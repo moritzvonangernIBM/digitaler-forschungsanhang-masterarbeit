@@ -1,0 +1,736 @@
+{
+  "agent_cost": 0.0063289,
+  "auth_classification": null,
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "duration": 39.19613774999743,
+  "effect_timeline": null,
+  "hallucination_check": null,
+  "hallucination_retries_used": 0,
+  "id": "seed_976302_C1_SEMANTIC_SUPPORT_task_020",
+  "info": null,
+  "messages": [
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi! How can I help you today?",
+      "cost": 0.0,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 0,
+      "turn_taking_action": null,
+      "usage": null,
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi! I’d like to upgrade all the items from my recent orders to the most expensive versions you have. For shoes, I just need the same size. I’d like to pay the difference with my gift card. Can you help me with that?",
+      "cost": 0.0013599999999999999,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 1,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 476
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Yes—I can help, but I’ll need to authenticate you first and then we’ll handle this **order-by-order** (I can only modify/exchange items for one order at a time).\n\nPlease reply with **one** of the following:\n1) **Email address** on your account, or  \n2) **First name + last name + ZIP code**\n\nAlso, for each order you want to upgrade, please have the **order ID(s)** ready (e.g., `#W0000000`).",
+      "cost": 0.0004808,
+      "generation_time_seconds": 2.0471279170014895,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 2,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 176,
+        "prompt_tokens": 3608
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Sure, my name is Ethan Garcia and my ZIP code is 80280. I don’t remember my email address, but I do have my order IDs ready.",
+      "cost": 0.00154,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 3,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 638
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.0003625,
+      "generation_time_seconds": 1.2089537080028094,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "first_name": "Ethan",
+            "last_name": "Garcia",
+            "zip": "80280"
+          },
+          "id": "call_BWjDBFxFPakDLqiHeoWQLwAG",
+          "name": "find_user_id_by_name_zip",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 4,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 3754
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "ethan_garcia_1261",
+      "error": false,
+      "id": "call_BWjDBFxFPakDLqiHeoWQLwAG",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 5
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks, Ethan—I've found your account.\n\nTo upgrade items, I need to know **which order(s)** you want to change. Please send the **order ID(s)** (e.g., `#W0000000`) you want to upgrade.\n\nAlso, a quick check: upgrades work differently based on status:\n- If an order is **pending** → we can **modify items** (one-time action).\n- If an order is **delivered** → we can **exchange items** (one-time action).\n\nReply with:\n1) The **order ID(s)**, and  \n2) Confirm: you want the upgrades to **“most expensive versions”** (same product type/option family) and for **shoes only, same size**.",
+      "cost": 0.00031478,
+      "generation_time_seconds": 2.2702635419846047,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 6,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 158,
+        "prompt_tokens": 3812
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "The first order I want to upgrade is #W1234567. And yes, please upgrade everything in that order to the most expensive versions available—just make sure for shoes, the size stays the same.",
+      "cost": 0.002002,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 7,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 833
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00023473000000000002,
+      "generation_time_seconds": 1.1213207080145366,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W1234567"
+          },
+          "id": "call_l9TuCC69WCSlcYbN90xzu3hT",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 8,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 61,
+        "prompt_tokens": 4018
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_l9TuCC69WCSlcYbN90xzu3hT",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 9
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I tried to look up order **#W1234567**, but it isn’t found in our system.\n\nCould you please double-check the order ID format (it should look like `#W0000000`) and send the correct ID?",
+      "cost": 0.00041725,
+      "generation_time_seconds": 1.1764605840144213,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 10,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 4059
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Oh, my mistake. Let me check again. The correct order ID is #W7654321. Please use that one.",
+      "cost": 0.002072,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 11,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 932
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00044858000000000007,
+      "generation_time_seconds": 3.724719624995487,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W7654321"
+          },
+          "id": "call_gdJFdtFSgV9VP91RqDkeVOKa",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 12,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 4144
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_gdJFdtFSgV9VP91RqDkeVOKa",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 13
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks—I've attempted to look up **#W7654321**, but it still isn’t found in our system.\n\nA couple quick things to confirm:\n- The order ID must include the leading **`#`** (e.g., `#W1234567`)—you’ve included that, so that’s good.\n- It must match exactly what’s in your confirmation email/receipt.\n\nPlease reply with the **correct order ID exactly as shown**. If you have multiple IDs, send the next one too.",
+      "cost": 0.00032813000000000004,
+      "generation_time_seconds": 1.5143190830131061,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 14,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 4185
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Let’s try #W0012345. If that one doesn’t work, I can give you another.",
+      "cost": 0.0023179999999999997,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 15,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1071
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00026553,
+      "generation_time_seconds": 1.1646946250111796,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W0012345"
+          },
+          "id": "call_JwIPHVqwWVxYn50NZ8mZTWpP",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 16,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 4322
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_JwIPHVqwWVxYn50NZ8mZTWpP",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 17
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks—#W0012345 still isn’t showing up in our system as an order ID.\n\nCould you please confirm the ID format from your email/receipt and try **one more** of these (whichever matches exactly):\n\n1) **With** the leading `#` (e.g., `#W0012345`) — what you already tried, or  \n2) **Without** the `#` (e.g., `W0012345`) — sometimes receipts omit it.\n\nReply with the exact order ID text as shown on your receipt, including whether the `#` is present. If you have another order ID, send that too and I’ll try it.",
+      "cost": 0.00067248,
+      "generation_time_seconds": 3.5635181660181843,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 18,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 356,
+        "prompt_tokens": 4363
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Alright, let’s try W0012345 this time. If that doesn’t work, I can look for another order ID.",
+      "cost": 0.0026859999999999996,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 19,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 1239
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00029103,
+      "generation_time_seconds": 1.1692283329903148,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "W0012345"
+          },
+          "id": "call_bJ1dn1p9xGxVd7tZF9rzUXYx",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 20,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 4537
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_bJ1dn1p9xGxVd7tZF9rzUXYx",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 21
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00047778,
+      "generation_time_seconds": 1.8500135830254294,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "user_id": "ethan_garcia_1261"
+          },
+          "id": "call_yvyW7xelhfd5CySMk3IYhO6V",
+          "name": "get_user_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 22,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 166,
+        "prompt_tokens": 4577
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"user_id\": \"ethan_garcia_1261\", \"name\": {\"first_name\": \"Ethan\", \"last_name\": \"Garcia\"}, \"address\": {\"address1\": \"667 Highland Drive\", \"address2\": \"Suite 865\", \"city\": \"Denver\", \"country\": \"USA\", \"state\": \"CO\", \"zip\": \"80280\"}, \"email\": \"ethan.garcia8085@example.com\", \"payment_methods\": {\"paypal_3798357\": {\"source\": \"paypal\", \"id\": \"paypal_3798357\"}, \"gift_card_4332117\": {\"source\": \"gift_card\", \"id\": \"gift_card_4332117\", \"balance\": 86.0}}, \"orders\": [\"#W4967593\", \"#W9911714\", \"#W5733668\"]}",
+      "error": false,
+      "id": "call_yvyW7xelhfd5CySMk3IYhO6V",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 23
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks, Ethan—your account is confirmed.\n\nI can’t find the order ID(s) you tried in our system, so likely they were typed incorrectly. In your account, I currently see these order IDs:\n\n- **#W4967593**\n- **#W9911714**\n- **#W5733668**\n\nWhich one would you like to upgrade to the most expensive versions (keeping **shoe size the same**)?\n\nReply with **one** of those order IDs (or tell me which ones if you want multiple).",
+      "cost": 0.0009072300000000001,
+      "generation_time_seconds": 4.251396999985445,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 24,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 475,
+        "prompt_tokens": 4793
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Let’s start with #W4967593. Please upgrade everything in that order to the most expensive versions, and for shoes, just keep the same size.",
+      "cost": 0.003016,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 25,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 1380
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00027895999999999997,
+      "generation_time_seconds": 1.3547851660114247,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W4967593"
+          },
+          "id": "call_eocjKmQJAKwQx9Dm4vYpcdSo",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 26,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 96,
+        "prompt_tokens": 4942
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W4967593\", \"user_id\": \"ethan_garcia_1261\", \"address\": {\"address1\": \"667 Highland Drive\", \"address2\": \"Suite 865\", \"city\": \"Denver\", \"country\": \"USA\", \"state\": \"CO\", \"zip\": \"80280\"}, \"items\": [{\"name\": \"Office Chair\", \"product_id\": \"4794339885\", \"item_id\": \"4168944673\", \"price\": 471.82, \"options\": {\"material\": \"leather\", \"color\": \"blue\", \"armrest\": \"none\", \"backrest height\": \"standard\"}}, {\"name\": \"Electric Toothbrush\", \"product_id\": \"7352963235\", \"item_id\": \"3320557165\", \"price\": 188.67, \"options\": {\"color\": \"blue\", \"speed settings\": \"high\", \"battery type\": \"AA batteries\"}}, {\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"8054888773\", \"price\": 206.03, \"options\": {\"color\": \"grey\", \"size\": \"small\", \"material\": \"nylon\", \"compartment\": \"laptop\"}}, {\"name\": \"Wristwatch\", \"product_id\": \"6066914160\", \"item_id\": \"1355937109\", \"price\": 1985.3, \"options\": {\"strap material\": \"leather\", \"dial color\": \"white\"}}], \"status\": \"processed\", \"fulfillments\": [{\"tracking_id\": [\"663395959263\"], \"item_ids\": [\"4168944673\", \"3320557165\", \"8054888773\", \"1355937109\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 2851.82, \"payment_method_id\": \"gift_card_4332117\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_eocjKmQJAKwQx9Dm4vYpcdSo",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 27
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00054591,
+      "generation_time_seconds": 2.2163616250036284,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "summary": "User Ethan Garcia requests upgrading all items in order #W4967593 to the most expensive versions (keeping shoe size same). However, order status is 'processed' (not pending or delivered), so current automated tools for modifying pending orders or exchanging delivered orders are not applicable. Human agent needed to review eligibility/options."
+          },
+          "id": "call_0h5M5Ht9QN5GkuN86Jpr4xPL",
+          "name": "transfer_to_human_agents",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 28,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 231,
+        "prompt_tokens": 5433
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Transfer successful",
+      "error": false,
+      "id": "call_0h5M5Ht9QN5GkuN86Jpr4xPL",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 29
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "YOU ARE BEING TRANSFERRED TO A HUMAN AGENT. PLEASE HOLD ON.",
+      "cost": 0.00030321,
+      "generation_time_seconds": 2.8763153750041965,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 30,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 5532
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "###TRANSFER###",
+      "cost": 0.000978,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 31,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1437
+      },
+      "utterance_ids": null
+    }
+  ],
+  "mode": "half_duplex",
+  "policy": null,
+  "review": null,
+  "reward_info": null,
+  "seed": 976302,
+  "speech_environment": null,
+  "task_id": "20",
+  "termination_reason": "user_stop",
+  "ticks": null,
+  "trial": null,
+  "user_cost": 0.015972,
+  "user_only_review": null
+}

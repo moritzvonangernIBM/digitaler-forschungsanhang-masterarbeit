@@ -1,0 +1,964 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.005278369999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0016722
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "b09133a1ac29f495b1bc26dc40494fb2feb85e25a8a58598676b45553c92115e",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8268610"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "1234 Elm St"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Springfield"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W2702727"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "62701"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W8268610\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"1234 Elm St\", \"city\": \"Springfield\", \"order_id\": \"#W2702727\", \"scope\": \"shipping address\", \"state\": \"IL\", \"zip\": \"62701\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "64226a11be772c1ce3ca5a1580e4cbb55dafb4febcb592e4ec88704dde854ae0",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8268610"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "1234 Elm St"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Springfield"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W2702727"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "62701"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "64226a11be772c1ce3ca5a1580e4cbb55dafb4febcb592e4ec88704dde854ae0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "64226a11be772c1ce3ca5a1580e4cbb55dafb4febcb592e4ec88704dde854ae0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "64226a11be772c1ce3ca5a1580e4cbb55dafb4febcb592e4ec88704dde854ae0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "64226a11be772c1ce3ca5a1580e4cbb55dafb4febcb592e4ec88704dde854ae0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "c47a23293dfd28b5fdc11631a893695d19f69f5c84f57ab60cd9c74db1b5c650",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W8268610"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "1234 Elm St"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "Springfield"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W2702727"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "62701"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "64226a11be772c1ce3ca5a1580e4cbb55dafb4febcb592e4ec88704dde854ae0",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 9,
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W8268610\", \"reason\": \"no longer needed.\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"1234 Elm St\", \"city\": \"Springfield\", \"order_id\": \"#W2702727\", \"scope\": \"shipping address\", \"state\": \"IL\", \"zip\": \"62701\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "f2b366be549d7998a8832178b91ea18f966f2263cf71c23d98f0cf33217f0809",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W8268610"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "1234 Elm St"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "Springfield"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W2702727"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "62701"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "f2b366be549d7998a8832178b91ea18f966f2263cf71c23d98f0cf33217f0809",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W8268610",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_DGSBJ7NvxJ6C4J7wQPozIoAq",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "f2b366be549d7998a8832178b91ea18f966f2263cf71c23d98f0cf33217f0809",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 12,
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "f2b366be549d7998a8832178b91ea18f966f2263cf71c23d98f0cf33217f0809",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 13,
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W8268610\", \"reason\": \"no longer needed.\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"1234 Elm St\", \"city\": \"Springfield\", \"order_id\": \"#W2702727\", \"scope\": \"shipping address\", \"state\": \"IL\", \"zip\": \"62701\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W8268610\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "51a5553c0aeb2fcbf4bb64fb459c19175dbf549d3037ba0571d376a67dc102b7",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W8268610"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "1234 Elm St"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "Springfield"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W2702727"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "62701"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W8268610",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "163 Cedar Street",
+                "address2": "Suite 165",
+                "city": "San Jose",
+                "country": "USA",
+                "state": "CA",
+                "zip": "95154"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9083642334",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "high",
+                    "color": "white",
+                    "power source": "USB"
+                  },
+                  "price": 164.28,
+                  "product_id": "6817146515"
+                }
+              ],
+              "order_id": "#W8268610",
+              "payment_history": [
+                {
+                  "amount": 164.28,
+                  "payment_method_id": "credit_card_3599838",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 164.28,
+                  "payment_method_id": "credit_card_3599838",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "yusuf_taylor_7149"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "51a5553c0aeb2fcbf4bb64fb459c19175dbf549d3037ba0571d376a67dc102b7",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order"
+      ],
+      "state_revision": 14
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "1234 Elm St",
+            "address2": "",
+            "city": "Springfield",
+            "country": "USA",
+            "order_id": "#W2702727",
+            "state": "IL",
+            "zip": "62701"
+          },
+          "call_id": "call_uqAY090BLVmFcZGgnsQTcziW",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "51a5553c0aeb2fcbf4bb64fb459c19175dbf549d3037ba0571d376a67dc102b7",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 16,
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "51a5553c0aeb2fcbf4bb64fb459c19175dbf549d3037ba0571d376a67dc102b7",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 17,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W8268610\", \"reason\": \"no longer needed.\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"1234 Elm St\", \"city\": \"Springfield\", \"order_id\": \"#W2702727\", \"scope\": \"shipping address\", \"state\": \"IL\", \"zip\": \"62701\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W8268610\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"address1\": \"1234 Elm St\", \"address2\": \"\", \"city\": \"Springfield\", \"country\": \"USA\", \"order_id\": \"#W2702727\", \"state\": \"IL\", \"zip\": \"62701\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "e064a6c2319050b8d806c562df3a9e4447c497819ad9d8493c378df583bb9933",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order",
+        "tool:call_uqAY090BLVmFcZGgnsQTcziW:modify_pending_order_address"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W8268610"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "1234 Elm St"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "Springfield"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "#W2702727"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "62701"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W8268610",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "163 Cedar Street",
+                "address2": "Suite 165",
+                "city": "San Jose",
+                "country": "USA",
+                "state": "CA",
+                "zip": "95154"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9083642334",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "high",
+                    "color": "white",
+                    "power source": "USB"
+                  },
+                  "price": 164.28,
+                  "product_id": "6817146515"
+                }
+              ],
+              "order_id": "#W8268610",
+              "payment_history": [
+                {
+                  "amount": 164.28,
+                  "payment_method_id": "credit_card_3599838",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 164.28,
+                  "payment_method_id": "credit_card_3599838",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "yusuf_taylor_7149"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_uqAY090BLVmFcZGgnsQTcziW:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "1234 Elm St",
+              "address2": "",
+              "city": "Springfield",
+              "country": "USA",
+              "order_id": "#W2702727",
+              "state": "IL",
+              "zip": "62701"
+            },
+            "result": {
+              "address": {
+                "address1": "1234 Elm St",
+                "address2": "",
+                "city": "Springfield",
+                "country": "USA",
+                "state": "IL",
+                "zip": "62701"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7373893106",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "white",
+                    "height": "4 ft",
+                    "material": "glass"
+                  },
+                  "price": 531.22,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "2733768059",
+                  "name": "Yoga Mat",
+                  "options": {
+                    "color": "pink",
+                    "material": "natural rubber",
+                    "thickness": "6mm"
+                  },
+                  "price": 94.38,
+                  "product_id": "4635925001"
+                }
+              ],
+              "order_id": "#W2702727",
+              "payment_history": [
+                {
+                  "amount": 625.6,
+                  "payment_method_id": "credit_card_3599838",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_taylor_7149"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e064a6c2319050b8d806c562df3a9e4447c497819ad9d8493c378df583bb9933",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order",
+        "tool:call_uqAY090BLVmFcZGgnsQTcziW:modify_pending_order_address"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e064a6c2319050b8d806c562df3a9e4447c497819ad9d8493c378df583bb9933",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "tool:call_DGSBJ7NvxJ6C4J7wQPozIoAq:cancel_pending_order",
+        "tool:call_uqAY090BLVmFcZGgnsQTcziW:modify_pending_order_address"
+      ],
+      "state_revision": 18
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 21,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 22.109582791978028,
+    "prewrite_validation": 0.0,
+    "semantic_support": 9.29480262400466
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 8,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "59",
+  "trajectory_id": "seed_976305_C1_SEMANTIC_SUPPORT_task_059"
+}

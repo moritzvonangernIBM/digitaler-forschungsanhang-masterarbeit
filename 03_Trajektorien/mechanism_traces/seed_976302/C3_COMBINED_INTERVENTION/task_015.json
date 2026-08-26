@@ -1,0 +1,1303 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.007951489999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00334065
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'desired_variant_constraints' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "desired_variant_constraints",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "9b092bf7e8816ae9a0e8b7723f0ed266def06e9b85a7870befd9165aef7a6678",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a pair of boots\", \"scope\": \"a pair of boots pending in my order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"For any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "f00202d81cdcb8778ea6151338a3daa5db2921da3311d49d2a2538967a0e2d2c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "f00202d81cdcb8778ea6151338a3daa5db2921da3311d49d2a2538967a0e2d2c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "17fdc0d6f696a4970daa83cccecf461eeb8b3b1e8e685ce04886bbc66f074bfc",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": [
+                "change to size 8",
+                "leather or anything similar is fine",
+                "I’m not worried about waterproofing"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "f00202d81cdcb8778ea6151338a3daa5db2921da3311d49d2a2538967a0e2d2c",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 6,
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"change to size 8\", \"leather or anything similar is fine\", \"I\\u2019m not worried about waterproofing\"], \"item_descriptions\": \"a pair of boots\", \"scope\": \"a pair of boots pending in my order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"For any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "fef48f9032b71f150937173afff8a620b1eb604566d66864bdea3d6615085581",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 7,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": [
+                "change to size 8",
+                "leather or anything similar is fine",
+                "I’m not worried about waterproofing"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "fef48f9032b71f150937173afff8a620b1eb604566d66864bdea3d6615085581",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "fef48f9032b71f150937173afff8a620b1eb604566d66864bdea3d6615085581",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "fef48f9032b71f150937173afff8a620b1eb604566d66864bdea3d6615085581",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "fef48f9032b71f150937173afff8a620b1eb604566d66864bdea3d6615085581",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "d05f70c5998d7f8cfd5d40135e2c89359e3a95060bd00d1fc2ff432e03b9bbf4",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": [
+                "change to size 8",
+                "leather or anything similar is fine",
+                "I’m not worried about waterproofing"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "fef48f9032b71f150937173afff8a620b1eb604566d66864bdea3d6615085581",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"change to size 8\", \"leather or anything similar is fine\", \"I\\u2019m not worried about waterproofing\"], \"item_descriptions\": \"a pair of boots\", \"order_id\": \"#W8665881\", \"scope\": \"a pair of boots pending in my order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\", \"scope\": \"For any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "4c5fc8bc81affe8ee50171bd751d64c3c800f05443caf87bae43b4cf4e7babfb",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user"
+      ],
+      "state_revision": 12,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": [
+                "change to size 8",
+                "leather or anything similar is fine",
+                "I’m not worried about waterproofing"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "4c5fc8bc81affe8ee50171bd751d64c3c800f05443caf87bae43b4cf4e7babfb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "4c5fc8bc81affe8ee50171bd751d64c3c800f05443caf87bae43b4cf4e7babfb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "b9c7240f393e79f8b355a851759379d130c01245411d3cc5b28dd5f0529de298",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "to size 8",
+                "material is leather or similar"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "The boots"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "4c5fc8bc81affe8ee50171bd751d64c3c800f05443caf87bae43b4cf4e7babfb",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 20,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"change to size 8\", \"leather or anything similar is fine\", \"I\\u2019m not worried about waterproofing\"], \"item_descriptions\": \"a pair of boots\", \"order_id\": \"#W8665881\", \"scope\": \"a pair of boots pending in my order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\", \"scope\": \"For any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": [\"to size 8\", \"material is leather or similar\"], \"order_id\": \"#W9389413\", \"scope\": \"The boots\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W9389413\", \"scope\": \"any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 21,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": [
+                "change to size 8",
+                "leather or anything similar is fine",
+                "I’m not worried about waterproofing"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "to size 8",
+                "material is leather or similar"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "The boots"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4127323219"
+            ],
+            "new_item_ids": [
+              "3613716226"
+            ],
+            "order_id": "#W9389413",
+            "payment_method_id": "paypal_5364164"
+          },
+          "call_id": "call_3MgmS0WEgT5zVvoKDbvnwCrR",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4127323219"
+        ],
+        "new_item_ids": [
+          "3613716226"
+        ],
+        "order_id": "#W9389413",
+        "payment_method_id": "paypal_5364164"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_3MgmS0WEgT5zVvoKDbvnwCrR",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 27,
+      "state_revision": 22,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_3MgmS0WEgT5zVvoKDbvnwCrR",
+        "candidate_arguments": {
+          "item_ids": [
+            "4127323219"
+          ],
+          "new_item_ids": [
+            "3613716226"
+          ],
+          "order_id": "#W9389413",
+          "payment_method_id": "paypal_5364164"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "fatima_johnson_7581",
+          "authentication_source_event_ids": [
+            "tool:call_Nc1nis45wZ9pCprrrHGj9eKX:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4127323219",
+              "2554056026",
+              "6342039236",
+              "5047954489"
+            ],
+            "order_id": "#W9389413",
+            "source_event_ids": [
+              "tool:call_fBynDK966wuTp0PGotrDQIIn:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "fatima_johnson_7581"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "7363354090",
+              "source_event_ids": [
+                "tool:call_MYD9Lxc9LWPC1Y0jPJWLCwRV:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "9523456873",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_1675628",
+              "paypal_5364164"
+            ],
+            "source_event_ids": [
+              "tool:call_GAacGJR4knNEluktPLBBkYLX:get_user_details"
+            ],
+            "user_id": "fatima_johnson_7581"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 28,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_3MgmS0WEgT5zVvoKDbvnwCrR",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 29,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b6b794bbe1c2cd40398b1e41b61b975a1ab15e2f25829ca0eff752a96a90d1b4",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 30,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"change to size 8\", \"leather or anything similar is fine\", \"I\\u2019m not worried about waterproofing\"], \"item_descriptions\": \"a pair of boots\", \"order_id\": \"#W8665881\", \"scope\": \"a pair of boots pending in my order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\", \"scope\": \"For any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": [\"to size 8\", \"material is leather or similar\"], \"order_id\": \"#W9389413\", \"scope\": \"The boots\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W9389413\", \"scope\": \"any payment or refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4127323219\"], \"new_item_ids\": [\"3613716226\"], \"order_id\": \"#W9389413\", \"payment_method_id\": \"paypal_5364164\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "2dace6d1c674bf2a6af117db42ddf9d2785b5fbb7d4caea4791b97d3127b694a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 31,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user",
+        "tool:call_3MgmS0WEgT5zVvoKDbvnwCrR:exchange_delivered_order_items"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": [
+                "change to size 8",
+                "leather or anything similar is fine",
+                "I’m not worried about waterproofing"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "a pair of boots"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:11:user"
+              ],
+              "value": "a pair of boots pending in my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "For any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "to size 8",
+                "material is leather or similar"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "The boots"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "any payment or refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_3MgmS0WEgT5zVvoKDbvnwCrR:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4127323219"
+              ],
+              "new_item_ids": [
+                "3613716226"
+              ],
+              "order_id": "#W9389413",
+              "payment_method_id": "paypal_5364164"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "4127323219"
+              ],
+              "exchange_new_items": [
+                "3613716226"
+              ],
+              "exchange_payment_method_id": "paypal_5364164",
+              "exchange_price_difference": 1.72,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4127323219",
+                    "2554056026",
+                    "6342039236",
+                    "5047954489"
+                  ],
+                  "tracking_id": [
+                    "967556659983"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4127323219",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "no"
+                  },
+                  "price": 251.82,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "2554056026",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "metal",
+                    "color": "gold",
+                    "display": "AMOLED"
+                  },
+                  "price": 367.38,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "6342039236",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "white",
+                    "size": "full size",
+                    "switch type": "clicky"
+                  },
+                  "price": 244.91,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "5047954489",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "blue",
+                    "material": "polyester",
+                    "size": "S",
+                    "style": "v-neck"
+                  },
+                  "price": 54.84,
+                  "product_id": "9523456873"
+                }
+              ],
+              "order_id": "#W9389413",
+              "payment_history": [
+                {
+                  "amount": 918.95,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "2dace6d1c674bf2a6af117db42ddf9d2785b5fbb7d4caea4791b97d3127b694a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 32,
+      "source_event_ids": [
+        "message:3:user",
+        "message:11:user",
+        "message:1:user",
+        "message:15:user",
+        "tool:call_3MgmS0WEgT5zVvoKDbvnwCrR:exchange_delivered_order_items"
+      ],
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 33,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 30.91273512400221,
+    "prewrite_validation": 0.00039945708704181015,
+    "semantic_support": 17.461322373972507
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 12,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "15",
+  "trajectory_id": "seed_976302_C3_COMBINED_INTERVENTION_task_015"
+}

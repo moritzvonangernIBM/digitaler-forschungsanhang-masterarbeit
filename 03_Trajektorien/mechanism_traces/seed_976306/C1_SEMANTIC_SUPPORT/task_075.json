@@ -1,0 +1,646 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.005432200000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0015851500000000002
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "dce508f04e32f72730ed370e3ff38242975b181de7f18896700d3ec251eb1ba0",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "bebd15796b4ca470186ca94357fba7be4f666ea7631137ff1d2a29b7da11fa22",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "black, 4 hours, not resistant"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "4063058357"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different model with specific features\", \"item_descriptions\": \"a pair of wireless earbuds\", \"scope\": \"a pair\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"black, 4 hours, not resistant\"], \"new_item_ids\": [\"4063058357\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "7fd59427f8e24ee01e282a47abac3550c9c450f2abaf9651c12679bf0c15e3a9",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "black, 4 hours, not resistant"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "4063058357"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "7fd59427f8e24ee01e282a47abac3550c9c450f2abaf9651c12679bf0c15e3a9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a27ecbb385a98238015a773e4617208af0ce1787e5f2f0d52311fb6e8c099ef6",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the only item I want to exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "7fd59427f8e24ee01e282a47abac3550c9c450f2abaf9651c12679bf0c15e3a9",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 8,
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different model with specific features\", \"item_descriptions\": \"a pair of wireless earbuds\", \"scope\": \"a pair\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"black, 4 hours, not resistant\"], \"new_item_ids\": [\"4063058357\"]}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the only item I want to exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "bef35f5cc1aa78465a001b1490671fd5467dd118aa4b406411842074446281cd",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "black, 4 hours, not resistant"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "4063058357"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the only item I want to exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "bef35f5cc1aa78465a001b1490671fd5467dd118aa4b406411842074446281cd",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8555936349"
+            ],
+            "new_item_ids": [
+              "4063058357"
+            ],
+            "order_id": "#W6908222",
+            "payment_method_id": "paypal_4518393"
+          },
+          "call_id": "call_gEXwdWdkODkSSQqCxfd0560Q",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "bef35f5cc1aa78465a001b1490671fd5467dd118aa4b406411842074446281cd",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 11,
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "bef35f5cc1aa78465a001b1490671fd5467dd118aa4b406411842074446281cd",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different model with specific features\", \"item_descriptions\": \"a pair of wireless earbuds\", \"scope\": \"a pair\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"black, 4 hours, not resistant\"], \"new_item_ids\": [\"4063058357\"]}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the only item I want to exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"8555936349\"], \"new_item_ids\": [\"4063058357\"], \"order_id\": \"#W6908222\", \"payment_method_id\": \"paypal_4518393\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "0cb21464bed6051cc3cfe923c7523fa26ba6ac889ffdceb675fa3e1297a6d516",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "tool:call_gEXwdWdkODkSSQqCxfd0560Q:exchange_delivered_order_items"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "black, 4 hours, not resistant"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "4063058357"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the only item I want to exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_gEXwdWdkODkSSQqCxfd0560Q:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8555936349"
+              ],
+              "new_item_ids": [
+                "4063058357"
+              ],
+              "order_id": "#W6908222",
+              "payment_method_id": "paypal_4518393"
+            },
+            "result": {
+              "address": {
+                "address1": "244 Elm Street",
+                "address2": "Suite 422",
+                "city": "Columbus",
+                "country": "USA",
+                "state": "OH",
+                "zip": "43209"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "8555936349"
+              ],
+              "exchange_new_items": [
+                "4063058357"
+              ],
+              "exchange_payment_method_id": "paypal_4518393",
+              "exchange_price_difference": 16.85,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "1270145486",
+                    "8555936349",
+                    "6595128475",
+                    "4843487907"
+                  ],
+                  "tracking_id": [
+                    "659687665480"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "1270145486",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "high",
+                    "color": "white",
+                    "power source": "battery"
+                  },
+                  "price": 144.07,
+                  "product_id": "6817146515"
+                },
+                {
+                  "item_id": "8555936349",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "8 hours",
+                    "color": "blue",
+                    "water resistance": "IPX4"
+                  },
+                  "price": 226.49,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "6595128475",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "9",
+                    "waterproof": "no"
+                  },
+                  "price": 237.65,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "4843487907",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "white",
+                    "size": "80%",
+                    "switch type": "clicky"
+                  },
+                  "price": 254.84,
+                  "product_id": "1656367028"
+                }
+              ],
+              "order_id": "#W6908222",
+              "payment_history": [
+                {
+                  "amount": 863.05,
+                  "payment_method_id": "paypal_4518393",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "liam_moore_4057"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "0cb21464bed6051cc3cfe923c7523fa26ba6ac889ffdceb675fa3e1297a6d516",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "tool:call_gEXwdWdkODkSSQqCxfd0560Q:exchange_delivered_order_items"
+      ],
+      "state_revision": 16
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 15,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 22.428095248062164,
+    "prewrite_validation": 0.0,
+    "semantic_support": 10.330285499978345
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 3,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "75",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_075"
+}

@@ -1,0 +1,664 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.008978940000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00252215
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "13c38a7fc991b200ed4e287fbee775fb9ca87ec9a4ad97224eab163e5c610a51",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "1000ml one"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "500ml water bottle"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the smaller bottle"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "a635eb4ec01053f2f89f94b8da6e7dcbbad188c890d3a731407c3d7019afc913",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "any refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the 1000ml stainless steel in red"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "option 1"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"1000ml one\", \"item_descriptions\": [\"500ml water bottle\"], \"scope\": \"the smaller bottle\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"any refund\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the 1000ml stainless steel in red\", \"scope\": \"option 1\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "1e2a55d5c77f46098103088ba972acc8a7962bfb138bfec96ad82b22b7201f40",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "1000ml one"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "500ml water bottle"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the smaller bottle"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "any refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the 1000ml stainless steel in red"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "option 1"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1e2a55d5c77f46098103088ba972acc8a7962bfb138bfec96ad82b22b7201f40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "record requires at least one grounded field",
+          "error_type": "ValueError",
+          "record_index": 0
+        },
+        {
+          "error": "record requires at least one grounded field",
+          "error_type": "ValueError",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "03b94926e4b169775aa049180d419cff3e020f17d0d0df6128d87cb481c24065",
+      "sequence": 7,
+      "source_event_ids": [],
+      "state_revision": 22,
+      "total_commitments": 3,
+      "validated_records": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1e2a55d5c77f46098103088ba972acc8a7962bfb138bfec96ad82b22b7201f40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3453331371"
+            ],
+            "new_item_ids": [
+              "2439754078"
+            ],
+            "order_id": "#W8661412",
+            "payment_method_id": "credit_card_7239357"
+          },
+          "call_id": "call_lxnqKVxOMQCV9oUR8MR6PfIu",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "1e2a55d5c77f46098103088ba972acc8a7962bfb138bfec96ad82b22b7201f40",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3453331371"
+        ],
+        "new_item_ids": [
+          "2439754078"
+        ],
+        "order_id": "#W8661412",
+        "payment_method_id": "credit_card_7239357"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_lxnqKVxOMQCV9oUR8MR6PfIu",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 10,
+      "state_revision": 22,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_lxnqKVxOMQCV9oUR8MR6PfIu",
+        "candidate_arguments": {
+          "item_ids": [
+            "3453331371"
+          ],
+          "new_item_ids": [
+            "2439754078"
+          ],
+          "order_id": "#W8661412",
+          "payment_method_id": "credit_card_7239357"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "emma_kovacs_9839",
+          "authentication_source_event_ids": [
+            "tool:call_sfYdfgoAQ1ZqdY6Wy3EvPNYI:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2226219750",
+              "3453331371",
+              "8426249116"
+            ],
+            "order_id": "#W8661412",
+            "source_event_ids": [
+              "tool:call_G3yqalyuEFnAm5fdx2A4OMIe:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "emma_kovacs_9839"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4794339885",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6066914160",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "8310926033",
+              "source_event_ids": [
+                "tool:call_j0sTHM67JtJ57G0yWMO0SwZc:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_7239357"
+            ],
+            "source_event_ids": [
+              "tool:call_McQzoM44r2uapTEiNxJ13Qfd:get_user_details"
+            ],
+            "user_id": "emma_kovacs_9839"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 11,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_lxnqKVxOMQCV9oUR8MR6PfIu",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 12,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1e2a55d5c77f46098103088ba972acc8a7962bfb138bfec96ad82b22b7201f40",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 13,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"1000ml one\", \"item_descriptions\": [\"500ml water bottle\"], \"scope\": \"the smaller bottle\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"any refund\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the 1000ml stainless steel in red\", \"scope\": \"option 1\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3453331371\"], \"new_item_ids\": [\"2439754078\"], \"order_id\": \"#W8661412\", \"payment_method_id\": \"credit_card_7239357\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "c2dd22924e9080119f34035b0ec8c3394105dbb4b50de82f754cd2b009c9b5d5",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_lxnqKVxOMQCV9oUR8MR6PfIu:modify_pending_order_items"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "1000ml one"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "500ml water bottle"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the smaller bottle"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "any refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the 1000ml stainless steel in red"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "option 1"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_lxnqKVxOMQCV9oUR8MR6PfIu:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3453331371"
+              ],
+              "new_item_ids": [
+                "2439754078"
+              ],
+              "order_id": "#W8661412",
+              "payment_method_id": "credit_card_7239357"
+            },
+            "result": {
+              "address": {
+                "address1": "637 Pine Lane",
+                "address2": "Suite 443",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32190"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "2226219750",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "white",
+                    "strap material": "silicone"
+                  },
+                  "price": 2009.03,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "2439754078",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "1000ml",
+                    "color": "red",
+                    "material": "stainless steel"
+                  },
+                  "price": 49.51,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "8426249116",
+                  "name": "Office Chair",
+                  "options": {
+                    "armrest": "fixed",
+                    "backrest height": "standard",
+                    "color": "black",
+                    "material": "fabric"
+                  },
+                  "price": 488.81,
+                  "product_id": "4794339885"
+                }
+              ],
+              "order_id": "#W8661412",
+              "payment_history": [
+                {
+                  "amount": 2550.63,
+                  "payment_method_id": "credit_card_7239357",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 3.280000000000001,
+                  "payment_method_id": "credit_card_7239357",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "emma_kovacs_9839"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c2dd22924e9080119f34035b0ec8c3394105dbb4b50de82f754cd2b009c9b5d5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_lxnqKVxOMQCV9oUR8MR6PfIu:modify_pending_order_items"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c2dd22924e9080119f34035b0ec8c3394105dbb4b50de82f754cd2b009c9b5d5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_lxnqKVxOMQCV9oUR8MR6PfIu:modify_pending_order_items"
+      ],
+      "state_revision": 26
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 17,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 62.966208125057165,
+    "prewrite_validation": 0.0006734990165568888,
+    "semantic_support": 14.338378709042445
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 4,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "79",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_079"
+}

@@ -1,0 +1,550 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00622542,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0018585000000000001
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "10bef651484452b6e5e42cfaf12974acc622f680eb16cd60efb1ab43312b8740",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "pet bed"
+              ]
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "sent to Texas by mistake"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return everything in that order except for the pet bed"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "b7c9e324d00efc7bfa80c5c91feb2c7d9505232e300d41dca58ed3a6c61a0d1c",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": [
+                "the electric kettle",
+                "the mechanical keyboard"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the electric kettle and the mechanical keyboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"pet bed\"], \"reason\": \"sent to Texas by mistake\", \"scope\": \"return everything in that order except for the pet bed\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"the electric kettle\", \"the mechanical keyboard\"], \"scope\": \"the electric kettle and the mechanical keyboard\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "b75d0334fb14fd481d31516b8815f089f9aff545975632c30e9b2d05f9c63754",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "pet bed"
+              ]
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "sent to Texas by mistake"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return everything in that order except for the pet bed"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": [
+                "the electric kettle",
+                "the mechanical keyboard"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the electric kettle and the mechanical keyboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b75d0334fb14fd481d31516b8815f089f9aff545975632c30e9b2d05f9c63754",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "79310c7a8490d9a975bc7ec58273428e74c67f73a0e8032f3c2e77f23f365819",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "pet bed"
+              ]
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "sent to Texas by mistake"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "return everything in that order except for the pet bed"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b75d0334fb14fd481d31516b8815f089f9aff545975632c30e9b2d05f9c63754",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "7602931732",
+              "9570044148"
+            ],
+            "order_id": "#W5565470",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_sVwMosrkpeQbSbhglFOOhctd",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "b75d0334fb14fd481d31516b8815f089f9aff545975632c30e9b2d05f9c63754",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b75d0334fb14fd481d31516b8815f089f9aff545975632c30e9b2d05f9c63754",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"pet bed\"], \"reason\": \"sent to Texas by mistake\", \"scope\": \"return everything in that order except for the pet bed\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"the electric kettle\", \"the mechanical keyboard\"], \"scope\": \"the electric kettle and the mechanical keyboard\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"7602931732\", \"9570044148\"], \"order_id\": \"#W5565470\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "cb8b16d532ae716549b35ec0435d5ddcb9a476d3a737590c4bb62fb5a1838206",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:17:user",
+        "tool:call_sVwMosrkpeQbSbhglFOOhctd:return_delivered_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "pet bed"
+              ]
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "sent to Texas by mistake"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "return everything in that order except for the pet bed"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": [
+                "the electric kettle",
+                "the mechanical keyboard"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the electric kettle and the mechanical keyboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_sVwMosrkpeQbSbhglFOOhctd:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "7602931732",
+                "9570044148"
+              ],
+              "order_id": "#W5565470",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "812 Cedar Avenue",
+                "address2": "Suite 500",
+                "city": "Houston",
+                "country": "USA",
+                "state": "TX",
+                "zip": "77129"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "7602931732",
+                    "9570044148",
+                    "6857426243"
+                  ],
+                  "tracking_id": [
+                    "907614527588"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "7602931732",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1L",
+                    "color": "black",
+                    "material": "stainless steel"
+                  },
+                  "price": 153.25,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "9570044148",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "full size",
+                    "switch type": "linear"
+                  },
+                  "price": 231.37,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "6857426243",
+                  "name": "Pet Bed",
+                  "options": {
+                    "color": "grey",
+                    "material": "fleece",
+                    "size": "medium"
+                  },
+                  "price": 196.53,
+                  "product_id": "2747247837"
+                }
+              ],
+              "order_id": "#W5565470",
+              "payment_history": [
+                {
+                  "amount": 581.15,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "7602931732",
+                "9570044148"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "cb8b16d532ae716549b35ec0435d5ddcb9a476d3a737590c4bb62fb5a1838206",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:17:user",
+        "tool:call_sVwMosrkpeQbSbhglFOOhctd:return_delivered_order_items"
+      ],
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 13,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 24.416689667967148,
+    "prewrite_validation": 0.0,
+    "semantic_support": 11.965153916971758
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 3,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "25",
+  "trajectory_id": "seed_976303_C1_SEMANTIC_SUPPORT_task_025"
+}

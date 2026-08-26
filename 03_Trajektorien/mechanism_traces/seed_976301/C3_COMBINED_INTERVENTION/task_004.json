@@ -1,0 +1,297 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.006251120000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00045215
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 1,
+    "a_opportunities": 1,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "415faa8b3022d541f7589afe864e5bc93891b12c3efa47e7582b941812700e22",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "purple",
+                "size small",
+                "v-neck",
+                "polyester material"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "all my pending t-shirt orders"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3799046073"
+        ],
+        "new_item_ids": [
+          "9647292434"
+        ],
+        "order_id": "#W6247578",
+        "payment_method_id": "credit_card_9513926"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_4ZhoihThWyTs2wlJmCFUIpzM",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 2,
+      "state_revision": 22,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_4ZhoihThWyTs2wlJmCFUIpzM",
+        "candidate_arguments": {
+          "item_ids": [
+            "3799046073"
+          ],
+          "new_item_ids": [
+            "9647292434"
+          ],
+          "order_id": "#W6247578",
+          "payment_method_id": "credit_card_9513926"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_rossi_9620",
+          "authentication_source_event_ids": [
+            "tool:call_h7SuSKpk8FvxTRW3vlVTmSFT:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "3799046073"
+            ],
+            "order_id": "#W6247578",
+            "source_event_ids": [
+              "tool:call_ScYm272AyTY5wBqOFfntBEkw:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_rossi_9620"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_EzJNTwZ2fb6xg2GHBXYLGghK:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9513926"
+            ],
+            "source_event_ids": [
+              "tool:call_FEInHrpbXtkj5FaRnCqxfII2:get_user_details"
+            ],
+            "user_id": "yusuf_rossi_9620"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 3,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_4ZhoihThWyTs2wlJmCFUIpzM",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 4,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8349118980"
+        ],
+        "new_item_ids": [
+          "9647292434"
+        ],
+        "order_id": "#W4776164",
+        "payment_method_id": "credit_card_9513926"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_ahMInsKNS7K2CntbDb1EsQ0q",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 5,
+      "state_revision": 24,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_ahMInsKNS7K2CntbDb1EsQ0q",
+        "candidate_arguments": {
+          "item_ids": [
+            "8349118980"
+          ],
+          "new_item_ids": [
+            "9647292434"
+          ],
+          "order_id": "#W4776164",
+          "payment_method_id": "credit_card_9513926"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_rossi_9620",
+          "authentication_source_event_ids": [
+            "tool:call_h7SuSKpk8FvxTRW3vlVTmSFT:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "8349118980",
+              "6324294385"
+            ],
+            "order_id": "#W4776164",
+            "source_event_ids": [
+              "tool:call_OgYGBUxjURAieN21PAxyETaV:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_rossi_9620"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_EzJNTwZ2fb6xg2GHBXYLGghK:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9513926"
+            ],
+            "source_event_ids": [
+              "tool:call_FEInHrpbXtkj5FaRnCqxfII2:get_user_details"
+            ],
+            "user_id": "yusuf_rossi_9620"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 6,
+      "state_revision": 24
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_ahMInsKNS7K2CntbDb1EsQ0q",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 7,
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 1,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 8,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 28.87414504098706,
+    "prewrite_validation": 0.0007767509669065475,
+    "semantic_support": 2.649157457984984
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "4",
+  "trajectory_id": "seed_976301_C3_COMBINED_INTERVENTION_task_004"
+}

@@ -1,0 +1,598 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00705278,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0016649000000000002
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "fc027ace47a7c76a22f2a8fd9fd1414055d1f49c5369e6bd4d3bb2aa55bb8858",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest earbud from the rest of my order, which has the same water resistance level as my other earbuds"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a Wireless Earbud with an IPX7 water resistance rating"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from the rest of my order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 14,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ebedac51c30d16a26f554dfb30310685629284d49547efc521ea116c8d40f03f",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the cheapest earbud from the rest of my order, which has the same water resistance level as my other earbuds\", \"item_descriptions\": \"a Wireless Earbud with an IPX7 water resistance rating\", \"scope\": \"from the rest of my order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"the exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "a7a87c8252e0dffff4b092edac692bbb786e4a5fd1d393bb6cac7ba0cba75dc2",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest earbud from the rest of my order, which has the same water resistance level as my other earbuds"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a Wireless Earbud with an IPX7 water resistance rating"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from the rest of my order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "a7a87c8252e0dffff4b092edac692bbb786e4a5fd1d393bb6cac7ba0cba75dc2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "2757705742"
+            ],
+            "new_item_ids": [
+              "1646531091"
+            ],
+            "order_id": "#W3470184",
+            "payment_method_id": "gift_card_7245904"
+          },
+          "call_id": "call_53Ko4OyDmDN0RNEpbTT6jfiD",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "a7a87c8252e0dffff4b092edac692bbb786e4a5fd1d393bb6cac7ba0cba75dc2",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "2757705742"
+        ],
+        "new_item_ids": [
+          "1646531091"
+        ],
+        "order_id": "#W3470184",
+        "payment_method_id": "gift_card_7245904"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_53Ko4OyDmDN0RNEpbTT6jfiD",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 20,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_53Ko4OyDmDN0RNEpbTT6jfiD",
+        "candidate_arguments": {
+          "item_ids": [
+            "2757705742"
+          ],
+          "new_item_ids": [
+            "1646531091"
+          ],
+          "order_id": "#W3470184",
+          "payment_method_id": "gift_card_7245904"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "aarav_anderson_8794",
+          "authentication_source_event_ids": [
+            "tool:call_xzfdCPuw6ud3xozbKXNnF4Wf:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "6452271382",
+              "2366567022",
+              "1646531091",
+              "2757705742",
+              "1768466237"
+            ],
+            "order_id": "#W3470184",
+            "source_event_ids": [
+              "tool:call_OHxi3hy5NKSrXMap8ccbo7FB:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "aarav_anderson_8794"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9924732112",
+              "source_event_ids": [
+                "tool:call_wriKHpzNU2mM08VBI205Q51N:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7245904"
+            ],
+            "source_event_ids": [
+              "tool:call_qg6oHrRqzmuaiAG2soYTp5eJ:get_user_details"
+            ],
+            "user_id": "aarav_anderson_8794"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 10,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_53Ko4OyDmDN0RNEpbTT6jfiD",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 11,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "a7a87c8252e0dffff4b092edac692bbb786e4a5fd1d393bb6cac7ba0cba75dc2",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the cheapest earbud from the rest of my order, which has the same water resistance level as my other earbuds\", \"item_descriptions\": \"a Wireless Earbud with an IPX7 water resistance rating\", \"scope\": \"from the rest of my order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"the exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"2757705742\"], \"new_item_ids\": [\"1646531091\"], \"order_id\": \"#W3470184\", \"payment_method_id\": \"gift_card_7245904\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "e354dd528562b97971d14bdc4796e6c1f25431ef1961ffc0aa1f5ef9f4fd935f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_53Ko4OyDmDN0RNEpbTT6jfiD:exchange_delivered_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest earbud from the rest of my order, which has the same water resistance level as my other earbuds"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a Wireless Earbud with an IPX7 water resistance rating"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from the rest of my order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_53Ko4OyDmDN0RNEpbTT6jfiD:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "2757705742"
+              ],
+              "new_item_ids": [
+                "1646531091"
+              ],
+              "order_id": "#W3470184",
+              "payment_method_id": "gift_card_7245904"
+            },
+            "result": {
+              "address": {
+                "address1": "931 Maple Drive",
+                "address2": "Suite 985",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19031"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "2757705742"
+              ],
+              "exchange_new_items": [
+                "1646531091"
+              ],
+              "exchange_payment_method_id": "gift_card_7245904",
+              "exchange_price_difference": -26.48,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6452271382",
+                    "2366567022",
+                    "1646531091",
+                    "2757705742",
+                    "1768466237"
+                  ],
+                  "tracking_id": [
+                    "326433164179"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6452271382",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "4 hours",
+                    "color": "blue",
+                    "water resistance": "IPX4"
+                  },
+                  "price": 258.84,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "2366567022",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "1000ml",
+                    "color": "blue",
+                    "material": "stainless steel"
+                  },
+                  "price": 54.04,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "1646531091",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "6 hours",
+                    "color": "blue",
+                    "water resistance": "IPX4"
+                  },
+                  "price": 232.49,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "2757705742",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "4 hours",
+                    "color": "blue",
+                    "water resistance": "IPX7"
+                  },
+                  "price": 258.97,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "1768466237",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "black",
+                    "height": "3 ft",
+                    "material": "glass"
+                  },
+                  "price": 549.84,
+                  "product_id": "8600330539"
+                }
+              ],
+              "order_id": "#W3470184",
+              "payment_history": [
+                {
+                  "amount": 1354.18,
+                  "payment_method_id": "gift_card_7245904",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "aarav_anderson_8794"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "e354dd528562b97971d14bdc4796e6c1f25431ef1961ffc0aa1f5ef9f4fd935f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_53Ko4OyDmDN0RNEpbTT6jfiD:exchange_delivered_order_items"
+      ],
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 15,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 72.22155137488153,
+    "prewrite_validation": 0.000601625011768192,
+    "semantic_support": 9.80568641697755
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 2,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "49",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_049"
+}

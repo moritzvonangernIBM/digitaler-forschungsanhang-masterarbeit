@@ -1,0 +1,1914 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.016690959999999998,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00454785
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 4,
+    "b_evidence_reads": 1,
+    "b_opportunities": 4,
+    "b_replans": 1
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7d21a026db5ab2fff95f39209484be76c6dbe576f3a083f4a8592570d8061e7f",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a 13-inch one instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop in another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a speaker I bought\", \"reason\": \"it\\u2019s ridiculously overpriced and it\\u2019s not even water-resistant\", \"scope\": \"return a speaker I bought\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a 13-inch one instead\", \"item_descriptions\": \"the 17-inch laptop\", \"scope\": \"the 17-inch laptop in another order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a 13-inch one instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop in another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "6d2f1d781d6770e46edd6dca82d40c84870d2b5ee5bb89d42be499fc33a165dd",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "3e664d34902f948f6e19dd341dade21024754aa131cf23b25e7a3a0689957fed",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user"
+      ],
+      "state_revision": 21,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:20:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:20:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "13-inch laptop"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "17-inch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "12c8a5d0d079b9cb83e274d881d59eb9acd0c2d0915d8cbf9544a1ea02a80363",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 16,
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a speaker I bought\", \"order_id\": \"#6704763132\", \"reason\": \"it\\u2019s ridiculously overpriced and it\\u2019s not even water-resistant\", \"scope\": \"return a speaker I bought\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a 13-inch one instead\", \"item_descriptions\": \"the 17-inch laptop\", \"scope\": \"the 17-inch laptop in another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"13-inch laptop\", \"item_descriptions\": \"17-inch\", \"order_id\": \"#6704763132\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "a43ec16a55afee268b69d385577956ea2e1757db32fdf175efa4436cb48a0762",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user"
+      ],
+      "state_revision": 21,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:20:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:20:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a 13-inch one instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop in another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "13-inch laptop"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "17-inch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "a43ec16a55afee268b69d385577956ea2e1757db32fdf175efa4436cb48a0762",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "a43ec16a55afee268b69d385577956ea2e1757db32fdf175efa4436cb48a0762",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user"
+      ],
+      "state_revision": 23
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6704763132"
+            ],
+            "order_id": "#W8528674",
+            "payment_method_id": "paypal_7664977"
+          },
+          "call_id": "call_nndtg99UaXJC5PhGjXfZ6mzS",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "a43ec16a55afee268b69d385577956ea2e1757db32fdf175efa4436cb48a0762",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 20,
+      "state_revision": 23
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "6704763132"
+        ],
+        "order_id": "#W8528674",
+        "payment_method_id": "paypal_7664977"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_nndtg99UaXJC5PhGjXfZ6mzS",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 23,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_nndtg99UaXJC5PhGjXfZ6mzS",
+        "candidate_arguments": {
+          "item_ids": [
+            "6704763132"
+          ],
+          "order_id": "#W8528674",
+          "payment_method_id": "paypal_7664977"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "aarav_santos_2259",
+          "authentication_source_event_ids": [
+            "tool:call_1t9EIF543kfie6iI6V1yOjQY:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "4716977452",
+              "6704763132",
+              "5111440845",
+              "4024196380"
+            ],
+            "order_id": "#W8528674",
+            "source_event_ids": [
+              "tool:call_emHofWAdmGWHnakXDLkKrzG3:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "aarav_santos_2259"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2696197613",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4768869376",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7664977"
+            ],
+            "source_event_ids": [
+              "tool:call_4EJxFt7HJBj2nOgQfi9h6w4W:get_user_details"
+            ],
+            "user_id": "aarav_santos_2259"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 22,
+      "state_revision": 23
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_nndtg99UaXJC5PhGjXfZ6mzS",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 23,
+      "state_revision": 23
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "a43ec16a55afee268b69d385577956ea2e1757db32fdf175efa4436cb48a0762",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 24,
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a speaker I bought\", \"order_id\": \"#6704763132\", \"reason\": \"it\\u2019s ridiculously overpriced and it\\u2019s not even water-resistant\", \"scope\": \"return a speaker I bought\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a 13-inch one instead\", \"item_descriptions\": \"the 17-inch laptop\", \"scope\": \"the 17-inch laptop in another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"13-inch laptop\", \"item_descriptions\": \"17-inch\", \"order_id\": \"#6704763132\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"6704763132\"], \"order_id\": \"#W8528674\", \"payment_method_id\": \"paypal_7664977\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+      ],
+      "state_revision": 25,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:20:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:20:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a 13-inch one instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop in another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "13-inch laptop"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "17-inch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6704763132"
+              ],
+              "order_id": "#W8528674",
+              "payment_method_id": "paypal_7664977"
+            },
+            "result": {
+              "address": {
+                "address1": "822 Elm Avenue",
+                "address2": "Suite 500",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76134"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4716977452",
+                    "6704763132",
+                    "5111440845",
+                    "4024196380"
+                  ],
+                  "tracking_id": [
+                    "977070317987"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4716977452",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "blue",
+                    "water resistance": "yes"
+                  },
+                  "price": 289.69,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "6704763132",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "blue",
+                    "water resistance": "no"
+                  },
+                  "price": 305.45,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "5111440845",
+                  "name": "LED Light Bulb",
+                  "options": {
+                    "brightness": "60W equivalent",
+                    "color temperature": "daylight",
+                    "connectivity": "Bluetooth"
+                  },
+                  "price": 48.55,
+                  "product_id": "2696197613"
+                },
+                {
+                  "item_id": "4024196380",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "black",
+                    "length": "50ft",
+                    "material": "latex"
+                  },
+                  "price": 102.9,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W8528674",
+              "payment_history": [
+                {
+                  "amount": 746.59,
+                  "payment_method_id": "paypal_7664977",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "6704763132"
+              ],
+              "return_payment_method_id": "paypal_7664977",
+              "status": "return requested",
+              "user_id": "aarav_santos_2259"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+      ],
+      "state_revision": 25
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "1684786391"
+            ],
+            "new_item_ids": [
+              "3778566150"
+            ],
+            "order_id": "#W9672333",
+            "payment_method_id": "paypal_7664977"
+          },
+          "call_id": "call_xH5vqNyNjNN1pWhpTUKk24hi",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 27,
+      "state_revision": 25
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "1684786391"
+        ],
+        "new_item_ids": [
+          "3778566150"
+        ],
+        "order_id": "#W9672333",
+        "payment_method_id": "paypal_7664977"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_xH5vqNyNjNN1pWhpTUKk24hi",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 28,
+      "state_revision": 25,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_xH5vqNyNjNN1pWhpTUKk24hi",
+        "candidate_arguments": {
+          "item_ids": [
+            "1684786391"
+          ],
+          "new_item_ids": [
+            "3778566150"
+          ],
+          "order_id": "#W9672333",
+          "payment_method_id": "paypal_7664977"
+        },
+        "disposition": "EVIDENCE_REQUIRED",
+        "evidence_action": {
+          "arguments": {
+            "product_id": "4760268021"
+          },
+          "tool_name": "get_product_details"
+        },
+        "observed": {
+          "authenticated_user_id": "aarav_santos_2259",
+          "authentication_source_event_ids": [
+            "tool:call_1t9EIF543kfie6iI6V1yOjQY:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "3778566150",
+              "3714494375",
+              "1345513440",
+              "7747408585",
+              "1684786391"
+            ],
+            "order_id": "#W9672333",
+            "source_event_ids": [
+              "tool:call_6WUH5o0Az4UL6iqt1At7Jk6I:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "aarav_santos_2259"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1762337868",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4760268021",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4896585277",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7664977"
+            ],
+            "source_event_ids": [
+              "tool:call_4EJxFt7HJBj2nOgQfi9h6w4W:get_user_details"
+            ],
+            "user_id": "aarav_santos_2259"
+          }
+        },
+        "reason_code": "B_PRODUCT_NOT_OBSERVED",
+        "required_response": "Read the relevant product before reconsidering the write.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "EVIDENCE_REQUIRED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_PRODUCT_NOT_OBSERVED",
+      "sequence": 29,
+      "state_revision": 25
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_evidence",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_EXACT_EVIDENCE_READ",
+      "sequence": 30,
+      "state_revision": 25
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 31,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+      ],
+      "state_revision": 27
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "1684786391"
+            ],
+            "new_item_ids": [
+              "3778566150"
+            ],
+            "order_id": "#W9672333",
+            "payment_method_id": "paypal_7664977"
+          },
+          "call_id": "call_iCvTFCCiLgHpoaZO3baP1gPp",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 32,
+      "state_revision": 27
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "1684786391"
+        ],
+        "new_item_ids": [
+          "3778566150"
+        ],
+        "order_id": "#W9672333",
+        "payment_method_id": "paypal_7664977"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_iCvTFCCiLgHpoaZO3baP1gPp",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 33,
+      "state_revision": 27,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_iCvTFCCiLgHpoaZO3baP1gPp",
+        "candidate_arguments": {
+          "item_ids": [
+            "1684786391"
+          ],
+          "new_item_ids": [
+            "3778566150"
+          ],
+          "order_id": "#W9672333",
+          "payment_method_id": "paypal_7664977"
+        },
+        "disposition": "INVALID",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "aarav_santos_2259",
+          "authentication_source_event_ids": [
+            "tool:call_1t9EIF543kfie6iI6V1yOjQY:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "3778566150",
+              "3714494375",
+              "1345513440",
+              "7747408585",
+              "1684786391"
+            ],
+            "order_id": "#W9672333",
+            "source_event_ids": [
+              "tool:call_6WUH5o0Az4UL6iqt1At7Jk6I:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "aarav_santos_2259"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1762337868",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "4760268021",
+              "source_event_ids": [
+                "tool:factorial_b_read_25_31:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "4896585277",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7664977"
+            ],
+            "source_event_ids": [
+              "tool:call_4EJxFt7HJBj2nOgQfi9h6w4W:get_user_details"
+            ],
+            "user_id": "aarav_santos_2259"
+          }
+        },
+        "reason_code": "B_VARIANT_UNAVAILABLE",
+        "required_response": "Choose an available variant or ask the user for another option.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "INVALID",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_VARIANT_UNAVAILABLE",
+      "sequence": 34,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_replan",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_INVALID_HELD_FOR_SINGLE_REPLAN",
+      "sequence": 35,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "event_type": "ACTIVATION",
+      "findings": [
+        {
+          "call_id": "call_iCvTFCCiLgHpoaZO3baP1gPp",
+          "candidate_arguments": {
+            "item_ids": [
+              "1684786391"
+            ],
+            "new_item_ids": [
+              "3778566150"
+            ],
+            "order_id": "#W9672333",
+            "payment_method_id": "paypal_7664977"
+          },
+          "disposition": "INVALID",
+          "evidence_action": null,
+          "observed": {
+            "authenticated_user_id": "aarav_santos_2259",
+            "authentication_source_event_ids": [
+              "tool:call_1t9EIF543kfie6iI6V1yOjQY:find_user_id_by_email"
+            ],
+            "order": {
+              "item_ids": [
+                "3778566150",
+                "3714494375",
+                "1345513440",
+                "7747408585",
+                "1684786391"
+              ],
+              "order_id": "#W9672333",
+              "source_event_ids": [
+                "tool:call_6WUH5o0Az4UL6iqt1At7Jk6I:get_order_details"
+              ],
+              "status": "pending",
+              "user_id": "aarav_santos_2259"
+            },
+            "products": [
+              {
+                "observed": false,
+                "product_id": "1762337868",
+                "source_event_ids": []
+              },
+              {
+                "observed": false,
+                "product_id": "4354588079",
+                "source_event_ids": []
+              },
+              {
+                "observed": true,
+                "product_id": "4760268021",
+                "source_event_ids": [
+                  "tool:factorial_b_read_25_31:get_product_details"
+                ]
+              },
+              {
+                "observed": false,
+                "product_id": "4896585277",
+                "source_event_ids": []
+              }
+            ],
+            "user_profile": {
+              "payment_method_ids": [
+                "paypal_7664977"
+              ],
+              "source_event_ids": [
+                "tool:call_4EJxFt7HJBj2nOgQfi9h6w4W:get_user_details"
+              ],
+              "user_id": "aarav_santos_2259"
+            }
+          },
+          "reason_code": "B_VARIANT_UNAVAILABLE",
+          "required_response": "Choose an available variant or ask the user for another option.",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "opportunity_id": null,
+      "reason_code": "B_SINGLE_REPLAN",
+      "sequence": 36,
+      "state_revision": 27
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 37,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+      ],
+      "state_revision": 29
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 38,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+      ],
+      "state_revision": 31
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 39,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+      ],
+      "state_revision": 33
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "1684786391"
+            ],
+            "new_item_ids": [
+              "5052031638"
+            ],
+            "order_id": "#W9672333",
+            "payment_method_id": "paypal_7664977"
+          },
+          "call_id": "call_PQ8uRLkuaBFzYwOgv7JvZs4m",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 40,
+      "state_revision": 33
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "1684786391"
+        ],
+        "new_item_ids": [
+          "5052031638"
+        ],
+        "order_id": "#W9672333",
+        "payment_method_id": "paypal_7664977"
+      },
+      "bundle_id": "BB-0004-O",
+      "call_id": "call_PQ8uRLkuaBFzYwOgv7JvZs4m",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 41,
+      "state_revision": 33,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_PQ8uRLkuaBFzYwOgv7JvZs4m",
+        "candidate_arguments": {
+          "item_ids": [
+            "1684786391"
+          ],
+          "new_item_ids": [
+            "5052031638"
+          ],
+          "order_id": "#W9672333",
+          "payment_method_id": "paypal_7664977"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "aarav_santos_2259",
+          "authentication_source_event_ids": [
+            "tool:call_1t9EIF543kfie6iI6V1yOjQY:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "3778566150",
+              "3714494375",
+              "1345513440",
+              "7747408585",
+              "1684786391"
+            ],
+            "order_id": "#W9672333",
+            "source_event_ids": [
+              "tool:call_6WUH5o0Az4UL6iqt1At7Jk6I:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "aarav_santos_2259"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1762337868",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "4760268021",
+              "source_event_ids": [
+                "tool:factorial_b_read_25_31:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "4896585277",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7664977"
+            ],
+            "source_event_ids": [
+              "tool:call_4EJxFt7HJBj2nOgQfi9h6w4W:get_user_details"
+            ],
+            "user_id": "aarav_santos_2259"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 42,
+      "state_revision": 33
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_PQ8uRLkuaBFzYwOgv7JvZs4m",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 43,
+      "state_revision": 33
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b610506f01712d60e85b871f560c802157d7255c69006bedd26a0ad877715d74",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 44,
+      "state_revision": 35
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a speaker I bought\", \"order_id\": \"#6704763132\", \"reason\": \"it\\u2019s ridiculously overpriced and it\\u2019s not even water-resistant\", \"scope\": \"return a speaker I bought\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a 13-inch one instead\", \"item_descriptions\": \"the 17-inch laptop\", \"scope\": \"the 17-inch laptop in another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"13-inch laptop\", \"item_descriptions\": \"17-inch\", \"order_id\": \"#6704763132\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"6704763132\"], \"order_id\": \"#W8528674\", \"payment_method_id\": \"paypal_7664977\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"1684786391\"], \"new_item_ids\": [\"5052031638\"], \"order_id\": \"#W9672333\", \"payment_method_id\": \"paypal_7664977\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "e69b9cf5792afdaa39ce243f9a19c22422fe75e2afd6c154de8b079c6b713562",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 45,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items",
+        "tool:call_PQ8uRLkuaBFzYwOgv7JvZs4m:modify_pending_order_items"
+      ],
+      "state_revision": 35,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:20:user"
+              ],
+              "value": "a speaker I bought"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "it’s ridiculously overpriced and it’s not even water-resistant"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:20:user"
+              ],
+              "value": "return a speaker I bought"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a 13-inch one instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the 17-inch laptop in another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "13-inch laptop"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "17-inch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "#6704763132"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6704763132"
+              ],
+              "order_id": "#W8528674",
+              "payment_method_id": "paypal_7664977"
+            },
+            "result": {
+              "address": {
+                "address1": "822 Elm Avenue",
+                "address2": "Suite 500",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76134"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4716977452",
+                    "6704763132",
+                    "5111440845",
+                    "4024196380"
+                  ],
+                  "tracking_id": [
+                    "977070317987"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4716977452",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "blue",
+                    "water resistance": "yes"
+                  },
+                  "price": 289.69,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "6704763132",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "blue",
+                    "water resistance": "no"
+                  },
+                  "price": 305.45,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "5111440845",
+                  "name": "LED Light Bulb",
+                  "options": {
+                    "brightness": "60W equivalent",
+                    "color temperature": "daylight",
+                    "connectivity": "Bluetooth"
+                  },
+                  "price": 48.55,
+                  "product_id": "2696197613"
+                },
+                {
+                  "item_id": "4024196380",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "black",
+                    "length": "50ft",
+                    "material": "latex"
+                  },
+                  "price": 102.9,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W8528674",
+              "payment_history": [
+                {
+                  "amount": 746.59,
+                  "payment_method_id": "paypal_7664977",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "6704763132"
+              ],
+              "return_payment_method_id": "paypal_7664977",
+              "status": "return requested",
+              "user_id": "aarav_santos_2259"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_PQ8uRLkuaBFzYwOgv7JvZs4m:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "1684786391"
+              ],
+              "new_item_ids": [
+                "5052031638"
+              ],
+              "order_id": "#W9672333",
+              "payment_method_id": "paypal_7664977"
+            },
+            "result": {
+              "address": {
+                "address1": "822 Elm Avenue",
+                "address2": "Suite 500",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76134"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3778566150",
+                  "name": "Laptop",
+                  "options": {
+                    "color": "silver",
+                    "processor": "i5",
+                    "ram": "32GB",
+                    "screen size": "13-inch",
+                    "storage": "256GB SSD"
+                  },
+                  "price": 2372.97,
+                  "product_id": "4760268021"
+                },
+                {
+                  "item_id": "3714494375",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "15 bar",
+                    "type": "manual"
+                  },
+                  "price": 2709.83,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "1345513440",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "cordless",
+                    "type": "canister"
+                  },
+                  "price": 655.59,
+                  "product_id": "1762337868"
+                },
+                {
+                  "item_id": "7747408585",
+                  "name": "Smart Thermostat",
+                  "options": {
+                    "color": "black",
+                    "compatibility": "Google Assistant"
+                  },
+                  "price": 249.01,
+                  "product_id": "4896585277"
+                },
+                {
+                  "item_id": "5052031638",
+                  "name": "Laptop",
+                  "options": {
+                    "color": "silver",
+                    "processor": "i5",
+                    "ram": "16GB",
+                    "screen size": "13-inch",
+                    "storage": "1TB SSD"
+                  },
+                  "price": 2621.77,
+                  "product_id": "4760268021"
+                }
+              ],
+              "order_id": "#W9672333",
+              "payment_history": [
+                {
+                  "amount": 8495.46,
+                  "payment_method_id": "paypal_7664977",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 113.71000000000004,
+                  "payment_method_id": "paypal_7664977",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "aarav_santos_2259"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e69b9cf5792afdaa39ce243f9a19c22422fe75e2afd6c154de8b079c6b713562",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 46,
+      "source_event_ids": [
+        "message:1:user",
+        "message:20:user",
+        "message:3:user",
+        "tool:call_nndtg99UaXJC5PhGjXfZ6mzS:return_delivered_order_items",
+        "tool:call_PQ8uRLkuaBFzYwOgv7JvZs4m:modify_pending_order_items"
+      ],
+      "state_revision": 35
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 4,
+    "b_opportunities": 4,
+    "event_count": 47,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 78.43359533220064,
+    "prewrite_validation": 0.0009127899538725615,
+    "semantic_support": 24.51004079193808
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 17,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 4
+  },
+  "task_id": "35",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_035"
+}

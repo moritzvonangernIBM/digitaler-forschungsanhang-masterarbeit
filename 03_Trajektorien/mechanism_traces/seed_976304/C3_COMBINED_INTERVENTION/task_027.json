@@ -1,0 +1,1529 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00986158,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0031989
+  },
+  "counts": {
+    "a_commitments": 5,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 3,
+    "b_replans": 1
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "4109527c5d3c51b3568be8eb89c900a10071cfd93e38cc3153a2d3fa4e14a703",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the same ones but in a waterproof version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the hiking boots I got"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the hiking boots I got"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"from my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same ones but in a waterproof version\", \"item_descriptions\": [\"the hiking boots I got\"], \"scope\": \"the hiking boots I got\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "cbbec07a0433adda1fd6b3fb2f1854738ac513498c098c8b4656ac421a29dbd4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the same ones but in a waterproof version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the hiking boots I got"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the hiking boots I got"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "cbbec07a0433adda1fd6b3fb2f1854738ac513498c098c8b4656ac421a29dbd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "1f623275e9709997be4cb1ce7c188d5649836b1cd18d2ceecb5bd1ab8bb47929",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "the same ones but in a waterproof version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": [
+                "the hiking boots I got"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the hiking boots I got"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the hiking boots"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "cbbec07a0433adda1fd6b3fb2f1854738ac513498c098c8b4656ac421a29dbd4",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 6,
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"from my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same ones but in a waterproof version\", \"item_descriptions\": [\"the hiking boots I got\"], \"scope\": \"the hiking boots I got\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the hiking boots\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "the same ones but in a waterproof version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": [
+                "the hiking boots I got"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the hiking boots I got"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the hiking boots"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "59b6ca34980978f99511fef82af7019f4fab920508d3302655335afebb02e52c",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 5,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W7181492"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the return"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W7181492"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ae8779dfba96eef3c7fce361586cb85a02147c0a07b1f5c22f0e87cdd3f64b24",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"from my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same ones but in a waterproof version\", \"item_descriptions\": [\"the hiking boots I got\"], \"scope\": \"the hiking boots I got\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the hiking boots\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\", \"scope\": \"the return\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\", \"scope\": \"the exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "118620c5fd3a55a20c165fd3491aa9e8f86e6fc5ff209cc400b87bdd5f3e46e6",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "the same ones but in a waterproof version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": [
+                "the hiking boots I got"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the hiking boots I got"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the hiking boots"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W7181492"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the return"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W7181492"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "118620c5fd3a55a20c165fd3491aa9e8f86e6fc5ff209cc400b87bdd5f3e46e6",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5753502325",
+              "9851293632"
+            ],
+            "order_id": "#W7181492",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_gTgl20ha2JsJcCXwuWGemz6n",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "118620c5fd3a55a20c165fd3491aa9e8f86e6fc5ff209cc400b87bdd5f3e46e6",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5753502325",
+          "9851293632"
+        ],
+        "order_id": "#W7181492",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_gTgl20ha2JsJcCXwuWGemz6n",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 22,
+      "state_revision": 20,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_gTgl20ha2JsJcCXwuWGemz6n",
+        "candidate_arguments": {
+          "item_ids": [
+            "5753502325",
+            "9851293632"
+          ],
+          "order_id": "#W7181492",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_t3X96qhRzLpL1O8iPG7UX9hy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5753502325",
+              "9851293632",
+              "3778705663",
+              "8118291112",
+              "3020722515"
+            ],
+            "order_id": "#W7181492",
+            "source_event_ids": [
+              "tool:call_QvTPHbNyAqP3CMO7skq0CwCc:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "7363354090",
+              "source_event_ids": [
+                "tool:call_NtgigOfr6EMy6tmS5fas3wX0:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_epttFMVDUFCc0VeJxpZ3ohTs:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 23,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_gTgl20ha2JsJcCXwuWGemz6n",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 24,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "118620c5fd3a55a20c165fd3491aa9e8f86e6fc5ff209cc400b87bdd5f3e46e6",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 25,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"from my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same ones but in a waterproof version\", \"item_descriptions\": [\"the hiking boots I got\"], \"scope\": \"the hiking boots I got\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the hiking boots\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\", \"scope\": \"the return\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\", \"scope\": \"the exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"5753502325\", \"9851293632\"], \"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "c8ed5afd8a8acec2f0dec551146a89c3699a628f65cd3915894d2fad90bd2232",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user",
+        "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "the same ones but in a waterproof version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": [
+                "the hiking boots I got"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the hiking boots I got"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the hiking boots"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W7181492"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the return"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W7181492"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5753502325",
+                "9851293632"
+              ],
+              "order_id": "#W7181492",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5753502325",
+                    "9851293632",
+                    "3778705663",
+                    "8118291112",
+                    "3020722515"
+                  ],
+                  "tracking_id": [
+                    "418708581751"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5753502325",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "rubber"
+                  },
+                  "price": 96.35,
+                  "product_id": "6679515468"
+                },
+                {
+                  "item_id": "9851293632",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "green",
+                    "compartment": "camera",
+                    "material": "polyester",
+                    "size": "small"
+                  },
+                  "price": 193.38,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3778705663",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "black",
+                    "height": "6 ft",
+                    "material": "metal"
+                  },
+                  "price": 473.48,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "8118291112",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "12",
+                    "waterproof": "no"
+                  },
+                  "price": 260.56,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "3020722515",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "1 cup",
+                    "color": "black",
+                    "features": "auto shutoff",
+                    "type": "french press"
+                  },
+                  "price": 238.64,
+                  "product_id": "7996920482"
+                }
+              ],
+              "order_id": "#W7181492",
+              "payment_history": [
+                {
+                  "amount": 1262.41,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "5753502325",
+                "9851293632"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "c8ed5afd8a8acec2f0dec551146a89c3699a628f65cd3915894d2fad90bd2232",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 27,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user",
+        "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8118291112"
+            ],
+            "new_item_ids": [
+              "8277474082"
+            ],
+            "order_id": "#W7181492",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_yoEIyyYT370AwJqO4PEzy0Mt",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "c8ed5afd8a8acec2f0dec551146a89c3699a628f65cd3915894d2fad90bd2232",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 28,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8118291112"
+        ],
+        "new_item_ids": [
+          "8277474082"
+        ],
+        "order_id": "#W7181492",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_yoEIyyYT370AwJqO4PEzy0Mt",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 29,
+      "state_revision": 22,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_yoEIyyYT370AwJqO4PEzy0Mt",
+        "candidate_arguments": {
+          "item_ids": [
+            "8118291112"
+          ],
+          "new_item_ids": [
+            "8277474082"
+          ],
+          "order_id": "#W7181492",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "INVALID",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_t3X96qhRzLpL1O8iPG7UX9hy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5753502325",
+              "9851293632",
+              "3778705663",
+              "8118291112",
+              "3020722515"
+            ],
+            "order_id": "#W7181492",
+            "source_event_ids": [
+              "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+            ],
+            "status": "return requested",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "7363354090",
+              "source_event_ids": [
+                "tool:call_NtgigOfr6EMy6tmS5fas3wX0:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_epttFMVDUFCc0VeJxpZ3ohTs:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_INELIGIBLE_STATUS",
+        "required_response": "Do not repeat the write for the observed order status.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "INVALID",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_INELIGIBLE_STATUS",
+      "sequence": 30,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_replan",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_INVALID_HELD_FOR_SINGLE_REPLAN",
+      "sequence": 31,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "event_type": "ACTIVATION",
+      "findings": [
+        {
+          "call_id": "call_yoEIyyYT370AwJqO4PEzy0Mt",
+          "candidate_arguments": {
+            "item_ids": [
+              "8118291112"
+            ],
+            "new_item_ids": [
+              "8277474082"
+            ],
+            "order_id": "#W7181492",
+            "payment_method_id": "paypal_3024827"
+          },
+          "disposition": "INVALID",
+          "evidence_action": null,
+          "observed": {
+            "authenticated_user_id": "isabella_johansson_2152",
+            "authentication_source_event_ids": [
+              "tool:call_t3X96qhRzLpL1O8iPG7UX9hy:find_user_id_by_name_zip"
+            ],
+            "order": {
+              "item_ids": [
+                "5753502325",
+                "9851293632",
+                "3778705663",
+                "8118291112",
+                "3020722515"
+              ],
+              "order_id": "#W7181492",
+              "source_event_ids": [
+                "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+              ],
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "products": [
+              {
+                "observed": false,
+                "product_id": "2524789262",
+                "source_event_ids": []
+              },
+              {
+                "observed": false,
+                "product_id": "6679515468",
+                "source_event_ids": []
+              },
+              {
+                "observed": true,
+                "product_id": "7363354090",
+                "source_event_ids": [
+                  "tool:call_NtgigOfr6EMy6tmS5fas3wX0:get_product_details"
+                ]
+              },
+              {
+                "observed": false,
+                "product_id": "7996920482",
+                "source_event_ids": []
+              },
+              {
+                "observed": false,
+                "product_id": "8600330539",
+                "source_event_ids": []
+              }
+            ],
+            "user_profile": {
+              "payment_method_ids": [
+                "paypal_3024827"
+              ],
+              "source_event_ids": [
+                "tool:call_epttFMVDUFCc0VeJxpZ3ohTs:get_user_details"
+              ],
+              "user_id": "isabella_johansson_2152"
+            }
+          },
+          "reason_code": "B_INELIGIBLE_STATUS",
+          "required_response": "Do not repeat the write for the observed order status.",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "opportunity_id": null,
+      "reason_code": "B_SINGLE_REPLAN",
+      "sequence": 32,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8118291112"
+        ],
+        "new_item_ids": [
+          "8277474082"
+        ],
+        "order_id": "#W7181492",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0003-R",
+      "call_id": "call_GTPLqZhDgpkS0j00g6u2HSAf",
+      "candidate_role": "revised",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 33,
+      "state_revision": 22,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_GTPLqZhDgpkS0j00g6u2HSAf",
+        "candidate_arguments": {
+          "item_ids": [
+            "8118291112"
+          ],
+          "new_item_ids": [
+            "8277474082"
+          ],
+          "order_id": "#W7181492",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "INVALID",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_t3X96qhRzLpL1O8iPG7UX9hy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5753502325",
+              "9851293632",
+              "3778705663",
+              "8118291112",
+              "3020722515"
+            ],
+            "order_id": "#W7181492",
+            "source_event_ids": [
+              "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+            ],
+            "status": "return requested",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "7363354090",
+              "source_event_ids": [
+                "tool:call_NtgigOfr6EMy6tmS5fas3wX0:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_epttFMVDUFCc0VeJxpZ3ohTs:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_INELIGIBLE_STATUS",
+        "required_response": "Do not repeat the write for the observed order status.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "INVALID",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_INELIGIBLE_STATUS",
+      "sequence": 34,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "blocked_after_replan",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_REVISED_BUNDLE_INVALID",
+      "sequence": 35,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "c8ed5afd8a8acec2f0dec551146a89c3699a628f65cd3915894d2fad90bd2232",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 36,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user",
+        "tool:call_gTgl20ha2JsJcCXwuWGemz6n:return_delivered_order_items"
+      ],
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 3,
+    "b_opportunities": 3,
+    "event_count": 37,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 36.59395183197921,
+    "prewrite_validation": 0.002001626999117434,
+    "semantic_support": 16.77265945795807
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 12,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "27",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_027"
+}

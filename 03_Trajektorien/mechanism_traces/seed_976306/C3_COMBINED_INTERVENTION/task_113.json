@@ -1,0 +1,362 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.0047338300000000005,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0008644999999999999
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "cec65495143e6b7de93675de12544ac4fa47eda42ea330064581f5331d77eff8",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "e16003f73ecc906d8b2ffa12444701ea9f46f19deb2c46e0da867292d979a520",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "ordered by mistake."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "06ad0f829764607f37fca4ef6d728575c423cbe4b8a2f0a83969b22c9ff8d36f",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "ordered by mistake."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user",
+                "message:19:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "order_id": "#W5056519",
+        "reason": "ordered by mistake"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_Pxjc80h6yITU5zYy7Bnm0HbW",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 6,
+      "state_revision": 20,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_Pxjc80h6yITU5zYy7Bnm0HbW",
+        "candidate_arguments": {
+          "order_id": "#W5056519",
+          "reason": "ordered by mistake"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yara_muller_8652",
+          "authentication_source_event_ids": [
+            "tool:call_GeIB4eA0NMnLqoEenjIPVJPa:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7902309762"
+            ],
+            "order_id": "#W5056519",
+            "source_event_ids": [
+              "tool:call_pEuIujheyHoFZ6XB79mzr2AL:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yara_muller_8652"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3095586"
+            ],
+            "source_event_ids": [
+              "tool:call_86yPlccoysQ2ipo1wLfoySZz:get_user_details"
+            ],
+            "user_id": "yara_muller_8652"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 7,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_Pxjc80h6yITU5zYy7Bnm0HbW",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 8,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "order_id": "#W5995614",
+        "reason": "ordered by mistake"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_O2Yv0AB2b8ERzGem5zN1iEPX",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 22,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_O2Yv0AB2b8ERzGem5zN1iEPX",
+        "candidate_arguments": {
+          "order_id": "#W5995614",
+          "reason": "ordered by mistake"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yara_muller_8652",
+          "authentication_source_event_ids": [
+            "tool:call_GeIB4eA0NMnLqoEenjIPVJPa:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "3877338112",
+              "9692325258"
+            ],
+            "order_id": "#W5995614",
+            "source_event_ids": [
+              "tool:call_EyjPV9zF2CJSE0rdqapAD16s:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yara_muller_8652"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "5426915165",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3095586"
+            ],
+            "source_event_ids": [
+              "tool:call_86yPlccoysQ2ipo1wLfoySZz:get_user_details"
+            ],
+            "user_id": "yara_muller_8652"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 10,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_O2Yv0AB2b8ERzGem5zN1iEPX",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 11,
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 12,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 24.57031762204133,
+    "prewrite_validation": 0.000503042945638299,
+    "semantic_support": 5.224216417060234
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "113",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_113"
+}

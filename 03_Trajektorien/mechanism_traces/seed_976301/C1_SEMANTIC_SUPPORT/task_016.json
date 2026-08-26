@@ -1,0 +1,1383 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00784884,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00117355
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "3d80114b81d3d1d7bc904a2903bf801ffea452f03dfa0281e6a6d7f5c8505459",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"all my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a watch\", \"scope\": \"a watch\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "4f4f208f4bb4afca1f3a45da04aa90b495cda4584eef65ee88612ece204d5898",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "abb1d4761a026fc593120cd82e6eac0fdceef71ec549963c53ded562582f0ee5",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"all my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a watch\", \"order_id\": \"#W9389413\", \"scope\": \"a watch\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "369bc96ac8e341fe085f739e492eef0f4b14237fabc5de418cc2c06ddbb9d753",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "369bc96ac8e341fe085f739e492eef0f4b14237fabc5de418cc2c06ddbb9d753",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5199551",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_6D9YEEpfU9qe8ofU6oRSuHJu",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "369bc96ac8e341fe085f739e492eef0f4b14237fabc5de418cc2c06ddbb9d753",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "369bc96ac8e341fe085f739e492eef0f4b14237fabc5de418cc2c06ddbb9d753",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 15,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"all my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a watch\", \"order_id\": \"#W9389413\", \"scope\": \"a watch\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W5199551\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "0410c8a4b14db0549f1d86c2e1487a44e358da7f5574eb223d90088a67e386b1",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5199551",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1615379700",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "yes"
+                  },
+                  "price": 253.89,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "5925362855",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "black",
+                    "resolution": "1080p",
+                    "waterproof": "yes"
+                  },
+                  "price": 503.51,
+                  "product_id": "3377618313"
+                },
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "5537798301",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "black",
+                    "size": "S",
+                    "ventilation": "medium"
+                  },
+                  "price": 204.47,
+                  "product_id": "7765186836"
+                },
+                {
+                  "item_id": "1994478369",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "black",
+                    "strap material": "silicone"
+                  },
+                  "price": 2025.51,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W5199551",
+              "payment_history": [
+                {
+                  "amount": 3131.1,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 3131.1,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "0410c8a4b14db0549f1d86c2e1487a44e358da7f5574eb223d90088a67e386b1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order"
+      ],
+      "state_revision": 18
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W8665881",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_73LaXP65f2Ah7YyO1iIPRaH8",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "0410c8a4b14db0549f1d86c2e1487a44e358da7f5574eb223d90088a67e386b1",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "0410c8a4b14db0549f1d86c2e1487a44e358da7f5574eb223d90088a67e386b1",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 19,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"all my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a watch\", \"order_id\": \"#W9389413\", \"scope\": \"a watch\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W5199551\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W8665881\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "48e7f200f8695f196933212f691fe9320c02183c5972f1ffdaed5b36cf42fc2f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order",
+        "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5199551",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1615379700",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "yes"
+                  },
+                  "price": 253.89,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "5925362855",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "black",
+                    "resolution": "1080p",
+                    "waterproof": "yes"
+                  },
+                  "price": 503.51,
+                  "product_id": "3377618313"
+                },
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "5537798301",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "black",
+                    "size": "S",
+                    "ventilation": "medium"
+                  },
+                  "price": 204.47,
+                  "product_id": "7765186836"
+                },
+                {
+                  "item_id": "1994478369",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "black",
+                    "strap material": "silicone"
+                  },
+                  "price": 2025.51,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W5199551",
+              "payment_history": [
+                {
+                  "amount": 3131.1,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 3131.1,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W8665881",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5855700373",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "black",
+                    "water resistance": "yes"
+                  },
+                  "price": 293.46,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "9408160950",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "leather",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 381.26,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "4422467033",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "urethane",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 483.47,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "1157853815",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "2L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 3096.7,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "8725040869",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "black",
+                    "resolution": "4K",
+                    "waterproof": "no"
+                  },
+                  "price": 522.86,
+                  "product_id": "3377618313"
+                }
+              ],
+              "order_id": "#W8665881",
+              "payment_history": [
+                {
+                  "amount": 4777.75,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 4777.75,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "48e7f200f8695f196933212f691fe9320c02183c5972f1ffdaed5b36cf42fc2f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order",
+        "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "2554056026"
+            ],
+            "order_id": "#W9389413",
+            "payment_method_id": "paypal_5364164"
+          },
+          "call_id": "call_aYzBr3gtxJ7D6ATYIzXvM38M",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "48e7f200f8695f196933212f691fe9320c02183c5972f1ffdaed5b36cf42fc2f",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 22,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "48e7f200f8695f196933212f691fe9320c02183c5972f1ffdaed5b36cf42fc2f",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 23,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"all my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a watch\", \"order_id\": \"#W9389413\", \"scope\": \"a watch\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W5199551\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W8665881\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"item_ids\": [\"2554056026\"], \"order_id\": \"#W9389413\", \"payment_method_id\": \"paypal_5364164\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "b68cef21b7c0c8deb3386a27c532431f45c0f29c53a4604551e3da9fa5fb595e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order",
+        "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order",
+        "tool:call_aYzBr3gtxJ7D6ATYIzXvM38M:return_delivered_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "all my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W9389413"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:15:user"
+              ],
+              "value": "a watch"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5199551",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1615379700",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "yes"
+                  },
+                  "price": 253.89,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "5925362855",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "black",
+                    "resolution": "1080p",
+                    "waterproof": "yes"
+                  },
+                  "price": 503.51,
+                  "product_id": "3377618313"
+                },
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "5537798301",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "black",
+                    "size": "S",
+                    "ventilation": "medium"
+                  },
+                  "price": 204.47,
+                  "product_id": "7765186836"
+                },
+                {
+                  "item_id": "1994478369",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "black",
+                    "strap material": "silicone"
+                  },
+                  "price": 2025.51,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W5199551",
+              "payment_history": [
+                {
+                  "amount": 3131.1,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 3131.1,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W8665881",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5855700373",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "black",
+                    "water resistance": "yes"
+                  },
+                  "price": 293.46,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "9408160950",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "leather",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 381.26,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "4422467033",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "urethane",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 483.47,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "1157853815",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "2L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 3096.7,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "8725040869",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "black",
+                    "resolution": "4K",
+                    "waterproof": "no"
+                  },
+                  "price": 522.86,
+                  "product_id": "3377618313"
+                }
+              ],
+              "order_id": "#W8665881",
+              "payment_history": [
+                {
+                  "amount": 4777.75,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 4777.75,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_aYzBr3gtxJ7D6ATYIzXvM38M:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "2554056026"
+              ],
+              "order_id": "#W9389413",
+              "payment_method_id": "paypal_5364164"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 640",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4127323219",
+                    "2554056026",
+                    "6342039236",
+                    "5047954489"
+                  ],
+                  "tracking_id": [
+                    "967556659983"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4127323219",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "no"
+                  },
+                  "price": 251.82,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "2554056026",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "metal",
+                    "color": "gold",
+                    "display": "AMOLED"
+                  },
+                  "price": 367.38,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "6342039236",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "white",
+                    "size": "full size",
+                    "switch type": "clicky"
+                  },
+                  "price": 244.91,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "5047954489",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "blue",
+                    "material": "polyester",
+                    "size": "S",
+                    "style": "v-neck"
+                  },
+                  "price": 54.84,
+                  "product_id": "9523456873"
+                }
+              ],
+              "order_id": "#W9389413",
+              "payment_history": [
+                {
+                  "amount": 918.95,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "2554056026"
+              ],
+              "return_payment_method_id": "paypal_5364164",
+              "status": "return requested",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "b68cef21b7c0c8deb3386a27c532431f45c0f29c53a4604551e3da9fa5fb595e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order",
+        "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order",
+        "tool:call_aYzBr3gtxJ7D6ATYIzXvM38M:return_delivered_order_items"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "b68cef21b7c0c8deb3386a27c532431f45c0f29c53a4604551e3da9fa5fb595e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_6D9YEEpfU9qe8ofU6oRSuHJu:cancel_pending_order",
+        "tool:call_73LaXP65f2Ah7YyO1iIPRaH8:cancel_pending_order",
+        "tool:call_aYzBr3gtxJ7D6ATYIzXvM38M:return_delivered_order_items"
+      ],
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 27,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 24.41698704098235,
+    "prewrite_validation": 0.0,
+    "semantic_support": 6.077859999990324
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 11,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "16",
+  "trajectory_id": "seed_976301_C1_SEMANTIC_SUPPORT_task_016"
+}

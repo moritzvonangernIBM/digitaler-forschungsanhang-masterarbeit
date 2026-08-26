@@ -1,0 +1,678 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.009099639999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00306345
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "894db9893301db87ecb2eef0b7de5f48d6dbb94578437670a46ed315aeb111fb",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles from my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "ac0da732d90b07c9bdd23795dd1f26d068248ee14e5b58969586888bbd191af5",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "ceramic, 2 liters, gas one",
+                "glass, 1.5 liters, gas one"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "3761330360",
+                "9647374798"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a couple of tea kettles\", \"scope\": \"a couple of tea kettles from my recent order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"ceramic, 2 liters, gas one\", \"glass, 1.5 liters, gas one\"], \"new_item_ids\": [\"3761330360\", \"9647374798\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "35cf8523691caf3ebf2d1638fb48fd918cd627f3923f8b794e72fb87352fe010",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles from my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "ceramic, 2 liters, gas one",
+                "glass, 1.5 liters, gas one"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "3761330360",
+                "9647374798"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "35cf8523691caf3ebf2d1638fb48fd918cd627f3923f8b794e72fb87352fe010",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "84b7f3594e3f3b7b956703515d4989907c4d6762a146fd4a06169c4c0321df86",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "just as you listed"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "35cf8523691caf3ebf2d1638fb48fd918cd627f3923f8b794e72fb87352fe010",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 8,
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a couple of tea kettles\", \"scope\": \"a couple of tea kettles from my recent order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"ceramic, 2 liters, gas one\", \"glass, 1.5 liters, gas one\"], \"new_item_ids\": [\"3761330360\", \"9647374798\"]}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"just as you listed\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles from my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "ceramic, 2 liters, gas one",
+                "glass, 1.5 liters, gas one"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "3761330360",
+                "9647374798"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "just as you listed"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "7292993796",
+              "7292993796"
+            ],
+            "new_item_ids": [
+              "3761330360",
+              "9647374798"
+            ],
+            "order_id": "#W4316152",
+            "payment_method_id": "gift_card_7245904"
+          },
+          "call_id": "call_vakhzu2tvyL8znp0U7UO7xlC",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 11,
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "record has no valid grounded fields",
+          "error_type": "ValueError",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "a21e825999cbbd0840d7df902bcf6e50420afd8dc4d51f78d22de465c0c6e39e",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c761a582f3b8e169649398767a514d6c64545cbeaefd10a4b987212ed640f4c5",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 17,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a couple of tea kettles\", \"scope\": \"a couple of tea kettles from my recent order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"ceramic, 2 liters, gas one\", \"glass, 1.5 liters, gas one\"], \"new_item_ids\": [\"3761330360\", \"9647374798\"]}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"just as you listed\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"the exchange\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "8c142f8568da2156971552f1195015761eedbdce71aac690cb0588367a8d5f79",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of tea kettles from my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "ceramic, 2 liters, gas one",
+                "glass, 1.5 liters, gas one"
+              ]
+            },
+            "new_item_ids": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "3761330360",
+                "9647374798"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "just as you listed"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "8c142f8568da2156971552f1195015761eedbdce71aac690cb0588367a8d5f79",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "8c142f8568da2156971552f1195015761eedbdce71aac690cb0588367a8d5f79",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "message:21:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "8c142f8568da2156971552f1195015761eedbdce71aac690cb0588367a8d5f79",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "message:21:user"
+      ],
+      "state_revision": 26
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 22,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 37.81256966499495,
+    "prewrite_validation": 0.0,
+    "semantic_support": 15.528013457020279
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 8,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "105",
+  "trajectory_id": "seed_976301_C1_SEMANTIC_SUPPORT_task_105"
+}

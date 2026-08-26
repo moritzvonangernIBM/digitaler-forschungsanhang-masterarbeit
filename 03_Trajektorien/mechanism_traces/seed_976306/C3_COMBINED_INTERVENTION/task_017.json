@@ -1,0 +1,283 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.0036622199999999995,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0013315500000000001
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7cd1f3e0f7d58526eacf1058cd582e43e05e799472b5820276881526d172dd41",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the delivery address for an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7427f6d49c41a74c694f54d496715d8407fe1b4a1ad328211e4902af173a035a",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address2": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "Suite 641"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W8665881"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "the delivery address for an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 5,
+      "source_event_ids": [],
+      "state_revision": 12,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "arguments": {
+        "address1": "123 Elm Street",
+        "address2": "Suite 641",
+        "city": "Austin",
+        "country": "USA",
+        "order_id": "#W8665881",
+        "state": "TX",
+        "zip": "78712"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_scz9LrydfIHuPBUVDiyhXIOx",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 6,
+      "state_revision": 12,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_scz9LrydfIHuPBUVDiyhXIOx",
+        "candidate_arguments": {
+          "address1": "123 Elm Street",
+          "address2": "Suite 641",
+          "city": "Austin",
+          "country": "USA",
+          "order_id": "#W8665881",
+          "state": "TX",
+          "zip": "78712"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "fatima_johnson_7581",
+          "authentication_source_event_ids": [
+            "tool:call_VWtPXVzcO2da3SqtIwOAKPL4:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5855700373",
+              "9408160950",
+              "4422467033",
+              "1157853815",
+              "8725040869"
+            ],
+            "order_id": "#W8665881",
+            "source_event_ids": [
+              "tool:call_Xq8gRXjTC6xe2NmzFA4YSdWB:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "fatima_johnson_7581"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "3377618313",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4768869376",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": null
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 7,
+      "state_revision": 12
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_scz9LrydfIHuPBUVDiyhXIOx",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 8,
+      "state_revision": 12
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 9,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 24.14835629198933,
+    "prewrite_validation": 0.00040925206849351525,
+    "semantic_support": 7.466725123987999
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "17",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_017"
+}

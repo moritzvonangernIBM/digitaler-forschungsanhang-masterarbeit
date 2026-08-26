@@ -1,0 +1,821 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.01099485,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00212925
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "97d67beaef054c92d246b50e14a871da053317f4f9b0e736c9340d01bd858f0e",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": [
+                "a bigger size",
+                "one that’s less bright",
+                "battery-powered instead of USB"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": [
+                "the water bottle",
+                "the desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "both items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "fe6740a4bd452dc62fa18e078f333bb6cb4b28f0ff718c4af39206860cc129d2",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user"
+      ],
+      "state_revision": 28,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a bigger size",
+                "one that’s less bright",
+                "battery-powered instead of USB"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "the water bottle",
+                "the desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "both items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ae88878efe86cde1bb6849499bbc313ed5d8c63df11b0bdfba4e583901a9c7fb",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the water bottle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "for a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"a bigger size\", \"one that\\u2019s less bright\", \"battery-powered instead of USB\"], \"item_descriptions\": [\"the water bottle\", \"the desk lamp\"], \"scope\": \"both items\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the water bottle\", \"reason\": \"for a refund\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "6f7b44ce11b07d49687c79cc7164ef3f59d6af0b39495379429ded4dce0e9f4b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user",
+        "message:29:user"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a bigger size",
+                "one that’s less bright",
+                "battery-powered instead of USB"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "the water bottle",
+                "the desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "both items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the water bottle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "for a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "6f7b44ce11b07d49687c79cc7164ef3f59d6af0b39495379429ded4dce0e9f4b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user",
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:31:user"
+      ],
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "6921880ca5eed58176101a1b14c75761ae3d420d0fddd464c1e30d40bc348c8d",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:29:user",
+        "message:31:user"
+      ],
+      "state_revision": 32,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the water bottle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "for a refund"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "the water bottle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "6f7b44ce11b07d49687c79cc7164ef3f59d6af0b39495379429ded4dce0e9f4b",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"a bigger size\", \"one that\\u2019s less bright\", \"battery-powered instead of USB\"], \"item_descriptions\": [\"the water bottle\", \"the desk lamp\"], \"scope\": \"both items\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the water bottle\", \"reason\": \"for a refund\", \"scope\": \"the water bottle\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "2b7f72dbe9854d98ba4ca9918f6bbfb0d35c240a7a5940cd064306e679e5247b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user",
+        "message:29:user",
+        "message:31:user"
+      ],
+      "state_revision": 32,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a bigger size",
+                "one that’s less bright",
+                "battery-powered instead of USB"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "the water bottle",
+                "the desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "both items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the water bottle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "for a refund"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "the water bottle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "2b7f72dbe9854d98ba4ca9918f6bbfb0d35c240a7a5940cd064306e679e5247b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user",
+        "message:29:user",
+        "message:31:user"
+      ],
+      "state_revision": 32
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8538875209"
+            ],
+            "order_id": "#W6390527",
+            "payment_method_id": "paypal_7644869"
+          },
+          "call_id": "call_DOiGQcgk61Sd0cvjqaFUkBSw",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "2b7f72dbe9854d98ba4ca9918f6bbfb0d35c240a7a5940cd064306e679e5247b",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 32
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8538875209"
+        ],
+        "order_id": "#W6390527",
+        "payment_method_id": "paypal_7644869"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_DOiGQcgk61Sd0cvjqaFUkBSw",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 32,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_DOiGQcgk61Sd0cvjqaFUkBSw",
+        "candidate_arguments": {
+          "item_ids": [
+            "8538875209"
+          ],
+          "order_id": "#W6390527",
+          "payment_method_id": "paypal_7644869"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_kovacs_8020",
+          "authentication_source_event_ids": [
+            "tool:call_U2VbaY6eQu5MQGtFejlVLC0p:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "8384507844",
+              "1615379700",
+              "8538875209"
+            ],
+            "order_id": "#W6390527",
+            "source_event_ids": [
+              "tool:call_hwyz7szX7HdcwTPBTY7i0Y1l:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "mei_kovacs_8020"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "6817146515",
+              "source_event_ids": [
+                "tool:call_8Cgfhe0ose4R5ReX8DpSuxx5:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "8310926033",
+              "source_event_ids": [
+                "tool:call_ZwHygYQljIiYiY9TPq6EVWkq:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7644869"
+            ],
+            "source_event_ids": [
+              "tool:call_mruWs1J5pa8PYM0TzdRVgL8w:get_user_details"
+            ],
+            "user_id": "mei_kovacs_8020"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 15,
+      "state_revision": 32
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_DOiGQcgk61Sd0cvjqaFUkBSw",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 16,
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "2b7f72dbe9854d98ba4ca9918f6bbfb0d35c240a7a5940cd064306e679e5247b",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 17,
+      "state_revision": 34
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"a bigger size\", \"one that\\u2019s less bright\", \"battery-powered instead of USB\"], \"item_descriptions\": [\"the water bottle\", \"the desk lamp\"], \"scope\": \"both items\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the water bottle\", \"reason\": \"for a refund\", \"scope\": \"the water bottle\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"8538875209\"], \"order_id\": \"#W6390527\", \"payment_method_id\": \"paypal_7644869\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "2818cf167e5064ed85e9b45148b14ad0de9ea340bffcf7d0949bb9027289c296",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 18,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user",
+        "message:29:user",
+        "message:31:user",
+        "tool:call_DOiGQcgk61Sd0cvjqaFUkBSw:return_delivered_order_items"
+      ],
+      "state_revision": 34,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a bigger size",
+                "one that’s less bright",
+                "battery-powered instead of USB"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:27:user"
+              ],
+              "value": [
+                "the water bottle",
+                "the desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "both items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the water bottle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "for a refund"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "the water bottle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_DOiGQcgk61Sd0cvjqaFUkBSw:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8538875209"
+              ],
+              "order_id": "#W6390527",
+              "payment_method_id": "paypal_7644869"
+            },
+            "result": {
+              "address": {
+                "address1": "317 Elm Street",
+                "address2": "Suite 461",
+                "city": "Charlotte",
+                "country": "USA",
+                "state": "NC",
+                "zip": "28236"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "8384507844",
+                    "1615379700",
+                    "8538875209"
+                  ],
+                  "tracking_id": [
+                    "745984883162"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "8384507844",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "medium",
+                    "color": "white",
+                    "power source": "USB"
+                  },
+                  "price": 137.94,
+                  "product_id": "6817146515"
+                },
+                {
+                  "item_id": "1615379700",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "yes"
+                  },
+                  "price": 253.89,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "8538875209",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "500ml",
+                    "color": "black",
+                    "material": "glass"
+                  },
+                  "price": 45.13,
+                  "product_id": "8310926033"
+                }
+              ],
+              "order_id": "#W6390527",
+              "payment_history": [
+                {
+                  "amount": 436.96,
+                  "payment_method_id": "paypal_7644869",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "8538875209"
+              ],
+              "return_payment_method_id": "paypal_7644869",
+              "status": "return requested",
+              "user_id": "mei_kovacs_8020"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "2818cf167e5064ed85e9b45148b14ad0de9ea340bffcf7d0949bb9027289c296",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:21:user",
+        "message:27:user",
+        "message:29:user",
+        "message:31:user",
+        "tool:call_DOiGQcgk61Sd0cvjqaFUkBSw:return_delivered_order_items"
+      ],
+      "state_revision": 34
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 20,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 58.56418337713694,
+    "prewrite_validation": 0.002422874851617962,
+    "semantic_support": 14.121229748940095
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 3,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "5",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_005"
+}

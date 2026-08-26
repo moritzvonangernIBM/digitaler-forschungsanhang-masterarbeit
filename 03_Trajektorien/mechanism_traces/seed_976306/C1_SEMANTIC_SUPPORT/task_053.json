@@ -1,0 +1,227 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00463809,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0014908
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7ec65f4654fbbb6cbf31eaf99c802ded4fd3cd3ab3ab7be47d88f3525c78782d",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the bicycle I ordered"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "arrived damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:16:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "88951c6963c6dd8bd1ed4118cacf116b2f5676db19949f6b9c8757c80fe93d4f",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user"
+      ],
+      "state_revision": 17,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": "the bicycle I ordered"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "arrived damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:18:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "35ec71b474fcef8194d8fdc8c2d143680d0bb7768637ca547fd6b05fe48326cb",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user",
+        "message:18:user"
+      ],
+      "state_revision": 19,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user",
+                "message:18:user"
+              ],
+              "value": "the bicycle I ordered"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "arrived damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 6,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 19.369586250802968,
+    "prewrite_validation": 0.0,
+    "semantic_support": 7.704273833020125
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "53",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_053"
+}

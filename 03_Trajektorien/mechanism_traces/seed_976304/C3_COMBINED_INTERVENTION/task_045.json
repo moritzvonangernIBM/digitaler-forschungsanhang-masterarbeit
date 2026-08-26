@@ -1,0 +1,218 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.0068629899999999985,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0008519500000000001
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 1,
+    "a_opportunities": 1,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "384c0f0479cca12c1ae807bd06c96ef24a3e42e75fd6419688a0363a5ff935e1",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "bagless one"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "6259501109"
+        ],
+        "new_item_ids": [
+          "7958300294"
+        ],
+        "order_id": "#W9502127",
+        "payment_method_id": "paypal_2433177"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_w7yxMzQjh5X6O9UFC4pFSnk8",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 2,
+      "state_revision": 24,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_w7yxMzQjh5X6O9UFC4pFSnk8",
+        "candidate_arguments": {
+          "item_ids": [
+            "6259501109"
+          ],
+          "new_item_ids": [
+            "7958300294"
+          ],
+          "order_id": "#W9502127",
+          "payment_method_id": "paypal_2433177"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "daiki_johnson_9523",
+          "authentication_source_event_ids": [
+            "tool:call_fqItX5jocB9yfW6f9TPuXF43:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2872451762",
+              "9534205511",
+              "6243981804",
+              "3877338112",
+              "6259501109"
+            ],
+            "order_id": "#W9502127",
+            "source_event_ids": [
+              "tool:call_M2Guc1gFubAK38U5qmbVXu3x:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "daiki_johnson_9523"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1762337868",
+              "source_event_ids": [
+                "tool:call_tejnjNVXGaNS1MEVLJVS67QJ:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "3821016478",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9743693396",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_2433177"
+            ],
+            "source_event_ids": [
+              "tool:call_KEeBUjADRCTEdHznxk4g86TP:get_user_details"
+            ],
+            "user_id": "daiki_johnson_9523"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 3,
+      "state_revision": 24
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_w7yxMzQjh5X6O9UFC4pFSnk8",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 4,
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 1,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 5,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 50.74271679203957,
+    "prewrite_validation": 0.0006357890088111162,
+    "semantic_support": 4.916831084003206
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "45",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_045"
+}

@@ -1,0 +1,1360 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.011093129999999998,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0011695
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 3,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 1,
+      "source_event_ids": [],
+      "state_revision": 22,
+      "total_commitments": 0,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "b31709b248c8d49c9dce0159c6edb24ffb7e8bea2d472415819b4de50114d01a",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "I don’t need it anymore since it goes with the tablet."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the portable charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:25:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "2a9beb96f1f3b5d4a1b70c8af4048be0506b909f1086e00b77d25c7f27631ea3",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:25:user"
+      ],
+      "state_revision": 26,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"I don\\u2019t need it anymore since it goes with the tablet.\", \"scope\": \"the portable charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "a3793d21fbc6f61a7863544d908bd37054535ec185888f493258ca504b463076",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "I don’t need it anymore since it goes with the tablet."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the portable charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "a3793d21fbc6f61a7863544d908bd37054535ec185888f493258ca504b463076",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W9373487",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_I6Suayo60aoWZgcYv0sxt7vv",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "a3793d21fbc6f61a7863544d908bd37054535ec185888f493258ca504b463076",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 26
+    },
+    {
+      "arguments": {
+        "order_id": "#W9373487",
+        "reason": "no longer needed"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_I6Suayo60aoWZgcYv0sxt7vv",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 26,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_I6Suayo60aoWZgcYv0sxt7vv",
+        "candidate_arguments": {
+          "order_id": "#W9373487",
+          "reason": "no longer needed"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "olivia_lopez_3865",
+          "authentication_source_event_ids": [
+            "tool:call_PpZPrGyO6J9mENIoNbArnqLV:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4063401924"
+            ],
+            "order_id": "#W9373487",
+            "source_event_ids": [
+              "tool:call_ss59UAZTSTJKCK4BcIU1QFuk:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "olivia_lopez_3865"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "6942297802",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7711863"
+            ],
+            "source_event_ids": [
+              "tool:call_ETBp8vnG9JRdgjtzv6wJTjJa:get_user_details"
+            ],
+            "user_id": "olivia_lopez_3865"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 10,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_I6Suayo60aoWZgcYv0sxt7vv",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 11,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "a3793d21fbc6f61a7863544d908bd37054535ec185888f493258ca504b463076",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"I don\\u2019t need it anymore since it goes with the tablet.\", \"scope\": \"the portable charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "I don’t need it anymore since it goes with the tablet."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the portable charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+      ],
+      "state_revision": 28
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ce54a5f89d2159e6eabbc85ad401c62402e9b685215d64148eba096cbe814fe8",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user"
+      ],
+      "state_revision": 30,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "I don’t need it anymore since it goes with the tablet."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user",
+                "message:29:user"
+              ],
+              "value": "the portable charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+      ],
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+      ],
+      "state_revision": 33
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:23:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+      ],
+      "state_revision": 35
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5481803",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_eokrXaEfTpWE4JiPAotKBE1p",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 20,
+      "state_revision": 35
+    },
+    {
+      "arguments": {
+        "order_id": "#W5481803",
+        "reason": "no longer needed"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_eokrXaEfTpWE4JiPAotKBE1p",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 35,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_eokrXaEfTpWE4JiPAotKBE1p",
+        "candidate_arguments": {
+          "order_id": "#W5481803",
+          "reason": "no longer needed"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "olivia_lopez_3865",
+          "authentication_source_event_ids": [
+            "tool:call_PpZPrGyO6J9mENIoNbArnqLV:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "9472539378",
+              "3613716226"
+            ],
+            "order_id": "#W5481803",
+            "source_event_ids": [
+              "tool:call_3VeSBTz93p6E8UF0kY6pqI5l:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "olivia_lopez_3865"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1075968781",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7711863"
+            ],
+            "source_event_ids": [
+              "tool:call_ETBp8vnG9JRdgjtzv6wJTjJa:get_user_details"
+            ],
+            "user_id": "olivia_lopez_3865"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 22,
+      "state_revision": 35
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_eokrXaEfTpWE4JiPAotKBE1p",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 23,
+      "state_revision": 35
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "d3fc357f4c56adf8ef75de75bf80f27cb56cc8def1a82159a3b30b6798c4dd1a",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 24,
+      "state_revision": 37
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"I don\\u2019t need it anymore since it goes with the tablet.\", \"scope\": \"the portable charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W5481803\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 25,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+      ],
+      "state_revision": 37,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "I don’t need it anymore since it goes with the tablet."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user",
+                "message:29:user"
+              ],
+              "value": "the portable charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5481803",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "3613716226",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "8",
+                    "waterproof": "no"
+                  },
+                  "price": 253.54,
+                  "product_id": "7363354090"
+                }
+              ],
+              "order_id": "#W5481803",
+              "payment_history": [
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+      ],
+      "state_revision": 37
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 27,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+      ],
+      "state_revision": 39
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 28,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+      ],
+      "state_revision": 41
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 29,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+      ],
+      "state_revision": 43
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6477915553"
+            ],
+            "order_id": "#W7449508",
+            "payment_method_id": "gift_card_7711863"
+          },
+          "call_id": "call_yCVWQirfwKfRieFio4Pbexuo",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 30,
+      "state_revision": 43
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "6477915553"
+        ],
+        "order_id": "#W7449508",
+        "payment_method_id": "gift_card_7711863"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_yCVWQirfwKfRieFio4Pbexuo",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 31,
+      "state_revision": 43,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_yCVWQirfwKfRieFio4Pbexuo",
+        "candidate_arguments": {
+          "item_ids": [
+            "6477915553"
+          ],
+          "order_id": "#W7449508",
+          "payment_method_id": "gift_card_7711863"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "olivia_lopez_3865",
+          "authentication_source_event_ids": [
+            "tool:call_PpZPrGyO6J9mENIoNbArnqLV:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "6200867091",
+              "6477915553"
+            ],
+            "order_id": "#W7449508",
+            "source_event_ids": [
+              "tool:call_zxyZSokBsorOWK5edhBvT3ca:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "olivia_lopez_3865"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7471004230",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7711863"
+            ],
+            "source_event_ids": [
+              "tool:call_ETBp8vnG9JRdgjtzv6wJTjJa:get_user_details"
+            ],
+            "user_id": "olivia_lopez_3865"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 32,
+      "state_revision": 43
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_yCVWQirfwKfRieFio4Pbexuo",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 33,
+      "state_revision": 43
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a1ecaf2de4de34d3129ebbd790363091b0f5fe2980bfec77246ad3a1eb6b680b",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 34,
+      "state_revision": 45
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"I don\\u2019t need it anymore since it goes with the tablet.\", \"scope\": \"the portable charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W5481803\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"item_ids\": [\"6477915553\"], \"order_id\": \"#W7449508\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "0e291d3ef39999f9049d799b87d29af2a99dd2d8dc4e61c67c5781c20456e93f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 35,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order",
+        "tool:call_yCVWQirfwKfRieFio4Pbexuo:return_delivered_order_items"
+      ],
+      "state_revision": 45,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "I don’t need it anymore since it goes with the tablet."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user",
+                "message:29:user"
+              ],
+              "value": "the portable charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5481803",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "3613716226",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "8",
+                    "waterproof": "no"
+                  },
+                  "price": 253.54,
+                  "product_id": "7363354090"
+                }
+              ],
+              "order_id": "#W5481803",
+              "payment_history": [
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_yCVWQirfwKfRieFio4Pbexuo:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6477915553"
+              ],
+              "order_id": "#W7449508",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6200867091",
+                    "6477915553"
+                  ],
+                  "tracking_id": [
+                    "194496721133"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6200867091",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 2955.17,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "6477915553",
+                  "name": "Sneakers",
+                  "options": {
+                    "color": "black",
+                    "material": "synthetic",
+                    "size": "6"
+                  },
+                  "price": 186.45,
+                  "product_id": "7471004230"
+                }
+              ],
+              "order_id": "#W7449508",
+              "payment_history": [
+                {
+                  "amount": 3141.62,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "6477915553"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "0e291d3ef39999f9049d799b87d29af2a99dd2d8dc4e61c67c5781c20456e93f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 36,
+      "source_event_ids": [
+        "message:23:user",
+        "message:29:user",
+        "message:25:user",
+        "tool:call_I6Suayo60aoWZgcYv0sxt7vv:cancel_pending_order",
+        "tool:call_eokrXaEfTpWE4JiPAotKBE1p:cancel_pending_order",
+        "tool:call_yCVWQirfwKfRieFio4Pbexuo:return_delivered_order_items"
+      ],
+      "state_revision": 45
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 3,
+    "b_opportunities": 3,
+    "event_count": 37,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 56.20229637506418,
+    "prewrite_validation": 0.0010179589735344052,
+    "semantic_support": 8.063304083945695
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 10,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "32",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_032"
+}

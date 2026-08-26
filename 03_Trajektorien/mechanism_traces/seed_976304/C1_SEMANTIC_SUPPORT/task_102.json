@@ -1,0 +1,1830 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.01912808,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00472015
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "6a70da7ad99203d8c6ee0aa28a4296363d5b4bcd4cb8a4b70ee7544381dc982a",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "4195f8d47699254d46e865458b32709e4c54df6c79d93debaccf9cb4ed5575e2",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'desired_variant_constraints' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "desired_variant_constraints",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "15e33a8b23475d38171085cb1e6afef73db3355008542df1c54f55b1c48304de",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:9:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the silicone one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "one of the watches—the silicone one"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"the same one I used for another order\", \"city\": \"New York\", \"order_id\": \"#W6729841\", \"scope\": \"I just placed an order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the silicone one\", \"order_id\": \"#W6729841\", \"scope\": \"one of the watches\\u2014the silicone one\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "c8fa97bb535f298183e24dac7349c0346dc3cefee17867877908d03effdff5cc",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:9:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the silicone one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "one of the watches—the silicone one"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "c8fa97bb535f298183e24dac7349c0346dc3cefee17867877908d03effdff5cc",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "c8fa97bb535f298183e24dac7349c0346dc3cefee17867877908d03effdff5cc",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 13
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:14:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "59fcee72a6cb8f89dc93820efa6744cb48283c058406f7101a4b12fe46a84575",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:14:user"
+      ],
+      "state_revision": 15,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "a metal band with a white dial"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "8886009523"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the silicone/blue watch (item 8886009523)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "shipped to my New York address, not the Seattle one"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "c8fa97bb535f298183e24dac7349c0346dc3cefee17867877908d03effdff5cc",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 15
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"the same one I used for another order\", \"city\": \"New York\", \"order_id\": \"#W6729841\", \"scope\": \"I just placed an order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the silicone one\", \"order_id\": \"#W6729841\", \"scope\": \"one of the watches\\u2014the silicone one\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"a metal band with a white dial\", \"item_ids\": \"8886009523\", \"order_id\": \"#W4219264\", \"scope\": \"the silicone/blue watch (item 8886009523)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"city\": \"New York\", \"order_id\": \"#W4219264\", \"scope\": \"shipped to my New York address, not the Seattle one\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user"
+      ],
+      "state_revision": 15,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:9:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the silicone one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "one of the watches—the silicone one"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "a metal band with a white dial"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "8886009523"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the silicone/blue watch (item 8886009523)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "shipped to my New York address, not the Seattle one"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "144 Lakeview Drive",
+            "address2": "Suite 925",
+            "city": "New York",
+            "country": "USA",
+            "order_id": "#W4219264",
+            "state": "NY",
+            "zip": "10228"
+          },
+          "call_id": "call_AeUCkqB9GyKV3ShX9ziI7Olp",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 17,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b022fe0e313456f1cd2bcd20d00c33caca5a09f4eb96e22b031945d81bad476e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"the same one I used for another order\", \"city\": \"New York\", \"order_id\": \"#W6729841\", \"scope\": \"I just placed an order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the silicone one\", \"order_id\": \"#W6729841\", \"scope\": \"one of the watches\\u2014the silicone one\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"a metal band with a white dial\", \"item_ids\": \"8886009523\", \"order_id\": \"#W4219264\", \"scope\": \"the silicone/blue watch (item 8886009523)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"city\": \"New York\", \"order_id\": \"#W4219264\", \"scope\": \"shipped to my New York address, not the Seattle one\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"144 Lakeview Drive\", \"address2\": \"Suite 925\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W4219264\", \"state\": \"NY\", \"zip\": \"10228\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "53ee2ec75bd7a9eb06132714fea8a53c80965436ce9c5b09680db356e5067206",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:9:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the silicone one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "one of the watches—the silicone one"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "a metal band with a white dial"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "8886009523"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the silicone/blue watch (item 8886009523)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "shipped to my New York address, not the Seattle one"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "144 Lakeview Drive",
+              "address2": "Suite 925",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W4219264",
+              "state": "NY",
+              "zip": "10228"
+            },
+            "result": {
+              "address": {
+                "address1": "144 Lakeview Drive",
+                "address2": "Suite 925",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10228"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7869640094",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "expert",
+                    "pieces": "2000",
+                    "theme": "animals"
+                  },
+                  "price": 47.59,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "8886009523",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "silicone"
+                  },
+                  "price": 1944.02,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "9112290483",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "metal"
+                  },
+                  "price": 1925.16,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W4219264",
+              "payment_history": [
+                {
+                  "amount": 3916.77,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "53ee2ec75bd7a9eb06132714fea8a53c80965436ce9c5b09680db356e5067206",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "53ee2ec75bd7a9eb06132714fea8a53c80965436ce9c5b09680db356e5067206",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8886009523"
+            ],
+            "new_item_ids": [
+              "2407258246"
+            ],
+            "order_id": "#W4219264",
+            "payment_method_id": "credit_card_1620755"
+          },
+          "call_id": "call_xztfSZrjnaB2v3jnGJsKMh69",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "53ee2ec75bd7a9eb06132714fea8a53c80965436ce9c5b09680db356e5067206",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 22,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "53ee2ec75bd7a9eb06132714fea8a53c80965436ce9c5b09680db356e5067206",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 23,
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"the same one I used for another order\", \"city\": \"New York\", \"order_id\": \"#W6729841\", \"scope\": \"I just placed an order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the silicone one\", \"order_id\": \"#W6729841\", \"scope\": \"one of the watches\\u2014the silicone one\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"a metal band with a white dial\", \"item_ids\": \"8886009523\", \"order_id\": \"#W4219264\", \"scope\": \"the silicone/blue watch (item 8886009523)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"city\": \"New York\", \"order_id\": \"#W4219264\", \"scope\": \"shipped to my New York address, not the Seattle one\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"144 Lakeview Drive\", \"address2\": \"Suite 925\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W4219264\", \"state\": \"NY\", \"zip\": \"10228\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"item_ids\": [\"8886009523\"], \"new_item_ids\": [\"2407258246\"], \"order_id\": \"#W4219264\", \"payment_method_id\": \"credit_card_1620755\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "e21e33619fbcb037732838c1012ac4177684e996c460567ee0e277e5dc2fba22",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:9:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the silicone one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "one of the watches—the silicone one"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "a metal band with a white dial"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "8886009523"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the silicone/blue watch (item 8886009523)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "shipped to my New York address, not the Seattle one"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "144 Lakeview Drive",
+              "address2": "Suite 925",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W4219264",
+              "state": "NY",
+              "zip": "10228"
+            },
+            "result": {
+              "address": {
+                "address1": "144 Lakeview Drive",
+                "address2": "Suite 925",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10228"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7869640094",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "expert",
+                    "pieces": "2000",
+                    "theme": "animals"
+                  },
+                  "price": 47.59,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "8886009523",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "silicone"
+                  },
+                  "price": 1944.02,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "9112290483",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "metal"
+                  },
+                  "price": 1925.16,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W4219264",
+              "payment_history": [
+                {
+                  "amount": 3916.77,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8886009523"
+              ],
+              "new_item_ids": [
+                "2407258246"
+              ],
+              "order_id": "#W4219264",
+              "payment_method_id": "credit_card_1620755"
+            },
+            "result": {
+              "address": {
+                "address1": "144 Lakeview Drive",
+                "address2": "Suite 925",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10228"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7869640094",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "expert",
+                    "pieces": "2000",
+                    "theme": "animals"
+                  },
+                  "price": 47.59,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "2407258246",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "white",
+                    "strap material": "metal"
+                  },
+                  "price": 1822.82,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "9112290483",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "metal"
+                  },
+                  "price": 1925.16,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W4219264",
+              "payment_history": [
+                {
+                  "amount": 3916.77,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 121.20000000000005,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e21e33619fbcb037732838c1012ac4177684e996c460567ee0e277e5dc2fba22",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items"
+      ],
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e21e33619fbcb037732838c1012ac4177684e996c460567ee0e277e5dc2fba22",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items"
+      ],
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e21e33619fbcb037732838c1012ac4177684e996c460567ee0e277e5dc2fba22",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 27,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items"
+      ],
+      "state_revision": 32
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6341716129"
+            ],
+            "new_item_ids": [
+              "8302289002"
+            ],
+            "order_id": "#W3445693",
+            "payment_method_id": "credit_card_1620755"
+          },
+          "call_id": "call_RHQjVobhkelgdOXekVPM3HW2",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "e21e33619fbcb037732838c1012ac4177684e996c460567ee0e277e5dc2fba22",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 28,
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e21e33619fbcb037732838c1012ac4177684e996c460567ee0e277e5dc2fba22",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 29,
+      "state_revision": 34
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"the same one I used for another order\", \"city\": \"New York\", \"order_id\": \"#W6729841\", \"scope\": \"I just placed an order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the silicone one\", \"order_id\": \"#W6729841\", \"scope\": \"one of the watches\\u2014the silicone one\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"a metal band with a white dial\", \"item_ids\": \"8886009523\", \"order_id\": \"#W4219264\", \"scope\": \"the silicone/blue watch (item 8886009523)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"city\": \"New York\", \"order_id\": \"#W4219264\", \"scope\": \"shipped to my New York address, not the Seattle one\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"144 Lakeview Drive\", \"address2\": \"Suite 925\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W4219264\", \"state\": \"NY\", \"zip\": \"10228\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"item_ids\": [\"8886009523\"], \"new_item_ids\": [\"2407258246\"], \"order_id\": \"#W4219264\", \"payment_method_id\": \"credit_card_1620755\"}, \"tool_name\": \"modify_pending_order_items\"}, {\"arguments\": {\"item_ids\": [\"6341716129\"], \"new_item_ids\": [\"8302289002\"], \"order_id\": \"#W3445693\", \"payment_method_id\": \"credit_card_1620755\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "afd5465c436e999eeb29b0f65b2aa6ec49d7ce7e8b4b657ff2a4f9fdf6ceb997",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 30,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items",
+        "tool:call_RHQjVobhkelgdOXekVPM3HW2:exchange_delivered_order_items"
+      ],
+      "state_revision": 34,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:9:user"
+              ],
+              "value": "the same one I used for another order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed an order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the silicone one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W6729841"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "one of the watches—the silicone one"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "a metal band with a white dial"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "8886009523"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the silicone/blue watch (item 8886009523)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "New York"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "#W4219264"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "shipped to my New York address, not the Seattle one"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "144 Lakeview Drive",
+              "address2": "Suite 925",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W4219264",
+              "state": "NY",
+              "zip": "10228"
+            },
+            "result": {
+              "address": {
+                "address1": "144 Lakeview Drive",
+                "address2": "Suite 925",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10228"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7869640094",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "expert",
+                    "pieces": "2000",
+                    "theme": "animals"
+                  },
+                  "price": 47.59,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "8886009523",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "silicone"
+                  },
+                  "price": 1944.02,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "9112290483",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "metal"
+                  },
+                  "price": 1925.16,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W4219264",
+              "payment_history": [
+                {
+                  "amount": 3916.77,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8886009523"
+              ],
+              "new_item_ids": [
+                "2407258246"
+              ],
+              "order_id": "#W4219264",
+              "payment_method_id": "credit_card_1620755"
+            },
+            "result": {
+              "address": {
+                "address1": "144 Lakeview Drive",
+                "address2": "Suite 925",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10228"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7869640094",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "expert",
+                    "pieces": "2000",
+                    "theme": "animals"
+                  },
+                  "price": 47.59,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "2407258246",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "white",
+                    "strap material": "metal"
+                  },
+                  "price": 1822.82,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "9112290483",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "metal"
+                  },
+                  "price": 1925.16,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W4219264",
+              "payment_history": [
+                {
+                  "amount": 3916.77,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 121.20000000000005,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_RHQjVobhkelgdOXekVPM3HW2:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6341716129"
+              ],
+              "new_item_ids": [
+                "8302289002"
+              ],
+              "order_id": "#W3445693",
+              "payment_method_id": "credit_card_1620755"
+            },
+            "result": {
+              "address": {
+                "address1": "144 Lakeview Drive",
+                "address2": "Suite 925",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10228"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "6341716129"
+              ],
+              "exchange_new_items": [
+                "8302289002"
+              ],
+              "exchange_payment_method_id": "credit_card_1620755",
+              "exchange_price_difference": 24.24,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6477915553",
+                    "2206116040",
+                    "6341716129"
+                  ],
+                  "tracking_id": [
+                    "870596657470"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6477915553",
+                  "name": "Sneakers",
+                  "options": {
+                    "color": "black",
+                    "material": "synthetic",
+                    "size": "6"
+                  },
+                  "price": 186.45,
+                  "product_id": "7471004230"
+                },
+                {
+                  "item_id": "2206116040",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "blue",
+                    "size": "L",
+                    "ventilation": "high"
+                  },
+                  "price": 209.91,
+                  "product_id": "7765186836"
+                },
+                {
+                  "item_id": "6341716129",
+                  "name": "Air Purifier",
+                  "options": {
+                    "features": "smart sensors",
+                    "filter type": "HEPA",
+                    "room size": "large"
+                  },
+                  "price": 523.31,
+                  "product_id": "3821016478"
+                }
+              ],
+              "order_id": "#W3445693",
+              "payment_history": [
+                {
+                  "amount": 919.67,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "afd5465c436e999eeb29b0f65b2aa6ec49d7ce7e8b4b657ff2a4f9fdf6ceb997",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 31,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items",
+        "tool:call_RHQjVobhkelgdOXekVPM3HW2:exchange_delivered_order_items"
+      ],
+      "state_revision": 34
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "afd5465c436e999eeb29b0f65b2aa6ec49d7ce7e8b4b657ff2a4f9fdf6ceb997",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 32,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:14:user",
+        "tool:call_AeUCkqB9GyKV3ShX9ziI7Olp:modify_pending_order_address",
+        "tool:call_xztfSZrjnaB2v3jnGJsKMh69:modify_pending_order_items",
+        "tool:call_RHQjVobhkelgdOXekVPM3HW2:exchange_delivered_order_items"
+      ],
+      "state_revision": 36
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 33,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 103.3015316670062,
+    "prewrite_validation": 0.0,
+    "semantic_support": 28.192282292002346
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 13,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "102",
+  "trajectory_id": "seed_976304_C1_SEMANTIC_SUPPORT_task_102"
+}

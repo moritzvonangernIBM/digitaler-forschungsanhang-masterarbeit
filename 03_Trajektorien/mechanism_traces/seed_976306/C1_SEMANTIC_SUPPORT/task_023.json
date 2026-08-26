@@ -1,0 +1,1589 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.01190487,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0029035
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "32d1546e9d4179dfb64a8454953b38b021a4c916d687b097f4fd64e72640ecea",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a luggage set"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different size and style\", \"item_descriptions\": \"a helmet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a luggage set\", \"scope\": \"from another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"a grill order\", \"scope\": \"I just placed\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "6557ab3663dea8e9026e9cada7bbe170d732fd01c104a5200756715d7a44a8d3",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a luggage set"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "6557ab3663dea8e9026e9cada7bbe170d732fd01c104a5200756715d7a44a8d3",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "6557ab3663dea8e9026e9cada7bbe170d732fd01c104a5200756715d7a44a8d3",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "6557ab3663dea8e9026e9cada7bbe170d732fd01c104a5200756715d7a44a8d3",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 4,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 3
+        }
+      ],
+      "response_sha256": "daee88eb9a8df7b0b1fc8d82559a952601cd414c607896606e8b53bc485f5e98",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "matches the same type as the one I already received"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "6557ab3663dea8e9026e9cada7bbe170d732fd01c104a5200756715d7a44a8d3",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 8,
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different size and style\", \"item_descriptions\": \"a helmet\", \"scope\": \"For the helmet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a luggage set\", \"scope\": \"from another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"matches the same type as the one I already received\", \"item_descriptions\": \"a grill order\", \"scope\": \"I just placed\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"For any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a luggage set"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "matches the same type as the one I already received"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3358616356"
+            ],
+            "new_item_ids": [
+              "8573379326"
+            ],
+            "order_id": "#W3947049",
+            "payment_method_id": "credit_card_7901829"
+          },
+          "call_id": "call_oHgcbpkQKrzgFeU0eC4YnZ00",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "487bb3a63195c5c49ea98294b528ccd6d9a1a0cf154fef0c9321fa1e8c11d0eb",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 19,
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different size and style\", \"item_descriptions\": \"a helmet\", \"scope\": \"For the helmet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a luggage set\", \"scope\": \"from another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"matches the same type as the one I already received\", \"item_descriptions\": \"a grill order\", \"scope\": \"I just placed\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"For any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3358616356\"], \"new_item_ids\": [\"8573379326\"], \"order_id\": \"#W3947049\", \"payment_method_id\": \"credit_card_7901829\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "73a280ce86234b491cfeef5a13daa82ad65dee69f7fc7fa5571d97697505d927",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a luggage set"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "matches the same type as the one I already received"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3358616356"
+              ],
+              "new_item_ids": [
+                "8573379326"
+              ],
+              "order_id": "#W3947049",
+              "payment_method_id": "credit_card_7901829"
+            },
+            "result": {
+              "address": {
+                "address1": "652 Laurel Lane",
+                "address2": "Suite 398",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98193"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "3358616356"
+              ],
+              "exchange_new_items": [
+                "8573379326"
+              ],
+              "exchange_payment_method_id": "credit_card_7901829",
+              "exchange_price_difference": -0.6,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3358616356"
+                  ],
+                  "tracking_id": [
+                    "758823963547"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3358616356",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "red",
+                    "size": "S",
+                    "ventilation": "low"
+                  },
+                  "price": 197.33,
+                  "product_id": "7765186836"
+                }
+              ],
+              "order_id": "#W3947049",
+              "payment_history": [
+                {
+                  "amount": 197.33,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_hernandez_5364"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "73a280ce86234b491cfeef5a13daa82ad65dee69f7fc7fa5571d97697505d927",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6301799585"
+            ],
+            "new_item_ids": [
+              "8926329222"
+            ],
+            "order_id": "#W6876713",
+            "payment_method_id": "credit_card_7901829"
+          },
+          "call_id": "call_pHG9hsvQjupTXtGPWrdrG65s",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "73a280ce86234b491cfeef5a13daa82ad65dee69f7fc7fa5571d97697505d927",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 22,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "73a280ce86234b491cfeef5a13daa82ad65dee69f7fc7fa5571d97697505d927",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 23,
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different size and style\", \"item_descriptions\": \"a helmet\", \"scope\": \"For the helmet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a luggage set\", \"scope\": \"from another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"matches the same type as the one I already received\", \"item_descriptions\": \"a grill order\", \"scope\": \"I just placed\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"For any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3358616356\"], \"new_item_ids\": [\"8573379326\"], \"order_id\": \"#W3947049\", \"payment_method_id\": \"credit_card_7901829\"}, \"tool_name\": \"exchange_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"6301799585\"], \"new_item_ids\": [\"8926329222\"], \"order_id\": \"#W6876713\", \"payment_method_id\": \"credit_card_7901829\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "151bcef162b0291a71b6c8d74bbd4fffd9d7d30d961a2e1afeb76e06fa7497ea",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items",
+        "tool:call_pHG9hsvQjupTXtGPWrdrG65s:exchange_delivered_order_items"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a luggage set"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "matches the same type as the one I already received"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3358616356"
+              ],
+              "new_item_ids": [
+                "8573379326"
+              ],
+              "order_id": "#W3947049",
+              "payment_method_id": "credit_card_7901829"
+            },
+            "result": {
+              "address": {
+                "address1": "652 Laurel Lane",
+                "address2": "Suite 398",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98193"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "3358616356"
+              ],
+              "exchange_new_items": [
+                "8573379326"
+              ],
+              "exchange_payment_method_id": "credit_card_7901829",
+              "exchange_price_difference": -0.6,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3358616356"
+                  ],
+                  "tracking_id": [
+                    "758823963547"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3358616356",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "red",
+                    "size": "S",
+                    "ventilation": "low"
+                  },
+                  "price": 197.33,
+                  "product_id": "7765186836"
+                }
+              ],
+              "order_id": "#W3947049",
+              "payment_history": [
+                {
+                  "amount": 197.33,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_hernandez_5364"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_pHG9hsvQjupTXtGPWrdrG65s:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6301799585"
+              ],
+              "new_item_ids": [
+                "8926329222"
+              ],
+              "order_id": "#W6876713",
+              "payment_method_id": "credit_card_7901829"
+            },
+            "result": {
+              "address": {
+                "address1": "652 Laurel Lane",
+                "address2": "Suite 398",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98193"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "6301799585"
+              ],
+              "exchange_new_items": [
+                "8926329222"
+              ],
+              "exchange_payment_method_id": "credit_card_7901829",
+              "exchange_price_difference": -43.59,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6200867091",
+                    "3234800602",
+                    "1345513440",
+                    "6301799585",
+                    "7082455361"
+                  ],
+                  "tracking_id": [
+                    "970329203674"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6200867091",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 2955.17,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "3234800602",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "red",
+                    "material": "cotton",
+                    "size": "L",
+                    "style": "v-neck"
+                  },
+                  "price": 46.66,
+                  "product_id": "9523456873"
+                },
+                {
+                  "item_id": "1345513440",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "cordless",
+                    "type": "canister"
+                  },
+                  "price": 655.59,
+                  "product_id": "1762337868"
+                },
+                {
+                  "item_id": "6301799585",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "blue",
+                    "material": "softshell",
+                    "piece count": "3-piece"
+                  },
+                  "price": 495.87,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "7082455361",
+                  "name": "Grill",
+                  "options": {
+                    "features": "rotisserie",
+                    "size": "medium",
+                    "type": "charcoal"
+                  },
+                  "price": 962.69,
+                  "product_id": "6819683148"
+                }
+              ],
+              "order_id": "#W6876713",
+              "payment_history": [
+                {
+                  "amount": 5115.98,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_hernandez_5364"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "151bcef162b0291a71b6c8d74bbd4fffd9d7d30d961a2e1afeb76e06fa7497ea",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items",
+        "tool:call_pHG9hsvQjupTXtGPWrdrG65s:exchange_delivered_order_items"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5946177616"
+            ],
+            "new_item_ids": [
+              "7082455361"
+            ],
+            "order_id": "#W3561391",
+            "payment_method_id": "credit_card_7901829"
+          },
+          "call_id": "call_GNPYE2RHXIQ1OTG0AI8vVjv1",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "151bcef162b0291a71b6c8d74bbd4fffd9d7d30d961a2e1afeb76e06fa7497ea",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "151bcef162b0291a71b6c8d74bbd4fffd9d7d30d961a2e1afeb76e06fa7497ea",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 27,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different size and style\", \"item_descriptions\": \"a helmet\", \"scope\": \"For the helmet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a luggage set\", \"scope\": \"from another order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"matches the same type as the one I already received\", \"item_descriptions\": \"a grill order\", \"scope\": \"I just placed\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"For any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3358616356\"], \"new_item_ids\": [\"8573379326\"], \"order_id\": \"#W3947049\", \"payment_method_id\": \"credit_card_7901829\"}, \"tool_name\": \"exchange_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"6301799585\"], \"new_item_ids\": [\"8926329222\"], \"order_id\": \"#W6876713\", \"payment_method_id\": \"credit_card_7901829\"}, \"tool_name\": \"exchange_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"5946177616\"], \"new_item_ids\": [\"7082455361\"], \"order_id\": \"#W3561391\", \"payment_method_id\": \"credit_card_7901829\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "013d8d5f7c4c2ce85a908a35465e49c726fa108f114e4aa4ab0b5b2f520a287b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 28,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items",
+        "tool:call_pHG9hsvQjupTXtGPWrdrG65s:exchange_delivered_order_items",
+        "tool:call_GNPYE2RHXIQ1OTG0AI8vVjv1:modify_pending_order_items"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a luggage set"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "from another order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "matches the same type as the one I already received"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a grill order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I just placed"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "For any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3358616356"
+              ],
+              "new_item_ids": [
+                "8573379326"
+              ],
+              "order_id": "#W3947049",
+              "payment_method_id": "credit_card_7901829"
+            },
+            "result": {
+              "address": {
+                "address1": "652 Laurel Lane",
+                "address2": "Suite 398",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98193"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "3358616356"
+              ],
+              "exchange_new_items": [
+                "8573379326"
+              ],
+              "exchange_payment_method_id": "credit_card_7901829",
+              "exchange_price_difference": -0.6,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3358616356"
+                  ],
+                  "tracking_id": [
+                    "758823963547"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3358616356",
+                  "name": "Cycling Helmet",
+                  "options": {
+                    "color": "red",
+                    "size": "S",
+                    "ventilation": "low"
+                  },
+                  "price": 197.33,
+                  "product_id": "7765186836"
+                }
+              ],
+              "order_id": "#W3947049",
+              "payment_history": [
+                {
+                  "amount": 197.33,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_hernandez_5364"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_pHG9hsvQjupTXtGPWrdrG65s:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6301799585"
+              ],
+              "new_item_ids": [
+                "8926329222"
+              ],
+              "order_id": "#W6876713",
+              "payment_method_id": "credit_card_7901829"
+            },
+            "result": {
+              "address": {
+                "address1": "652 Laurel Lane",
+                "address2": "Suite 398",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98193"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "6301799585"
+              ],
+              "exchange_new_items": [
+                "8926329222"
+              ],
+              "exchange_payment_method_id": "credit_card_7901829",
+              "exchange_price_difference": -43.59,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6200867091",
+                    "3234800602",
+                    "1345513440",
+                    "6301799585",
+                    "7082455361"
+                  ],
+                  "tracking_id": [
+                    "970329203674"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6200867091",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 2955.17,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "3234800602",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "red",
+                    "material": "cotton",
+                    "size": "L",
+                    "style": "v-neck"
+                  },
+                  "price": 46.66,
+                  "product_id": "9523456873"
+                },
+                {
+                  "item_id": "1345513440",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "cordless",
+                    "type": "canister"
+                  },
+                  "price": 655.59,
+                  "product_id": "1762337868"
+                },
+                {
+                  "item_id": "6301799585",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "blue",
+                    "material": "softshell",
+                    "piece count": "3-piece"
+                  },
+                  "price": 495.87,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "7082455361",
+                  "name": "Grill",
+                  "options": {
+                    "features": "rotisserie",
+                    "size": "medium",
+                    "type": "charcoal"
+                  },
+                  "price": 962.69,
+                  "product_id": "6819683148"
+                }
+              ],
+              "order_id": "#W6876713",
+              "payment_history": [
+                {
+                  "amount": 5115.98,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_hernandez_5364"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_GNPYE2RHXIQ1OTG0AI8vVjv1:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5946177616"
+              ],
+              "new_item_ids": [
+                "7082455361"
+              ],
+              "order_id": "#W3561391",
+              "payment_method_id": "credit_card_7901829"
+            },
+            "result": {
+              "address": {
+                "address1": "652 Laurel Lane",
+                "address2": "Suite 398",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98193"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7082455361",
+                  "name": "Grill",
+                  "options": {
+                    "features": "rotisserie",
+                    "size": "medium",
+                    "type": "charcoal"
+                  },
+                  "price": 962.69,
+                  "product_id": "6819683148"
+                }
+              ],
+              "order_id": "#W3561391",
+              "payment_history": [
+                {
+                  "amount": 1057.24,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 94.54999999999995,
+                  "payment_method_id": "credit_card_7901829",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "sofia_hernandez_5364"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "013d8d5f7c4c2ce85a908a35465e49c726fa108f114e4aa4ab0b5b2f520a287b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 29,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "tool:call_oHgcbpkQKrzgFeU0eC4YnZ00:exchange_delivered_order_items",
+        "tool:call_pHG9hsvQjupTXtGPWrdrG65s:exchange_delivered_order_items",
+        "tool:call_GNPYE2RHXIQ1OTG0AI8vVjv1:modify_pending_order_items"
+      ],
+      "state_revision": 30
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 30,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 46.72905845893547,
+    "prewrite_validation": 0.0,
+    "semantic_support": 13.784090541070327
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 14,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "23",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_023"
+}

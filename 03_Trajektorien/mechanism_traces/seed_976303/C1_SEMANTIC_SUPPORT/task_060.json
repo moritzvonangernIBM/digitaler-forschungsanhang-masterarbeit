@@ -1,0 +1,634 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00486516,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0021090500000000003
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "544528d86041723c342481986f332e80de59d2ce2619a69d80840ff3858c9600",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a blue colored version"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Please make sure the price stays the same or is lower"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "change the wireless earbuds in my order W5061109"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "fee332691ce973218544bc4f4ff4fe2ce14b26e3f524200daf7bc8b7b855e232",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the blue earbuds without water resistance"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a blue colored version\", \"fallback_constraints\": \"Please make sure the price stays the same or is lower\", \"item_descriptions\": \"wireless earbuds\", \"scope\": \"change the wireless earbuds in my order W5061109\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the blue earbuds without water resistance\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "9da86556084f82df8cd8b297cac7c2560dfcad45167da4606c61b1dc0f36e1b4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a blue colored version"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Please make sure the price stays the same or is lower"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "change the wireless earbuds in my order W5061109"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the blue earbuds without water resistance"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "9da86556084f82df8cd8b297cac7c2560dfcad45167da4606c61b1dc0f36e1b4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "4849efcc3a5b265fc5e819eaff47c1d1ad954de9cfb1962c37864b3c6912d71e",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "process the refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "9da86556084f82df8cd8b297cac7c2560dfcad45167da4606c61b1dc0f36e1b4",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 8,
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a blue colored version\", \"fallback_constraints\": \"Please make sure the price stays the same or is lower\", \"item_descriptions\": \"wireless earbuds\", \"scope\": \"change the wireless earbuds in my order W5061109\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the blue earbuds without water resistance\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"process the refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "25036c2bff2231d5a7fc90bfb71d528bfa67527ef8b291ad8722bc7c6b329264",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a blue colored version"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Please make sure the price stays the same or is lower"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "change the wireless earbuds in my order W5061109"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the blue earbuds without water resistance"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "process the refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "25036c2bff2231d5a7fc90bfb71d528bfa67527ef8b291ad8722bc7c6b329264",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3694871183"
+            ],
+            "new_item_ids": [
+              "6077640618"
+            ],
+            "order_id": "#W5061109",
+            "payment_method_id": "paypal_3742148"
+          },
+          "call_id": "call_UVeeGYzxjbHPW43qWr1yRdSo",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "25036c2bff2231d5a7fc90bfb71d528bfa67527ef8b291ad8722bc7c6b329264",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 11,
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "25036c2bff2231d5a7fc90bfb71d528bfa67527ef8b291ad8722bc7c6b329264",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a blue colored version\", \"fallback_constraints\": \"Please make sure the price stays the same or is lower\", \"item_descriptions\": \"wireless earbuds\", \"scope\": \"change the wireless earbuds in my order W5061109\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the blue earbuds without water resistance\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"process the refund\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3694871183\"], \"new_item_ids\": [\"6077640618\"], \"order_id\": \"#W5061109\", \"payment_method_id\": \"paypal_3742148\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "cedd7512118dd16a33259695064c35108bcc07efdb9debe6147fa9b8c7cb3767",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:11:user",
+        "tool:call_UVeeGYzxjbHPW43qWr1yRdSo:modify_pending_order_items"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a blue colored version"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Please make sure the price stays the same or is lower"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "change the wireless earbuds in my order W5061109"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the blue earbuds without water resistance"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "process the refund"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_UVeeGYzxjbHPW43qWr1yRdSo:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3694871183"
+              ],
+              "new_item_ids": [
+                "6077640618"
+              ],
+              "order_id": "#W5061109",
+              "payment_method_id": "paypal_3742148"
+            },
+            "result": {
+              "address": {
+                "address1": "503 Elm Avenue",
+                "address2": "Suite 641",
+                "city": "Houston",
+                "country": "USA",
+                "state": "TX",
+                "zip": "77004"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6254646215",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand B",
+                    "kit size": "basic",
+                    "skin tone": "dark"
+                  },
+                  "price": 248.85,
+                  "product_id": "5149340237"
+                },
+                {
+                  "item_id": "6077640618",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "8 hours",
+                    "color": "blue",
+                    "water resistance": "not resistant"
+                  },
+                  "price": 242.92,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "8323284863",
+                  "name": "Office Chair",
+                  "options": {
+                    "armrest": "adjustable",
+                    "backrest height": "standard",
+                    "color": "blue",
+                    "material": "fabric"
+                  },
+                  "price": 511.24,
+                  "product_id": "4794339885"
+                },
+                {
+                  "item_id": "3254583681",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "20 hours",
+                    "color": "blue",
+                    "water resistance": "yes"
+                  },
+                  "price": 302.67,
+                  "product_id": "4768869376"
+                }
+              ],
+              "order_id": "#W5061109",
+              "payment_history": [
+                {
+                  "amount": 1319.43,
+                  "payment_method_id": "paypal_3742148",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 13.750000000000028,
+                  "payment_method_id": "paypal_3742148",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "chen_johnson_4204"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "cedd7512118dd16a33259695064c35108bcc07efdb9debe6147fa9b8c7cb3767",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:11:user",
+        "tool:call_UVeeGYzxjbHPW43qWr1yRdSo:modify_pending_order_items"
+      ],
+      "state_revision": 14
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 15,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 19.826042164990213,
+    "prewrite_validation": 0.0,
+    "semantic_support": 10.254341918000137
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 3,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "60",
+  "trajectory_id": "seed_976303_C1_SEMANTIC_SUPPORT_task_060"
+}

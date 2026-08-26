@@ -1,0 +1,581 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00370965,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00273455
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "6f396af4e8bda288c7166dc30e2753e2151bef61607f0d099c4c696ce4974a17",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "77599c1620eab81c8f81f34bd2013debae12e0ef6199b7930610a3cf00b2a95b",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": [
+                "a smart watch",
+                "an e-reader"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "from the same order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"reason\": \"really disappointed with the quality\", \"scope\": \"two skateboards\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"a smart watch\", \"an e-reader\"], \"scope\": \"from the same order\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "1543e5d9801afba8de051cfc26b9c157c7285423ed7a06d28ff06dca28da4e7a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": [
+                "a smart watch",
+                "an e-reader"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "from the same order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1543e5d9801afba8de051cfc26b9c157c7285423ed7a06d28ff06dca28da4e7a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "1693851d0bef7f5e0290c19745d0e5c08440498e9c39a69b5abd4e8f99fb05d9",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "exchange it for the same model instead of returning it"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "getting the 32GB version instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1543e5d9801afba8de051cfc26b9c157c7285423ed7a06d28ff06dca28da4e7a",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 8,
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"reason\": \"really disappointed with the quality\", \"scope\": \"two skateboards\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"a smart watch\", \"an e-reader\"], \"scope\": \"from the same order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"exchange it for the same model instead of returning it\", \"fallback_constraints\": \"getting the 32GB version instead\", \"item_descriptions\": \"e-reader\", \"scope\": \"the e-reader\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "c3915bc7f05cae6135b174c86a43634a0227f18cfb25a53d30c2a998d5d2e63f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": [
+                "a smart watch",
+                "an e-reader"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "from the same order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "exchange it for the same model instead of returning it"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "getting the 32GB version instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c3915bc7f05cae6135b174c86a43634a0227f18cfb25a53d30c2a998d5d2e63f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "46d29bec22099a9216553159335e6b06f05273d30adca9b18ee13cdc830b54cc",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:9:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "two skateboards"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "exchange it for the same model instead of returning it"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "getting the 32GB version instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user",
+                "message:11:user"
+              ],
+              "value": "e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user",
+                "message:11:user"
+              ],
+              "value": "the e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c3915bc7f05cae6135b174c86a43634a0227f18cfb25a53d30c2a998d5d2e63f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:9:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c3915bc7f05cae6135b174c86a43634a0227f18cfb25a53d30c2a998d5d2e63f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:9:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c3915bc7f05cae6135b174c86a43634a0227f18cfb25a53d30c2a998d5d2e63f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:9:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c3915bc7f05cae6135b174c86a43634a0227f18cfb25a53d30c2a998d5d2e63f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:9:user"
+      ],
+      "state_revision": 18
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 17,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 21.39290249987971,
+    "prewrite_validation": 0.0,
+    "semantic_support": 12.90310595795745
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 6,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "91",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_091"
+}

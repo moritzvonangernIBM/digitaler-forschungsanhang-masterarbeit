@@ -1,0 +1,764 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.0053197800000000005,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0023107500000000003
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "c6c490f7a0101a0411e9db290966e2bd94ebee9495e1ffe758b28266f0819ab9",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'item_descriptions' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "item_descriptions",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "9f220f29442f752b9f858b8daa4956eaccf4f60674c2921ef7a7492104d45756",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W6908222"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "655497df0af54bdbd6c21b699a353699b22d70a5c3b66c8a91b1f9b73ab8ec8f",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "wireless earbuds that are black, have a battery life of 4 hours, and are not water resistant."
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different model with specific features\", \"item_descriptions\": \"a pair of wireless earbuds\", \"order_id\": \"#W6908222\", \"scope\": \"a pair of wireless earbuds\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"wireless earbuds that are black, have a battery life of 4 hours, and are not water resistant.\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "34f46998764b52e9278946311065c0b309aa6b672959cc1c3f5ddfb8c6dd23dd",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W6908222"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "wireless earbuds that are black, have a battery life of 4 hours, and are not water resistant."
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "34f46998764b52e9278946311065c0b309aa6b672959cc1c3f5ddfb8c6dd23dd",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "34f46998764b52e9278946311065c0b309aa6b672959cc1c3f5ddfb8c6dd23dd",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:13:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "record requires at least one grounded field",
+          "error_type": "ValueError",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "45d1f66342360938da8cd85fea128f9b714a5baa0556f295d9d5af0b489c6204",
+      "sequence": 10,
+      "source_event_ids": [],
+      "state_revision": 18,
+      "total_commitments": 3,
+      "validated_records": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "34f46998764b52e9278946311065c0b309aa6b672959cc1c3f5ddfb8c6dd23dd",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:13:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8555936349"
+            ],
+            "new_item_ids": [
+              "4063058357"
+            ],
+            "order_id": "#W6908222",
+            "payment_method_id": "paypal_4518393"
+          },
+          "call_id": "call_9LU9CmwSz8wNTQoB0W101zWR",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "34f46998764b52e9278946311065c0b309aa6b672959cc1c3f5ddfb8c6dd23dd",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 12,
+      "state_revision": 18
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8555936349"
+        ],
+        "new_item_ids": [
+          "4063058357"
+        ],
+        "order_id": "#W6908222",
+        "payment_method_id": "paypal_4518393"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_9LU9CmwSz8wNTQoB0W101zWR",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 18,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_9LU9CmwSz8wNTQoB0W101zWR",
+        "candidate_arguments": {
+          "item_ids": [
+            "8555936349"
+          ],
+          "new_item_ids": [
+            "4063058357"
+          ],
+          "order_id": "#W6908222",
+          "payment_method_id": "paypal_4518393"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "liam_moore_4057",
+          "authentication_source_event_ids": [
+            "tool:call_697azgAlmv4IXuDgXS2Hx9iW:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "1270145486",
+              "8555936349",
+              "6595128475",
+              "4843487907"
+            ],
+            "order_id": "#W6908222",
+            "source_event_ids": [
+              "tool:call_fLfrti50rSFoARrC3yUT45oR:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "liam_moore_4057"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6817146515",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9924732112",
+              "source_event_ids": [
+                "tool:call_S1a5yVMcZ7G5RjotFZCLOlLI:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_4518393"
+            ],
+            "source_event_ids": [
+              "tool:call_m1Jf6SoyajTcYNI5wWM1Cf6s:get_user_details"
+            ],
+            "user_id": "liam_moore_4057"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 14,
+      "state_revision": 18
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_9LU9CmwSz8wNTQoB0W101zWR",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 15,
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "34f46998764b52e9278946311065c0b309aa6b672959cc1c3f5ddfb8c6dd23dd",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 16,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different model with specific features\", \"item_descriptions\": \"a pair of wireless earbuds\", \"order_id\": \"#W6908222\", \"scope\": \"a pair of wireless earbuds\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"wireless earbuds that are black, have a battery life of 4 hours, and are not water resistant.\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"8555936349\"], \"new_item_ids\": [\"4063058357\"], \"order_id\": \"#W6908222\", \"payment_method_id\": \"paypal_4518393\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "e11986f0c4ea78cb7df381e4cb63db176868bc55054dcca389a57e99af0051c7",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:13:user",
+        "tool:call_9LU9CmwSz8wNTQoB0W101zWR:exchange_delivered_order_items"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different model with specific features"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W6908222"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "a pair of wireless earbuds"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "wireless earbuds that are black, have a battery life of 4 hours, and are not water resistant."
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_9LU9CmwSz8wNTQoB0W101zWR:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8555936349"
+              ],
+              "new_item_ids": [
+                "4063058357"
+              ],
+              "order_id": "#W6908222",
+              "payment_method_id": "paypal_4518393"
+            },
+            "result": {
+              "address": {
+                "address1": "244 Elm Street",
+                "address2": "Suite 422",
+                "city": "Columbus",
+                "country": "USA",
+                "state": "OH",
+                "zip": "43209"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "8555936349"
+              ],
+              "exchange_new_items": [
+                "4063058357"
+              ],
+              "exchange_payment_method_id": "paypal_4518393",
+              "exchange_price_difference": 16.85,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "1270145486",
+                    "8555936349",
+                    "6595128475",
+                    "4843487907"
+                  ],
+                  "tracking_id": [
+                    "659687665480"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "1270145486",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "high",
+                    "color": "white",
+                    "power source": "battery"
+                  },
+                  "price": 144.07,
+                  "product_id": "6817146515"
+                },
+                {
+                  "item_id": "8555936349",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "8 hours",
+                    "color": "blue",
+                    "water resistance": "IPX4"
+                  },
+                  "price": 226.49,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "6595128475",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "9",
+                    "waterproof": "no"
+                  },
+                  "price": 237.65,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "4843487907",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "white",
+                    "size": "80%",
+                    "switch type": "clicky"
+                  },
+                  "price": 254.84,
+                  "product_id": "1656367028"
+                }
+              ],
+              "order_id": "#W6908222",
+              "payment_history": [
+                {
+                  "amount": 863.05,
+                  "payment_method_id": "paypal_4518393",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "liam_moore_4057"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "e11986f0c4ea78cb7df381e4cb63db176868bc55054dcca389a57e99af0051c7",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:13:user",
+        "tool:call_9LU9CmwSz8wNTQoB0W101zWR:exchange_delivered_order_items"
+      ],
+      "state_revision": 20
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 19,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 22.004340334999142,
+    "prewrite_validation": 0.00036112801171839237,
+    "semantic_support": 12.106713332963409
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 4,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "75",
+  "trajectory_id": "seed_976303_C3_COMBINED_INTERVENTION_task_075"
+}

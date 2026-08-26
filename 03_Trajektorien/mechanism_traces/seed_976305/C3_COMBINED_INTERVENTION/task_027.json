@@ -1,0 +1,960 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.008711220000000002,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0024300500000000004
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "715bff7e638f7002f29cc3192111e67b2e407d2b75b4da9b98ad8e7cee5e3384",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a waterproof version"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the hiking boots"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"a waterproof version\"], \"item_descriptions\": [\"the hiking boots\"], \"scope\": \"my recent order\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a waterproof version"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the hiking boots"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 13
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:16:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "7320aeb61ce2ecdf8cc801f9d979c9b8cb8d6997a2108d6ecd7d281c56d64c68",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user"
+      ],
+      "state_revision": 17,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a waterproof version"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "the hiking boots"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": [
+                "8277474082"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "441b6bfe34e9704e7870af7c35334b13ee3b9ffead4787ff117ba2baed4a8208",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 17
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"a waterproof version\"], \"item_descriptions\": [\"the hiking boots\"], \"item_ids\": [\"8277474082\"], \"scope\": \"my recent order\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "db956b1c9c485227a033fdc10c3cd527e6b36d81e9351eb0f1e0bd8063ea7996",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user"
+      ],
+      "state_revision": 17,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a waterproof version"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "the hiking boots"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": [
+                "8277474082"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "db956b1c9c485227a033fdc10c3cd527e6b36d81e9351eb0f1e0bd8063ea7996",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:18:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a4629c6efc5e50f12aca88eadc7fcb258184175e50d78980f6592b01077304c5",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user",
+        "message:18:user"
+      ],
+      "state_revision": 19,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a waterproof version"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user",
+                "message:18:user"
+              ],
+              "value": [
+                "the hiking boots"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": [
+                "8277474082"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "db956b1c9c485227a033fdc10c3cd527e6b36d81e9351eb0f1e0bd8063ea7996",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8118291112"
+            ],
+            "new_item_ids": [
+              "8277474082"
+            ],
+            "order_id": "#W7181492",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_fOWXFh4qGCLMbRgdH4odyACv",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "db956b1c9c485227a033fdc10c3cd527e6b36d81e9351eb0f1e0bd8063ea7996",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 17,
+      "state_revision": 19
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8118291112"
+        ],
+        "new_item_ids": [
+          "8277474082"
+        ],
+        "order_id": "#W7181492",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_fOWXFh4qGCLMbRgdH4odyACv",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 19,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_fOWXFh4qGCLMbRgdH4odyACv",
+        "candidate_arguments": {
+          "item_ids": [
+            "8118291112"
+          ],
+          "new_item_ids": [
+            "8277474082"
+          ],
+          "order_id": "#W7181492",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_cSHOni7VC1xJIlrFUpshZcOp:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5753502325",
+              "9851293632",
+              "3778705663",
+              "8118291112",
+              "3020722515"
+            ],
+            "order_id": "#W7181492",
+            "source_event_ids": [
+              "tool:call_tUjW86C83gIS8QYvStnrP6ZL:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "7363354090",
+              "source_event_ids": [
+                "tool:call_VOwjeR3WM55I53tyOmBPpqzw:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_Vby9BUas93J8d2O1NPNBaQ6V:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 19,
+      "state_revision": 19
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_fOWXFh4qGCLMbRgdH4odyACv",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 20,
+      "state_revision": 19
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "db956b1c9c485227a033fdc10c3cd527e6b36d81e9351eb0f1e0bd8063ea7996",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 21,
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a hose\", \"a backpack\"], \"scope\": \"my recent order\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"a waterproof version\"], \"item_descriptions\": [\"the hiking boots\"], \"item_ids\": [\"8277474082\"], \"scope\": \"my recent order\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"8118291112\"], \"new_item_ids\": [\"8277474082\"], \"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "c6343e30e2d42ddcde5d217e1fd00053c7750c513d40af26c33f8c3a37810b9c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 22,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user",
+        "message:18:user",
+        "tool:call_fOWXFh4qGCLMbRgdH4odyACv:exchange_delivered_order_items"
+      ],
+      "state_revision": 21,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a hose",
+                "a backpack"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": [
+                "a waterproof version"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user",
+                "message:18:user"
+              ],
+              "value": [
+                "the hiking boots"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": [
+                "8277474082"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_fOWXFh4qGCLMbRgdH4odyACv:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8118291112"
+              ],
+              "new_item_ids": [
+                "8277474082"
+              ],
+              "order_id": "#W7181492",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "8118291112"
+              ],
+              "exchange_new_items": [
+                "8277474082"
+              ],
+              "exchange_payment_method_id": "paypal_3024827",
+              "exchange_price_difference": -23.99,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5753502325",
+                    "9851293632",
+                    "3778705663",
+                    "8118291112",
+                    "3020722515"
+                  ],
+                  "tracking_id": [
+                    "418708581751"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5753502325",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "rubber"
+                  },
+                  "price": 96.35,
+                  "product_id": "6679515468"
+                },
+                {
+                  "item_id": "9851293632",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "green",
+                    "compartment": "camera",
+                    "material": "polyester",
+                    "size": "small"
+                  },
+                  "price": 193.38,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3778705663",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "black",
+                    "height": "6 ft",
+                    "material": "metal"
+                  },
+                  "price": 473.48,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "8118291112",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "12",
+                    "waterproof": "no"
+                  },
+                  "price": 260.56,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "3020722515",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "1 cup",
+                    "color": "black",
+                    "features": "auto shutoff",
+                    "type": "french press"
+                  },
+                  "price": 238.64,
+                  "product_id": "7996920482"
+                }
+              ],
+              "order_id": "#W7181492",
+              "payment_history": [
+                {
+                  "amount": 1262.41,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "c6343e30e2d42ddcde5d217e1fd00053c7750c513d40af26c33f8c3a37810b9c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user",
+        "message:18:user",
+        "tool:call_fOWXFh4qGCLMbRgdH4odyACv:exchange_delivered_order_items"
+      ],
+      "state_revision": 21
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 24,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 55.10124562383862,
+    "prewrite_validation": 0.0005682078772224486,
+    "semantic_support": 12.960529625997879
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 9,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "27",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_027"
+}

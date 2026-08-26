@@ -1,0 +1,393 @@
+{
+  "agent_cost": 0.0034688500000000003,
+  "auth_classification": null,
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "duration": 16.9118552919972,
+  "effect_timeline": null,
+  "hallucination_check": null,
+  "hallucination_retries_used": 0,
+  "id": "seed_976301_C1_SEMANTIC_SUPPORT_task_017",
+  "info": null,
+  "messages": [
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi! How can I help you today?",
+      "cost": 0.0,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 0,
+      "turn_taking_action": null,
+      "usage": null,
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi, I need to update the delivery address for an order I placed. I want it delivered to Suite 641 instead.",
+      "cost": 0.0009379999999999999,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 1,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 369
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Sure—I can help update the shipping address for a **pending** order.\n\nFirst, I need to authenticate your account. Please reply with **one** of the following:\n\n1) **Email address** (preferred), or  \n2) **First name + last name + ZIP code**\n\nAlso, please share your **order id** (it looks like **#W0000000**) so I can update the correct order.",
+      "cost": 0.0009203,
+      "generation_time_seconds": 4.1832377500104485,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 2,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 155,
+        "prompt_tokens": 3582
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I don’t remember my email address, but my name is Fatima Johnson and my zip code is 78712. The order number is #W8665881.",
+      "cost": 0.001246,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 3,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 487
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00034515,
+      "generation_time_seconds": 1.1862905000016326,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "first_name": "Fatima",
+            "last_name": "Johnson",
+            "zip": "78712"
+          },
+          "id": "call_c1wYvZPYV5vDuF2cauwl81Uh",
+          "name": "find_user_id_by_name_zip",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 4,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 3711
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "fatima_johnson_7581",
+      "error": false,
+      "id": "call_c1wYvZPYV5vDuF2cauwl81Uh",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 5
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00013848000000000002,
+      "generation_time_seconds": 0.9276992499944754,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W8665881"
+          },
+          "id": "call_cSYiV1meYEn0wNKjzlgCXbwn",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 6,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 3768
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W8665881\", \"user_id\": \"fatima_johnson_7581\", \"address\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite 640\", \"city\": \"Austin\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78712\"}, \"items\": [{\"name\": \"Bluetooth Speaker\", \"product_id\": \"4768869376\", \"item_id\": \"5855700373\", \"price\": 293.46, \"options\": {\"color\": \"black\", \"battery life\": \"10 hours\", \"water resistance\": \"yes\"}}, {\"name\": \"Smart Watch\", \"product_id\": \"6945232052\", \"item_id\": \"9408160950\", \"price\": 381.26, \"options\": {\"color\": \"gold\", \"band material\": \"leather\", \"display\": \"LCD\"}}, {\"name\": \"Dumbbell Set\", \"product_id\": \"7233192239\", \"item_id\": \"4422467033\", \"price\": 483.47, \"options\": {\"weight range\": \"30-50 lbs\", \"material\": \"urethane\", \"set type\": \"adjustable\"}}, {\"name\": \"Espresso Machine\", \"product_id\": \"4354588079\", \"item_id\": \"1157853815\", \"price\": 3096.7, \"options\": {\"pressure\": \"19 bar\", \"capacity\": \"2L\", \"type\": \"capsule\"}}, {\"name\": \"Action Camera\", \"product_id\": \"3377618313\", \"item_id\": \"8725040869\", \"price\": 522.86, \"options\": {\"resolution\": \"4K\", \"waterproof\": \"no\", \"color\": \"black\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 4777.75, \"payment_method_id\": \"paypal_5364164\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_cSYiV1meYEn0wNKjzlgCXbwn",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 7
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Great—I've found your order **#W8665881**. It’s currently **pending**, so I can update the delivery address.\n\n**Current address on the order:**\n- 123 Elm Street, **Suite 640**\n- Austin, TX 78712, USA\n\n**Change you requested:**\n- 123 Elm Street, **Suite 641**\n- Austin, TX 78712, USA\n\nPlease confirm: should I proceed with updating the address to **Suite 641**? Reply **yes** to proceed.",
+      "cost": 0.0005342,
+      "generation_time_seconds": 1.615879249991849,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 8,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 112,
+        "prompt_tokens": 4275
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Yes, please go ahead and update it to Suite 641.",
+      "cost": 0.0013779999999999999,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 9,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 637
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00084438,
+      "generation_time_seconds": 3.4775287080119597,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "address1": "123 Elm Street",
+            "address2": "Suite 641",
+            "city": "Austin",
+            "country": "USA",
+            "order_id": "#W8665881",
+            "state": "TX",
+            "zip": "78712"
+          },
+          "id": "call_VagMJLqkrzlDPOumTIt6zHEy",
+          "name": "modify_pending_order_address",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 10,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 4586
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W8665881\", \"user_id\": \"fatima_johnson_7581\", \"address\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite 641\", \"city\": \"Austin\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78712\"}, \"items\": [{\"name\": \"Bluetooth Speaker\", \"product_id\": \"4768869376\", \"item_id\": \"5855700373\", \"price\": 293.46, \"options\": {\"color\": \"black\", \"battery life\": \"10 hours\", \"water resistance\": \"yes\"}}, {\"name\": \"Smart Watch\", \"product_id\": \"6945232052\", \"item_id\": \"9408160950\", \"price\": 381.26, \"options\": {\"color\": \"gold\", \"band material\": \"leather\", \"display\": \"LCD\"}}, {\"name\": \"Dumbbell Set\", \"product_id\": \"7233192239\", \"item_id\": \"4422467033\", \"price\": 483.47, \"options\": {\"weight range\": \"30-50 lbs\", \"material\": \"urethane\", \"set type\": \"adjustable\"}}, {\"name\": \"Espresso Machine\", \"product_id\": \"4354588079\", \"item_id\": \"1157853815\", \"price\": 3096.7, \"options\": {\"pressure\": \"19 bar\", \"capacity\": \"2L\", \"type\": \"capsule\"}}, {\"name\": \"Action Camera\", \"product_id\": \"3377618313\", \"item_id\": \"8725040869\", \"price\": 522.86, \"options\": {\"resolution\": \"4K\", \"waterproof\": \"no\", \"color\": \"black\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 4777.75, \"payment_method_id\": \"paypal_5364164\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_VagMJLqkrzlDPOumTIt6zHEy",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 11
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Done—I've updated the delivery address for order **#W8665881** to:\n\n- **123 Elm Street, Suite 641**\n- Austin, TX **78712**\n- USA",
+      "cost": 0.00044558,
+      "generation_time_seconds": 1.301353457994992,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 12,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 5191
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thank you for your help! That’s all I needed.",
+      "cost": 0.001488,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 13,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 696
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "You’re welcome, Fatima! Glad I could help.",
+      "cost": 0.00024075999999999996,
+      "generation_time_seconds": 1.0420974159933394,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 14,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 5251
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "###STOP###",
+      "cost": 0.0014799999999999998,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 15,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 728
+      },
+      "utterance_ids": null
+    }
+  ],
+  "mode": "half_duplex",
+  "policy": null,
+  "review": null,
+  "reward_info": null,
+  "seed": 976301,
+  "speech_environment": null,
+  "task_id": "17",
+  "termination_reason": "user_stop",
+  "ticks": null,
+  "trial": null,
+  "user_cost": 0.006529999999999999,
+  "user_only_review": null
+}

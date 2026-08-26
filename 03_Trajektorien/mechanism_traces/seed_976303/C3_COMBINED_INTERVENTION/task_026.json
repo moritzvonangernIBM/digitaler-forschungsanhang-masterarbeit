@@ -1,0 +1,286 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00416778,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0014703000000000001
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "35b8a337ac3d7415d5f70edc14a28fbf4514b209a81799ed747be42aec6a3534",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "pet bed"
+              ]
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "sent to Texas by mistake"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return everything in that order except for the pet bed"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "d3063f2534bfefab6cdc65bbe3b2cb50d0a9ef0478a6b55071de30a01fa1e756",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "pet bed"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": [
+                "7602931732",
+                "9570044148"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5565470"
+            },
+            "payment_method_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "paypal_3024827"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "sent to Texas by mistake"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user"
+              ],
+              "value": "return everything in that order except for the pet bed"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "7602931732",
+          "9570044148"
+        ],
+        "order_id": "#W5565470",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_tBXYQeXHrEtKwtkB8rJNo6QJ",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 4,
+      "state_revision": 18,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_tBXYQeXHrEtKwtkB8rJNo6QJ",
+        "candidate_arguments": {
+          "item_ids": [
+            "7602931732",
+            "9570044148"
+          ],
+          "order_id": "#W5565470",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_f8B07Iwand33RJxkUjiXXTt1:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7602931732",
+              "9570044148",
+              "6857426243"
+            ],
+            "order_id": "#W5565470",
+            "source_event_ids": [
+              "tool:call_ap3wnUVLekePaExsI8zaqA3t:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1075968781",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "2747247837",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_GHFiBr66KtaZAYU5UlqCwEjN:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 5,
+      "state_revision": 18
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_tBXYQeXHrEtKwtkB8rJNo6QJ",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 6,
+      "state_revision": 18
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 7,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 19.33964529100922,
+    "prewrite_validation": 0.00045204201887827367,
+    "semantic_support": 6.900118999998085
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "26",
+  "trajectory_id": "seed_976303_C3_COMBINED_INTERVENTION_task_026"
+}

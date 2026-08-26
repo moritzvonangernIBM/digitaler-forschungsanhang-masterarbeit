@@ -1,0 +1,242 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00590855,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0008882500000000002
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 1,
+      "source_event_ids": [],
+      "state_revision": 14,
+      "total_commitments": 0,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 20,
+      "total_commitments": 0,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:25:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "98b229769f316e05dbca41d812954084201fb02df36c7b46f32de5da6d6c1c60",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:25:user"
+      ],
+      "state_revision": 26,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "the 100ml bottle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5081446110"
+        ],
+        "new_item_ids": [
+          "3399869890"
+        ],
+        "order_id": "#W1671835",
+        "payment_method_id": "paypal_6918118"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_dcQaU4njVD2ZFMwf2Vfl3Psp",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 6,
+      "state_revision": 26,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_dcQaU4njVD2ZFMwf2Vfl3Psp",
+        "candidate_arguments": {
+          "item_ids": [
+            "5081446110"
+          ],
+          "new_item_ids": [
+            "3399869890"
+          ],
+          "order_id": "#W1671835",
+          "payment_method_id": "paypal_6918118"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ivan_johnson_6036",
+          "authentication_source_event_ids": [
+            "tool:call_SRQgMGf4aPZiZwqGaCCs7KWa:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5081446110"
+            ],
+            "order_id": "#W1671835",
+            "source_event_ids": [
+              "tool:call_GtyqNOEi22xSrejCpTfV5e67:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "ivan_johnson_6036"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "6858788497",
+              "source_event_ids": [
+                "tool:call_CGHeCj8TO09BufutcTcpHdG0:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_6918118"
+            ],
+            "source_event_ids": [
+              "tool:call_oYbT7SooUo3mfOxHK54Gja8C:get_user_details"
+            ],
+            "user_id": "ivan_johnson_6036"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 7,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_dcQaU4njVD2ZFMwf2Vfl3Psp",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 8,
+      "state_revision": 26
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 9,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 29.392096416966524,
+    "prewrite_validation": 0.0003494580159895122,
+    "semantic_support": 5.41364674999204
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "77",
+  "trajectory_id": "seed_976303_C3_COMBINED_INTERVENTION_task_077"
+}

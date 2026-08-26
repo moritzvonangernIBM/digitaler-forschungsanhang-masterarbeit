@@ -1,0 +1,519 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00562072,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0009991000000000002
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "b6dd3f201a8fb0b680aeaea6025b14fb7d789ccce0091ca96ac6938cbcd927c1",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "switch it to the largest size available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "#W1671835"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "my perfume order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "f9a9c24b8323cb5de46612a5653b763252e9882ffd1296b47a1a0c00d20e51f0",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the 100ml size"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "my 30ml bottle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"switch it to the largest size available\", \"order_id\": \"#W1671835\", \"scope\": \"my perfume order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 100ml size\", \"item_descriptions\": \"my 30ml bottle\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "d746704e733a7a5fc46df4a60afb43e123a430556666b41eba2845e5eba74896",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:13:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "switch it to the largest size available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "#W1671835"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "my perfume order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the 100ml size"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "my 30ml bottle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "d746704e733a7a5fc46df4a60afb43e123a430556666b41eba2845e5eba74896",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:13:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5081446110"
+            ],
+            "new_item_ids": [
+              "3399869890"
+            ],
+            "order_id": "#W1671835",
+            "payment_method_id": "paypal_6918118"
+          },
+          "call_id": "call_dIQofOdBdfo6hoyKc4YHe3Ix",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "d746704e733a7a5fc46df4a60afb43e123a430556666b41eba2845e5eba74896",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 6,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5081446110"
+        ],
+        "new_item_ids": [
+          "3399869890"
+        ],
+        "order_id": "#W1671835",
+        "payment_method_id": "paypal_6918118"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_dIQofOdBdfo6hoyKc4YHe3Ix",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 7,
+      "state_revision": 20,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_dIQofOdBdfo6hoyKc4YHe3Ix",
+        "candidate_arguments": {
+          "item_ids": [
+            "5081446110"
+          ],
+          "new_item_ids": [
+            "3399869890"
+          ],
+          "order_id": "#W1671835",
+          "payment_method_id": "paypal_6918118"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ivan_johnson_6036",
+          "authentication_source_event_ids": [
+            "tool:call_A53IovkS5sFa9GQhlLLpAi12:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5081446110"
+            ],
+            "order_id": "#W1671835",
+            "source_event_ids": [
+              "tool:call_uhLtF0RU6muRjajkhm2mtlJZ:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "ivan_johnson_6036"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "6858788497",
+              "source_event_ids": [
+                "tool:call_him6oZxnSu2Qg9ey1DBfvgvB:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_6918118"
+            ],
+            "source_event_ids": [
+              "tool:call_7kPsx3vRM3Z3I7arzsgS6EVP:get_user_details"
+            ],
+            "user_id": "ivan_johnson_6036"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 8,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_dIQofOdBdfo6hoyKc4YHe3Ix",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 9,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "d746704e733a7a5fc46df4a60afb43e123a430556666b41eba2845e5eba74896",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"switch it to the largest size available\", \"order_id\": \"#W1671835\", \"scope\": \"my perfume order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 100ml size\", \"item_descriptions\": \"my 30ml bottle\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"5081446110\"], \"new_item_ids\": [\"3399869890\"], \"order_id\": \"#W1671835\", \"payment_method_id\": \"paypal_6918118\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "b1e3d4c2fc10a1888c126513ac6423ec578f96d1f6db33c4a410c60ea65026d2",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:13:user",
+        "message:19:user",
+        "tool:call_dIQofOdBdfo6hoyKc4YHe3Ix:exchange_delivered_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "switch it to the largest size available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "#W1671835"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "my perfume order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the 100ml size"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "my 30ml bottle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_dIQofOdBdfo6hoyKc4YHe3Ix:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5081446110"
+              ],
+              "new_item_ids": [
+                "3399869890"
+              ],
+              "order_id": "#W1671835",
+              "payment_method_id": "paypal_6918118"
+            },
+            "result": {
+              "address": {
+                "address1": "851 Pine Lane",
+                "address2": "Suite 428",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76115"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "5081446110"
+              ],
+              "exchange_new_items": [
+                "3399869890"
+              ],
+              "exchange_payment_method_id": "paypal_6918118",
+              "exchange_price_difference": -10.48,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5081446110"
+                  ],
+                  "tracking_id": [
+                    "820626058356"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5081446110",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 322.52,
+                  "product_id": "6858788497"
+                }
+              ],
+              "order_id": "#W1671835",
+              "payment_history": [
+                {
+                  "amount": 322.52,
+                  "payment_method_id": "paypal_6918118",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "ivan_johnson_6036"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b1e3d4c2fc10a1888c126513ac6423ec578f96d1f6db33c4a410c60ea65026d2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:13:user",
+        "message:19:user",
+        "tool:call_dIQofOdBdfo6hoyKc4YHe3Ix:exchange_delivered_order_items"
+      ],
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 13,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 21.669428000037442,
+    "prewrite_validation": 0.0006955400167498738,
+    "semantic_support": 5.5123634159972426
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 2,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "77",
+  "trajectory_id": "seed_976302_C3_COMBINED_INTERVENTION_task_077"
+}

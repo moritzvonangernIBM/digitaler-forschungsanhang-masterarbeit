@@ -1,0 +1,1006 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.011514710000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0020272
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "637910659a1a8725af0c6115d2110ce51fbb5af22f91a1e134f6e900632ecac5",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "purple, size S, v-neck, and preferably polyester if that’s available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"purple, size S, v-neck, and preferably polyester if that\\u2019s available\", \"order_id\": [\"#W6247578\", \"#W4776164\"], \"scope\": \"For both pending t-shirt orders (#W6247578 and #W4776164)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": [\"#W6247578\", \"#W4776164\"], \"scope\": \"For both pending t-shirt orders (#W6247578 and #W4776164)\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "0e91bd76be6ee1c72fb8bd03bc785516b9efecb29ba645ac1fc76b0e437cebe4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "purple, size S, v-neck, and preferably polyester if that’s available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0e91bd76be6ee1c72fb8bd03bc785516b9efecb29ba645ac1fc76b0e437cebe4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:26:user"
+      ],
+      "state_revision": 27
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "4ef566fe70d9719db6556415a95953f91007e945eea2264d74458e3a7ebe323a",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:24:user",
+        "message:26:user"
+      ],
+      "state_revision": 27,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "purple, size S, v-neck, and preferably polyester if that’s available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0e91bd76be6ee1c72fb8bd03bc785516b9efecb29ba645ac1fc76b0e437cebe4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 27
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3799046073"
+            ],
+            "new_item_ids": [
+              "9647292434"
+            ],
+            "order_id": "#W6247578",
+            "payment_method_id": "credit_card_9513926"
+          },
+          "call_id": "call_2musAEPmRwOqZ5qtW4Yl3JVz",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "0e91bd76be6ee1c72fb8bd03bc785516b9efecb29ba645ac1fc76b0e437cebe4",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 7,
+      "state_revision": 27
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3799046073"
+        ],
+        "new_item_ids": [
+          "9647292434"
+        ],
+        "order_id": "#W6247578",
+        "payment_method_id": "credit_card_9513926"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_2musAEPmRwOqZ5qtW4Yl3JVz",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 27,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_2musAEPmRwOqZ5qtW4Yl3JVz",
+        "candidate_arguments": {
+          "item_ids": [
+            "3799046073"
+          ],
+          "new_item_ids": [
+            "9647292434"
+          ],
+          "order_id": "#W6247578",
+          "payment_method_id": "credit_card_9513926"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_rossi_9620",
+          "authentication_source_event_ids": [
+            "tool:call_EcwQ1e8Drne3AZmSxI4W1JCy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "3799046073"
+            ],
+            "order_id": "#W6247578",
+            "source_event_ids": [
+              "tool:call_U0jvIyBwCoYYU3Ca6VGRV13K:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_rossi_9620"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_etSPuxCWvzUKsbSXH2cLMaCI:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9513926"
+            ],
+            "source_event_ids": [
+              "tool:call_E2ie28D5XWtr6bM520PMoUdz:get_user_details"
+            ],
+            "user_id": "yusuf_rossi_9620"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 9,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_2musAEPmRwOqZ5qtW4Yl3JVz",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 10,
+      "state_revision": 27
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0e91bd76be6ee1c72fb8bd03bc785516b9efecb29ba645ac1fc76b0e437cebe4",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 29
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"purple, size S, v-neck, and preferably polyester if that\\u2019s available\", \"order_id\": [\"#W6247578\", \"#W4776164\"], \"scope\": \"For both pending t-shirt orders (#W6247578 and #W4776164)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": [\"#W6247578\", \"#W4776164\"], \"scope\": \"For both pending t-shirt orders (#W6247578 and #W4776164)\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3799046073\"], \"new_item_ids\": [\"9647292434\"], \"order_id\": \"#W6247578\", \"payment_method_id\": \"credit_card_9513926\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "37881acf0f3678336a3c1e5e46128423f80698acb5398d13de4abe56ea236bcb",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:24:user",
+        "message:26:user",
+        "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items"
+      ],
+      "state_revision": 29,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "purple, size S, v-neck, and preferably polyester if that’s available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3799046073"
+              ],
+              "new_item_ids": [
+                "9647292434"
+              ],
+              "order_id": "#W6247578",
+              "payment_method_id": "credit_card_9513926"
+            },
+            "result": {
+              "address": {
+                "address1": "763 Broadway",
+                "address2": "Suite 135",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19122"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9647292434",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "purple",
+                    "material": "polyester",
+                    "size": "S",
+                    "style": "v-neck"
+                  },
+                  "price": 53.48,
+                  "product_id": "9523456873"
+                }
+              ],
+              "order_id": "#W6247578",
+              "payment_history": [
+                {
+                  "amount": 53.27,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 0.20999999999999375,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "yusuf_rossi_9620"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "37881acf0f3678336a3c1e5e46128423f80698acb5398d13de4abe56ea236bcb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:24:user",
+        "message:26:user",
+        "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items"
+      ],
+      "state_revision": 29
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8349118980"
+            ],
+            "new_item_ids": [
+              "9647292434"
+            ],
+            "order_id": "#W4776164",
+            "payment_method_id": "credit_card_9513926"
+          },
+          "call_id": "call_uZB4mE10uh4E052R0e4xcWcl",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "37881acf0f3678336a3c1e5e46128423f80698acb5398d13de4abe56ea236bcb",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 29
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8349118980"
+        ],
+        "new_item_ids": [
+          "9647292434"
+        ],
+        "order_id": "#W4776164",
+        "payment_method_id": "credit_card_9513926"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_uZB4mE10uh4E052R0e4xcWcl",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 15,
+      "state_revision": 29,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_uZB4mE10uh4E052R0e4xcWcl",
+        "candidate_arguments": {
+          "item_ids": [
+            "8349118980"
+          ],
+          "new_item_ids": [
+            "9647292434"
+          ],
+          "order_id": "#W4776164",
+          "payment_method_id": "credit_card_9513926"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_rossi_9620",
+          "authentication_source_event_ids": [
+            "tool:call_EcwQ1e8Drne3AZmSxI4W1JCy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "8349118980",
+              "6324294385"
+            ],
+            "order_id": "#W4776164",
+            "source_event_ids": [
+              "tool:call_PkWKwRiOF4ZXOhAmZq9M7xJ0:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_rossi_9620"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_etSPuxCWvzUKsbSXH2cLMaCI:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9513926"
+            ],
+            "source_event_ids": [
+              "tool:call_E2ie28D5XWtr6bM520PMoUdz:get_user_details"
+            ],
+            "user_id": "yusuf_rossi_9620"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 16,
+      "state_revision": 29
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_uZB4mE10uh4E052R0e4xcWcl",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 17,
+      "state_revision": 29
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "37881acf0f3678336a3c1e5e46128423f80698acb5398d13de4abe56ea236bcb",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 31
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"purple, size S, v-neck, and preferably polyester if that\\u2019s available\", \"order_id\": [\"#W6247578\", \"#W4776164\"], \"scope\": \"For both pending t-shirt orders (#W6247578 and #W4776164)\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": [\"#W6247578\", \"#W4776164\"], \"scope\": \"For both pending t-shirt orders (#W6247578 and #W4776164)\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3799046073\"], \"new_item_ids\": [\"9647292434\"], \"order_id\": \"#W6247578\", \"payment_method_id\": \"credit_card_9513926\"}, \"tool_name\": \"modify_pending_order_items\"}, {\"arguments\": {\"item_ids\": [\"8349118980\"], \"new_item_ids\": [\"9647292434\"], \"order_id\": \"#W4776164\", \"payment_method_id\": \"credit_card_9513926\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "4ade1e4e98821c8a28d293358ebf26461a72742d32673045f57512c04ecb7032",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:24:user",
+        "message:26:user",
+        "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items",
+        "tool:call_uZB4mE10uh4E052R0e4xcWcl:modify_pending_order_items"
+      ],
+      "state_revision": 31,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "purple, size S, v-neck, and preferably polyester if that’s available"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "#W6247578",
+                "#W4776164"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user",
+                "message:26:user"
+              ],
+              "value": "For both pending t-shirt orders (#W6247578 and #W4776164)"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3799046073"
+              ],
+              "new_item_ids": [
+                "9647292434"
+              ],
+              "order_id": "#W6247578",
+              "payment_method_id": "credit_card_9513926"
+            },
+            "result": {
+              "address": {
+                "address1": "763 Broadway",
+                "address2": "Suite 135",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19122"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9647292434",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "purple",
+                    "material": "polyester",
+                    "size": "S",
+                    "style": "v-neck"
+                  },
+                  "price": 53.48,
+                  "product_id": "9523456873"
+                }
+              ],
+              "order_id": "#W6247578",
+              "payment_history": [
+                {
+                  "amount": 53.27,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 0.20999999999999375,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "yusuf_rossi_9620"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_uZB4mE10uh4E052R0e4xcWcl:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8349118980"
+              ],
+              "new_item_ids": [
+                "9647292434"
+              ],
+              "order_id": "#W4776164",
+              "payment_method_id": "credit_card_9513926"
+            },
+            "result": {
+              "address": {
+                "address1": "763 Broadway",
+                "address2": "Suite 135",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19122"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9647292434",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "purple",
+                    "material": "polyester",
+                    "size": "S",
+                    "style": "v-neck"
+                  },
+                  "price": 53.48,
+                  "product_id": "9523456873"
+                },
+                {
+                  "item_id": "6324294385",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "9 bar",
+                    "type": "automatic"
+                  },
+                  "price": 2719.01,
+                  "product_id": "4354588079"
+                }
+              ],
+              "order_id": "#W4776164",
+              "payment_history": [
+                {
+                  "amount": 2772.44,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 0.04999999999999716,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "yusuf_rossi_9620"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "4ade1e4e98821c8a28d293358ebf26461a72742d32673045f57512c04ecb7032",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:24:user",
+        "message:26:user",
+        "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items",
+        "tool:call_uZB4mE10uh4E052R0e4xcWcl:modify_pending_order_items"
+      ],
+      "state_revision": 31
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "4ade1e4e98821c8a28d293358ebf26461a72742d32673045f57512c04ecb7032",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:24:user",
+        "message:26:user",
+        "tool:call_2musAEPmRwOqZ5qtW4Yl3JVz:modify_pending_order_items",
+        "tool:call_uZB4mE10uh4E052R0e4xcWcl:modify_pending_order_items"
+      ],
+      "state_revision": 33
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 22,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 40.38282762502786,
+    "prewrite_validation": 0.000551750126760453,
+    "semantic_support": 9.512338500993792
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 5,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "4",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_004"
+}

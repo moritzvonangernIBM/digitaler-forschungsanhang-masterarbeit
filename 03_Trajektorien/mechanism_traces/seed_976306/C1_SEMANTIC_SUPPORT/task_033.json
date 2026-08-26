@@ -1,0 +1,437 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00550587,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00122815
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "085220298c787023b344345eb094f710cad77934c85daf834d7849820c3ff280",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the office items"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return just the office items"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 4,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a6f45d1324f79f7e965725aa48468e51e8b58b2fa8f336ba1649a9079c8d7cb2",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "the Seattle one from this order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Seattle"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the office items\", \"scope\": \"return just the office items\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the Seattle one from this order\", \"city\": \"Seattle\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "cbe3af4d0107484ace3c9a1a48f714512a8d8be07af484c86b00777296f978a2",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the office items"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return just the office items"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "the Seattle one from this order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Seattle"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "cbe3af4d0107484ace3c9a1a48f714512a8d8be07af484c86b00777296f978a2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "cbe3af4d0107484ace3c9a1a48f714512a8d8be07af484c86b00777296f978a2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "517 Lakeview Drive",
+            "address2": "Suite 183",
+            "city": "Seattle",
+            "country": "USA",
+            "state": "WA",
+            "user_id": "noah_patel_6952",
+            "zip": "98195"
+          },
+          "call_id": "call_EOLmuYcBsgFwxHuEHKuLEJ1j",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "cbe3af4d0107484ace3c9a1a48f714512a8d8be07af484c86b00777296f978a2",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "cbe3af4d0107484ace3c9a1a48f714512a8d8be07af484c86b00777296f978a2",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the office items\", \"scope\": \"return just the office items\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the Seattle one from this order\", \"city\": \"Seattle\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"517 Lakeview Drive\", \"address2\": \"Suite 183\", \"city\": \"Seattle\", \"country\": \"USA\", \"state\": \"WA\", \"user_id\": \"noah_patel_6952\", \"zip\": \"98195\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "2d93dbd99cdca0113d5fcdf4926ae83b3ea4b7a2aa982cddbe35dd5e14625ef2",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_EOLmuYcBsgFwxHuEHKuLEJ1j:modify_user_address"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the office items"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return just the office items"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "the Seattle one from this order"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Seattle"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_EOLmuYcBsgFwxHuEHKuLEJ1j:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "517 Lakeview Drive",
+              "address2": "Suite 183",
+              "city": "Seattle",
+              "country": "USA",
+              "state": "WA",
+              "user_id": "noah_patel_6952",
+              "zip": "98195"
+            },
+            "result": {
+              "address": {
+                "address1": "517 Lakeview Drive",
+                "address2": "Suite 183",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98195"
+              },
+              "email": "noah.patel1792@example.com",
+              "name": {
+                "first_name": "Noah",
+                "last_name": "Patel"
+              },
+              "orders": [
+                "#W1845024",
+                "#W7043598",
+                "#W6111398"
+              ],
+              "payment_methods": {
+                "paypal_3169710": {
+                  "id": "paypal_3169710",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "noah_patel_6952"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "2d93dbd99cdca0113d5fcdf4926ae83b3ea4b7a2aa982cddbe35dd5e14625ef2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_EOLmuYcBsgFwxHuEHKuLEJ1j:modify_user_address"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "2d93dbd99cdca0113d5fcdf4926ae83b3ea4b7a2aa982cddbe35dd5e14625ef2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:15:user",
+        "tool:call_EOLmuYcBsgFwxHuEHKuLEJ1j:modify_user_address"
+      ],
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 14,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 21.557786833960563,
+    "prewrite_validation": 0.0,
+    "semantic_support": 7.083148292033002
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 4,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "33",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_033"
+}

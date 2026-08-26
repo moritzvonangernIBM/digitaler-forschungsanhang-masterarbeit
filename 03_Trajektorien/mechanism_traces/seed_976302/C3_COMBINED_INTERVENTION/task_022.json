@@ -1,0 +1,2232 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.007875130000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00262405
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 6,
+    "b_evidence_reads": 0,
+    "b_opportunities": 3,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'scope' is invalid for modify_user_address",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        },
+        {
+          "error": "record has no valid grounded fields",
+          "error_type": "ValueError",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "2ea0ed6679f41512175b27332ddb7b614f5680920c199082508c0fc835a672eb",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "for any orders I have"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "e8574c027485df096ad38af068a864b9c087fae1cf524492a2d3f9b0d5c14017",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"scope\": \"for any orders I have\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "004d3b1e937b3a00a4ebad652670012192b6d3a0b577aff4e09606dd0c27a4d9",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:15:user",
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:15:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "56f64ac3c2d04f9e5bf45fa393cb633033f00b86194981934062ff261d2c7704",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 13,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"address_reference\": \"new address\", \"city\": \"New York\", \"country\": \"USA\", \"scope\": \"for any orders I have\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"new address\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "5e09618e408c391790acaf67e5942466d234d4af8b4d68f9e8fa49b4bb042cb7",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 14,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:15:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "5e09618e408c391790acaf67e5942466d234d4af8b4d68f9e8fa49b4bb042cb7",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "101 Highway",
+            "address2": "",
+            "city": "New York",
+            "country": "USA",
+            "state": "NY",
+            "user_id": "ethan_garcia_1261",
+            "zip": "10001"
+          },
+          "call_id": "call_mfacM8l6QT4tzjp7ejbs2PR1",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "5e09618e408c391790acaf67e5942466d234d4af8b4d68f9e8fa49b4bb042cb7",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 16,
+      "state_revision": 16
+    },
+    {
+      "arguments": {
+        "address1": "101 Highway",
+        "address2": "",
+        "city": "New York",
+        "country": "USA",
+        "state": "NY",
+        "user_id": "ethan_garcia_1261",
+        "zip": "10001"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_mfacM8l6QT4tzjp7ejbs2PR1",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 17,
+      "state_revision": 16,
+      "tool_name": "modify_user_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_mfacM8l6QT4tzjp7ejbs2PR1",
+        "candidate_arguments": {
+          "address1": "101 Highway",
+          "address2": "",
+          "city": "New York",
+          "country": "USA",
+          "state": "NY",
+          "user_id": "ethan_garcia_1261",
+          "zip": "10001"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ethan_garcia_1261",
+          "authentication_source_event_ids": [
+            "tool:call_tmmHT6vTDqPgd3MyMXVOLbOi:find_user_id_by_name_zip"
+          ],
+          "order": null,
+          "products": [],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_4332117",
+              "paypal_3798357"
+            ],
+            "source_event_ids": [
+              "tool:call_FS3WUwi24fmvU4jtwPJDinFP:get_user_details"
+            ],
+            "user_id": "ethan_garcia_1261"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_user_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 18,
+      "state_revision": 16
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_mfacM8l6QT4tzjp7ejbs2PR1",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 19,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "5e09618e408c391790acaf67e5942466d234d4af8b4d68f9e8fa49b4bb042cb7",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 20,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"address_reference\": \"new address\", \"city\": \"New York\", \"country\": \"USA\", \"scope\": \"for any orders I have\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"new address\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"user_id\": \"ethan_garcia_1261\", \"zip\": \"10001\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "f159983ec9c1b11d1beabf314c2a274a1d105f425178995a5edb0e87ba44a479",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 21,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:15:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "state": "NY",
+              "user_id": "ethan_garcia_1261",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "email": "ethan.garcia8085@example.com",
+              "name": {
+                "first_name": "Ethan",
+                "last_name": "Garcia"
+              },
+              "orders": [
+                "#W4967593",
+                "#W9911714",
+                "#W5733668"
+              ],
+              "payment_methods": {
+                "gift_card_4332117": {
+                  "balance": 86.0,
+                  "id": "gift_card_4332117",
+                  "source": "gift_card"
+                },
+                "paypal_3798357": {
+                  "id": "paypal_3798357",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f159983ec9c1b11d1beabf314c2a274a1d105f425178995a5edb0e87ba44a479",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+      ],
+      "state_revision": 18
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "101 Highway",
+            "address2": "",
+            "city": "New York",
+            "country": "USA",
+            "order_id": "#W9911714",
+            "state": "NY",
+            "zip": "10001"
+          },
+          "call_id": "call_s4Qocju6ornX72h0mDQ6P11q",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "f159983ec9c1b11d1beabf314c2a274a1d105f425178995a5edb0e87ba44a479",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 23,
+      "state_revision": 18
+    },
+    {
+      "arguments": {
+        "address1": "101 Highway",
+        "address2": "",
+        "city": "New York",
+        "country": "USA",
+        "order_id": "#W9911714",
+        "state": "NY",
+        "zip": "10001"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_s4Qocju6ornX72h0mDQ6P11q",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 24,
+      "state_revision": 18,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_s4Qocju6ornX72h0mDQ6P11q",
+        "candidate_arguments": {
+          "address1": "101 Highway",
+          "address2": "",
+          "city": "New York",
+          "country": "USA",
+          "order_id": "#W9911714",
+          "state": "NY",
+          "zip": "10001"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ethan_garcia_1261",
+          "authentication_source_event_ids": [
+            "tool:call_tmmHT6vTDqPgd3MyMXVOLbOi:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2366567022",
+              "1340995114",
+              "9791469541",
+              "1763705424"
+            ],
+            "order_id": "#W9911714",
+            "source_event_ids": [
+              "tool:call_811EyvK9BmWSCfTqXHv6A2CH:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "ethan_garcia_1261"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6938111410",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_4332117",
+              "paypal_3798357"
+            ],
+            "source_event_ids": [
+              "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+            ],
+            "user_id": "ethan_garcia_1261"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 25,
+      "state_revision": 18
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_s4Qocju6ornX72h0mDQ6P11q",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 26,
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f159983ec9c1b11d1beabf314c2a274a1d105f425178995a5edb0e87ba44a479",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 27,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"address_reference\": \"new address\", \"city\": \"New York\", \"country\": \"USA\", \"scope\": \"for any orders I have\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"new address\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"user_id\": \"ethan_garcia_1261\", \"zip\": \"10001\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W9911714\", \"state\": \"NY\", \"zip\": \"10001\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "12915ae8baff558e3fb254d2c50a59a3de04799e41b6c451bd9298e79c02289f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 28,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:15:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "state": "NY",
+              "user_id": "ethan_garcia_1261",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "email": "ethan.garcia8085@example.com",
+              "name": {
+                "first_name": "Ethan",
+                "last_name": "Garcia"
+              },
+              "orders": [
+                "#W4967593",
+                "#W9911714",
+                "#W5733668"
+              ],
+              "payment_methods": {
+                "gift_card_4332117": {
+                  "balance": 86.0,
+                  "id": "gift_card_4332117",
+                  "source": "gift_card"
+                },
+                "paypal_3798357": {
+                  "id": "paypal_3798357",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W9911714",
+              "state": "NY",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "2366567022",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "1000ml",
+                    "color": "blue",
+                    "material": "stainless steel"
+                  },
+                  "price": 54.04,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "1340995114",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "full size",
+                    "switch type": "tactile"
+                  },
+                  "price": 235.13,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "9791469541",
+                  "name": "Running Shoes",
+                  "options": {
+                    "color": "yellow",
+                    "material": "synthetic",
+                    "size": "9",
+                    "sole": "rubber"
+                  },
+                  "price": 147.05,
+                  "product_id": "6938111410"
+                },
+                {
+                  "item_id": "1763705424",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand C",
+                    "kit size": "professional",
+                    "skin tone": "dark"
+                  },
+                  "price": 235.44,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W9911714",
+              "payment_history": [
+                {
+                  "amount": 671.66,
+                  "payment_method_id": "paypal_3798357",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "12915ae8baff558e3fb254d2c50a59a3de04799e41b6c451bd9298e79c02289f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 29,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 30,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "822f7cfb5e984d23a3cd6bb7c7f7964d6bbf0b50641a84d63c13f39595feb65f",
+      "sequence": 31,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the original one I had before"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "12915ae8baff558e3fb254d2c50a59a3de04799e41b6c451bd9298e79c02289f",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 32,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"address_reference\": \"new address\", \"city\": \"New York\", \"country\": \"USA\", \"scope\": \"for any orders I have\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"new address\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"address_reference\": \"the original one I had before\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"user_id\": \"ethan_garcia_1261\", \"zip\": \"10001\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W9911714\", \"state\": \"NY\", \"zip\": \"10001\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "621b45b301f62012280c7ae32abe06a2e3bc42f3bfa5af92f6867792a29c329c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 33,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:15:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the original one I had before"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "state": "NY",
+              "user_id": "ethan_garcia_1261",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "email": "ethan.garcia8085@example.com",
+              "name": {
+                "first_name": "Ethan",
+                "last_name": "Garcia"
+              },
+              "orders": [
+                "#W4967593",
+                "#W9911714",
+                "#W5733668"
+              ],
+              "payment_methods": {
+                "gift_card_4332117": {
+                  "balance": 86.0,
+                  "id": "gift_card_4332117",
+                  "source": "gift_card"
+                },
+                "paypal_3798357": {
+                  "id": "paypal_3798357",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W9911714",
+              "state": "NY",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "2366567022",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "1000ml",
+                    "color": "blue",
+                    "material": "stainless steel"
+                  },
+                  "price": 54.04,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "1340995114",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "full size",
+                    "switch type": "tactile"
+                  },
+                  "price": 235.13,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "9791469541",
+                  "name": "Running Shoes",
+                  "options": {
+                    "color": "yellow",
+                    "material": "synthetic",
+                    "size": "9",
+                    "sole": "rubber"
+                  },
+                  "price": 147.05,
+                  "product_id": "6938111410"
+                },
+                {
+                  "item_id": "1763705424",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand C",
+                    "kit size": "professional",
+                    "skin tone": "dark"
+                  },
+                  "price": 235.44,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W9911714",
+              "payment_history": [
+                {
+                  "amount": 671.66,
+                  "payment_method_id": "paypal_3798357",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "621b45b301f62012280c7ae32abe06a2e3bc42f3bfa5af92f6867792a29c329c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 34,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "621b45b301f62012280c7ae32abe06a2e3bc42f3bfa5af92f6867792a29c329c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 35,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+      ],
+      "state_revision": 24
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "667 Highland Drive",
+            "address2": "Suite 865",
+            "city": "Denver",
+            "country": "USA",
+            "state": "CO",
+            "user_id": "ethan_garcia_1261",
+            "zip": "80280"
+          },
+          "call_id": "call_lHq7MSjKRHCGJOIgizKI7FS0",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0005",
+      "card_sha256": "621b45b301f62012280c7ae32abe06a2e3bc42f3bfa5af92f6867792a29c329c",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 36,
+      "state_revision": 24
+    },
+    {
+      "arguments": {
+        "address1": "667 Highland Drive",
+        "address2": "Suite 865",
+        "city": "Denver",
+        "country": "USA",
+        "state": "CO",
+        "user_id": "ethan_garcia_1261",
+        "zip": "80280"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_lHq7MSjKRHCGJOIgizKI7FS0",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 37,
+      "state_revision": 24,
+      "tool_name": "modify_user_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_lHq7MSjKRHCGJOIgizKI7FS0",
+        "candidate_arguments": {
+          "address1": "667 Highland Drive",
+          "address2": "Suite 865",
+          "city": "Denver",
+          "country": "USA",
+          "state": "CO",
+          "user_id": "ethan_garcia_1261",
+          "zip": "80280"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ethan_garcia_1261",
+          "authentication_source_event_ids": [
+            "tool:call_tmmHT6vTDqPgd3MyMXVOLbOi:find_user_id_by_name_zip"
+          ],
+          "order": null,
+          "products": [],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_4332117",
+              "paypal_3798357"
+            ],
+            "source_event_ids": [
+              "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+            ],
+            "user_id": "ethan_garcia_1261"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_user_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 38,
+      "state_revision": 24
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_lHq7MSjKRHCGJOIgizKI7FS0",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 39,
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "621b45b301f62012280c7ae32abe06a2e3bc42f3bfa5af92f6867792a29c329c",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 40,
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"address_reference\": \"new address\", \"city\": \"New York\", \"country\": \"USA\", \"scope\": \"for any orders I have\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"101 Highway\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10001\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"new address\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"address_reference\": \"the original one I had before\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"user_id\": \"ethan_garcia_1261\", \"zip\": \"10001\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W9911714\", \"state\": \"NY\", \"zip\": \"10001\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"667 Highland Drive\", \"address2\": \"Suite 865\", \"city\": \"Denver\", \"country\": \"USA\", \"state\": \"CO\", \"user_id\": \"ethan_garcia_1261\", \"zip\": \"80280\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0006",
+      "card_sha256": "b327ee16d571e623f121617302fb00ca707d88a6ba560d2d5d40684fff049d02",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 41,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address",
+        "tool:call_lHq7MSjKRHCGJOIgizKI7FS0:modify_user_address"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:15:user"
+              ],
+              "value": "for any orders I have"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "101 Highway"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "New York"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "10001"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "new address"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the original one I had before"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "state": "NY",
+              "user_id": "ethan_garcia_1261",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "email": "ethan.garcia8085@example.com",
+              "name": {
+                "first_name": "Ethan",
+                "last_name": "Garcia"
+              },
+              "orders": [
+                "#W4967593",
+                "#W9911714",
+                "#W5733668"
+              ],
+              "payment_methods": {
+                "gift_card_4332117": {
+                  "balance": 86.0,
+                  "id": "gift_card_4332117",
+                  "source": "gift_card"
+                },
+                "paypal_3798357": {
+                  "id": "paypal_3798357",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "101 Highway",
+              "address2": "",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W9911714",
+              "state": "NY",
+              "zip": "10001"
+            },
+            "result": {
+              "address": {
+                "address1": "101 Highway",
+                "address2": "",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10001"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "2366567022",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "1000ml",
+                    "color": "blue",
+                    "material": "stainless steel"
+                  },
+                  "price": 54.04,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "1340995114",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "full size",
+                    "switch type": "tactile"
+                  },
+                  "price": 235.13,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "9791469541",
+                  "name": "Running Shoes",
+                  "options": {
+                    "color": "yellow",
+                    "material": "synthetic",
+                    "size": "9",
+                    "sole": "rubber"
+                  },
+                  "price": 147.05,
+                  "product_id": "6938111410"
+                },
+                {
+                  "item_id": "1763705424",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand C",
+                    "kit size": "professional",
+                    "skin tone": "dark"
+                  },
+                  "price": 235.44,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W9911714",
+              "payment_history": [
+                {
+                  "amount": 671.66,
+                  "payment_method_id": "paypal_3798357",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_lHq7MSjKRHCGJOIgizKI7FS0:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "667 Highland Drive",
+              "address2": "Suite 865",
+              "city": "Denver",
+              "country": "USA",
+              "state": "CO",
+              "user_id": "ethan_garcia_1261",
+              "zip": "80280"
+            },
+            "result": {
+              "address": {
+                "address1": "667 Highland Drive",
+                "address2": "Suite 865",
+                "city": "Denver",
+                "country": "USA",
+                "state": "CO",
+                "zip": "80280"
+              },
+              "email": "ethan.garcia8085@example.com",
+              "name": {
+                "first_name": "Ethan",
+                "last_name": "Garcia"
+              },
+              "orders": [
+                "#W4967593",
+                "#W9911714",
+                "#W5733668"
+              ],
+              "payment_methods": {
+                "gift_card_4332117": {
+                  "balance": 86.0,
+                  "id": "gift_card_4332117",
+                  "source": "gift_card"
+                },
+                "paypal_3798357": {
+                  "id": "paypal_3798357",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "ethan_garcia_1261"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "b327ee16d571e623f121617302fb00ca707d88a6ba560d2d5d40684fff049d02",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 42,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address",
+        "tool:call_lHq7MSjKRHCGJOIgizKI7FS0:modify_user_address"
+      ],
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "b327ee16d571e623f121617302fb00ca707d88a6ba560d2d5d40684fff049d02",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 43,
+      "source_event_ids": [
+        "message:3:user",
+        "message:15:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_mfacM8l6QT4tzjp7ejbs2PR1:modify_user_address",
+        "tool:call_s4Qocju6ornX72h0mDQ6P11q:modify_pending_order_address",
+        "tool:call_lHq7MSjKRHCGJOIgizKI7FS0:modify_user_address"
+      ],
+      "state_revision": 28
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 3,
+    "b_opportunities": 3,
+    "event_count": 44,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 23.73073766802554,
+    "prewrite_validation": 0.0007502090011257678,
+    "semantic_support": 13.625569125026232
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 6,
+    "card_injections": 13,
+    "injected_cards": 6,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "22",
+  "trajectory_id": "seed_976302_C3_COMBINED_INTERVENTION_task_022"
+}

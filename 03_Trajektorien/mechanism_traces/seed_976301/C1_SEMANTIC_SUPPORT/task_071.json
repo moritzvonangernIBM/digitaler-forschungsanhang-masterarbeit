@@ -1,0 +1,862 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.012660649999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0021935500000000003
+  },
+  "counts": {
+    "a_commitments": 5,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "0a31ea7ef70516abc1d4ae934bb4fe4760c4a1e87069ddcf9990869b237f7ef9",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"a couple of the items\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        },
+        {
+          "error": "record has no valid grounded fields",
+          "error_type": "ValueError",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "3edb6372f85a0354689d82b511aad735c1dc5dba1a44a852653d4d32cd20548f",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Black / medium / AC adapter"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "045778353ba29dcd73e16c7003cdb921608746ad493982f3f78ae6f692f17fd4",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 13,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"a couple of the items\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"Black / medium / AC adapter\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "1e790effb9744ee3573359bcd788a3e786ab423406e4538fa37766e56fa42d73",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Black / medium / AC adapter"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "1e790effb9744ee3573359bcd788a3e786ab423406e4538fa37766e56fa42d73",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "3aadd1db22a1aea0b0c829334cbdb6d82a5aac2b17c6cb00dfe5224a4472eb3f",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "total_commitments": 5,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "only modify the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "for any price difference instead of the gift card"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "1e790effb9744ee3573359bcd788a3e786ab423406e4538fa37766e56fa42d73",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"a couple of the items\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"Black / medium / AC adapter\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"only modify the backpack\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"for any price difference instead of the gift card\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "dcaefce093207af447b42983412edc62502d729441e8e24ed9695dfdb6b02616",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Black / medium / AC adapter"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "only modify the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "for any price difference instead of the gift card"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "dcaefce093207af447b42983412edc62502d729441e8e24ed9695dfdb6b02616",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "dcaefce093207af447b42983412edc62502d729441e8e24ed9695dfdb6b02616",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:23:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 23,
+      "source_event_ids": [],
+      "state_revision": 28,
+      "total_commitments": 5,
+      "validated_records": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "dcaefce093207af447b42983412edc62502d729441e8e24ed9695dfdb6b02616",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:23:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "2492465580"
+            ],
+            "new_item_ids": [
+              "5917587651"
+            ],
+            "order_id": "#W5270061",
+            "payment_method_id": "paypal_7729105"
+          },
+          "call_id": "call_469U1pBByh7fhNGjeN9vTum0",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "dcaefce093207af447b42983412edc62502d729441e8e24ed9695dfdb6b02616",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 25,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "dcaefce093207af447b42983412edc62502d729441e8e24ed9695dfdb6b02616",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 26,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"a couple of the items\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"Black / medium / AC adapter\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"only modify the backpack\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"for any price difference instead of the gift card\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"2492465580\"], \"new_item_ids\": [\"5917587651\"], \"order_id\": \"#W5270061\", \"payment_method_id\": \"paypal_7729105\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "c26634eee927586567ea1f65b59c2e881d37fed36705f500201f4e045ee53509",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 27,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:23:user",
+        "tool:call_469U1pBByh7fhNGjeN9vTum0:modify_pending_order_items"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Black / medium / AC adapter"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "only modify the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "for any price difference instead of the gift card"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_469U1pBByh7fhNGjeN9vTum0:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "2492465580"
+              ],
+              "new_item_ids": [
+                "5917587651"
+              ],
+              "order_id": "#W5270061",
+              "payment_method_id": "paypal_7729105"
+            },
+            "result": {
+              "address": {
+                "address1": "584 Sunset Drive",
+                "address2": "Suite 270",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20353"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "5810561222",
+                  "name": "Indoor Security Camera",
+                  "options": {
+                    "connectivity": "Wi-Fi",
+                    "field of view": "130 degrees",
+                    "resolution": "4K"
+                  },
+                  "price": 274.98,
+                  "product_id": "2985987096"
+                },
+                {
+                  "item_id": "7453605304",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "low",
+                    "color": "silver",
+                    "power source": "battery"
+                  },
+                  "price": 150.01,
+                  "product_id": "6817146515"
+                }
+              ],
+              "order_id": "#W5270061",
+              "payment_history": [
+                {
+                  "amount": 626.94,
+                  "payment_method_id": "gift_card_1711656",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 10.840000000000003,
+                  "payment_method_id": "paypal_7729105",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "ivan_khan_7475"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "c26634eee927586567ea1f65b59c2e881d37fed36705f500201f4e045ee53509",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 28,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:23:user",
+        "tool:call_469U1pBByh7fhNGjeN9vTum0:modify_pending_order_items"
+      ],
+      "state_revision": 30
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 29,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 49.01302566794038,
+    "prewrite_validation": 0.0,
+    "semantic_support": 10.953533706982853
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 13,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "71",
+  "trajectory_id": "seed_976301_C1_SEMANTIC_SUPPORT_task_071"
+}

@@ -1,0 +1,641 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.007004449999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0024764
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "c283df81af376f5074766ac137f4a73e9e17422ef06719768c8f4fbcf8740720",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "highest resolution, waterproof camera I can for the same price I paid before"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a camera I bought"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 4,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        },
+        {
+          "error": "record has no valid grounded fields",
+          "error_type": "ValueError",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "0421e92ecd7f6a45f3f3454b2dbb82529472ff9081669bb470db8ed1f1b00d78",
+      "sequence": 5,
+      "source_event_ids": [],
+      "state_revision": 12,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "7f1f2327dbadb017cc95f207f29a3686c4fb1e7f82d3a7e2252fe47e2d48915d",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": [
+                "the highest-resolution waterproof one",
+                "for around the same price"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the current camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"highest resolution, waterproof camera I can for the same price I paid before\", \"scope\": \"a camera I bought\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"the highest-resolution waterproof one\", \"for around the same price\"], \"item_descriptions\": \"the current camera\", \"scope\": \"that order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "254bae5f7384ea833fedc31460adc61921b629f4336774d1c37e085c39fc886d",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "highest resolution, waterproof camera I can for the same price I paid before"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a camera I bought"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": [
+                "the highest-resolution waterproof one",
+                "for around the same price"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the current camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "254bae5f7384ea833fedc31460adc61921b629f4336774d1c37e085c39fc886d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "254bae5f7384ea833fedc31460adc61921b629f4336774d1c37e085c39fc886d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "254bae5f7384ea833fedc31460adc61921b629f4336774d1c37e085c39fc886d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "1810466394"
+            ],
+            "new_item_ids": [
+              "6117189161"
+            ],
+            "order_id": "#W7464385",
+            "payment_method_id": "paypal_1261484"
+          },
+          "call_id": "call_QWXJ0cIeCizzd74SGFVixW1X",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "254bae5f7384ea833fedc31460adc61921b629f4336774d1c37e085c39fc886d",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 12,
+      "state_revision": 24
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "1810466394"
+        ],
+        "new_item_ids": [
+          "6117189161"
+        ],
+        "order_id": "#W7464385",
+        "payment_method_id": "paypal_1261484"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_QWXJ0cIeCizzd74SGFVixW1X",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 24,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_QWXJ0cIeCizzd74SGFVixW1X",
+        "candidate_arguments": {
+          "item_ids": [
+            "1810466394"
+          ],
+          "new_item_ids": [
+            "6117189161"
+          ],
+          "order_id": "#W7464385",
+          "payment_method_id": "paypal_1261484"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "james_sanchez_3954",
+          "authentication_source_event_ids": [
+            "tool:call_8Cpn6dbj5gmwnoD7lNAO4nRS:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "1810466394"
+            ],
+            "order_id": "#W7464385",
+            "source_event_ids": [
+              "tool:call_092VJIU3zsfU8mRM0Q1naYJK:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "james_sanchez_3954"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "3377618313",
+              "source_event_ids": [
+                "tool:call_BhLry7P90QB6PcUzsvNh66eF:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_1261484"
+            ],
+            "source_event_ids": [
+              "tool:call_SS55t8SVDzmlxKJoUuJ1Mybf:get_user_details"
+            ],
+            "user_id": "james_sanchez_3954"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 14,
+      "state_revision": 24
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_QWXJ0cIeCizzd74SGFVixW1X",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 15,
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "254bae5f7384ea833fedc31460adc61921b629f4336774d1c37e085c39fc886d",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 16,
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"highest resolution, waterproof camera I can for the same price I paid before\", \"scope\": \"a camera I bought\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": [\"the highest-resolution waterproof one\", \"for around the same price\"], \"item_descriptions\": \"the current camera\", \"scope\": \"that order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"1810466394\"], \"new_item_ids\": [\"6117189161\"], \"order_id\": \"#W7464385\", \"payment_method_id\": \"paypal_1261484\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "399f5190bf6b052fdebecf0e31beed6e5abe7bbec6bc6635fe9f8a1be2c12689",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_QWXJ0cIeCizzd74SGFVixW1X:modify_pending_order_items"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "highest resolution, waterproof camera I can for the same price I paid before"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a camera I bought"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": [
+                "the highest-resolution waterproof one",
+                "for around the same price"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the current camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_QWXJ0cIeCizzd74SGFVixW1X:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "1810466394"
+              ],
+              "new_item_ids": [
+                "6117189161"
+              ],
+              "order_id": "#W7464385",
+              "payment_method_id": "paypal_1261484"
+            },
+            "result": {
+              "address": {
+                "address1": "219 Park Avenue",
+                "address2": "Suite 437",
+                "city": "Chicago",
+                "country": "USA",
+                "state": "IL",
+                "zip": "60623"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6117189161",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "silver",
+                    "resolution": "4K",
+                    "waterproof": "yes"
+                  },
+                  "price": 481.5,
+                  "product_id": "3377618313"
+                }
+              ],
+              "order_id": "#W7464385",
+              "payment_history": [
+                {
+                  "amount": 502.28,
+                  "payment_method_id": "paypal_1261484",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 20.779999999999973,
+                  "payment_method_id": "paypal_1261484",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "james_sanchez_3954"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "399f5190bf6b052fdebecf0e31beed6e5abe7bbec6bc6635fe9f8a1be2c12689",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_QWXJ0cIeCizzd74SGFVixW1X:modify_pending_order_items"
+      ],
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "399f5190bf6b052fdebecf0e31beed6e5abe7bbec6bc6635fe9f8a1be2c12689",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_QWXJ0cIeCizzd74SGFVixW1X:modify_pending_order_items"
+      ],
+      "state_revision": 28
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 20,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 33.56525283202063,
+    "prewrite_validation": 0.0005606249906122684,
+    "semantic_support": 13.12568212498445
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 5,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "64",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_064"
+}

@@ -1,0 +1,743 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.012009990000000002,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0026939000000000004
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "fa02dd757cf489a9b72e7604da9fc292353960b5557b7e7986bf5295fa1e38e9",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "9944d61691801a300f53473b81dd911edcd69817726bf5927b437dfaf890b3db",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user"
+      ],
+      "state_revision": 28,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:32:user"
+      ],
+      "state_revision": 33
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "acd31b5547a2fc967e8f8744edf042065aed7fecb0acd5790389112182c8233f",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:32:user"
+      ],
+      "state_revision": 33,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "low brightness, AC adapter, silver",
+                "1000ml, stainless steel, black"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "1569765161",
+                "7661609223"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": [\"a water bottle\", \"a desk lamp\"], \"scope\": \"a couple of items I bought recently\\u2014a water bottle and a desk lamp\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"low brightness, AC adapter, silver\", \"1000ml, stainless steel, black\"], \"item_ids\": [\"1569765161\", \"7661609223\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "d487f0062d5e1d3e999c2d140b1287670228c0f74d29ecbe9897ce2deaa5de67",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user",
+        "message:32:user"
+      ],
+      "state_revision": 33,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "low brightness, AC adapter, silver",
+                "1000ml, stainless steel, black"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "1569765161",
+                "7661609223"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "d487f0062d5e1d3e999c2d140b1287670228c0f74d29ecbe9897ce2deaa5de67",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user",
+        "message:32:user"
+      ],
+      "state_revision": 33
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:34:user"
+      ],
+      "state_revision": 35
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "1444ef251399227e2730b5ad95f2d03bb51a9b7c7b5672ad291839dcbaf79122",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user",
+        "message:34:user"
+      ],
+      "state_revision": 35,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:34:user"
+              ],
+              "value": "low brightness, AC adapter, silver"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:27:user",
+                "message:34:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:34:user"
+              ],
+              "value": [
+                "1569765161"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "d487f0062d5e1d3e999c2d140b1287670228c0f74d29ecbe9897ce2deaa5de67",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 35
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"low brightness, AC adapter, silver\", \"item_descriptions\": [\"a water bottle\", \"a desk lamp\"], \"item_ids\": [\"1569765161\"], \"scope\": \"a couple of items I bought recently\\u2014a water bottle and a desk lamp\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"low brightness, AC adapter, silver\", \"1000ml, stainless steel, black\"], \"item_ids\": [\"1569765161\", \"7661609223\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "9f0c7c6f77dae594535f3dc39d7a40145f849baf34d7b61e7c92ddf3aa873f70",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:34:user",
+        "message:1:user",
+        "message:27:user",
+        "message:32:user"
+      ],
+      "state_revision": 35,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:34:user"
+              ],
+              "value": "low brightness, AC adapter, silver"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:27:user",
+                "message:34:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:34:user"
+              ],
+              "value": [
+                "1569765161"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "low brightness, AC adapter, silver",
+                "1000ml, stainless steel, black"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "1569765161",
+                "7661609223"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9f0c7c6f77dae594535f3dc39d7a40145f849baf34d7b61e7c92ddf3aa873f70",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:34:user",
+        "message:1:user",
+        "message:27:user",
+        "message:32:user"
+      ],
+      "state_revision": 35
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9f0c7c6f77dae594535f3dc39d7a40145f849baf34d7b61e7c92ddf3aa873f70",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:34:user",
+        "message:1:user",
+        "message:27:user",
+        "message:32:user"
+      ],
+      "state_revision": 37
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8384507844"
+            ],
+            "new_item_ids": [
+              "1569765161"
+            ],
+            "order_id": "#W6390527",
+            "payment_method_id": "paypal_7644869"
+          },
+          "call_id": "call_x3tFUelmzY4mz0E7H79RBPnc",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "9f0c7c6f77dae594535f3dc39d7a40145f849baf34d7b61e7c92ddf3aa873f70",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 37
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9f0c7c6f77dae594535f3dc39d7a40145f849baf34d7b61e7c92ddf3aa873f70",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 15,
+      "state_revision": 39
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"low brightness, AC adapter, silver\", \"item_descriptions\": [\"a water bottle\", \"a desk lamp\"], \"item_ids\": [\"1569765161\"], \"scope\": \"a couple of items I bought recently\\u2014a water bottle and a desk lamp\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"low brightness, AC adapter, silver\", \"1000ml, stainless steel, black\"], \"item_ids\": [\"1569765161\", \"7661609223\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"8384507844\"], \"new_item_ids\": [\"1569765161\"], \"order_id\": \"#W6390527\", \"payment_method_id\": \"paypal_7644869\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "5459722f6be4511ac9e148db4fd434372dae3a5b8aa14174d54dfa8232736ff5",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 16,
+      "source_event_ids": [
+        "message:34:user",
+        "message:1:user",
+        "message:27:user",
+        "message:32:user",
+        "tool:call_x3tFUelmzY4mz0E7H79RBPnc:exchange_delivered_order_items"
+      ],
+      "state_revision": 39,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:34:user"
+              ],
+              "value": "low brightness, AC adapter, silver"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:27:user",
+                "message:34:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:34:user"
+              ],
+              "value": [
+                "1569765161"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "low brightness, AC adapter, silver",
+                "1000ml, stainless steel, black"
+              ]
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:32:user"
+              ],
+              "value": [
+                "1569765161",
+                "7661609223"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_x3tFUelmzY4mz0E7H79RBPnc:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8384507844"
+              ],
+              "new_item_ids": [
+                "1569765161"
+              ],
+              "order_id": "#W6390527",
+              "payment_method_id": "paypal_7644869"
+            },
+            "result": {
+              "address": {
+                "address1": "317 Elm Street",
+                "address2": "Suite 461",
+                "city": "Charlotte",
+                "country": "USA",
+                "state": "NC",
+                "zip": "28236"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "8384507844"
+              ],
+              "exchange_new_items": [
+                "1569765161"
+              ],
+              "exchange_payment_method_id": "paypal_7644869",
+              "exchange_price_difference": 5.08,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "8384507844",
+                    "1615379700",
+                    "8538875209"
+                  ],
+                  "tracking_id": [
+                    "745984883162"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "8384507844",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "medium",
+                    "color": "white",
+                    "power source": "USB"
+                  },
+                  "price": 137.94,
+                  "product_id": "6817146515"
+                },
+                {
+                  "item_id": "1615379700",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "10",
+                    "waterproof": "yes"
+                  },
+                  "price": 253.89,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "8538875209",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "500ml",
+                    "color": "black",
+                    "material": "glass"
+                  },
+                  "price": 45.13,
+                  "product_id": "8310926033"
+                }
+              ],
+              "order_id": "#W6390527",
+              "payment_history": [
+                {
+                  "amount": 436.96,
+                  "payment_method_id": "paypal_7644869",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "mei_kovacs_8020"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "5459722f6be4511ac9e148db4fd434372dae3a5b8aa14174d54dfa8232736ff5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:34:user",
+        "message:1:user",
+        "message:27:user",
+        "message:32:user",
+        "tool:call_x3tFUelmzY4mz0E7H79RBPnc:exchange_delivered_order_items"
+      ],
+      "state_revision": 39
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 18,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 46.23565883404808,
+    "prewrite_validation": 0.0,
+    "semantic_support": 15.475586041982751
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 4,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "7",
+  "trajectory_id": "seed_976305_C1_SEMANTIC_SUPPORT_task_007"
+}

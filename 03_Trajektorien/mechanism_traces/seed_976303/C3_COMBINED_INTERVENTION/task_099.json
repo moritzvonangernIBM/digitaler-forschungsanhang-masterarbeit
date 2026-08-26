@@ -1,0 +1,1154 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.011052860000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0029587500000000004
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 4,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 3,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 2
+        }
+      ],
+      "response_sha256": "5ab844c9fea90ce8262e01d86fe457c27179859e7e22bf4b36228b195eeabcef",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "larger frame size—switching to a mountain bike is fine"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "kid’s bicycle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my kid’s bicycle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "same difficulty but with 1000 more pieces, and I’d prefer an art theme over animals"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "jigsaw puzzle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the jigsaw puzzle from the same order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "just the skateboard from one of my orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"larger frame size\\u2014switching to a mountain bike is fine\", \"item_descriptions\": \"kid\\u2019s bicycle\", \"scope\": \"my kid\\u2019s bicycle\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"same difficulty but with 1000 more pieces, and I\\u2019d prefer an art theme over animals\", \"item_descriptions\": \"jigsaw puzzle\", \"scope\": \"the jigsaw puzzle from the same order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"just the skateboard from one of my orders\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "larger frame size—switching to a mountain bike is fine"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "kid’s bicycle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my kid’s bicycle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "same difficulty but with 1000 more pieces, and I’d prefer an art theme over animals"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "jigsaw puzzle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the jigsaw puzzle from the same order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "just the skateboard from one of my orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "8ac2d7eefeb5fb73395394afa798abe189be30f8129ec400f94fcf36fde754c8",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "larger frame size—switching to a mountain bike is fine"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "kid’s bicycle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "my kid’s bicycle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "7758198585",
+              "4068787148"
+            ],
+            "new_item_ids": [
+              "5606522780",
+              "5546244844"
+            ],
+            "order_id": "#W3916020",
+            "payment_method_id": "credit_card_3951670"
+          },
+          "call_id": "call_8Bv4kG536UEheqva00gGjmSH",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "7758198585",
+          "4068787148"
+        ],
+        "new_item_ids": [
+          "5606522780",
+          "5546244844"
+        ],
+        "order_id": "#W3916020",
+        "payment_method_id": "credit_card_3951670"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_8Bv4kG536UEheqva00gGjmSH",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 20,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_8Bv4kG536UEheqva00gGjmSH",
+        "candidate_arguments": {
+          "item_ids": [
+            "7758198585",
+            "4068787148"
+          ],
+          "new_item_ids": [
+            "5606522780",
+            "5546244844"
+          ],
+          "order_id": "#W3916020",
+          "payment_method_id": "credit_card_3951670"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "sofia_li_9219",
+          "authentication_source_event_ids": [
+            "tool:call_3G6vftnXv8L18S7F0j02ABbR:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4068787148",
+              "7758198585"
+            ],
+            "order_id": "#W3916020",
+            "source_event_ids": [
+              "tool:call_l64Yys6HdBkSWO153jJ4p28b:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "sofia_li_9219"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1808611083",
+              "source_event_ids": [
+                "tool:call_jZpo8YEhITdJYOg8pGRXiiuG:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "9783735446",
+              "source_event_ids": [
+                "tool:call_gUDXqXclXh4OhpiAJqVcRFkX:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3951670",
+              "credit_card_8105988",
+              "paypal_8194385"
+            ],
+            "source_event_ids": [
+              "tool:call_wkXQW7bDQ5G1tiRTxiIBiiD9:get_user_details"
+            ],
+            "user_id": "sofia_li_9219"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 15,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_8Bv4kG536UEheqva00gGjmSH",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 16,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b77282c23b6dca8945b9cb9b4d1359c09c032fe16d1c66f315e3a8306e1b5a3e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 17,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"larger frame size\\u2014switching to a mountain bike is fine\", \"item_descriptions\": \"kid\\u2019s bicycle\", \"scope\": \"my kid\\u2019s bicycle\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"same difficulty but with 1000 more pieces, and I\\u2019d prefer an art theme over animals\", \"item_descriptions\": \"jigsaw puzzle\", \"scope\": \"the jigsaw puzzle from the same order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"just the skateboard from one of my orders\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"7758198585\", \"4068787148\"], \"new_item_ids\": [\"5606522780\", \"5546244844\"], \"order_id\": \"#W3916020\", \"payment_method_id\": \"credit_card_3951670\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "563c5bd0495237cc56e8b0252951a8c6f0058f73bdb1fb0f7b74b675612dea0b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_8Bv4kG536UEheqva00gGjmSH:exchange_delivered_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "larger frame size—switching to a mountain bike is fine"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "kid’s bicycle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "my kid’s bicycle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "same difficulty but with 1000 more pieces, and I’d prefer an art theme over animals"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "jigsaw puzzle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the jigsaw puzzle from the same order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "just the skateboard from one of my orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8Bv4kG536UEheqva00gGjmSH:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "7758198585",
+                "4068787148"
+              ],
+              "new_item_ids": [
+                "5606522780",
+                "5546244844"
+              ],
+              "order_id": "#W3916020",
+              "payment_method_id": "credit_card_3951670"
+            },
+            "result": {
+              "address": {
+                "address1": "285 Elm Street",
+                "address2": "Suite 121",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76155"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "4068787148",
+                "7758198585"
+              ],
+              "exchange_new_items": [
+                "5546244844",
+                "5606522780"
+              ],
+              "exchange_payment_method_id": "credit_card_3951670",
+              "exchange_price_difference": -14.96,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4068787148",
+                    "7758198585"
+                  ],
+                  "tracking_id": [
+                    "580826001577"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4068787148",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "500",
+                    "theme": "art"
+                  },
+                  "price": 52.01,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "7758198585",
+                  "name": "Bicycle",
+                  "options": {
+                    "color": "green",
+                    "frame size": "medium",
+                    "type": "road"
+                  },
+                  "price": 1917.21,
+                  "product_id": "9783735446"
+                }
+              ],
+              "order_id": "#W3916020",
+              "payment_history": [
+                {
+                  "amount": 1969.22,
+                  "payment_method_id": "credit_card_8105988",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_li_9219"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "563c5bd0495237cc56e8b0252951a8c6f0058f73bdb1fb0f7b74b675612dea0b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_8Bv4kG536UEheqva00gGjmSH:exchange_delivered_order_items"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5996159312"
+            ],
+            "new_item_ids": [
+              "8363011723"
+            ],
+            "order_id": "#W4689314",
+            "payment_method_id": "credit_card_3951670"
+          },
+          "call_id": "call_wOChDoLTeDTtIOnNb5z2AFMb",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "563c5bd0495237cc56e8b0252951a8c6f0058f73bdb1fb0f7b74b675612dea0b",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 20,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5996159312"
+        ],
+        "new_item_ids": [
+          "8363011723"
+        ],
+        "order_id": "#W4689314",
+        "payment_method_id": "credit_card_3951670"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_wOChDoLTeDTtIOnNb5z2AFMb",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 22,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_wOChDoLTeDTtIOnNb5z2AFMb",
+        "candidate_arguments": {
+          "item_ids": [
+            "5996159312"
+          ],
+          "new_item_ids": [
+            "8363011723"
+          ],
+          "order_id": "#W4689314",
+          "payment_method_id": "credit_card_3951670"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "sofia_li_9219",
+          "authentication_source_event_ids": [
+            "tool:call_3G6vftnXv8L18S7F0j02ABbR:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5996159312"
+            ],
+            "order_id": "#W4689314",
+            "source_event_ids": [
+              "tool:call_bE8zTygwnA31SI6J8edm1981:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "sofia_li_9219"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "8940227892",
+              "source_event_ids": [
+                "tool:call_FwzxMRvKbD6UMuGhWLnd6SLB:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3951670",
+              "credit_card_8105988",
+              "paypal_8194385"
+            ],
+            "source_event_ids": [
+              "tool:call_wkXQW7bDQ5G1tiRTxiIBiiD9:get_user_details"
+            ],
+            "user_id": "sofia_li_9219"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 22,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_wOChDoLTeDTtIOnNb5z2AFMb",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 23,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "563c5bd0495237cc56e8b0252951a8c6f0058f73bdb1fb0f7b74b675612dea0b",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 24,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"larger frame size\\u2014switching to a mountain bike is fine\", \"item_descriptions\": \"kid\\u2019s bicycle\", \"scope\": \"my kid\\u2019s bicycle\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"same difficulty but with 1000 more pieces, and I\\u2019d prefer an art theme over animals\", \"item_descriptions\": \"jigsaw puzzle\", \"scope\": \"the jigsaw puzzle from the same order\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"just the skateboard from one of my orders\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"7758198585\", \"4068787148\"], \"new_item_ids\": [\"5606522780\", \"5546244844\"], \"order_id\": \"#W3916020\", \"payment_method_id\": \"credit_card_3951670\"}, \"tool_name\": \"exchange_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"5996159312\"], \"new_item_ids\": [\"8363011723\"], \"order_id\": \"#W4689314\", \"payment_method_id\": \"credit_card_3951670\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "2c17b5eb4403c28d8c5754f2bcbd61b396ed6151866f7f69eefe37a3501c3a74",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_8Bv4kG536UEheqva00gGjmSH:exchange_delivered_order_items",
+        "tool:call_wOChDoLTeDTtIOnNb5z2AFMb:exchange_delivered_order_items"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "larger frame size—switching to a mountain bike is fine"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "kid’s bicycle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "my kid’s bicycle"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "same difficulty but with 1000 more pieces, and I’d prefer an art theme over animals"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "jigsaw puzzle"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the jigsaw puzzle from the same order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "just the skateboard from one of my orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8Bv4kG536UEheqva00gGjmSH:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "7758198585",
+                "4068787148"
+              ],
+              "new_item_ids": [
+                "5606522780",
+                "5546244844"
+              ],
+              "order_id": "#W3916020",
+              "payment_method_id": "credit_card_3951670"
+            },
+            "result": {
+              "address": {
+                "address1": "285 Elm Street",
+                "address2": "Suite 121",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76155"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "4068787148",
+                "7758198585"
+              ],
+              "exchange_new_items": [
+                "5546244844",
+                "5606522780"
+              ],
+              "exchange_payment_method_id": "credit_card_3951670",
+              "exchange_price_difference": -14.96,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4068787148",
+                    "7758198585"
+                  ],
+                  "tracking_id": [
+                    "580826001577"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4068787148",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "500",
+                    "theme": "art"
+                  },
+                  "price": 52.01,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "7758198585",
+                  "name": "Bicycle",
+                  "options": {
+                    "color": "green",
+                    "frame size": "medium",
+                    "type": "road"
+                  },
+                  "price": 1917.21,
+                  "product_id": "9783735446"
+                }
+              ],
+              "order_id": "#W3916020",
+              "payment_history": [
+                {
+                  "amount": 1969.22,
+                  "payment_method_id": "credit_card_8105988",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_li_9219"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_wOChDoLTeDTtIOnNb5z2AFMb:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5996159312"
+              ],
+              "new_item_ids": [
+                "8363011723"
+              ],
+              "order_id": "#W4689314",
+              "payment_method_id": "credit_card_3951670"
+            },
+            "result": {
+              "address": {
+                "address1": "786 Elm Street",
+                "address2": "Suite 546",
+                "city": "San Antonio",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78260"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "5996159312"
+              ],
+              "exchange_new_items": [
+                "8363011723"
+              ],
+              "exchange_payment_method_id": "credit_card_3951670",
+              "exchange_price_difference": -71.59,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5996159312"
+                  ],
+                  "tracking_id": [
+                    "689944590938"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5996159312",
+                  "name": "Digital Camera",
+                  "options": {
+                    "resolution": "24MP",
+                    "storage": "SD card",
+                    "zoom": "3x"
+                  },
+                  "price": 2895.55,
+                  "product_id": "8940227892"
+                }
+              ],
+              "order_id": "#W4689314",
+              "payment_history": [
+                {
+                  "amount": 2895.55,
+                  "payment_method_id": "credit_card_8105988",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "sofia_li_9219"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "2c17b5eb4403c28d8c5754f2bcbd61b396ed6151866f7f69eefe37a3501c3a74",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "tool:call_8Bv4kG536UEheqva00gGjmSH:exchange_delivered_order_items",
+        "tool:call_wOChDoLTeDTtIOnNb5z2AFMb:exchange_delivered_order_items"
+      ],
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 27,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 43.542366333975224,
+    "prewrite_validation": 0.0004776659916387871,
+    "semantic_support": 15.253803667001193
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 10,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "99",
+  "trajectory_id": "seed_976303_C3_COMBINED_INTERVENTION_task_099"
+}

@@ -1,0 +1,1980 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.010450160000000002,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0017139000000000002
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 6,
+    "b_evidence_reads": 0,
+    "b_opportunities": 4,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "2c0d4f91aa6e56d09725092bde9380a7aea1845fc32c8b42322ad86e8a769fe6",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "d16ad7ac998c5f4b040794d5ea95a6bc0d190ebb336b374219e1acd574ae25c2",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"that one\", \"scope\": \"some addresses related to my orders and account\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address I want is already in one of my pending orders\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 8,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "0d302f700847b3682ac748c7a536f0228fea157217dbb79c18611568901d4f07",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the address from my Washington DC order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3d2f7556c65b796253ac0c10b34d795337d8128fe24c77038e2bd19e59b3db40",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"that one\", \"scope\": \"some addresses related to my orders and account\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address I want is already in one of my pending orders\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the address from my Washington DC order\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "962077ab31f8c378171b6ca79d3cbb06349b99e8cf59a52d1a55cb1b06437d69",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the address from my Washington DC order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "962077ab31f8c378171b6ca79d3cbb06349b99e8cf59a52d1a55cb1b06437d69",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "962077ab31f8c378171b6ca79d3cbb06349b99e8cf59a52d1a55cb1b06437d69",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "565 Maple Drive",
+            "address2": "Suite 501",
+            "city": "Washington",
+            "country": "USA",
+            "state": "DC",
+            "user_id": "yusuf_hernandez_6785",
+            "zip": "20307"
+          },
+          "call_id": "call_7clqdyt2H6PFWAwqeCOZVT4x",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "962077ab31f8c378171b6ca79d3cbb06349b99e8cf59a52d1a55cb1b06437d69",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 24
+    },
+    {
+      "arguments": {
+        "address1": "565 Maple Drive",
+        "address2": "Suite 501",
+        "city": "Washington",
+        "country": "USA",
+        "state": "DC",
+        "user_id": "yusuf_hernandez_6785",
+        "zip": "20307"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_7clqdyt2H6PFWAwqeCOZVT4x",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 19,
+      "state_revision": 24,
+      "tool_name": "modify_user_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_7clqdyt2H6PFWAwqeCOZVT4x",
+        "candidate_arguments": {
+          "address1": "565 Maple Drive",
+          "address2": "Suite 501",
+          "city": "Washington",
+          "country": "USA",
+          "state": "DC",
+          "user_id": "yusuf_hernandez_6785",
+          "zip": "20307"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_hernandez_6785",
+          "authentication_source_event_ids": [
+            "tool:call_BUxjBDUwgnkCXs93xigYZDGv:find_user_id_by_email"
+          ],
+          "order": null,
+          "products": [],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7529813"
+            ],
+            "source_event_ids": [
+              "tool:call_kizTTCgjpmWSGEbA6iUWPCYN:get_user_details"
+            ],
+            "user_id": "yusuf_hernandez_6785"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_user_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 20,
+      "state_revision": 24
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_7clqdyt2H6PFWAwqeCOZVT4x",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 21,
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "962077ab31f8c378171b6ca79d3cbb06349b99e8cf59a52d1a55cb1b06437d69",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 22,
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"that one\", \"scope\": \"some addresses related to my orders and account\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address I want is already in one of my pending orders\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the address from my Washington DC order\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"user_id\": \"yusuf_hernandez_6785\", \"zip\": \"20307\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "1b6fb1fb7aa24237bf8b834ba3a3fc66e19d9bf7616cfe621a99d545b372e4cf",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 23,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the address from my Washington DC order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "state": "DC",
+              "user_id": "yusuf_hernandez_6785",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "email": "yusuf.hernandez8836@example.com",
+              "name": {
+                "first_name": "Yusuf",
+                "last_name": "Hernandez"
+              },
+              "orders": [
+                "#W2166301",
+                "#W2466703",
+                "#W6832752",
+                "#W7739115",
+                "#W1994898"
+              ],
+              "payment_methods": {
+                "paypal_7529813": {
+                  "id": "paypal_7529813",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "1b6fb1fb7aa24237bf8b834ba3a3fc66e19d9bf7616cfe621a99d545b372e4cf",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "565 Maple Drive",
+            "address2": "Suite 501",
+            "city": "Washington",
+            "country": "USA",
+            "order_id": "#W2166301",
+            "state": "DC",
+            "zip": "20307"
+          },
+          "call_id": "call_pyS4R7w3JQghYebn9zHhtpwx",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "1b6fb1fb7aa24237bf8b834ba3a3fc66e19d9bf7616cfe621a99d545b372e4cf",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 25,
+      "state_revision": 26
+    },
+    {
+      "arguments": {
+        "address1": "565 Maple Drive",
+        "address2": "Suite 501",
+        "city": "Washington",
+        "country": "USA",
+        "order_id": "#W2166301",
+        "state": "DC",
+        "zip": "20307"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_pyS4R7w3JQghYebn9zHhtpwx",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 26,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_pyS4R7w3JQghYebn9zHhtpwx",
+        "candidate_arguments": {
+          "address1": "565 Maple Drive",
+          "address2": "Suite 501",
+          "city": "Washington",
+          "country": "USA",
+          "order_id": "#W2166301",
+          "state": "DC",
+          "zip": "20307"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_hernandez_6785",
+          "authentication_source_event_ids": [
+            "tool:call_BUxjBDUwgnkCXs93xigYZDGv:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "3330317167",
+              "1775591963",
+              "3624655057"
+            ],
+            "order_id": "#W2166301",
+            "source_event_ids": [
+              "tool:call_yoMfXMnuAnKupRrDs7a4xwza:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_hernandez_6785"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "5713490933",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6938111410",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9783735446",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7529813"
+            ],
+            "source_event_ids": [
+              "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+            ],
+            "user_id": "yusuf_hernandez_6785"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 27,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_pyS4R7w3JQghYebn9zHhtpwx",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 28,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "1b6fb1fb7aa24237bf8b834ba3a3fc66e19d9bf7616cfe621a99d545b372e4cf",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 29,
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"that one\", \"scope\": \"some addresses related to my orders and account\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address I want is already in one of my pending orders\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the address from my Washington DC order\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"user_id\": \"yusuf_hernandez_6785\", \"zip\": \"20307\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"order_id\": \"#W2166301\", \"state\": \"DC\", \"zip\": \"20307\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "9e3532bd7e43bc0da1f509cde060d6e36e16df1e96d534d04321d54522ffa12e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 30,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address",
+        "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the address from my Washington DC order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "state": "DC",
+              "user_id": "yusuf_hernandez_6785",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "email": "yusuf.hernandez8836@example.com",
+              "name": {
+                "first_name": "Yusuf",
+                "last_name": "Hernandez"
+              },
+              "orders": [
+                "#W2166301",
+                "#W2466703",
+                "#W6832752",
+                "#W7739115",
+                "#W1994898"
+              ],
+              "payment_methods": {
+                "paypal_7529813": {
+                  "id": "paypal_7529813",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "order_id": "#W2166301",
+              "state": "DC",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3330317167",
+                  "name": "Gaming Mouse",
+                  "options": {
+                    "color": "black",
+                    "connectivity": "wired",
+                    "sensor type": "optical"
+                  },
+                  "price": 137.32,
+                  "product_id": "5713490933"
+                },
+                {
+                  "item_id": "1775591963",
+                  "name": "Running Shoes",
+                  "options": {
+                    "color": "white",
+                    "material": "leather",
+                    "size": "10",
+                    "sole": "EVA"
+                  },
+                  "price": 154.75,
+                  "product_id": "6938111410"
+                },
+                {
+                  "item_id": "3624655057",
+                  "name": "Bicycle",
+                  "options": {
+                    "color": "blue",
+                    "frame size": "medium",
+                    "type": "road"
+                  },
+                  "price": 2195.04,
+                  "product_id": "9783735446"
+                }
+              ],
+              "order_id": "#W2166301",
+              "payment_history": [
+                {
+                  "amount": 2487.11,
+                  "payment_method_id": "paypal_7529813",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "9e3532bd7e43bc0da1f509cde060d6e36e16df1e96d534d04321d54522ffa12e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 31,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address",
+        "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "565 Maple Drive",
+            "address2": "Suite 501",
+            "city": "Washington",
+            "country": "USA",
+            "order_id": "#W2466703",
+            "state": "DC",
+            "zip": "20307"
+          },
+          "call_id": "call_IdwhqCJJabl4SLVqufdqO9vn",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "9e3532bd7e43bc0da1f509cde060d6e36e16df1e96d534d04321d54522ffa12e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 32,
+      "state_revision": 28
+    },
+    {
+      "arguments": {
+        "address1": "565 Maple Drive",
+        "address2": "Suite 501",
+        "city": "Washington",
+        "country": "USA",
+        "order_id": "#W2466703",
+        "state": "DC",
+        "zip": "20307"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_IdwhqCJJabl4SLVqufdqO9vn",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 33,
+      "state_revision": 28,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_IdwhqCJJabl4SLVqufdqO9vn",
+        "candidate_arguments": {
+          "address1": "565 Maple Drive",
+          "address2": "Suite 501",
+          "city": "Washington",
+          "country": "USA",
+          "order_id": "#W2466703",
+          "state": "DC",
+          "zip": "20307"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_hernandez_6785",
+          "authentication_source_event_ids": [
+            "tool:call_BUxjBDUwgnkCXs93xigYZDGv:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "7848293342",
+              "4894369688",
+              "9385662952"
+            ],
+            "order_id": "#W2466703",
+            "source_event_ids": [
+              "tool:call_NQhOASgfppumPEw302n4Nhpn:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_hernandez_6785"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "6819683148",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8560156827",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7529813"
+            ],
+            "source_event_ids": [
+              "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+            ],
+            "user_id": "yusuf_hernandez_6785"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 34,
+      "state_revision": 28
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_IdwhqCJJabl4SLVqufdqO9vn",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 35,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "9e3532bd7e43bc0da1f509cde060d6e36e16df1e96d534d04321d54522ffa12e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 36,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"that one\", \"scope\": \"some addresses related to my orders and account\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address I want is already in one of my pending orders\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the address from my Washington DC order\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"user_id\": \"yusuf_hernandez_6785\", \"zip\": \"20307\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"order_id\": \"#W2166301\", \"state\": \"DC\", \"zip\": \"20307\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"order_id\": \"#W2466703\", \"state\": \"DC\", \"zip\": \"20307\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "05f127a1067cbbce02cbbb1ab236c492aecd59e622d90c212b52f7dc5c71b3c4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 37,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address",
+        "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address",
+        "tool:call_IdwhqCJJabl4SLVqufdqO9vn:modify_pending_order_address"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the address from my Washington DC order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "state": "DC",
+              "user_id": "yusuf_hernandez_6785",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "email": "yusuf.hernandez8836@example.com",
+              "name": {
+                "first_name": "Yusuf",
+                "last_name": "Hernandez"
+              },
+              "orders": [
+                "#W2166301",
+                "#W2466703",
+                "#W6832752",
+                "#W7739115",
+                "#W1994898"
+              ],
+              "payment_methods": {
+                "paypal_7529813": {
+                  "id": "paypal_7529813",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "order_id": "#W2166301",
+              "state": "DC",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3330317167",
+                  "name": "Gaming Mouse",
+                  "options": {
+                    "color": "black",
+                    "connectivity": "wired",
+                    "sensor type": "optical"
+                  },
+                  "price": 137.32,
+                  "product_id": "5713490933"
+                },
+                {
+                  "item_id": "1775591963",
+                  "name": "Running Shoes",
+                  "options": {
+                    "color": "white",
+                    "material": "leather",
+                    "size": "10",
+                    "sole": "EVA"
+                  },
+                  "price": 154.75,
+                  "product_id": "6938111410"
+                },
+                {
+                  "item_id": "3624655057",
+                  "name": "Bicycle",
+                  "options": {
+                    "color": "blue",
+                    "frame size": "medium",
+                    "type": "road"
+                  },
+                  "price": 2195.04,
+                  "product_id": "9783735446"
+                }
+              ],
+              "order_id": "#W2166301",
+              "payment_history": [
+                {
+                  "amount": 2487.11,
+                  "payment_method_id": "paypal_7529813",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_IdwhqCJJabl4SLVqufdqO9vn:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "order_id": "#W2466703",
+              "state": "DC",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7848293342",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "medium",
+                    "type": "charcoal"
+                  },
+                  "price": 942.71,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "4894369688",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "brown",
+                    "height": "5 ft",
+                    "material": "glass"
+                  },
+                  "price": 537.01,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "9385662952",
+                  "name": "Fleece Jacket",
+                  "options": {
+                    "color": "black",
+                    "size": "L",
+                    "zipper": "full"
+                  },
+                  "price": 159.92,
+                  "product_id": "8560156827"
+                }
+              ],
+              "order_id": "#W2466703",
+              "payment_history": [
+                {
+                  "amount": 1639.64,
+                  "payment_method_id": "paypal_7529813",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "05f127a1067cbbce02cbbb1ab236c492aecd59e622d90c212b52f7dc5c71b3c4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 38,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address",
+        "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address",
+        "tool:call_IdwhqCJJabl4SLVqufdqO9vn:modify_pending_order_address"
+      ],
+      "state_revision": 30
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "565 Maple Drive",
+            "address2": "Suite 501",
+            "city": "Washington",
+            "country": "USA",
+            "order_id": "#W6832752",
+            "state": "DC",
+            "zip": "20307"
+          },
+          "call_id": "call_NzncOw3hRVE0zZxzvyRc7K7I",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0005",
+      "card_sha256": "05f127a1067cbbce02cbbb1ab236c492aecd59e622d90c212b52f7dc5c71b3c4",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 39,
+      "state_revision": 30
+    },
+    {
+      "arguments": {
+        "address1": "565 Maple Drive",
+        "address2": "Suite 501",
+        "city": "Washington",
+        "country": "USA",
+        "order_id": "#W6832752",
+        "state": "DC",
+        "zip": "20307"
+      },
+      "bundle_id": "BB-0004-O",
+      "call_id": "call_NzncOw3hRVE0zZxzvyRc7K7I",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 40,
+      "state_revision": 30,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_NzncOw3hRVE0zZxzvyRc7K7I",
+        "candidate_arguments": {
+          "address1": "565 Maple Drive",
+          "address2": "Suite 501",
+          "city": "Washington",
+          "country": "USA",
+          "order_id": "#W6832752",
+          "state": "DC",
+          "zip": "20307"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_hernandez_6785",
+          "authentication_source_event_ids": [
+            "tool:call_BUxjBDUwgnkCXs93xigYZDGv:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "3812493782"
+            ],
+            "order_id": "#W6832752",
+            "source_event_ids": [
+              "tool:call_LuzazdP6r7DG0zjCsTF4lILs:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_hernandez_6785"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7529813"
+            ],
+            "source_event_ids": [
+              "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+            ],
+            "user_id": "yusuf_hernandez_6785"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 41,
+      "state_revision": 30
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_NzncOw3hRVE0zZxzvyRc7K7I",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 42,
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "05f127a1067cbbce02cbbb1ab236c492aecd59e622d90c212b52f7dc5c71b3c4",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 43,
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"that one\", \"scope\": \"some addresses related to my orders and account\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address I want is already in one of my pending orders\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the address from my Washington DC order\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"user_id\": \"yusuf_hernandez_6785\", \"zip\": \"20307\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"order_id\": \"#W2166301\", \"state\": \"DC\", \"zip\": \"20307\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"order_id\": \"#W2466703\", \"state\": \"DC\", \"zip\": \"20307\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"order_id\": \"#W6832752\", \"state\": \"DC\", \"zip\": \"20307\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0006",
+      "card_sha256": "500e6c4e7b8000723a94cdd548a60e9f3fe9b0cab47a488ada53ce9187550aa8",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 44,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address",
+        "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address",
+        "tool:call_IdwhqCJJabl4SLVqufdqO9vn:modify_pending_order_address",
+        "tool:call_NzncOw3hRVE0zZxzvyRc7K7I:modify_pending_order_address"
+      ],
+      "state_revision": 32,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "that one"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": "some addresses related to my orders and account"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the address I want is already in one of my pending orders"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the address from my Washington DC order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "state": "DC",
+              "user_id": "yusuf_hernandez_6785",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "email": "yusuf.hernandez8836@example.com",
+              "name": {
+                "first_name": "Yusuf",
+                "last_name": "Hernandez"
+              },
+              "orders": [
+                "#W2166301",
+                "#W2466703",
+                "#W6832752",
+                "#W7739115",
+                "#W1994898"
+              ],
+              "payment_methods": {
+                "paypal_7529813": {
+                  "id": "paypal_7529813",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "order_id": "#W2166301",
+              "state": "DC",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3330317167",
+                  "name": "Gaming Mouse",
+                  "options": {
+                    "color": "black",
+                    "connectivity": "wired",
+                    "sensor type": "optical"
+                  },
+                  "price": 137.32,
+                  "product_id": "5713490933"
+                },
+                {
+                  "item_id": "1775591963",
+                  "name": "Running Shoes",
+                  "options": {
+                    "color": "white",
+                    "material": "leather",
+                    "size": "10",
+                    "sole": "EVA"
+                  },
+                  "price": 154.75,
+                  "product_id": "6938111410"
+                },
+                {
+                  "item_id": "3624655057",
+                  "name": "Bicycle",
+                  "options": {
+                    "color": "blue",
+                    "frame size": "medium",
+                    "type": "road"
+                  },
+                  "price": 2195.04,
+                  "product_id": "9783735446"
+                }
+              ],
+              "order_id": "#W2166301",
+              "payment_history": [
+                {
+                  "amount": 2487.11,
+                  "payment_method_id": "paypal_7529813",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_IdwhqCJJabl4SLVqufdqO9vn:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "order_id": "#W2466703",
+              "state": "DC",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7848293342",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "medium",
+                    "type": "charcoal"
+                  },
+                  "price": 942.71,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "4894369688",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "brown",
+                    "height": "5 ft",
+                    "material": "glass"
+                  },
+                  "price": 537.01,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "9385662952",
+                  "name": "Fleece Jacket",
+                  "options": {
+                    "color": "black",
+                    "size": "L",
+                    "zipper": "full"
+                  },
+                  "price": 159.92,
+                  "product_id": "8560156827"
+                }
+              ],
+              "order_id": "#W2466703",
+              "payment_history": [
+                {
+                  "amount": 1639.64,
+                  "payment_method_id": "paypal_7529813",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_NzncOw3hRVE0zZxzvyRc7K7I:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "565 Maple Drive",
+              "address2": "Suite 501",
+              "city": "Washington",
+              "country": "USA",
+              "order_id": "#W6832752",
+              "state": "DC",
+              "zip": "20307"
+            },
+            "result": {
+              "address": {
+                "address1": "565 Maple Drive",
+                "address2": "Suite 501",
+                "city": "Washington",
+                "country": "USA",
+                "state": "DC",
+                "zip": "20307"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3812493782",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "7",
+                    "waterproof": "yes"
+                  },
+                  "price": 244.34,
+                  "product_id": "7363354090"
+                }
+              ],
+              "order_id": "#W6832752",
+              "payment_history": [
+                {
+                  "amount": 244.34,
+                  "payment_method_id": "paypal_7529813",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yusuf_hernandez_6785"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "500e6c4e7b8000723a94cdd548a60e9f3fe9b0cab47a488ada53ce9187550aa8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 45,
+      "source_event_ids": [
+        "message:7:user",
+        "message:1:user",
+        "message:21:user",
+        "tool:call_7clqdyt2H6PFWAwqeCOZVT4x:modify_user_address",
+        "tool:call_pyS4R7w3JQghYebn9zHhtpwx:modify_pending_order_address",
+        "tool:call_IdwhqCJJabl4SLVqufdqO9vn:modify_pending_order_address",
+        "tool:call_NzncOw3hRVE0zZxzvyRc7K7I:modify_pending_order_address"
+      ],
+      "state_revision": 32
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 4,
+    "b_opportunities": 4,
+    "event_count": 46,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 43.29884416889399,
+    "prewrite_validation": 0.0008685420616529882,
+    "semantic_support": 9.033092081954237
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 6,
+    "card_injections": 13,
+    "injected_cards": 6,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 4
+  },
+  "task_id": "87",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_087"
+}

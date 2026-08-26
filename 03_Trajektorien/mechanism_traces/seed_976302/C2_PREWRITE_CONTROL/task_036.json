@@ -1,0 +1,183 @@
+{
+  "condition": "C2_PREWRITE_CONTROL",
+  "cost_usd": {
+    "native_agent": 0.009876310000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0
+  },
+  "counts": {
+    "a_commitments": 0,
+    "a_extractions": 0,
+    "a_opportunities": 0,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "arguments": {
+        "item_ids": [
+          "6117189161",
+          "7453605304",
+          "3799046073"
+        ],
+        "new_item_ids": [
+          "6700049080",
+          "5320792178",
+          "3234800602"
+        ],
+        "order_id": "#W9348897",
+        "payment_method_id": "credit_card_8853416"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_98BOHyBHTZLohU4LLm5zQnCT",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 0,
+      "state_revision": 32,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_98BOHyBHTZLohU4LLm5zQnCT",
+        "candidate_arguments": {
+          "item_ids": [
+            "6117189161",
+            "7453605304",
+            "3799046073"
+          ],
+          "new_item_ids": [
+            "6700049080",
+            "5320792178",
+            "3234800602"
+          ],
+          "order_id": "#W9348897",
+          "payment_method_id": "credit_card_8853416"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "daiki_sanchez_3253",
+          "authentication_source_event_ids": [
+            "tool:call_w1fjUXP7dSE0H0cYGAkaKfzT:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "6117189161",
+              "9879255677",
+              "7453605304",
+              "3799046073",
+              "9851293632"
+            ],
+            "order_id": "#W9348897",
+            "source_event_ids": [
+              "tool:call_ibAQ95mPNdlNA2gMVen0t3jk:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "daiki_sanchez_3253"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "2524789262",
+              "source_event_ids": [
+                "tool:call_Ah7LH4L24jWa7LB1h4OT7j6q:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "3377618313",
+              "source_event_ids": [
+                "tool:call_K8ikE0Mdz29EnnTL0tUj0ITv:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "6817146515",
+              "source_event_ids": [
+                "tool:call_L55NairvUqGJYs24iZAtmLeF:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_rpR3QNYGyoa3uZ6oh0XPnv0b:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "9743693396",
+              "source_event_ids": [
+                "tool:call_Zo4C303JDbR7fMAtNikQElSo:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_8853416"
+            ],
+            "source_event_ids": [
+              "tool:call_khSkLUaK0VdyytJXuwQVPWh5:get_user_details"
+            ],
+            "user_id": "daiki_sanchez_3253"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 1,
+      "state_revision": 32
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_98BOHyBHTZLohU4LLm5zQnCT",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 2,
+      "state_revision": 32
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": false
+  },
+  "observer_audit": {
+    "a_opportunities": 0,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 3,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 47.686487038998166,
+    "prewrite_validation": 0.0005562090227613226,
+    "semantic_support": 0.0
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "36",
+  "trajectory_id": "seed_976302_C2_PREWRITE_CONTROL_task_036"
+}

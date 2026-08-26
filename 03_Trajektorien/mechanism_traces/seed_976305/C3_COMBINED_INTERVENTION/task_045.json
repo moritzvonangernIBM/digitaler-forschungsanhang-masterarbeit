@@ -1,0 +1,773 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.01106359,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0021197
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "ebb274c260a746944e3e8317da9dae7b2a04f3a2ebab43b42e0224588530927b",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the bagless canister"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "7958300294"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "option 3, the bagless canister"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the bagless canister\", \"item_ids\": \"7958300294\", \"scope\": \"option 3, the bagless canister\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "0deddc06419d41ea2845dbd63ab1affb0ee63f88c9eaf3ec1055043c15b5785c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the bagless canister"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "7958300294"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "option 3, the bagless canister"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0deddc06419d41ea2845dbd63ab1affb0ee63f88c9eaf3ec1055043c15b5785c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0deddc06419d41ea2845dbd63ab1affb0ee63f88c9eaf3ec1055043c15b5785c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 23
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "7b1247546fef2efcd914f2d8984955eea8c43dc972d9d2d43fe7f9b122fbc3b9",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "the robotic vacuum"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "6259501109"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "just for the robotic vacuum"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0deddc06419d41ea2845dbd63ab1affb0ee63f88c9eaf3ec1055043c15b5785c",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 7,
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the bagless canister\", \"item_ids\": \"7958300294\", \"scope\": \"option 3, the bagless canister\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"price difference\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the robotic vacuum\", \"item_ids\": [\"6259501109\"], \"scope\": \"just for the robotic vacuum\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "c133c9ca31521dec235b96ba945eca9bd3143ef0d63df84d201cf36d14aad28e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 8,
+      "source_event_ids": [
+        "message:20:user",
+        "message:24:user"
+      ],
+      "state_revision": 25,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the bagless canister"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "7958300294"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "option 3, the bagless canister"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "the robotic vacuum"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "6259501109"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "just for the robotic vacuum"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c133c9ca31521dec235b96ba945eca9bd3143ef0d63df84d201cf36d14aad28e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:20:user",
+        "message:24:user"
+      ],
+      "state_revision": 25
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c133c9ca31521dec235b96ba945eca9bd3143ef0d63df84d201cf36d14aad28e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:20:user",
+        "message:24:user"
+      ],
+      "state_revision": 27
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6259501109"
+            ],
+            "new_item_ids": [
+              "7958300294"
+            ],
+            "order_id": "#W9502127",
+            "payment_method_id": "paypal_2433177"
+          },
+          "call_id": "call_DCJz4DAIrdULiOd7FSfO0LTZ",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "c133c9ca31521dec235b96ba945eca9bd3143ef0d63df84d201cf36d14aad28e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 11,
+      "state_revision": 27
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "6259501109"
+        ],
+        "new_item_ids": [
+          "7958300294"
+        ],
+        "order_id": "#W9502127",
+        "payment_method_id": "paypal_2433177"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_DCJz4DAIrdULiOd7FSfO0LTZ",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 12,
+      "state_revision": 27,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_DCJz4DAIrdULiOd7FSfO0LTZ",
+        "candidate_arguments": {
+          "item_ids": [
+            "6259501109"
+          ],
+          "new_item_ids": [
+            "7958300294"
+          ],
+          "order_id": "#W9502127",
+          "payment_method_id": "paypal_2433177"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "daiki_johnson_9523",
+          "authentication_source_event_ids": [
+            "tool:call_MJeeF2Cp1ltYRRpIq4YB1FyN:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2872451762",
+              "9534205511",
+              "6243981804",
+              "3877338112",
+              "6259501109"
+            ],
+            "order_id": "#W9502127",
+            "source_event_ids": [
+              "tool:call_K6BibbvAMhkrebrQbzaLo20d:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "daiki_johnson_9523"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1762337868",
+              "source_event_ids": [
+                "tool:call_JNaw69VxRTT51pYdhxGEooeX:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "3821016478",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9743693396",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_2433177"
+            ],
+            "source_event_ids": [
+              "tool:call_oTPFYSaEhdAv0VhSvQNSbKOT:get_user_details"
+            ],
+            "user_id": "daiki_johnson_9523"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 13,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_DCJz4DAIrdULiOd7FSfO0LTZ",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 14,
+      "state_revision": 27
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "c133c9ca31521dec235b96ba945eca9bd3143ef0d63df84d201cf36d14aad28e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 15,
+      "state_revision": 29
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the bagless canister\", \"item_ids\": \"7958300294\", \"scope\": \"option 3, the bagless canister\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"price difference\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the robotic vacuum\", \"item_ids\": [\"6259501109\"], \"scope\": \"just for the robotic vacuum\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"6259501109\"], \"new_item_ids\": [\"7958300294\"], \"order_id\": \"#W9502127\", \"payment_method_id\": \"paypal_2433177\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "39935183efc38b1c888c8a31d6f33b7bf2be5748da3b4a507cfc92e6b9b41416",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 16,
+      "source_event_ids": [
+        "message:20:user",
+        "message:24:user",
+        "tool:call_DCJz4DAIrdULiOd7FSfO0LTZ:exchange_delivered_order_items"
+      ],
+      "state_revision": 29,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the bagless canister"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "7958300294"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "option 3, the bagless canister"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "the robotic vacuum"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "6259501109"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "just for the robotic vacuum"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_DCJz4DAIrdULiOd7FSfO0LTZ:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6259501109"
+              ],
+              "new_item_ids": [
+                "7958300294"
+              ],
+              "order_id": "#W9502127",
+              "payment_method_id": "paypal_2433177"
+            },
+            "result": {
+              "address": {
+                "address1": "834 Park Avenue",
+                "address2": "Suite 947",
+                "city": "Denver",
+                "country": "USA",
+                "state": "CO",
+                "zip": "80273"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "6259501109"
+              ],
+              "exchange_new_items": [
+                "7958300294"
+              ],
+              "exchange_payment_method_id": "paypal_2433177",
+              "exchange_price_difference": -9.89,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "2872451762",
+                    "9534205511",
+                    "6243981804",
+                    "3877338112",
+                    "6259501109"
+                  ],
+                  "tracking_id": [
+                    "269178517234"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "2872451762",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "pet hair removal",
+                    "type": "canister"
+                  },
+                  "price": 622.12,
+                  "product_id": "1762337868"
+                },
+                {
+                  "item_id": "9534205511",
+                  "name": "Air Purifier",
+                  "options": {
+                    "features": "smart sensors",
+                    "filter type": "ionic",
+                    "room size": "large"
+                  },
+                  "price": 473.43,
+                  "product_id": "3821016478"
+                },
+                {
+                  "item_id": "6243981804",
+                  "name": "Patio Umbrella",
+                  "options": {
+                    "color": "green",
+                    "material": "sunbrella",
+                    "size": "7 ft",
+                    "tilt mechanism": "auto tilt"
+                  },
+                  "price": 329.85,
+                  "product_id": "9743693396"
+                },
+                {
+                  "item_id": "3877338112",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "5-25 lbs"
+                  },
+                  "price": 545.68,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "6259501109",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "pet hair removal",
+                    "type": "robotic"
+                  },
+                  "price": 652.61,
+                  "product_id": "1762337868"
+                }
+              ],
+              "order_id": "#W9502127",
+              "payment_history": [
+                {
+                  "amount": 2623.69,
+                  "payment_method_id": "paypal_2433177",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "daiki_johnson_9523"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "39935183efc38b1c888c8a31d6f33b7bf2be5748da3b4a507cfc92e6b9b41416",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:20:user",
+        "message:24:user",
+        "tool:call_DCJz4DAIrdULiOd7FSfO0LTZ:exchange_delivered_order_items"
+      ],
+      "state_revision": 29
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 18,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 48.06745970796328,
+    "prewrite_validation": 0.000557000981643796,
+    "semantic_support": 9.602710458013462
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 5,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "45",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_045"
+}

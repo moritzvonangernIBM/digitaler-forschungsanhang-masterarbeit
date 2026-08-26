@@ -1,0 +1,248 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.006941020000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0009226
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "42155ec3f7e1593e661749b0fc89f7d239c728d9062e4b725eae1f742225316e",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "bagless canister"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "7958300294"
+              ]
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 20,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "6259501109"
+        ],
+        "new_item_ids": [
+          "7958300294"
+        ],
+        "order_id": "#W9502127",
+        "payment_method_id": "paypal_2433177"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_hoeCF2u8r8cyqJHRXmGqzrqS",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 4,
+      "state_revision": 22,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_hoeCF2u8r8cyqJHRXmGqzrqS",
+        "candidate_arguments": {
+          "item_ids": [
+            "6259501109"
+          ],
+          "new_item_ids": [
+            "7958300294"
+          ],
+          "order_id": "#W9502127",
+          "payment_method_id": "paypal_2433177"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "daiki_johnson_9523",
+          "authentication_source_event_ids": [
+            "tool:call_xveKquLDqvrRxC9R2XyxsWzl:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2872451762",
+              "9534205511",
+              "6243981804",
+              "3877338112",
+              "6259501109"
+            ],
+            "order_id": "#W9502127",
+            "source_event_ids": [
+              "tool:call_UBjzT8eUlG5cMe0B4kpelPKB:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "daiki_johnson_9523"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1762337868",
+              "source_event_ids": [
+                "tool:call_Fo1aIT4RVnl8ldrFa7NhsO2H:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "3821016478",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9743693396",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_2433177"
+            ],
+            "source_event_ids": [
+              "tool:call_k9EG1GFBZAGDX5r8OVJ2Lbq4:get_user_details"
+            ],
+            "user_id": "daiki_johnson_9523"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 5,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_hoeCF2u8r8cyqJHRXmGqzrqS",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 6,
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 7,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 28.023502459021984,
+    "prewrite_validation": 0.0005429149459814653,
+    "semantic_support": 4.491510249994462
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "45",
+  "trajectory_id": "seed_976302_C3_COMBINED_INTERVENTION_task_045"
+}

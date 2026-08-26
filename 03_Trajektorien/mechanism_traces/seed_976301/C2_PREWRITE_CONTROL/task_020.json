@@ -1,0 +1,180 @@
+{
+  "condition": "C2_PREWRITE_CONTROL",
+  "cost_usd": {
+    "native_agent": 0.00986999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0
+  },
+  "counts": {
+    "a_commitments": 0,
+    "a_extractions": 0,
+    "a_opportunities": 0,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "arguments": {
+        "item_ids": [
+          "2366567022",
+          "1340995114",
+          "9791469541",
+          "1763705424"
+        ],
+        "new_item_ids": [
+          "4579334072",
+          "1151293680",
+          "4107812777",
+          "2882812427"
+        ],
+        "order_id": "#W9911714",
+        "payment_method_id": "gift_card_4332117"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_HJUk8BNBRPaRiqJsOIg9havQ",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 0,
+      "state_revision": 30,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_HJUk8BNBRPaRiqJsOIg9havQ",
+        "candidate_arguments": {
+          "item_ids": [
+            "2366567022",
+            "1340995114",
+            "9791469541",
+            "1763705424"
+          ],
+          "new_item_ids": [
+            "4579334072",
+            "1151293680",
+            "4107812777",
+            "2882812427"
+          ],
+          "order_id": "#W9911714",
+          "payment_method_id": "gift_card_4332117"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ethan_garcia_1261",
+          "authentication_source_event_ids": [
+            "tool:call_8Zhm14BqLnkPB1dayVOp5tqe:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2366567022",
+              "1340995114",
+              "9791469541",
+              "1763705424"
+            ],
+            "order_id": "#W9911714",
+            "source_event_ids": [
+              "tool:call_hqCT9sq2sTZyaToAPxiueQTz:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "ethan_garcia_1261"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1656367028",
+              "source_event_ids": [
+                "tool:call_oVuehJiN28NP5zsDS1UHMzkd:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "5149340237",
+              "source_event_ids": [
+                "tool:call_6iPwiviQE08tD91DIgIPic5B:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "6938111410",
+              "source_event_ids": [
+                "tool:call_DGa6alZBSIVOauWFKjfQnKWK:get_product_details"
+              ]
+            },
+            {
+              "observed": true,
+              "product_id": "8310926033",
+              "source_event_ids": [
+                "tool:call_v52yn2jdzQdjTYSjlieqSkyp:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_4332117",
+              "paypal_3798357"
+            ],
+            "source_event_ids": [
+              "tool:call_DwiX4Dm7YtkXXDjxyjOUpSiG:get_user_details"
+            ],
+            "user_id": "ethan_garcia_1261"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 1,
+      "state_revision": 30
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_HJUk8BNBRPaRiqJsOIg9havQ",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 2,
+      "state_revision": 30
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": false
+  },
+  "observer_audit": {
+    "a_opportunities": 0,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 3,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 40.98429853998823,
+    "prewrite_validation": 0.0005965419695712626,
+    "semantic_support": 0.0
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "20",
+  "trajectory_id": "seed_976301_C2_PREWRITE_CONTROL_task_020"
+}

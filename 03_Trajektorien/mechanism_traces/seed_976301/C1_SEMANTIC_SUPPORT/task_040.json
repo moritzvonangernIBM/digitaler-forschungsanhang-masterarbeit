@@ -1,0 +1,434 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.0035856099999999995,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00188875
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "fc25fc89ac323ff837d3597bb7e479ce00010f63b4b6003437cf1fe66bec502e",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my most recent order"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "292fe9f61a5d6dd33c4762c0d4663f3b4f06d489dddbd3fb1a3167bae34f7491",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "my most recent order"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "28eb410caf2a4b6792536130da6d0585ba11fd0750abe0048590c1e2dbdd388a",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "#W4923227"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my most recent order\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W4923227\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "785091e624c88cbe8ba9acd6e1d1372eb952d5fcd921839dc37a526ad67274d3",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "my most recent order"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "#W4923227"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "785091e624c88cbe8ba9acd6e1d1372eb952d5fcd921839dc37a526ad67274d3",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W4923227",
+            "payment_method_id": "credit_card_8897086"
+          },
+          "call_id": "call_cNA1BYoaA1xHrCjPvW7yqzVr",
+          "tool_name": "modify_pending_order_payment"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "785091e624c88cbe8ba9acd6e1d1372eb952d5fcd921839dc37a526ad67274d3",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "785091e624c88cbe8ba9acd6e1d1372eb952d5fcd921839dc37a526ad67274d3",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 9,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my most recent order\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W4923227\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W4923227\", \"payment_method_id\": \"credit_card_8897086\"}, \"tool_name\": \"modify_pending_order_payment\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "3b811931151f54ef37dce6e0f89726b1e4465a0889c1eae5872c6e53dc35185a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "tool:call_cNA1BYoaA1xHrCjPvW7yqzVr:modify_pending_order_payment"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "my most recent order"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "#W4923227"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_cNA1BYoaA1xHrCjPvW7yqzVr:modify_pending_order_payment"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W4923227",
+              "payment_method_id": "credit_card_8897086"
+            },
+            "result": {
+              "address": {
+                "address1": "710 Sunset Drive",
+                "address2": "Suite 176",
+                "city": "Phoenix",
+                "country": "USA",
+                "state": "AZ",
+                "zip": "85034"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7751905257",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "red",
+                    "water resistance": "yes"
+                  },
+                  "price": 321.18,
+                  "product_id": "4768869376"
+                }
+              ],
+              "order_id": "#W4923227",
+              "payment_history": [
+                {
+                  "amount": 321.18,
+                  "payment_method_id": "credit_card_8554680",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 321.18,
+                  "payment_method_id": "credit_card_8897086",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 321.18,
+                  "payment_method_id": "credit_card_8554680",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "isabella_lopez_6490"
+            },
+            "tool_name": "modify_pending_order_payment"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "3b811931151f54ef37dce6e0f89726b1e4465a0889c1eae5872c6e53dc35185a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "tool:call_cNA1BYoaA1xHrCjPvW7yqzVr:modify_pending_order_payment"
+      ],
+      "state_revision": 16
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 12,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 16.25618562400632,
+    "prewrite_validation": 0.0,
+    "semantic_support": 8.900704083018354
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 2,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "40",
+  "trajectory_id": "seed_976301_C1_SEMANTIC_SUPPORT_task_040"
+}

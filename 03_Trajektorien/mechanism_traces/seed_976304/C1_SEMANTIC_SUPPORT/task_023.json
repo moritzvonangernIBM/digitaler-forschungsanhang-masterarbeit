@@ -1,0 +1,715 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.01711154,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00456065
+  },
+  "counts": {
+    "a_commitments": 7,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 1,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a9394f7b00da480f77d42d04be405bc77620a86836220acd63d6a134f8c69917",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "some recent orders"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "1ef6a43b34ca81b62b1368e461db1af655a437a230efb55b10eb6d19dbe1910e",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "a medium-sized, red, high ventilation type"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#45219"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "a two-piece, black set made of soft material"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#44782"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the luggage set"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "be the same type as the grill I already received from you"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#45901"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the grill"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"different size and style\", \"item_descriptions\": \"a helmet\", \"scope\": \"some recent orders\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a medium-sized, red, high ventilation type\", \"order_id\": \"#45219\", \"scope\": \"the helmet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"a two-piece, black set made of soft material\", \"order_id\": \"#44782\", \"scope\": \"the luggage set\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"desired_variant_constraints\": \"be the same type as the grill I already received from you\", \"order_id\": \"#45901\", \"scope\": \"the grill\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a helmet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "some recent orders"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "a medium-sized, red, high ventilation type"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#45219"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the helmet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "a two-piece, black set made of soft material"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#44782"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the luggage set"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "be the same type as the grill I already received from you"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#45901"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the grill"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 8,
+      "source_event_ids": [],
+      "state_revision": 14,
+      "total_commitments": 4,
+      "validated_records": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 23
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:24:user"
+      ],
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 4,
+      "changed_commitments": 4,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "8f73e889b19d176d6d1ab897be9558dc8f23ac7f905487c1158189c583fb01ca",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:24:user"
+      ],
+      "state_revision": 25,
+      "total_commitments": 7,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "different size and style"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a helmet"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "5946177616"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "#W3561391"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:24:user"
+              ],
+              "value": "some recent orders"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "#W3561391"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "for any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "a medium, red, high ventilation type"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "helmet"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "3358616356"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "#W3947049"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0007",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "a two-piece, black, soft material set"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "luggage set"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": [
+                "6301799585"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:24:user"
+              ],
+              "value": "#W6876713"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "286d4c460cfabd5ae514fa5afb12cf9f953bcedb82f8edbf985c5e38aebc3cc1",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 6,
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 15,
+      "state_revision": 25
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 16,
+      "state_revision": 25
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 17,
+      "state_revision": 27
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 18,
+      "state_revision": 29
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 19,
+      "state_revision": 31
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 20,
+      "state_revision": 33
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 21,
+      "state_revision": 35
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 22,
+      "state_revision": 37
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 23,
+      "state_revision": 39
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 24,
+      "state_revision": 41
+    },
+    {
+      "commitment_count": 7,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 25,
+      "state_revision": 43
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 26,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 130.60774099986884,
+    "prewrite_validation": 0.0,
+    "semantic_support": 23.276774499972817
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 1,
+    "card_injections": 6,
+    "injected_cards": 1,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "23",
+  "trajectory_id": "seed_976304_C1_SEMANTIC_SUPPORT_task_023"
+}

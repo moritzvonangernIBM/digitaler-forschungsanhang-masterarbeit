@@ -1,0 +1,2365 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.011749289999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0025226000000000003
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 7,
+    "b_evidence_reads": 0,
+    "b_opportunities": 4,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "b8b9dfdc43811cf1c3a4ea71f77c08175881eb0fea857852137a2d3d905d1392",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "0e36cd241133b78b92f6b39421537eeb5f846670bcfb8b563be3975cdc8f3c82",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0e36cd241133b78b92f6b39421537eeb5f846670bcfb8b563be3975cdc8f3c82",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "f206c08736bfc596af591eb68b30cd0f16d9731d4a64a97f78f7189f335a614b",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "0e36cd241133b78b92f6b39421537eeb5f846670bcfb8b563be3975cdc8f3c82",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 6,
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"what\\u2019s pending\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 23
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 25
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:26:user"
+      ],
+      "state_revision": 27
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "6b9d4e3f85253107375fde5e814304bfcce363e183b1bc3d0fb7e5c27f9aefb0",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:26:user"
+      ],
+      "state_revision": 27,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "no longer needed"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:26:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "those orders"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "224e652d117ec88563d2af4238b048dfeaad3e587c2d07558ab637bd36e5ada9",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 19,
+      "state_revision": 27
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"no longer needed\", \"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"what\\u2019s pending\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"those orders\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "95d03528a59f7b2e53b935f723298dde65c0a2524d2ad5723e658af333e087ca",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 20,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 27,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "no longer needed"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:26:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "those orders"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "95d03528a59f7b2e53b935f723298dde65c0a2524d2ad5723e658af333e087ca",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 27
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W4836353",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_mHvGRR0M0hMXm8It9uuGRGu7",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "95d03528a59f7b2e53b935f723298dde65c0a2524d2ad5723e658af333e087ca",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 22,
+      "state_revision": 27
+    },
+    {
+      "arguments": {
+        "order_id": "#W4836353",
+        "reason": "no longer needed"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_mHvGRR0M0hMXm8It9uuGRGu7",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 23,
+      "state_revision": 27,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_mHvGRR0M0hMXm8It9uuGRGu7",
+        "candidate_arguments": {
+          "order_id": "#W4836353",
+          "reason": "no longer needed"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "amelia_silva_7726",
+          "authentication_source_event_ids": [
+            "tool:call_9j5M5z3m5S3xmz8MhEI1jccm:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "1421289881",
+              "5311660992"
+            ],
+            "order_id": "#W4836353",
+            "source_event_ids": [
+              "tool:call_TujlDj390boVSkAxPiCBJ54z:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "amelia_silva_7726"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "1801728040",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_3491931"
+            ],
+            "source_event_ids": [
+              "tool:call_NfnBxBk7JlBoaZ6xmdSciZ7O:get_user_details"
+            ],
+            "user_id": "amelia_silva_7726"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 24,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_mHvGRR0M0hMXm8It9uuGRGu7",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 25,
+      "state_revision": 27
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "95d03528a59f7b2e53b935f723298dde65c0a2524d2ad5723e658af333e087ca",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 26,
+      "state_revision": 29
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"no longer needed\", \"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"what\\u2019s pending\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"those orders\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W4836353\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "4e92be686241172349767ac33e892d66ba74d5e09e19f47def5561d30f27a06e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 27,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order"
+      ],
+      "state_revision": 29,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "no longer needed"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:26:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "those orders"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W4836353",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1421289881",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "80%",
+                    "switch type": "linear"
+                  },
+                  "price": 268.77,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "5311660992",
+                  "name": "Smartphone",
+                  "options": {
+                    "RAM": "8GB",
+                    "color": "rose gold",
+                    "screen size": "5.8-inch",
+                    "storage": "64GB"
+                  },
+                  "price": 1161.04,
+                  "product_id": "1801728040"
+                }
+              ],
+              "order_id": "#W4836353",
+              "payment_history": [
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "4e92be686241172349767ac33e892d66ba74d5e09e19f47def5561d30f27a06e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 28,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order"
+      ],
+      "state_revision": 29
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W7342738",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_4WDPn2vJTfcjwhpVWIJVElTO",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "4e92be686241172349767ac33e892d66ba74d5e09e19f47def5561d30f27a06e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 29,
+      "state_revision": 29
+    },
+    {
+      "arguments": {
+        "order_id": "#W7342738",
+        "reason": "no longer needed"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_4WDPn2vJTfcjwhpVWIJVElTO",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 30,
+      "state_revision": 29,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_4WDPn2vJTfcjwhpVWIJVElTO",
+        "candidate_arguments": {
+          "order_id": "#W7342738",
+          "reason": "no longer needed"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "amelia_silva_7726",
+          "authentication_source_event_ids": [
+            "tool:call_9j5M5z3m5S3xmz8MhEI1jccm:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "6164262152",
+              "6974536207",
+              "2499294441",
+              "3275928196"
+            ],
+            "order_id": "#W7342738",
+            "source_event_ids": [
+              "tool:call_l1DVXw5nscYmBA8SJskDmQlp:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "amelia_silva_7726"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7352963235",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9924732112",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_3491931"
+            ],
+            "source_event_ids": [
+              "tool:call_NfnBxBk7JlBoaZ6xmdSciZ7O:get_user_details"
+            ],
+            "user_id": "amelia_silva_7726"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 31,
+      "state_revision": 29
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_4WDPn2vJTfcjwhpVWIJVElTO",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 32,
+      "state_revision": 29
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "4e92be686241172349767ac33e892d66ba74d5e09e19f47def5561d30f27a06e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 33,
+      "state_revision": 31
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"no longer needed\", \"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"what\\u2019s pending\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"those orders\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W4836353\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W7342738\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "337a08561a8f1fce898c365ae39b53ce9dff325c0217b6eb96867ecdf97efa86",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 34,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order",
+        "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order"
+      ],
+      "state_revision": 31,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "no longer needed"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:26:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "those orders"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W4836353",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1421289881",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "80%",
+                    "switch type": "linear"
+                  },
+                  "price": 268.77,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "5311660992",
+                  "name": "Smartphone",
+                  "options": {
+                    "RAM": "8GB",
+                    "color": "rose gold",
+                    "screen size": "5.8-inch",
+                    "storage": "64GB"
+                  },
+                  "price": 1161.04,
+                  "product_id": "1801728040"
+                }
+              ],
+              "order_id": "#W4836353",
+              "payment_history": [
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W7342738",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6164262152",
+                  "name": "Electric Toothbrush",
+                  "options": {
+                    "battery type": "rechargeable",
+                    "color": "white",
+                    "speed settings": "low"
+                  },
+                  "price": 211.11,
+                  "product_id": "7352963235"
+                },
+                {
+                  "item_id": "6974536207",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "blue",
+                    "material": "plastic"
+                  },
+                  "price": 49.3,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "2499294441",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "8 hours",
+                    "color": "black",
+                    "water resistance": "IPX7"
+                  },
+                  "price": 258.36,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "3275928196",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "urethane",
+                    "set type": "adjustable",
+                    "weight range": "5-25 lbs"
+                  },
+                  "price": 511.63,
+                  "product_id": "7233192239"
+                }
+              ],
+              "order_id": "#W7342738",
+              "payment_history": [
+                {
+                  "amount": 1030.4,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1030.4,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "337a08561a8f1fce898c365ae39b53ce9dff325c0217b6eb96867ecdf97efa86",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 35,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order",
+        "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order"
+      ],
+      "state_revision": 31
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5669664287",
+              "4900990404",
+              "9862136885",
+              "6777246137"
+            ],
+            "order_id": "#W4597054",
+            "payment_method_id": "gift_card_3491931"
+          },
+          "call_id": "call_vP3ixm0kdCRqTH5dVKgg186g",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0005",
+      "card_sha256": "337a08561a8f1fce898c365ae39b53ce9dff325c0217b6eb96867ecdf97efa86",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 36,
+      "state_revision": 31
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5669664287",
+          "4900990404",
+          "9862136885",
+          "6777246137"
+        ],
+        "order_id": "#W4597054",
+        "payment_method_id": "gift_card_3491931"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_vP3ixm0kdCRqTH5dVKgg186g",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 37,
+      "state_revision": 31,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_vP3ixm0kdCRqTH5dVKgg186g",
+        "candidate_arguments": {
+          "item_ids": [
+            "5669664287",
+            "4900990404",
+            "9862136885",
+            "6777246137"
+          ],
+          "order_id": "#W4597054",
+          "payment_method_id": "gift_card_3491931"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "amelia_silva_7726",
+          "authentication_source_event_ids": [
+            "tool:call_9j5M5z3m5S3xmz8MhEI1jccm:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "5669664287",
+              "4900990404",
+              "9862136885",
+              "6777246137"
+            ],
+            "order_id": "#W4597054",
+            "source_event_ids": [
+              "tool:call_4v2w2qg1wvQglM1o2gleaITg:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "amelia_silva_7726"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "3821016478",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_3491931"
+            ],
+            "source_event_ids": [
+              "tool:call_NfnBxBk7JlBoaZ6xmdSciZ7O:get_user_details"
+            ],
+            "user_id": "amelia_silva_7726"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 38,
+      "state_revision": 31
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_vP3ixm0kdCRqTH5dVKgg186g",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 39,
+      "state_revision": 31
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "337a08561a8f1fce898c365ae39b53ce9dff325c0217b6eb96867ecdf97efa86",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 40,
+      "state_revision": 33
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"no longer needed\", \"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"what\\u2019s pending\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"those orders\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W4836353\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W7342738\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"item_ids\": [\"5669664287\", \"4900990404\", \"9862136885\", \"6777246137\"], \"order_id\": \"#W4597054\", \"payment_method_id\": \"gift_card_3491931\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0006",
+      "card_sha256": "80374342d378bdb62f1df039a7512bdb080f2d39e53d89e4eb86df81f74971aa",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 41,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order",
+        "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order",
+        "tool:call_vP3ixm0kdCRqTH5dVKgg186g:return_delivered_order_items"
+      ],
+      "state_revision": 33,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "no longer needed"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:26:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "those orders"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W4836353",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1421289881",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "80%",
+                    "switch type": "linear"
+                  },
+                  "price": 268.77,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "5311660992",
+                  "name": "Smartphone",
+                  "options": {
+                    "RAM": "8GB",
+                    "color": "rose gold",
+                    "screen size": "5.8-inch",
+                    "storage": "64GB"
+                  },
+                  "price": 1161.04,
+                  "product_id": "1801728040"
+                }
+              ],
+              "order_id": "#W4836353",
+              "payment_history": [
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W7342738",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6164262152",
+                  "name": "Electric Toothbrush",
+                  "options": {
+                    "battery type": "rechargeable",
+                    "color": "white",
+                    "speed settings": "low"
+                  },
+                  "price": 211.11,
+                  "product_id": "7352963235"
+                },
+                {
+                  "item_id": "6974536207",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "blue",
+                    "material": "plastic"
+                  },
+                  "price": 49.3,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "2499294441",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "8 hours",
+                    "color": "black",
+                    "water resistance": "IPX7"
+                  },
+                  "price": 258.36,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "3275928196",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "urethane",
+                    "set type": "adjustable",
+                    "weight range": "5-25 lbs"
+                  },
+                  "price": 511.63,
+                  "product_id": "7233192239"
+                }
+              ],
+              "order_id": "#W7342738",
+              "payment_history": [
+                {
+                  "amount": 1030.4,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1030.4,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_vP3ixm0kdCRqTH5dVKgg186g:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5669664287",
+                "4900990404",
+                "9862136885",
+                "6777246137"
+              ],
+              "order_id": "#W4597054",
+              "payment_method_id": "gift_card_3491931"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5669664287",
+                    "4900990404",
+                    "9862136885",
+                    "6777246137"
+                  ],
+                  "tracking_id": [
+                    "561724567137"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5669664287",
+                  "name": "Air Purifier",
+                  "options": {
+                    "features": "quiet operation",
+                    "filter type": "ionic",
+                    "room size": "small"
+                  },
+                  "price": 543.68,
+                  "product_id": "3821016478"
+                },
+                {
+                  "item_id": "4900990404",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "metal",
+                    "color": "silver",
+                    "display": "AMOLED"
+                  },
+                  "price": 336.71,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "9862136885",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "2 cups",
+                    "color": "black",
+                    "features": "timer",
+                    "type": "espresso"
+                  },
+                  "price": 258.32,
+                  "product_id": "7996920482"
+                },
+                {
+                  "item_id": "6777246137",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "red",
+                    "material": "stainless steel"
+                  },
+                  "price": 47.76,
+                  "product_id": "8310926033"
+                }
+              ],
+              "order_id": "#W4597054",
+              "payment_history": [
+                {
+                  "amount": 1186.47,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "4900990404",
+                "5669664287",
+                "6777246137",
+                "9862136885"
+              ],
+              "return_payment_method_id": "gift_card_3491931",
+              "status": "return requested",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "80374342d378bdb62f1df039a7512bdb080f2d39e53d89e4eb86df81f74971aa",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 42,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order",
+        "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order",
+        "tool:call_vP3ixm0kdCRqTH5dVKgg186g:return_delivered_order_items"
+      ],
+      "state_revision": 33
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8277474082"
+            ],
+            "order_id": "#W7773202",
+            "payment_method_id": "gift_card_3491931"
+          },
+          "call_id": "call_td6NevILzeWFUX3FgzO3VfJk",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0006",
+      "card_sha256": "80374342d378bdb62f1df039a7512bdb080f2d39e53d89e4eb86df81f74971aa",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 43,
+      "state_revision": 33
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8277474082"
+        ],
+        "order_id": "#W7773202",
+        "payment_method_id": "gift_card_3491931"
+      },
+      "bundle_id": "BB-0004-O",
+      "call_id": "call_td6NevILzeWFUX3FgzO3VfJk",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 44,
+      "state_revision": 33,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_td6NevILzeWFUX3FgzO3VfJk",
+        "candidate_arguments": {
+          "item_ids": [
+            "8277474082"
+          ],
+          "order_id": "#W7773202",
+          "payment_method_id": "gift_card_3491931"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "amelia_silva_7726",
+          "authentication_source_event_ids": [
+            "tool:call_9j5M5z3m5S3xmz8MhEI1jccm:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "8277474082"
+            ],
+            "order_id": "#W7773202",
+            "source_event_ids": [
+              "tool:call_ptaYW4W58zFHLxdTunngdiQb:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "amelia_silva_7726"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_3491931"
+            ],
+            "source_event_ids": [
+              "tool:call_NfnBxBk7JlBoaZ6xmdSciZ7O:get_user_details"
+            ],
+            "user_id": "amelia_silva_7726"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 45,
+      "state_revision": 33
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_td6NevILzeWFUX3FgzO3VfJk",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 46,
+      "state_revision": 33
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "80374342d378bdb62f1df039a7512bdb080f2d39e53d89e4eb86df81f74971aa",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 47,
+      "state_revision": 35
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"no longer needed\", \"scope\": \"cancel any orders that haven\\u2019t arrived yet\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"for the ones that have already been delivered, I\\u2019d like to return everything if possible\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"what\\u2019s pending\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"scope\": \"those orders\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W4836353\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W7342738\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"item_ids\": [\"5669664287\", \"4900990404\", \"9862136885\", \"6777246137\"], \"order_id\": \"#W4597054\", \"payment_method_id\": \"gift_card_3491931\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"8277474082\"], \"order_id\": \"#W7773202\", \"payment_method_id\": \"gift_card_3491931\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0007",
+      "card_sha256": "c8a9e52f1a15b944e5016c799534515a9bf10660f8789164f148fea980c73d20",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 48,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order",
+        "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order",
+        "tool:call_vP3ixm0kdCRqTH5dVKgg186g:return_delivered_order_items",
+        "tool:call_td6NevILzeWFUX3FgzO3VfJk:return_delivered_order_items"
+      ],
+      "state_revision": 35,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "no longer needed"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:26:user"
+              ],
+              "value": "cancel any orders that haven’t arrived yet"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "for the ones that have already been delivered, I’d like to return everything if possible"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "what’s pending"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:26:user"
+              ],
+              "value": "those orders"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W4836353",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1421289881",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "80%",
+                    "switch type": "linear"
+                  },
+                  "price": 268.77,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "5311660992",
+                  "name": "Smartphone",
+                  "options": {
+                    "RAM": "8GB",
+                    "color": "rose gold",
+                    "screen size": "5.8-inch",
+                    "storage": "64GB"
+                  },
+                  "price": 1161.04,
+                  "product_id": "1801728040"
+                }
+              ],
+              "order_id": "#W4836353",
+              "payment_history": [
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1429.81,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W7342738",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6164262152",
+                  "name": "Electric Toothbrush",
+                  "options": {
+                    "battery type": "rechargeable",
+                    "color": "white",
+                    "speed settings": "low"
+                  },
+                  "price": 211.11,
+                  "product_id": "7352963235"
+                },
+                {
+                  "item_id": "6974536207",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "blue",
+                    "material": "plastic"
+                  },
+                  "price": 49.3,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "2499294441",
+                  "name": "Wireless Earbuds",
+                  "options": {
+                    "battery life": "8 hours",
+                    "color": "black",
+                    "water resistance": "IPX7"
+                  },
+                  "price": 258.36,
+                  "product_id": "9924732112"
+                },
+                {
+                  "item_id": "3275928196",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "urethane",
+                    "set type": "adjustable",
+                    "weight range": "5-25 lbs"
+                  },
+                  "price": 511.63,
+                  "product_id": "7233192239"
+                }
+              ],
+              "order_id": "#W7342738",
+              "payment_history": [
+                {
+                  "amount": 1030.4,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1030.4,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_vP3ixm0kdCRqTH5dVKgg186g:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5669664287",
+                "4900990404",
+                "9862136885",
+                "6777246137"
+              ],
+              "order_id": "#W4597054",
+              "payment_method_id": "gift_card_3491931"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5669664287",
+                    "4900990404",
+                    "9862136885",
+                    "6777246137"
+                  ],
+                  "tracking_id": [
+                    "561724567137"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5669664287",
+                  "name": "Air Purifier",
+                  "options": {
+                    "features": "quiet operation",
+                    "filter type": "ionic",
+                    "room size": "small"
+                  },
+                  "price": 543.68,
+                  "product_id": "3821016478"
+                },
+                {
+                  "item_id": "4900990404",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "metal",
+                    "color": "silver",
+                    "display": "AMOLED"
+                  },
+                  "price": 336.71,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "9862136885",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "2 cups",
+                    "color": "black",
+                    "features": "timer",
+                    "type": "espresso"
+                  },
+                  "price": 258.32,
+                  "product_id": "7996920482"
+                },
+                {
+                  "item_id": "6777246137",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "red",
+                    "material": "stainless steel"
+                  },
+                  "price": 47.76,
+                  "product_id": "8310926033"
+                }
+              ],
+              "order_id": "#W4597054",
+              "payment_history": [
+                {
+                  "amount": 1186.47,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "4900990404",
+                "5669664287",
+                "6777246137",
+                "9862136885"
+              ],
+              "return_payment_method_id": "gift_card_3491931",
+              "status": "return requested",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_td6NevILzeWFUX3FgzO3VfJk:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8277474082"
+              ],
+              "order_id": "#W7773202",
+              "payment_method_id": "gift_card_3491931"
+            },
+            "result": {
+              "address": {
+                "address1": "182 Elm Avenue",
+                "address2": "Suite 875",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19117"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "8277474082"
+                  ],
+                  "tracking_id": [
+                    "638927335105"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "8277474082",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "12",
+                    "waterproof": "yes"
+                  },
+                  "price": 236.57,
+                  "product_id": "7363354090"
+                }
+              ],
+              "order_id": "#W7773202",
+              "payment_history": [
+                {
+                  "amount": 236.57,
+                  "payment_method_id": "gift_card_3491931",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "8277474082"
+              ],
+              "return_payment_method_id": "gift_card_3491931",
+              "status": "return requested",
+              "user_id": "amelia_silva_7726"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0007",
+      "card_sha256": "c8a9e52f1a15b944e5016c799534515a9bf10660f8789164f148fea980c73d20",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 49,
+      "source_event_ids": [
+        "message:26:user",
+        "message:1:user",
+        "message:3:user",
+        "tool:call_mHvGRR0M0hMXm8It9uuGRGu7:cancel_pending_order",
+        "tool:call_4WDPn2vJTfcjwhpVWIJVElTO:cancel_pending_order",
+        "tool:call_vP3ixm0kdCRqTH5dVKgg186g:return_delivered_order_items",
+        "tool:call_td6NevILzeWFUX3FgzO3VfJk:return_delivered_order_items"
+      ],
+      "state_revision": 35
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 4,
+    "b_opportunities": 4,
+    "event_count": 50,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 40.66090962610906,
+    "prewrite_validation": 0.0007846259977668524,
+    "semantic_support": 13.863749875046778
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 7,
+    "card_injections": 15,
+    "injected_cards": 7,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 4
+  },
+  "task_id": "55",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_055"
+}

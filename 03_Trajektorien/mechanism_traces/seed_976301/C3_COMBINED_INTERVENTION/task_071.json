@@ -1,0 +1,1885 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.013424149999999998,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00424405
+  },
+  "counts": {
+    "a_commitments": 6,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "6bb8d15a95fa36308c223196139655d72c8c3ff310b738a38709d4ffdc3ce86c",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "black color"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "desk lamp"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the desk lamp"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my main address\", \"order_id\": \"#W0034521\", \"scope\": \"the shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"black color\", \"item_descriptions\": \"desk lamp\", \"order_id\": \"#W0034521\", \"scope\": \"the desk lamp\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "black color"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "desk lamp"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the desk lamp"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'item_descriptions' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "item_descriptions",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "8d66ed4ea218d3e73d28bd11b33ca257ae140e78e739ff62d1abc2cddf0b81b5",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my main one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ba6a03abf0f5dbd8b488b5029da74ce626989b01c8cd402dba0334e63d8a6df8",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my main address\", \"order_id\": \"#W0034521\", \"scope\": \"the shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"black color\", \"item_descriptions\": \"desk lamp\", \"order_id\": \"#W0034521\", \"scope\": \"the desk lamp\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my main one\", \"order_id\": \"#W5270061\", \"scope\": \"my recent order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W5270061\", \"scope\": \"the items\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "782879817b6a98fd576a6bf257965c6c38ded1a985a3d25a462423f033df0426",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:7:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "black color"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "desk lamp"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the desk lamp"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my main one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "782879817b6a98fd576a6bf257965c6c38ded1a985a3d25a462423f033df0426",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:7:user",
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "782879817b6a98fd576a6bf257965c6c38ded1a985a3d25a462423f033df0426",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:7:user",
+        "message:21:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "782879817b6a98fd576a6bf257965c6c38ded1a985a3d25a462423f033df0426",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:7:user",
+        "message:21:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "782879817b6a98fd576a6bf257965c6c38ded1a985a3d25a462423f033df0426",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:7:user",
+        "message:21:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 2
+        }
+      ],
+      "response_sha256": "db2d317576b116b2006a4e541d733f8902965c65e501f776dad8a01a29a1d14b",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:29:user",
+        "message:7:user"
+      ],
+      "state_revision": 30,
+      "total_commitments": 6,
+      "validated_records": [
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the grey, medium, polyester option"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "just the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "any additional charges"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "782879817b6a98fd576a6bf257965c6c38ded1a985a3d25a462423f033df0426",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 20,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 6,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my main address\", \"order_id\": \"#W0034521\", \"scope\": \"the shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"black color\", \"item_descriptions\": \"desk lamp\", \"order_id\": \"#W0034521\", \"scope\": \"the desk lamp\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my main one\", \"order_id\": \"#W5270061\", \"scope\": \"my recent order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W5270061\", \"scope\": \"the items\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"desired_variant_constraints\": \"the grey, medium, polyester option\", \"item_descriptions\": \"the backpack\", \"scope\": \"just the backpack\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0006\", \"explicit_fields\": {\"scope\": \"any additional charges\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "662bdd681c6593523678ecfdac2a5fb33244643069d2d39248ca20fc7388a36e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 21,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:21:user"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "black color"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "desk lamp"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the desk lamp"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my main one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the grey, medium, polyester option"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "just the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "any additional charges"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "662bdd681c6593523678ecfdac2a5fb33244643069d2d39248ca20fc7388a36e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:21:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:31:user"
+      ],
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 2
+        },
+        {
+          "error": "record has no valid grounded fields",
+          "error_type": "ValueError",
+          "record_index": 2
+        }
+      ],
+      "response_sha256": "e143c9438dc868cf24b21d5f8d6806af9f38b90459564a74070428c50b0307de",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:31:user"
+      ],
+      "state_revision": 32,
+      "total_commitments": 6,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the grey, medium, polyester option"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "just the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "662bdd681c6593523678ecfdac2a5fb33244643069d2d39248ca20fc7388a36e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:21:user"
+      ],
+      "state_revision": 32
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "159 Hickory Lane",
+            "address2": "Suite 995",
+            "city": "Charlotte",
+            "country": "USA",
+            "order_id": "#W5270061",
+            "state": "NC",
+            "zip": "28243"
+          },
+          "call_id": "call_msDRRjlgKuFag1h8OqM0gaj8",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "662bdd681c6593523678ecfdac2a5fb33244643069d2d39248ca20fc7388a36e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 32
+    },
+    {
+      "arguments": {
+        "address1": "159 Hickory Lane",
+        "address2": "Suite 995",
+        "city": "Charlotte",
+        "country": "USA",
+        "order_id": "#W5270061",
+        "state": "NC",
+        "zip": "28243"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_msDRRjlgKuFag1h8OqM0gaj8",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 27,
+      "state_revision": 32,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_msDRRjlgKuFag1h8OqM0gaj8",
+        "candidate_arguments": {
+          "address1": "159 Hickory Lane",
+          "address2": "Suite 995",
+          "city": "Charlotte",
+          "country": "USA",
+          "order_id": "#W5270061",
+          "state": "NC",
+          "zip": "28243"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ivan_khan_7475",
+          "authentication_source_event_ids": [
+            "tool:call_kvbS9M3BX8aJcOzF5Q4fKhxw:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2492465580",
+              "5810561222",
+              "7453605304"
+            ],
+            "order_id": "#W5270061",
+            "source_event_ids": [
+              "tool:call_xikuCmtXfSz8KfGGhp7rsXp0:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "ivan_khan_7475"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "2524789262",
+              "source_event_ids": [
+                "tool:call_nLvuAk2V6DrNOeX9fpASvHTp:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "2985987096",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "6817146515",
+              "source_event_ids": [
+                "tool:call_MiB5B3WFMQAQC66sIssetRQ7:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_1711656",
+              "paypal_7729105"
+            ],
+            "source_event_ids": [
+              "tool:call_1Jb7KZfPmS4tPcsTgk6yq3GF:get_user_details"
+            ],
+            "user_id": "ivan_khan_7475"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 28,
+      "state_revision": 32
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_msDRRjlgKuFag1h8OqM0gaj8",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 29,
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "662bdd681c6593523678ecfdac2a5fb33244643069d2d39248ca20fc7388a36e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 30,
+      "state_revision": 34
+    },
+    {
+      "accepted_records": 6,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my main address\", \"order_id\": \"#W0034521\", \"scope\": \"the shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"black color\", \"item_descriptions\": \"desk lamp\", \"order_id\": \"#W0034521\", \"scope\": \"the desk lamp\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my main one\", \"order_id\": \"#W5270061\", \"scope\": \"my recent order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W5270061\", \"scope\": \"the items\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"desired_variant_constraints\": \"the grey, medium, polyester option\", \"item_descriptions\": \"the backpack\", \"scope\": \"just the backpack\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0006\", \"explicit_fields\": {\"scope\": \"any additional charges\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 995\", \"city\": \"Charlotte\", \"country\": \"USA\", \"order_id\": \"#W5270061\", \"state\": \"NC\", \"zip\": \"28243\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "b7506f226edd8487a2f0c7a3839a26497b5684bfc0b3a9864722f791db660d4f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 31,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:31:user",
+        "message:21:user",
+        "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address"
+      ],
+      "state_revision": 34,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "black color"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "desk lamp"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the desk lamp"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my main one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the grey, medium, polyester option"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "just the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "any additional charges"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "159 Hickory Lane",
+              "address2": "Suite 995",
+              "city": "Charlotte",
+              "country": "USA",
+              "order_id": "#W5270061",
+              "state": "NC",
+              "zip": "28243"
+            },
+            "result": {
+              "address": {
+                "address1": "159 Hickory Lane",
+                "address2": "Suite 995",
+                "city": "Charlotte",
+                "country": "USA",
+                "state": "NC",
+                "zip": "28243"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "2492465580",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "navy",
+                    "compartment": "laptop",
+                    "material": "nylon",
+                    "size": "small"
+                  },
+                  "price": 201.95,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "5810561222",
+                  "name": "Indoor Security Camera",
+                  "options": {
+                    "connectivity": "Wi-Fi",
+                    "field of view": "130 degrees",
+                    "resolution": "4K"
+                  },
+                  "price": 274.98,
+                  "product_id": "2985987096"
+                },
+                {
+                  "item_id": "7453605304",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "low",
+                    "color": "silver",
+                    "power source": "battery"
+                  },
+                  "price": 150.01,
+                  "product_id": "6817146515"
+                }
+              ],
+              "order_id": "#W5270061",
+              "payment_history": [
+                {
+                  "amount": 626.94,
+                  "payment_method_id": "gift_card_1711656",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "ivan_khan_7475"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b7506f226edd8487a2f0c7a3839a26497b5684bfc0b3a9864722f791db660d4f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 32,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:31:user",
+        "message:21:user",
+        "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address"
+      ],
+      "state_revision": 34
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "2492465580"
+            ],
+            "new_item_ids": [
+              "5917587651"
+            ],
+            "order_id": "#W5270061",
+            "payment_method_id": "paypal_7729105"
+          },
+          "call_id": "call_EbGa6jZiaVHeTSejJNFJfqAa",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "b7506f226edd8487a2f0c7a3839a26497b5684bfc0b3a9864722f791db660d4f",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 33,
+      "state_revision": 34
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "2492465580"
+        ],
+        "new_item_ids": [
+          "5917587651"
+        ],
+        "order_id": "#W5270061",
+        "payment_method_id": "paypal_7729105"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_EbGa6jZiaVHeTSejJNFJfqAa",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 34,
+      "state_revision": 34,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_EbGa6jZiaVHeTSejJNFJfqAa",
+        "candidate_arguments": {
+          "item_ids": [
+            "2492465580"
+          ],
+          "new_item_ids": [
+            "5917587651"
+          ],
+          "order_id": "#W5270061",
+          "payment_method_id": "paypal_7729105"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "ivan_khan_7475",
+          "authentication_source_event_ids": [
+            "tool:call_kvbS9M3BX8aJcOzF5Q4fKhxw:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "2492465580",
+              "5810561222",
+              "7453605304"
+            ],
+            "order_id": "#W5270061",
+            "source_event_ids": [
+              "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address"
+            ],
+            "status": "pending",
+            "user_id": "ivan_khan_7475"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "2524789262",
+              "source_event_ids": [
+                "tool:call_nLvuAk2V6DrNOeX9fpASvHTp:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "2985987096",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "6817146515",
+              "source_event_ids": [
+                "tool:call_MiB5B3WFMQAQC66sIssetRQ7:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_1711656",
+              "paypal_7729105"
+            ],
+            "source_event_ids": [
+              "tool:call_1Jb7KZfPmS4tPcsTgk6yq3GF:get_user_details"
+            ],
+            "user_id": "ivan_khan_7475"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 35,
+      "state_revision": 34
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_EbGa6jZiaVHeTSejJNFJfqAa",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 36,
+      "state_revision": 34
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "b7506f226edd8487a2f0c7a3839a26497b5684bfc0b3a9864722f791db660d4f",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 37,
+      "state_revision": 36
+    },
+    {
+      "accepted_records": 6,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my main address\", \"order_id\": \"#W0034521\", \"scope\": \"the shipping address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"black color\", \"item_descriptions\": \"desk lamp\", \"order_id\": \"#W0034521\", \"scope\": \"the desk lamp\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my main one\", \"order_id\": \"#W5270061\", \"scope\": \"my recent order\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W5270061\", \"scope\": \"the items\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"desired_variant_constraints\": \"the grey, medium, polyester option\", \"item_descriptions\": \"the backpack\", \"scope\": \"just the backpack\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0006\", \"explicit_fields\": {\"scope\": \"any additional charges\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 995\", \"city\": \"Charlotte\", \"country\": \"USA\", \"order_id\": \"#W5270061\", \"state\": \"NC\", \"zip\": \"28243\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"item_ids\": [\"2492465580\"], \"new_item_ids\": [\"5917587651\"], \"order_id\": \"#W5270061\", \"payment_method_id\": \"paypal_7729105\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "0b11152b582b473f5526ee15328a1c6b88e01ca8fb7646da049ae9e86b08e084",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 38,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:31:user",
+        "message:21:user",
+        "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address",
+        "tool:call_EbGa6jZiaVHeTSejJNFJfqAa:modify_pending_order_items"
+      ],
+      "state_revision": 36,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "my main address"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user",
+                "message:29:user"
+              ],
+              "value": "the shipping address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "black color"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "desk lamp"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034521"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the desk lamp"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my main one"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "my recent order"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "#W5270061"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the items"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the grey, medium, polyester option"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "the backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user",
+                "message:31:user"
+              ],
+              "value": "just the backpack"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "any additional charges"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "159 Hickory Lane",
+              "address2": "Suite 995",
+              "city": "Charlotte",
+              "country": "USA",
+              "order_id": "#W5270061",
+              "state": "NC",
+              "zip": "28243"
+            },
+            "result": {
+              "address": {
+                "address1": "159 Hickory Lane",
+                "address2": "Suite 995",
+                "city": "Charlotte",
+                "country": "USA",
+                "state": "NC",
+                "zip": "28243"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "2492465580",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "navy",
+                    "compartment": "laptop",
+                    "material": "nylon",
+                    "size": "small"
+                  },
+                  "price": 201.95,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "5810561222",
+                  "name": "Indoor Security Camera",
+                  "options": {
+                    "connectivity": "Wi-Fi",
+                    "field of view": "130 degrees",
+                    "resolution": "4K"
+                  },
+                  "price": 274.98,
+                  "product_id": "2985987096"
+                },
+                {
+                  "item_id": "7453605304",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "low",
+                    "color": "silver",
+                    "power source": "battery"
+                  },
+                  "price": 150.01,
+                  "product_id": "6817146515"
+                }
+              ],
+              "order_id": "#W5270061",
+              "payment_history": [
+                {
+                  "amount": 626.94,
+                  "payment_method_id": "gift_card_1711656",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "ivan_khan_7475"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_EbGa6jZiaVHeTSejJNFJfqAa:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "2492465580"
+              ],
+              "new_item_ids": [
+                "5917587651"
+              ],
+              "order_id": "#W5270061",
+              "payment_method_id": "paypal_7729105"
+            },
+            "result": {
+              "address": {
+                "address1": "159 Hickory Lane",
+                "address2": "Suite 995",
+                "city": "Charlotte",
+                "country": "USA",
+                "state": "NC",
+                "zip": "28243"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "5810561222",
+                  "name": "Indoor Security Camera",
+                  "options": {
+                    "connectivity": "Wi-Fi",
+                    "field of view": "130 degrees",
+                    "resolution": "4K"
+                  },
+                  "price": 274.98,
+                  "product_id": "2985987096"
+                },
+                {
+                  "item_id": "7453605304",
+                  "name": "Desk Lamp",
+                  "options": {
+                    "brightness": "low",
+                    "color": "silver",
+                    "power source": "battery"
+                  },
+                  "price": 150.01,
+                  "product_id": "6817146515"
+                }
+              ],
+              "order_id": "#W5270061",
+              "payment_history": [
+                {
+                  "amount": 626.94,
+                  "payment_method_id": "gift_card_1711656",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 10.840000000000003,
+                  "payment_method_id": "paypal_7729105",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "ivan_khan_7475"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "0b11152b582b473f5526ee15328a1c6b88e01ca8fb7646da049ae9e86b08e084",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 39,
+      "source_event_ids": [
+        "message:7:user",
+        "message:29:user",
+        "message:31:user",
+        "message:21:user",
+        "tool:call_msDRRjlgKuFag1h8OqM0gaj8:modify_pending_order_address",
+        "tool:call_EbGa6jZiaVHeTSejJNFJfqAa:modify_pending_order_items"
+      ],
+      "state_revision": 36
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 40,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 45.53384804195957,
+    "prewrite_validation": 0.0005809590220451355,
+    "semantic_support": 19.873436915993807
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 15,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "71",
+  "trajectory_id": "seed_976301_C3_COMBINED_INTERVENTION_task_071"
+}

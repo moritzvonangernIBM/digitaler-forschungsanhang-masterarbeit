@@ -1,0 +1,599 @@
+{
+  "agent_cost": 0.007012299999999998,
+  "auth_classification": null,
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "duration": 42.6508687500027,
+  "effect_timeline": null,
+  "hallucination_check": null,
+  "hallucination_retries_used": 0,
+  "id": "seed_976304_C1_SEMANTIC_SUPPORT_task_011",
+  "info": null,
+  "messages": [
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi! How can I help you today?",
+      "cost": 0.0,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 0,
+      "turn_taking_action": null,
+      "usage": null,
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I want to return everything I ordered.",
+      "cost": 0.000896,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 1,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 416
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Sure—I can help with that, but first I need to authenticate your account.\n\nPlease reply with **one** of the following:\n1) **Your email**, or  \n2) **Your first name + last name + ZIP code**\n\nAlso, please share your **order ID** (e.g., `#W0000000`) so I can confirm it’s eligible for a full return.",
+      "cost": 0.0007247499999999999,
+      "generation_time_seconds": 4.606611958006397,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 2,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 126,
+        "prompt_tokens": 3565
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "mia.garcia2723@example.com\n\nOrder IDs: #A12345 and #B67890",
+      "cost": 0.0011899999999999999,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 3,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 511
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00035795,
+      "generation_time_seconds": 1.1953002079972066,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "email": "mia.garcia2723@example.com"
+          },
+          "id": "call_PPh2cwIcNgzEDcdgzrNQHbg7",
+          "name": "find_user_id_by_email",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 4,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 67,
+        "prompt_tokens": 3675
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "mia_garcia_4516",
+      "error": false,
+      "id": "call_PPh2cwIcNgzEDcdgzrNQHbg7",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 5
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00017218000000000002,
+      "generation_time_seconds": 1.9972213330038358,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#A12345"
+          },
+          "id": "call_iy8UNYVqjlc7m7hyUDCbD6bD",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        },
+        {
+          "arguments": {
+            "order_id": "#B67890"
+          },
+          "id": "call_M1Uivy0SGKb42MPawYiJx5Gz",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 6,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 3724
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_iy8UNYVqjlc7m7hyUDCbD6bD",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 7
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_M1Uivy0SGKb42MPawYiJx5Gz",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 8
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I couldn’t find either order ID in our system: **#A12345** and **#B67890**.\n\nCould you please double-check the order IDs (and include the leading **#**), or share the **correct order ID(s)**? Once I can locate your order, I’ll help you return everything.",
+      "cost": 0.00020518,
+      "generation_time_seconds": 1.3319361660105642,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 9,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 70,
+        "prompt_tokens": 3814
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "That’s what I have. Maybe check by my email?",
+      "cost": 0.001308,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 10,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 606
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00022653000000000001,
+      "generation_time_seconds": 1.2536631250113714,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "user_id": "mia_garcia_4516"
+          },
+          "id": "call_0wYKNW1bu703hmJjCMOM5Rb4",
+          "name": "get_user_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 11,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 73,
+        "prompt_tokens": 3902
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"user_id\": \"mia_garcia_4516\", \"name\": {\"first_name\": \"Mia\", \"last_name\": \"Garcia\"}, \"address\": {\"address1\": \"537 Main Street\", \"address2\": \"Suite 572\", \"city\": \"Indianapolis\", \"country\": \"USA\", \"state\": \"IN\", \"zip\": \"46229\"}, \"email\": \"mia.garcia2723@example.com\", \"payment_methods\": {\"paypal_9497703\": {\"source\": \"paypal\", \"id\": \"paypal_9497703\"}, \"credit_card_3124723\": {\"source\": \"credit_card\", \"id\": \"credit_card_3124723\", \"brand\": \"visa\", \"last_four\": \"7285\"}}, \"orders\": [\"#W5490111\", \"#W7387996\"]}",
+      "error": false,
+      "id": "call_0wYKNW1bu703hmJjCMOM5Rb4",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 12
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks—I checked your account for **mia.garcia2723@example.com**. In our system, you don’t have orders **#A12345** or **#B67890**.\n\nInstead, I see these orders under your account:\n- **#W5490111**\n- **#W7387996**\n\nWhich order ID(s) do you want to return **everything** from? (You can reply with one or both.)  \nAlso, for the refund, which payment method should the refund go to: **PayPal** or **credit card**?",
+      "cost": 0.00075453,
+      "generation_time_seconds": 3.3839068330125883,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 13,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 461,
+        "prompt_tokens": 4117
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Return everything from both orders.\n\nRefund #W5490111 to the payment method used for #W7387996, and refund #W7387996 to the payment method used for #W5490111.",
+      "cost": 0.0018279999999999998,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 14,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 742
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00155958,
+      "generation_time_seconds": 7.473689167993143,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5490111"
+          },
+          "id": "call_2MgTL7ms8jXws0hkV8xSlvOw",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        },
+        {
+          "arguments": {
+            "order_id": "#W7387996"
+          },
+          "id": "call_A8oox2ClFQKQxVUOVin0wqMA",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 15,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 192,
+        "prompt_tokens": 4480
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W5490111\", \"user_id\": \"mia_garcia_4516\", \"address\": {\"address1\": \"537 Main Street\", \"address2\": \"Suite 572\", \"city\": \"Indianapolis\", \"country\": \"USA\", \"state\": \"IN\", \"zip\": \"46229\"}, \"items\": [{\"name\": \"Water Bottle\", \"product_id\": \"8310926033\", \"item_id\": \"4579334072\", \"price\": 54.85, \"options\": {\"capacity\": \"750ml\", \"material\": \"glass\", \"color\": \"black\"}}, {\"name\": \"Mechanical Keyboard\", \"product_id\": \"1656367028\", \"item_id\": \"1421289881\", \"price\": 268.77, \"options\": {\"switch type\": \"linear\", \"backlight\": \"none\", \"size\": \"80%\"}}, {\"name\": \"Action Camera\", \"product_id\": \"3377618313\", \"item_id\": \"6117189161\", \"price\": 481.5, \"options\": {\"resolution\": \"4K\", \"waterproof\": \"yes\", \"color\": \"silver\"}}, {\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"4947717507\", \"price\": 218.04, \"options\": {\"color\": \"green\", \"size\": \"medium\", \"material\": \"leather\", \"compartment\": \"camera\"}}], \"status\": \"delivered\", \"fulfillments\": [{\"tracking_id\": [\"574297338433\"], \"item_ids\": [\"4579334072\", \"1421289881\", \"6117189161\", \"4947717507\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1023.16, \"payment_method_id\": \"credit_card_3124723\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_2MgTL7ms8jXws0hkV8xSlvOw",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 16
+    },
+    {
+      "content": "{\"order_id\": \"#W7387996\", \"user_id\": \"mia_garcia_4516\", \"address\": {\"address1\": \"537 Main Street\", \"address2\": \"Suite 572\", \"city\": \"Indianapolis\", \"country\": \"USA\", \"state\": \"IN\", \"zip\": \"46229\"}, \"items\": [{\"name\": \"Gaming Mouse\", \"product_id\": \"5713490933\", \"item_id\": \"5796612084\", \"price\": 158.89, \"options\": {\"color\": \"RGB\", \"sensor type\": \"optical\", \"connectivity\": \"wired\"}}], \"status\": \"delivered\", \"fulfillments\": [{\"tracking_id\": [\"200246490130\"], \"item_ids\": [\"5796612084\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 158.89, \"payment_method_id\": \"paypal_9497703\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_A8oox2ClFQKQxVUOVin0wqMA",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 17
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Got it. I can process **returns for everything** in both delivered orders, but I need to clarify the refund routing:\n\nOur policy requires that a return refund goes to the **original payment method used for that same order** (or an existing gift card).  \nSo I **can’t** swap refunds between orders as you requested.\n\nHere’s what I have on your orders:\n\n**#W5490111** (delivered) — return all 4 items  \n- Water Bottle (item `4579334072`)  \n- Mechanical Keyboard (item `1421289881`)  \n- Action Camera (item `6117189161`)  \n- Backpack (item `4947717507`)  \nRefund goes to: **credit card (id: `credit_card_3124723`)**\n\n**#W7387996** (delivered) — return all 1 item  \n- Gaming Mouse (item `5796612084`)  \nRefund goes to: **PayPal (id: `paypal_9497703`)**\n\nPlease reply **“yes”** to confirm you want me to proceed with these returns **and refunds to the original payment method for each order**.",
+      "cost": 0.0009385800000000001,
+      "generation_time_seconds": 4.512637666979572,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 18,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 426,
+        "prompt_tokens": 5256
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "What the hell? That’s so stupid. Why can’t you just do what I asked? This is ridiculous. Fine, whatever. Yes, just do it.",
+      "cost": 0.002326,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 19,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 1031
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00055796,
+      "generation_time_seconds": 2.4529804999765474,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4579334072",
+              "1421289881",
+              "6117189161",
+              "4947717507"
+            ],
+            "order_id": "#W5490111",
+            "payment_method_id": "credit_card_3124723"
+          },
+          "id": "call_QVlcADf95qzb8EgceIg9kKxE",
+          "name": "return_delivered_order_items",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 20,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 224,
+        "prompt_tokens": 5537
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W5490111\", \"user_id\": \"mia_garcia_4516\", \"address\": {\"address1\": \"537 Main Street\", \"address2\": \"Suite 572\", \"city\": \"Indianapolis\", \"country\": \"USA\", \"state\": \"IN\", \"zip\": \"46229\"}, \"items\": [{\"name\": \"Water Bottle\", \"product_id\": \"8310926033\", \"item_id\": \"4579334072\", \"price\": 54.85, \"options\": {\"capacity\": \"750ml\", \"material\": \"glass\", \"color\": \"black\"}}, {\"name\": \"Mechanical Keyboard\", \"product_id\": \"1656367028\", \"item_id\": \"1421289881\", \"price\": 268.77, \"options\": {\"switch type\": \"linear\", \"backlight\": \"none\", \"size\": \"80%\"}}, {\"name\": \"Action Camera\", \"product_id\": \"3377618313\", \"item_id\": \"6117189161\", \"price\": 481.5, \"options\": {\"resolution\": \"4K\", \"waterproof\": \"yes\", \"color\": \"silver\"}}, {\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"4947717507\", \"price\": 218.04, \"options\": {\"color\": \"green\", \"size\": \"medium\", \"material\": \"leather\", \"compartment\": \"camera\"}}], \"status\": \"return requested\", \"fulfillments\": [{\"tracking_id\": [\"574297338433\"], \"item_ids\": [\"4579334072\", \"1421289881\", \"6117189161\", \"4947717507\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1023.16, \"payment_method_id\": \"credit_card_3124723\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": [\"1421289881\", \"4579334072\", \"4947717507\", \"6117189161\"], \"return_payment_method_id\": \"credit_card_3124723\"}",
+      "error": false,
+      "id": "call_QVlcADf95qzb8EgceIg9kKxE",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 21
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00064153,
+      "generation_time_seconds": 5.858821583999088,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5796612084"
+            ],
+            "order_id": "#W7387996",
+            "payment_method_id": "paypal_9497703"
+          },
+          "id": "call_epWBCkyQe1YjHYVuyxJwOgjI",
+          "name": "return_delivered_order_items",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 22,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 6152
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W7387996\", \"user_id\": \"mia_garcia_4516\", \"address\": {\"address1\": \"537 Main Street\", \"address2\": \"Suite 572\", \"city\": \"Indianapolis\", \"country\": \"USA\", \"state\": \"IN\", \"zip\": \"46229\"}, \"items\": [{\"name\": \"Gaming Mouse\", \"product_id\": \"5713490933\", \"item_id\": \"5796612084\", \"price\": 158.89, \"options\": {\"color\": \"RGB\", \"sensor type\": \"optical\", \"connectivity\": \"wired\"}}], \"status\": \"return requested\", \"fulfillments\": [{\"tracking_id\": [\"200246490130\"], \"item_ids\": [\"5796612084\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 158.89, \"payment_method_id\": \"paypal_9497703\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": [\"5796612084\"], \"return_payment_method_id\": \"paypal_9497703\"}",
+      "error": false,
+      "id": "call_epWBCkyQe1YjHYVuyxJwOgjI",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 23
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I hear you—and I’ve gone ahead with the returns. Refunds have to go back to the original payment method **for each order**.\n\n### Return submitted\n**1) Order #W5490111** (return all items)  \n- Item IDs: `4579334072`, `1421289881`, `6117189161`, `4947717507`  \n- Refund to: **credit card** (`credit_card_3124723`)  \n- Status: **return requested**\n\n**2) Order #W7387996** (return everything)  \n- Item ID: `5796612084`  \n- Refund to: **PayPal** (`paypal_9497703`)  \n- Status: **return requested**\n\nYou should receive an email with instructions on **how and where to return** the items.",
+      "cost": 0.00087353,
+      "generation_time_seconds": 2.0995691250136588,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 24,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 173,
+        "prompt_tokens": 6512
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Fine. Whatever. Done.###STOP###",
+      "cost": 0.002554,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 25,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1241
+      },
+      "utterance_ids": null
+    }
+  ],
+  "mode": "half_duplex",
+  "policy": null,
+  "review": null,
+  "reward_info": null,
+  "seed": 976304,
+  "speech_environment": null,
+  "task_id": "11",
+  "termination_reason": "user_stop",
+  "ticks": null,
+  "trial": null,
+  "user_cost": 0.010102,
+  "user_only_review": null
+}

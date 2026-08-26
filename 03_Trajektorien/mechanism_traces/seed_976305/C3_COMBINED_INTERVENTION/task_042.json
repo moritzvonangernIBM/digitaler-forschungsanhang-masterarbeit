@@ -1,0 +1,2762 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.011484059999999997,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00215445
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 7,
+    "b_evidence_reads": 0,
+    "b_opportunities": 4,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "d6b0269b54b4c1fa97586fb936cb376e484a6c92efbbfb11740daff7e8763eb4",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:12:user"
+      ],
+      "state_revision": 13
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "dd72c798ea34fe5fbf29ad3ae7f40e0f3290bf4d1265b283a3979c3809b79758",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:12:user"
+      ],
+      "state_revision": 13,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "ee0e33261a5add76ca6acf2d215f70b60bd744eab0f57c54b2df3de0580058b5",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user"
+      ],
+      "state_revision": 13,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ee0e33261a5add76ca6acf2d215f70b60bd744eab0f57c54b2df3de0580058b5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user"
+      ],
+      "state_revision": 13
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:14:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "051752f89be5ab341d1103060546b75598ef1ba7635350e5c559c73263323f72",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:12:user",
+        "message:14:user"
+      ],
+      "state_revision": 15,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ee0e33261a5add76ca6acf2d215f70b60bd744eab0f57c54b2df3de0580058b5",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 8,
+      "state_revision": 15
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"address_reference\": \"the correct address\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "0270b12dff41b978d6ffee4bedd1d8a576aa6613d1eff07f473f76321bc50db0",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user"
+      ],
+      "state_revision": 15,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "0270b12dff41b978d6ffee4bedd1d8a576aa6613d1eff07f473f76321bc50db0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "445 Maple Drive",
+            "address2": "Suite 394",
+            "city": "Fort Worth",
+            "country": "USA",
+            "order_id": "#W9583042",
+            "state": "TX",
+            "zip": "76165"
+          },
+          "call_id": "call_8oGSVAPiLKLlWEsqXdFlhooA",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "0270b12dff41b978d6ffee4bedd1d8a576aa6613d1eff07f473f76321bc50db0",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 11,
+      "state_revision": 15
+    },
+    {
+      "arguments": {
+        "address1": "445 Maple Drive",
+        "address2": "Suite 394",
+        "city": "Fort Worth",
+        "country": "USA",
+        "order_id": "#W9583042",
+        "state": "TX",
+        "zip": "76165"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_8oGSVAPiLKLlWEsqXdFlhooA",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 12,
+      "state_revision": 15,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_8oGSVAPiLKLlWEsqXdFlhooA",
+        "candidate_arguments": {
+          "address1": "445 Maple Drive",
+          "address2": "Suite 394",
+          "city": "Fort Worth",
+          "country": "USA",
+          "order_id": "#W9583042",
+          "state": "TX",
+          "zip": "76165"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_patel_7272",
+          "authentication_source_event_ids": [
+            "tool:call_lOWCnHmxf1ldrhKWJ8n0qdP2:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5421902839",
+              "6245231688",
+              "7160999700",
+              "3230708338"
+            ],
+            "order_id": "#W9583042",
+            "source_event_ids": [
+              "tool:call_cJ0q5J1Qglz3r0oM6nBglMza:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "mei_patel_7272"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "5426915165",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6858788497",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9503061",
+              "paypal_4768213"
+            ],
+            "source_event_ids": [
+              "tool:call_RnHmFn99pKuL1BJZOoVBpyKs:get_user_details"
+            ],
+            "user_id": "mei_patel_7272"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 13,
+      "state_revision": 15
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_8oGSVAPiLKLlWEsqXdFlhooA",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 14,
+      "state_revision": 15
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "0270b12dff41b978d6ffee4bedd1d8a576aa6613d1eff07f473f76321bc50db0",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 15,
+      "state_revision": 17
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"address_reference\": \"the correct address\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W9583042\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "7d5f95726f2ea3e0d2f56c574670ee9e403ffa159b4cfa2220ab4f72fccce05e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+      ],
+      "state_revision": 17,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W9583042",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5421902839",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "oriental",
+                    "size": "100ml"
+                  },
+                  "price": 328.25,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "6245231688",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 522.03,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "7160999700",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "red",
+                    "material": "softshell",
+                    "piece count": "2-piece"
+                  },
+                  "price": 499.29,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "3230708338",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "latex"
+                  },
+                  "price": 99.51,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W9583042",
+              "payment_history": [
+                {
+                  "amount": 1449.08,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "7d5f95726f2ea3e0d2f56c574670ee9e403ffa159b4cfa2220ab4f72fccce05e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+      ],
+      "state_revision": 17
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "445 Maple Drive",
+            "address2": "Suite 394",
+            "city": "Fort Worth",
+            "country": "USA",
+            "order_id": "#W4082615",
+            "state": "TX",
+            "zip": "76165"
+          },
+          "call_id": "call_iWo7tlrbw1ehyIpWslgLQGz2",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "7d5f95726f2ea3e0d2f56c574670ee9e403ffa159b4cfa2220ab4f72fccce05e",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 17
+    },
+    {
+      "arguments": {
+        "address1": "445 Maple Drive",
+        "address2": "Suite 394",
+        "city": "Fort Worth",
+        "country": "USA",
+        "order_id": "#W4082615",
+        "state": "TX",
+        "zip": "76165"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_iWo7tlrbw1ehyIpWslgLQGz2",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 19,
+      "state_revision": 17,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_iWo7tlrbw1ehyIpWslgLQGz2",
+        "candidate_arguments": {
+          "address1": "445 Maple Drive",
+          "address2": "Suite 394",
+          "city": "Fort Worth",
+          "country": "USA",
+          "order_id": "#W4082615",
+          "state": "TX",
+          "zip": "76165"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_patel_7272",
+          "authentication_source_event_ids": [
+            "tool:call_lOWCnHmxf1ldrhKWJ8n0qdP2:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "9779102705",
+              "5917587651",
+              "3876764226",
+              "8316205423",
+              "2540052208"
+            ],
+            "order_id": "#W4082615",
+            "source_event_ids": [
+              "tool:call_8QszHa6IS26DyNQSPi0QillH:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "mei_patel_7272"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1808611083",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6819683148",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6858788497",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9503061",
+              "paypal_4768213"
+            ],
+            "source_event_ids": [
+              "tool:call_RnHmFn99pKuL1BJZOoVBpyKs:get_user_details"
+            ],
+            "user_id": "mei_patel_7272"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 20,
+      "state_revision": 17
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_iWo7tlrbw1ehyIpWslgLQGz2",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 21,
+      "state_revision": 17
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "7d5f95726f2ea3e0d2f56c574670ee9e403ffa159b4cfa2220ab4f72fccce05e",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 22,
+      "state_revision": 19
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"address_reference\": \"the correct address\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W9583042\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W4082615\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "e1cbab8584aeb72df25ec56536350ada1553451c97bfa7a42363ff2186e09e86",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+      ],
+      "state_revision": 19,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W9583042",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5421902839",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "oriental",
+                    "size": "100ml"
+                  },
+                  "price": 328.25,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "6245231688",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 522.03,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "7160999700",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "red",
+                    "material": "softshell",
+                    "piece count": "2-piece"
+                  },
+                  "price": 499.29,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "3230708338",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "latex"
+                  },
+                  "price": 99.51,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W9583042",
+              "payment_history": [
+                {
+                  "amount": 1449.08,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W4082615",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9779102705",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "1000",
+                    "theme": "art"
+                  },
+                  "price": 54.11,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3876764226",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "portable",
+                    "type": "electric"
+                  },
+                  "price": 981.47,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "8316205423",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "women",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 288.75,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "2540052208",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "silicone",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 346.42,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W4082615",
+              "payment_history": [
+                {
+                  "amount": 1883.54,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e1cbab8584aeb72df25ec56536350ada1553451c97bfa7a42363ff2186e09e86",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+      ],
+      "state_revision": 19
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "35ca99897168740aca9ddf737122d8045a48c06461cacd2dc3063929d4c6dd95",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the same one"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e1cbab8584aeb72df25ec56536350ada1553451c97bfa7a42363ff2186e09e86",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 27,
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"address_reference\": \"the correct address\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the same one\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W9583042\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W4082615\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "3e50bd794f3a3746e47c5e2d35cd8bab9666e68d9b1368aa03bd351a9b1b647f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 28,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+      ],
+      "state_revision": 21,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the same one"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W9583042",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5421902839",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "oriental",
+                    "size": "100ml"
+                  },
+                  "price": 328.25,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "6245231688",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 522.03,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "7160999700",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "red",
+                    "material": "softshell",
+                    "piece count": "2-piece"
+                  },
+                  "price": 499.29,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "3230708338",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "latex"
+                  },
+                  "price": 99.51,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W9583042",
+              "payment_history": [
+                {
+                  "amount": 1449.08,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W4082615",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9779102705",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "1000",
+                    "theme": "art"
+                  },
+                  "price": 54.11,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3876764226",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "portable",
+                    "type": "electric"
+                  },
+                  "price": 981.47,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "8316205423",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "women",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 288.75,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "2540052208",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "silicone",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 346.42,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W4082615",
+              "payment_history": [
+                {
+                  "amount": 1883.54,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "3e50bd794f3a3746e47c5e2d35cd8bab9666e68d9b1368aa03bd351a9b1b647f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 29,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+      ],
+      "state_revision": 21
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "3e50bd794f3a3746e47c5e2d35cd8bab9666e68d9b1368aa03bd351a9b1b647f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 30,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+      ],
+      "state_revision": 23
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "445 Maple Drive",
+            "address2": "Suite 394",
+            "city": "Fort Worth",
+            "country": "USA",
+            "state": "TX",
+            "user_id": "mei_patel_7272",
+            "zip": "76165"
+          },
+          "call_id": "call_B12JfIRwjgrAKb2TkpdnQIQp",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0005",
+      "card_sha256": "3e50bd794f3a3746e47c5e2d35cd8bab9666e68d9b1368aa03bd351a9b1b647f",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 31,
+      "state_revision": 23
+    },
+    {
+      "arguments": {
+        "address1": "445 Maple Drive",
+        "address2": "Suite 394",
+        "city": "Fort Worth",
+        "country": "USA",
+        "state": "TX",
+        "user_id": "mei_patel_7272",
+        "zip": "76165"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_B12JfIRwjgrAKb2TkpdnQIQp",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 32,
+      "state_revision": 23,
+      "tool_name": "modify_user_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_B12JfIRwjgrAKb2TkpdnQIQp",
+        "candidate_arguments": {
+          "address1": "445 Maple Drive",
+          "address2": "Suite 394",
+          "city": "Fort Worth",
+          "country": "USA",
+          "state": "TX",
+          "user_id": "mei_patel_7272",
+          "zip": "76165"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_patel_7272",
+          "authentication_source_event_ids": [
+            "tool:call_lOWCnHmxf1ldrhKWJ8n0qdP2:find_user_id_by_name_zip"
+          ],
+          "order": null,
+          "products": [],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9503061",
+              "paypal_4768213"
+            ],
+            "source_event_ids": [
+              "tool:call_RnHmFn99pKuL1BJZOoVBpyKs:get_user_details"
+            ],
+            "user_id": "mei_patel_7272"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_user_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 33,
+      "state_revision": 23
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_B12JfIRwjgrAKb2TkpdnQIQp",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 34,
+      "state_revision": 23
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "3e50bd794f3a3746e47c5e2d35cd8bab9666e68d9b1368aa03bd351a9b1b647f",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 35,
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"address_reference\": \"the correct address\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the same one\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W9583042\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W4082615\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"state\": \"TX\", \"user_id\": \"mei_patel_7272\", \"zip\": \"76165\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 36,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+      ],
+      "state_revision": 25,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the same one"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W9583042",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5421902839",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "oriental",
+                    "size": "100ml"
+                  },
+                  "price": 328.25,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "6245231688",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 522.03,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "7160999700",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "red",
+                    "material": "softshell",
+                    "piece count": "2-piece"
+                  },
+                  "price": 499.29,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "3230708338",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "latex"
+                  },
+                  "price": 99.51,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W9583042",
+              "payment_history": [
+                {
+                  "amount": 1449.08,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W4082615",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9779102705",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "1000",
+                    "theme": "art"
+                  },
+                  "price": 54.11,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3876764226",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "portable",
+                    "type": "electric"
+                  },
+                  "price": 981.47,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "8316205423",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "women",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 288.75,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "2540052208",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "silicone",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 346.42,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W4082615",
+              "payment_history": [
+                {
+                  "amount": 1883.54,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "state": "TX",
+              "user_id": "mei_patel_7272",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "email": "mei.patel3193@example.com",
+              "name": {
+                "first_name": "Mei",
+                "last_name": "Patel"
+              },
+              "orders": [
+                "#W9583042",
+                "#W4082615"
+              ],
+              "payment_methods": {
+                "credit_card_9503061": {
+                  "brand": "visa",
+                  "id": "credit_card_9503061",
+                  "last_four": "9904",
+                  "source": "credit_card"
+                },
+                "paypal_4768213": {
+                  "id": "paypal_4768213",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 37,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+      ],
+      "state_revision": 25
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 38,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+      ],
+      "state_revision": 27
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 39,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+      ],
+      "state_revision": 29
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 40,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+      ],
+      "state_revision": 31
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 41,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+      ],
+      "state_revision": 33
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "9779102705"
+            ],
+            "new_item_ids": [
+              "1096508426"
+            ],
+            "order_id": "#W4082615",
+            "payment_method_id": "paypal_4768213"
+          },
+          "call_id": "call_Spi4HYHVapGbFbLDR5qX8yoP",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 42,
+      "state_revision": 33
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "9779102705"
+        ],
+        "new_item_ids": [
+          "1096508426"
+        ],
+        "order_id": "#W4082615",
+        "payment_method_id": "paypal_4768213"
+      },
+      "bundle_id": "BB-0004-O",
+      "call_id": "call_Spi4HYHVapGbFbLDR5qX8yoP",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 43,
+      "state_revision": 33,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_Spi4HYHVapGbFbLDR5qX8yoP",
+        "candidate_arguments": {
+          "item_ids": [
+            "9779102705"
+          ],
+          "new_item_ids": [
+            "1096508426"
+          ],
+          "order_id": "#W4082615",
+          "payment_method_id": "paypal_4768213"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_patel_7272",
+          "authentication_source_event_ids": [
+            "tool:call_lOWCnHmxf1ldrhKWJ8n0qdP2:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "9779102705",
+              "5917587651",
+              "3876764226",
+              "8316205423",
+              "2540052208"
+            ],
+            "order_id": "#W4082615",
+            "source_event_ids": [
+              "tool:call_sk2yQqU5ginW9Qbkp1Zn3y98:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "mei_patel_7272"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1808611083",
+              "source_event_ids": [
+                "tool:call_p4ps6WMg9pIzt251qJzTq3fS:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6819683148",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6858788497",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9503061",
+              "paypal_4768213"
+            ],
+            "source_event_ids": [
+              "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+            ],
+            "user_id": "mei_patel_7272"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 44,
+      "state_revision": 33
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_Spi4HYHVapGbFbLDR5qX8yoP",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0004",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 45,
+      "state_revision": 33
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "d66e051706c1a800ca88f6ca61e6cb5f9a170782345d440d04bcee45890cd167",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 46,
+      "state_revision": 35
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"my address\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address1\": \"445 Maple Drive, Suite 394\", \"address_reference\": \"the correct address\", \"city\": \"Fort Worth\", \"scope\": \"both orders\", \"state\": \"TX\", \"zip\": \"76165\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the same one\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W9583042\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"order_id\": \"#W4082615\", \"state\": \"TX\", \"zip\": \"76165\"}, \"tool_name\": \"modify_pending_order_address\"}, {\"arguments\": {\"address1\": \"445 Maple Drive\", \"address2\": \"Suite 394\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"state\": \"TX\", \"user_id\": \"mei_patel_7272\", \"zip\": \"76165\"}, \"tool_name\": \"modify_user_address\"}, {\"arguments\": {\"item_ids\": [\"9779102705\"], \"new_item_ids\": [\"1096508426\"], \"order_id\": \"#W4082615\", \"payment_method_id\": \"paypal_4768213\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0007",
+      "card_sha256": "ffa43d49a8d71585180e6909eab373c754c28bc7d7fbd2561990a5a9e1c1d5e6",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 47,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address",
+        "tool:call_Spi4HYHVapGbFbLDR5qX8yoP:modify_pending_order_items"
+      ],
+      "state_revision": 35,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "445 Maple Drive, Suite 394"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:14:user"
+              ],
+              "value": "the correct address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "Fort Worth"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:12:user",
+                "message:14:user"
+              ],
+              "value": "both orders"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:12:user"
+              ],
+              "value": "76165"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "the same one"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W9583042",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5421902839",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "oriental",
+                    "size": "100ml"
+                  },
+                  "price": 328.25,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "6245231688",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 522.03,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "7160999700",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "red",
+                    "material": "softshell",
+                    "piece count": "2-piece"
+                  },
+                  "price": 499.29,
+                  "product_id": "5426915165"
+                },
+                {
+                  "item_id": "3230708338",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "latex"
+                  },
+                  "price": 99.51,
+                  "product_id": "6679515468"
+                }
+              ],
+              "order_id": "#W9583042",
+              "payment_history": [
+                {
+                  "amount": 1449.08,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "order_id": "#W4082615",
+              "state": "TX",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9779102705",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "1000",
+                    "theme": "art"
+                  },
+                  "price": 54.11,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3876764226",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "portable",
+                    "type": "electric"
+                  },
+                  "price": 981.47,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "8316205423",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "women",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 288.75,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "2540052208",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "silicone",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 346.42,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W4082615",
+              "payment_history": [
+                {
+                  "amount": 1883.54,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "445 Maple Drive",
+              "address2": "Suite 394",
+              "city": "Fort Worth",
+              "country": "USA",
+              "state": "TX",
+              "user_id": "mei_patel_7272",
+              "zip": "76165"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "email": "mei.patel3193@example.com",
+              "name": {
+                "first_name": "Mei",
+                "last_name": "Patel"
+              },
+              "orders": [
+                "#W9583042",
+                "#W4082615"
+              ],
+              "payment_methods": {
+                "credit_card_9503061": {
+                  "brand": "visa",
+                  "id": "credit_card_9503061",
+                  "last_four": "9904",
+                  "source": "credit_card"
+                },
+                "paypal_4768213": {
+                  "id": "paypal_4768213",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_user_address"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_Spi4HYHVapGbFbLDR5qX8yoP:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "9779102705"
+              ],
+              "new_item_ids": [
+                "1096508426"
+              ],
+              "order_id": "#W4082615",
+              "payment_method_id": "paypal_4768213"
+            },
+            "result": {
+              "address": {
+                "address1": "445 Maple Drive",
+                "address2": "Suite 394",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76165"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "1096508426",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "beginner",
+                    "pieces": "500",
+                    "theme": "art"
+                  },
+                  "price": 46.13,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3876764226",
+                  "name": "Grill",
+                  "options": {
+                    "features": "side burner",
+                    "size": "portable",
+                    "type": "electric"
+                  },
+                  "price": 981.47,
+                  "product_id": "6819683148"
+                },
+                {
+                  "item_id": "8316205423",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "women",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 288.75,
+                  "product_id": "6858788497"
+                },
+                {
+                  "item_id": "2540052208",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "silicone",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 346.42,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W4082615",
+              "payment_history": [
+                {
+                  "amount": 1883.54,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 7.979999999999997,
+                  "payment_method_id": "paypal_4768213",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "mei_patel_7272"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0007",
+      "card_sha256": "ffa43d49a8d71585180e6909eab373c754c28bc7d7fbd2561990a5a9e1c1d5e6",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 48,
+      "source_event_ids": [
+        "message:1:user",
+        "message:12:user",
+        "message:14:user",
+        "message:20:user",
+        "tool:call_8oGSVAPiLKLlWEsqXdFlhooA:modify_pending_order_address",
+        "tool:call_iWo7tlrbw1ehyIpWslgLQGz2:modify_pending_order_address",
+        "tool:call_B12JfIRwjgrAKb2TkpdnQIQp:modify_user_address",
+        "tool:call_Spi4HYHVapGbFbLDR5qX8yoP:modify_pending_order_items"
+      ],
+      "state_revision": 35
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 4,
+    "b_opportunities": 4,
+    "event_count": 49,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 52.8175653340586,
+    "prewrite_validation": 0.0010013739229179919,
+    "semantic_support": 13.029435499978717
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 7,
+    "card_injections": 12,
+    "injected_cards": 7,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 4
+  },
+  "task_id": "42",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_042"
+}

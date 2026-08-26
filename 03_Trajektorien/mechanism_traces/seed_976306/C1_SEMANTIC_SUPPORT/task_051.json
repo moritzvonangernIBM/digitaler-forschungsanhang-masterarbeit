@@ -1,0 +1,635 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00347311,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0014889500000000002
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "1a2e99fceff756d96c4f929cd893d4254ec04f4c207a0b1694aaeac9be0f06d0",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera that I received recently"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 4,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a800455ebfe83f0feda726554722b14acf69640cc021808936f2116470fcf850",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "since I no longer need the camera."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a digital camera\", \"order_id\": \"#W8855135\", \"scope\": \"a digital camera that I received recently\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"since I no longer need the camera.\", \"scope\": \"the order\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "df51b69aa98e1592089701d98c1a0dd50fc45da43198b794dd7812d094d80c0a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera that I received recently"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "since I no longer need the camera."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "df51b69aa98e1592089701d98c1a0dd50fc45da43198b794dd7812d094d80c0a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "042fae13e633b2a00ee56b14f641302acd798623f96d37d5880d7e74284b0da0",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W8855135"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "df51b69aa98e1592089701d98c1a0dd50fc45da43198b794dd7812d094d80c0a",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a digital camera\", \"order_id\": \"#W8855135\", \"scope\": \"a digital camera that I received recently\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"since I no longer need the camera.\", \"scope\": \"the order\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W8855135\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "f50b985f1ae0db120778223b379a539d537cf3fd6505e814c3f274ab9b6aa885",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera that I received recently"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "since I no longer need the camera."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W8855135"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "f50b985f1ae0db120778223b379a539d537cf3fd6505e814c3f274ab9b6aa885",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W8855135",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_KalGHM3PJjJMrrYxptLd81Kb",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "f50b985f1ae0db120778223b379a539d537cf3fd6505e814c3f274ab9b6aa885",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "f50b985f1ae0db120778223b379a539d537cf3fd6505e814c3f274ab9b6aa885",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a digital camera\", \"order_id\": \"#W8855135\", \"scope\": \"a digital camera that I received recently\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"since I no longer need the camera.\", \"scope\": \"the order\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W8855135\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W8855135\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "5978ea5841a37b9e7e7db9f984225acf798829bd153ee8748324f1e5ac831098",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user",
+        "message:15:user",
+        "tool:call_KalGHM3PJjJMrrYxptLd81Kb:cancel_pending_order"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera that I received recently"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "since I no longer need the camera."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "the order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "#W8855135"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_KalGHM3PJjJMrrYxptLd81Kb:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W8855135",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "786 Elm Street",
+                "address2": "Suite 546",
+                "city": "San Antonio",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78260"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4035304400",
+                  "name": "Air Purifier",
+                  "options": {
+                    "features": "smart sensors",
+                    "filter type": "HEPA",
+                    "room size": "medium"
+                  },
+                  "price": 504.19,
+                  "product_id": "3821016478"
+                },
+                {
+                  "item_id": "1437889264",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "7",
+                    "waterproof": "no"
+                  },
+                  "price": 258.09,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "3098764622",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "plastic",
+                    "design": "plain",
+                    "length": "34 inch"
+                  },
+                  "price": 202.13,
+                  "product_id": "1968349452"
+                },
+                {
+                  "item_id": "2733768059",
+                  "name": "Yoga Mat",
+                  "options": {
+                    "color": "pink",
+                    "material": "natural rubber",
+                    "thickness": "6mm"
+                  },
+                  "price": 94.38,
+                  "product_id": "4635925001"
+                }
+              ],
+              "order_id": "#W8855135",
+              "payment_history": [
+                {
+                  "amount": 1058.79,
+                  "payment_method_id": "credit_card_3951670",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1058.79,
+                  "payment_method_id": "credit_card_3951670",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "sofia_li_9219"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "5978ea5841a37b9e7e7db9f984225acf798829bd153ee8748324f1e5ac831098",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user",
+        "message:15:user",
+        "tool:call_KalGHM3PJjJMrrYxptLd81Kb:cancel_pending_order"
+      ],
+      "state_revision": 18
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 17,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 15.108217956847511,
+    "prewrite_validation": 0.0,
+    "semantic_support": 8.355056040920317
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 3,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "51",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_051"
+}

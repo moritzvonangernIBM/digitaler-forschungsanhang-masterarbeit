@@ -1,0 +1,807 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.007023349999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00223975
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' is invalid for modify_user_address",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "320c5c86f4a5b73438e27d295d24f001a72cafc6e308fce45212f0943b5f5caa",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Phoenix"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest t-shirt you’ve got"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my next order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"city\": \"Phoenix\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the cheapest t-shirt you\\u2019ve got\", \"scope\": \"my next order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "1a0e614e36a74b29ab575f3df06b3488b1f52cb8e01f8f445601fe70546d22a0",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Phoenix"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest t-shirt you’ve got"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my next order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1a0e614e36a74b29ab575f3df06b3488b1f52cb8e01f8f445601fe70546d22a0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "9f665698c19f8bf2511b5461ac3dacece0118f871e45689fee41928aa09084e8",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my most recent order"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "85033"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1a0e614e36a74b29ab575f3df06b3488b1f52cb8e01f8f445601fe70546d22a0",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 6,
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"city\": \"Phoenix\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the cheapest t-shirt you\\u2019ve got\", \"scope\": \"my next order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my most recent order\", \"zip\": \"85033\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Phoenix"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest t-shirt you’ve got"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my next order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my most recent order"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "85033"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "c757f3e31047091c3ca9ec9b063acfe8e7ee93889afadd5c09ab1c3a94bb387f",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Phoenix one"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Phoenix"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Arizona"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "12c988d07d4543786b62c8679382818ddea798b091cef042c2a078ab1472e76a",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"city\": \"Phoenix\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the cheapest t-shirt you\\u2019ve got\", \"scope\": \"my next order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my most recent order\", \"zip\": \"85033\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"address_reference\": \"Phoenix one\", \"city\": \"Phoenix\", \"state\": \"Arizona\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "805e3f5bb0e2dc10db4c271a8bc51e81832417aa6ed5ffc0f91e6c41b5bc38f2",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Phoenix"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest t-shirt you’ve got"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my next order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my most recent order"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "85033"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Phoenix one"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Phoenix"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Arizona"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "805e3f5bb0e2dc10db4c271a8bc51e81832417aa6ed5ffc0f91e6c41b5bc38f2",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "157 Oak Street",
+            "address2": "Suite 258",
+            "city": "Phoenix",
+            "country": "USA",
+            "state": "AZ",
+            "user_id": "fatima_taylor_3452",
+            "zip": "85033"
+          },
+          "call_id": "call_e9cQHvmIbpa884uC7HjbQRyW",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "805e3f5bb0e2dc10db4c271a8bc51e81832417aa6ed5ffc0f91e6c41b5bc38f2",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "805e3f5bb0e2dc10db4c271a8bc51e81832417aa6ed5ffc0f91e6c41b5bc38f2",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 22,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"city\": \"Phoenix\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"the cheapest t-shirt you\\u2019ve got\", \"scope\": \"my next order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"my most recent order\", \"zip\": \"85033\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"address_reference\": \"Phoenix one\", \"city\": \"Phoenix\", \"state\": \"Arizona\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"157 Oak Street\", \"address2\": \"Suite 258\", \"city\": \"Phoenix\", \"country\": \"USA\", \"state\": \"AZ\", \"user_id\": \"fatima_taylor_3452\", \"zip\": \"85033\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "d881d66fa945f23c875f0d212a3372070685bc7a3c802fb4d6d8fafaaa8e62f7",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user",
+        "tool:call_e9cQHvmIbpa884uC7HjbQRyW:modify_user_address"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "Phoenix"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the cheapest t-shirt you’ve got"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my next order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my most recent order"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "85033"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Phoenix one"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Phoenix"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "Arizona"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_e9cQHvmIbpa884uC7HjbQRyW:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "157 Oak Street",
+              "address2": "Suite 258",
+              "city": "Phoenix",
+              "country": "USA",
+              "state": "AZ",
+              "user_id": "fatima_taylor_3452",
+              "zip": "85033"
+            },
+            "result": {
+              "address": {
+                "address1": "157 Oak Street",
+                "address2": "Suite 258",
+                "city": "Phoenix",
+                "country": "USA",
+                "state": "AZ",
+                "zip": "85033"
+              },
+              "email": "fatima.taylor7676@example.com",
+              "name": {
+                "first_name": "Fatima",
+                "last_name": "Taylor"
+              },
+              "orders": [
+                "#W5285031"
+              ],
+              "payment_methods": {
+                "credit_card_7952624": {
+                  "brand": "visa",
+                  "id": "credit_card_7952624",
+                  "last_four": "7684",
+                  "source": "credit_card"
+                }
+              },
+              "user_id": "fatima_taylor_3452"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "d881d66fa945f23c875f0d212a3372070685bc7a3c802fb4d6d8fafaaa8e62f7",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:19:user",
+        "tool:call_e9cQHvmIbpa884uC7HjbQRyW:modify_user_address"
+      ],
+      "state_revision": 22
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 25,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 26.943055708135944,
+    "prewrite_validation": 0.0,
+    "semantic_support": 10.672169292054605
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 11,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "39",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_039"
+}

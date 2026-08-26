@@ -1,0 +1,911 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00719719,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0021998000000000005
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 3,
+    "b_replans": 1
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "68e3f91b421af501d9b312b83ce75fb39727bf253fcc2181e11c2ad1305cabae",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "a metal strap instead. If there are color options for the metal strap, I’d like white."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "silicone strap watch"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "8886009523"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "157c34ce6001b4e2eafef26ee019d5d0a2fc9eca6b6f5ae9e374a5e4360eb457",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "Refund the $121.20 to my credit card ending in 1065."
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same one you have on file from my other order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "my New York address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a metal strap instead. If there are color options for the metal strap, I\\u2019d like white.\", \"item_descriptions\": \"silicone strap watch\", \"item_ids\": \"8886009523\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"Refund the $121.20 to my credit card ending in 1065.\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the same one you have on file from my other order\", \"scope\": \"my New York address\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "18b76a6674761fbaf0b37b42aa3c71f77973320e4cf87db1dc6c003fff73ad27",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:13:user",
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "a metal strap instead. If there are color options for the metal strap, I’d like white."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "silicone strap watch"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "8886009523"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "Refund the $121.20 to my credit card ending in 1065."
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same one you have on file from my other order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "my New York address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "18b76a6674761fbaf0b37b42aa3c71f77973320e4cf87db1dc6c003fff73ad27",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:13:user",
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "18b76a6674761fbaf0b37b42aa3c71f77973320e4cf87db1dc6c003fff73ad27",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:13:user",
+        "message:17:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "8886009523"
+            ],
+            "new_item_ids": [
+              "2407258246"
+            ],
+            "order_id": "#W4219264",
+            "payment_method_id": "credit_card_1620755"
+          },
+          "call_id": "call_UOLzjKf0OhzzOUyO2Az9t6ej",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "18b76a6674761fbaf0b37b42aa3c71f77973320e4cf87db1dc6c003fff73ad27",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 7,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8886009523"
+        ],
+        "new_item_ids": [
+          "2407258246"
+        ],
+        "order_id": "#W4219264",
+        "payment_method_id": "credit_card_1620755"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_UOLzjKf0OhzzOUyO2Az9t6ej",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 20,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_UOLzjKf0OhzzOUyO2Az9t6ej",
+        "candidate_arguments": {
+          "item_ids": [
+            "8886009523"
+          ],
+          "new_item_ids": [
+            "2407258246"
+          ],
+          "order_id": "#W4219264",
+          "payment_method_id": "credit_card_1620755"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "noah_ito_3850",
+          "authentication_source_event_ids": [
+            "tool:call_FK1go1R5fTWdmVgTghkgZfKy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7869640094",
+              "8886009523",
+              "9112290483"
+            ],
+            "order_id": "#W4219264",
+            "source_event_ids": [
+              "tool:call_bvrGVfouqyMMl9rG5zWtGn1C:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "noah_ito_3850"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1808611083",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "6066914160",
+              "source_event_ids": [
+                "tool:call_gOwdcXM0OOzlFKacDcNpd7RD:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_1620755"
+            ],
+            "source_event_ids": [
+              "tool:call_KfEAEbVvzPHPyuuvUKvT6zP4:get_user_details"
+            ],
+            "user_id": "noah_ito_3850"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 9,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_UOLzjKf0OhzzOUyO2Az9t6ej",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 10,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "18b76a6674761fbaf0b37b42aa3c71f77973320e4cf87db1dc6c003fff73ad27",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a metal strap instead. If there are color options for the metal strap, I\\u2019d like white.\", \"item_descriptions\": \"silicone strap watch\", \"item_ids\": \"8886009523\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"Refund the $121.20 to my credit card ending in 1065.\"}, \"operation\": \"modify_pending_order_payment\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address_reference\": \"the same one you have on file from my other order\", \"scope\": \"my New York address\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"8886009523\"], \"new_item_ids\": [\"2407258246\"], \"order_id\": \"#W4219264\", \"payment_method_id\": \"credit_card_1620755\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "99b4a395a5876830054acd7e7f4e4f8b6d69369adfda2cb38af3eadd12b64269",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:13:user",
+        "message:17:user",
+        "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "a metal strap instead. If there are color options for the metal strap, I’d like white."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "silicone strap watch"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "8886009523"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "Refund the $121.20 to my credit card ending in 1065."
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same one you have on file from my other order"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "my New York address"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "8886009523"
+              ],
+              "new_item_ids": [
+                "2407258246"
+              ],
+              "order_id": "#W4219264",
+              "payment_method_id": "credit_card_1620755"
+            },
+            "result": {
+              "address": {
+                "address1": "619 Broadway",
+                "address2": "Suite 484",
+                "city": "Seattle",
+                "country": "USA",
+                "state": "WA",
+                "zip": "98187"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7869640094",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "expert",
+                    "pieces": "2000",
+                    "theme": "animals"
+                  },
+                  "price": 47.59,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "2407258246",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "white",
+                    "strap material": "metal"
+                  },
+                  "price": 1822.82,
+                  "product_id": "6066914160"
+                },
+                {
+                  "item_id": "9112290483",
+                  "name": "Wristwatch",
+                  "options": {
+                    "dial color": "blue",
+                    "strap material": "metal"
+                  },
+                  "price": 1925.16,
+                  "product_id": "6066914160"
+                }
+              ],
+              "order_id": "#W4219264",
+              "payment_history": [
+                {
+                  "amount": 3916.77,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 121.20000000000005,
+                  "payment_method_id": "credit_card_1620755",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "noah_ito_3850"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "99b4a395a5876830054acd7e7f4e4f8b6d69369adfda2cb38af3eadd12b64269",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:13:user",
+        "message:17:user",
+        "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "144 Lakeview Drive",
+            "address2": "Suite 925",
+            "city": "New York",
+            "country": "USA",
+            "order_id": "#W4219264",
+            "state": "NY",
+            "zip": "10228"
+          },
+          "call_id": "call_v7NeAhGF7u9slSOQOvsH7Yz3",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "99b4a395a5876830054acd7e7f4e4f8b6d69369adfda2cb38af3eadd12b64269",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "address1": "144 Lakeview Drive",
+        "address2": "Suite 925",
+        "city": "New York",
+        "country": "USA",
+        "order_id": "#W4219264",
+        "state": "NY",
+        "zip": "10228"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_v7NeAhGF7u9slSOQOvsH7Yz3",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 15,
+      "state_revision": 22,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_v7NeAhGF7u9slSOQOvsH7Yz3",
+        "candidate_arguments": {
+          "address1": "144 Lakeview Drive",
+          "address2": "Suite 925",
+          "city": "New York",
+          "country": "USA",
+          "order_id": "#W4219264",
+          "state": "NY",
+          "zip": "10228"
+        },
+        "disposition": "INVALID",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "noah_ito_3850",
+          "authentication_source_event_ids": [
+            "tool:call_FK1go1R5fTWdmVgTghkgZfKy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7869640094",
+              "2407258246",
+              "9112290483"
+            ],
+            "order_id": "#W4219264",
+            "source_event_ids": [
+              "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+            ],
+            "status": "pending (item modified)",
+            "user_id": "noah_ito_3850"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1808611083",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "6066914160",
+              "source_event_ids": [
+                "tool:call_gOwdcXM0OOzlFKacDcNpd7RD:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_1620755"
+            ],
+            "source_event_ids": [
+              "tool:call_KfEAEbVvzPHPyuuvUKvT6zP4:get_user_details"
+            ],
+            "user_id": "noah_ito_3850"
+          }
+        },
+        "reason_code": "B_INELIGIBLE_STATUS",
+        "required_response": "Do not repeat the write for the observed order status.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "INVALID",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_INELIGIBLE_STATUS",
+      "sequence": 16,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_replan",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_INVALID_HELD_FOR_SINGLE_REPLAN",
+      "sequence": 17,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "event_type": "ACTIVATION",
+      "findings": [
+        {
+          "call_id": "call_v7NeAhGF7u9slSOQOvsH7Yz3",
+          "candidate_arguments": {
+            "address1": "144 Lakeview Drive",
+            "address2": "Suite 925",
+            "city": "New York",
+            "country": "USA",
+            "order_id": "#W4219264",
+            "state": "NY",
+            "zip": "10228"
+          },
+          "disposition": "INVALID",
+          "evidence_action": null,
+          "observed": {
+            "authenticated_user_id": "noah_ito_3850",
+            "authentication_source_event_ids": [
+              "tool:call_FK1go1R5fTWdmVgTghkgZfKy:find_user_id_by_name_zip"
+            ],
+            "order": {
+              "item_ids": [
+                "7869640094",
+                "2407258246",
+                "9112290483"
+              ],
+              "order_id": "#W4219264",
+              "source_event_ids": [
+                "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+              ],
+              "status": "pending (item modified)",
+              "user_id": "noah_ito_3850"
+            },
+            "products": [
+              {
+                "observed": false,
+                "product_id": "1808611083",
+                "source_event_ids": []
+              },
+              {
+                "observed": true,
+                "product_id": "6066914160",
+                "source_event_ids": [
+                  "tool:call_gOwdcXM0OOzlFKacDcNpd7RD:get_product_details"
+                ]
+              }
+            ],
+            "user_profile": {
+              "payment_method_ids": [
+                "credit_card_1620755"
+              ],
+              "source_event_ids": [
+                "tool:call_KfEAEbVvzPHPyuuvUKvT6zP4:get_user_details"
+              ],
+              "user_id": "noah_ito_3850"
+            }
+          },
+          "reason_code": "B_INELIGIBLE_STATUS",
+          "required_response": "Do not repeat the write for the observed order status.",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "opportunity_id": null,
+      "reason_code": "B_SINGLE_REPLAN",
+      "sequence": 18,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "address1": "144 Lakeview Drive",
+        "address2": "Suite 925",
+        "city": "New York",
+        "country": "USA",
+        "order_id": "#W4219264",
+        "state": "NY",
+        "zip": "10228"
+      },
+      "bundle_id": "BB-0003-R",
+      "call_id": "call_UHypqTFeTRDq9rS3qoOFH8G2",
+      "candidate_role": "revised",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 19,
+      "state_revision": 22,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_UHypqTFeTRDq9rS3qoOFH8G2",
+        "candidate_arguments": {
+          "address1": "144 Lakeview Drive",
+          "address2": "Suite 925",
+          "city": "New York",
+          "country": "USA",
+          "order_id": "#W4219264",
+          "state": "NY",
+          "zip": "10228"
+        },
+        "disposition": "INVALID",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "noah_ito_3850",
+          "authentication_source_event_ids": [
+            "tool:call_FK1go1R5fTWdmVgTghkgZfKy:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7869640094",
+              "2407258246",
+              "9112290483"
+            ],
+            "order_id": "#W4219264",
+            "source_event_ids": [
+              "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+            ],
+            "status": "pending (item modified)",
+            "user_id": "noah_ito_3850"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1808611083",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "6066914160",
+              "source_event_ids": [
+                "tool:call_gOwdcXM0OOzlFKacDcNpd7RD:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_1620755"
+            ],
+            "source_event_ids": [
+              "tool:call_KfEAEbVvzPHPyuuvUKvT6zP4:get_user_details"
+            ],
+            "user_id": "noah_ito_3850"
+          }
+        },
+        "reason_code": "B_INELIGIBLE_STATUS",
+        "required_response": "Do not repeat the write for the observed order status.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "INVALID",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_INELIGIBLE_STATUS",
+      "sequence": 20,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "blocked_after_replan",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_REVISED_BUNDLE_INVALID",
+      "sequence": 21,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "99b4a395a5876830054acd7e7f4e4f8b6d69369adfda2cb38af3eadd12b64269",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:13:user",
+        "message:17:user",
+        "tool:call_UOLzjKf0OhzzOUyO2Az9t6ej:modify_pending_order_items"
+      ],
+      "state_revision": 24
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 3,
+    "b_opportunities": 3,
+    "event_count": 23,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 28.158715124009177,
+    "prewrite_validation": 0.00045358086936175823,
+    "semantic_support": 10.355306666984688
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 4,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "102",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_102"
+}

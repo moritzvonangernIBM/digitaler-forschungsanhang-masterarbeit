@@ -1,0 +1,556 @@
+{
+  "agent_cost": 0.0047773799999999995,
+  "auth_classification": null,
+  "condition": "C2_PREWRITE_CONTROL",
+  "duration": 24.54935875000956,
+  "effect_timeline": null,
+  "hallucination_check": null,
+  "hallucination_retries_used": 0,
+  "id": "seed_976301_C2_PREWRITE_CONTROL_task_026",
+  "info": null,
+  "messages": [
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi! How can I help you today?",
+      "cost": 0.0,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 0,
+      "turn_taking_action": null,
+      "usage": null,
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi, I need some help with an order that was sent to Texas by mistake. I need the tracking number for it, and I want to return everything in that order except for the pet bed. It's pretty urgent.",
+      "cost": 0.00112,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 1,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 384
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Sure—I can help, but first I need to authenticate you.\n\nPlease reply with **either**:\n1) your **email**, **or**\n2) your **first name + last name + ZIP code**\n\nAlso, please share the **order id** (it looks like **#W0000000**) so I can pull up the **tracking number** and confirm the order status.",
+      "cost": 0.00053065,
+      "generation_time_seconds": 2.0311812500003725,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 2,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 217,
+        "prompt_tokens": 3601
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I actually don’t remember my order number or my email address right now, but my name is Isabella Johansson and my ZIP code is 32286. Can you look up my order with that info?",
+      "cost": 0.001348,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 3,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 514
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.0003775,
+      "generation_time_seconds": 1.2832723749888828,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "first_name": "Isabella",
+            "last_name": "Johansson",
+            "zip": "32286"
+          },
+          "id": "call_mbJgATP8fmO82uZ2rqC0OQUG",
+          "name": "find_user_id_by_name_zip",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 4,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 74,
+        "prompt_tokens": 3729
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "isabella_johansson_2152",
+      "error": false,
+      "id": "call_mbJgATP8fmO82uZ2rqC0OQUG",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 5
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00014603,
+      "generation_time_seconds": 0.9513906250067521,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "user_id": "isabella_johansson_2152"
+          },
+          "id": "call_Iepzcl2klZF1oTvP8Rngye3v",
+          "name": "get_user_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 6,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 3787
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"user_id\": \"isabella_johansson_2152\", \"name\": {\"first_name\": \"Isabella\", \"last_name\": \"Johansson\"}, \"address\": {\"address1\": \"313 Chestnut Street\", \"address2\": \"Suite 537\", \"city\": \"Jacksonville\", \"country\": \"USA\", \"state\": \"FL\", \"zip\": \"32286\"}, \"email\": \"isabella.johansson9391@example.com\", \"payment_methods\": {\"paypal_3024827\": {\"source\": \"paypal\", \"id\": \"paypal_3024827\"}}, \"orders\": [\"#W3792453\", \"#W7181492\", \"#W5565470\", \"#W2575533\"]}",
+      "error": false,
+      "id": "call_Iepzcl2klZF1oTvP8Rngye3v",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 7
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00039172999999999996,
+      "generation_time_seconds": 1.9392146250029327,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W3792453"
+          },
+          "id": "call_o1XMCRWrusfc5lwujdgvQUZ9",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 8,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 193,
+        "prompt_tokens": 3978
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W3792453\", \"user_id\": \"isabella_johansson_2152\", \"address\": {\"address1\": \"313 Chestnut Street\", \"address2\": \"Suite 537\", \"city\": \"Jacksonville\", \"country\": \"USA\", \"state\": \"FL\", \"zip\": \"32286\"}, \"items\": [{\"name\": \"Skateboard\", \"product_id\": \"1968349452\", \"item_id\": \"4293355847\", \"price\": 200.8, \"options\": {\"deck material\": \"bamboo\", \"length\": \"31 inch\", \"design\": \"plain\"}}], \"status\": \"delivered\", \"fulfillments\": [{\"tracking_id\": [\"908856694334\"], \"item_ids\": [\"4293355847\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 200.8, \"payment_method_id\": \"paypal_3024827\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_o1XMCRWrusfc5lwujdgvQUZ9",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 9
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00035498,
+      "generation_time_seconds": 1.4378293749905424,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W7181492"
+          },
+          "id": "call_gzc5XE6J2crjduYevfLTfslt",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 10,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 118,
+        "prompt_tokens": 4263
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W7181492\", \"user_id\": \"isabella_johansson_2152\", \"address\": {\"address1\": \"313 Chestnut Street\", \"address2\": \"Suite 537\", \"city\": \"Jacksonville\", \"country\": \"USA\", \"state\": \"FL\", \"zip\": \"32286\"}, \"items\": [{\"name\": \"Garden Hose\", \"product_id\": \"6679515468\", \"item_id\": \"5753502325\", \"price\": 96.35, \"options\": {\"length\": \"25ft\", \"material\": \"rubber\", \"color\": \"green\"}}, {\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"9851293632\", \"price\": 193.38, \"options\": {\"color\": \"green\", \"size\": \"small\", \"material\": \"polyester\", \"compartment\": \"camera\"}}, {\"name\": \"Bookshelf\", \"product_id\": \"8600330539\", \"item_id\": \"3778705663\", \"price\": 473.48, \"options\": {\"material\": \"metal\", \"color\": \"black\", \"height\": \"6 ft\"}}, {\"name\": \"Hiking Boots\", \"product_id\": \"7363354090\", \"item_id\": \"8118291112\", \"price\": 260.56, \"options\": {\"size\": \"12\", \"material\": \"leather\", \"waterproof\": \"no\"}}, {\"name\": \"Coffee Maker\", \"product_id\": \"7996920482\", \"item_id\": \"3020722515\", \"price\": 238.64, \"options\": {\"color\": \"black\", \"capacity\": \"1 cup\", \"type\": \"french press\", \"features\": \"auto shutoff\"}}], \"status\": \"delivered\", \"fulfillments\": [{\"tracking_id\": [\"418708581751\"], \"item_ids\": [\"5753502325\", \"9851293632\", \"3778705663\", \"8118291112\", \"3020722515\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1262.41, \"payment_method_id\": \"paypal_3024827\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_gzc5XE6J2crjduYevfLTfslt",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 11
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.0005336,
+      "generation_time_seconds": 2.776979125002981,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5565470"
+          },
+          "id": "call_PAYw065zAQYXfqT9zVj5bst4",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 12,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 4822
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W5565470\", \"user_id\": \"isabella_johansson_2152\", \"address\": {\"address1\": \"812 Cedar Avenue\", \"address2\": \"Suite 500\", \"city\": \"Houston\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"77129\"}, \"items\": [{\"name\": \"Electric Kettle\", \"product_id\": \"1075968781\", \"item_id\": \"7602931732\", \"price\": 153.25, \"options\": {\"capacity\": \"1L\", \"material\": \"stainless steel\", \"color\": \"black\"}}, {\"name\": \"Mechanical Keyboard\", \"product_id\": \"1656367028\", \"item_id\": \"9570044148\", \"price\": 231.37, \"options\": {\"switch type\": \"linear\", \"backlight\": \"none\", \"size\": \"full size\"}}, {\"name\": \"Pet Bed\", \"product_id\": \"2747247837\", \"item_id\": \"6857426243\", \"price\": 196.53, \"options\": {\"size\": \"medium\", \"material\": \"fleece\", \"color\": \"grey\"}}], \"status\": \"delivered\", \"fulfillments\": [{\"tracking_id\": [\"907614527588\"], \"item_ids\": [\"7602931732\", \"9570044148\", \"6857426243\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 581.15, \"payment_method_id\": \"paypal_3024827\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_PAYw065zAQYXfqT9zVj5bst4",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 13
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00024756,
+      "generation_time_seconds": 1.3040400829922874,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W2575533"
+          },
+          "id": "call_2RoqcVeBTOKvqUKl6SjD4EBs",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 14,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 5235
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W2575533\", \"user_id\": \"isabella_johansson_2152\", \"address\": {\"address1\": \"313 Chestnut Street\", \"address2\": \"Suite 537\", \"city\": \"Jacksonville\", \"country\": \"USA\", \"state\": \"FL\", \"zip\": \"32286\"}, \"items\": [{\"name\": \"Vacuum Cleaner\", \"product_id\": \"1762337868\", \"item_id\": \"4806644905\", \"price\": 658.89, \"options\": {\"type\": \"robotic\", \"bagged/bagless\": \"bagless\", \"features\": \"cordless\"}}, {\"name\": \"Portable Charger\", \"product_id\": \"6942297802\", \"item_id\": \"8349903180\", \"price\": 102.07, \"options\": {\"capacity\": \"20000mAh\", \"output\": \"Wireless\", \"color\": \"black\"}}, {\"name\": \"E-Reader\", \"product_id\": \"3801771308\", \"item_id\": \"9494281769\", \"price\": 252.06, \"options\": {\"screen size\": \"8-inch\", \"connectivity\": \"Wi-Fi\", \"storage\": \"8GB\"}}, {\"name\": \"Garden Hose\", \"product_id\": \"6679515468\", \"item_id\": \"5206946487\", \"price\": 95.08, \"options\": {\"length\": \"50ft\", \"material\": \"vinyl\", \"color\": \"black\"}}, {\"name\": \"Office Chair\", \"product_id\": \"4794339885\", \"item_id\": \"8323284863\", \"price\": 511.24, \"options\": {\"material\": \"fabric\", \"color\": \"blue\", \"armrest\": \"adjustable\", \"backrest height\": \"standard\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1619.34, \"payment_method_id\": \"paypal_3024827\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_2RoqcVeBTOKvqUKl6SjD4EBs",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 15
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks, Isabella—I've found the order that was delivered to **Texas**.\n\n## Tracking number (Order #W5565470)\n- **Tracking ID:** **907614527588**\n- **Status:** delivered\n- **Ship-to:** Houston, TX\n\n## What you want to return\nYou asked to return **everything except the pet bed**. In **#W5565470**, that means returning these items:\n- **Electric Kettle** (item **7602931732**)\n- **Mechanical Keyboard** (item **9570044148**)\n\nAnd **not** returning:\n- **Pet Bed** (item **6857426243**)\n\n## Refund method needed\nYour order was paid with **PayPal** (**payment method id: paypal_3024827**).  \nDo you want the refund sent back to the **same PayPal**?\n\n## Please confirm (required)\nReply **“yes”** to confirm you want me to submit a **return request for #W5565470** for:\n- item_ids: **7602931732**, **9570044148**\n- exclude item_id: **6857426243**\n- refund to: **PayPal (paypal_3024827)**\n\n(If you’d prefer a gift card instead, tell me that and provide the gift card payment method id you want to use.)",
+      "cost": 0.0010474100000000001,
+      "generation_time_seconds": 4.188046999988728,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 16,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 581,
+        "prompt_tokens": 5753
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Yes, please go ahead and submit the return request for those two items and refund it to my PayPal. Thank you!",
+      "cost": 0.001878,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 17,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 839
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00036299,
+      "generation_time_seconds": 1.4180301669985056,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "7602931732",
+              "9570044148"
+            ],
+            "order_id": "#W5565470",
+            "payment_method_id": "paypal_3024827"
+          },
+          "id": "call_ngVe5I1MbBemBT6JV1ggCK7s",
+          "name": "return_delivered_order_items",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 18,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 131,
+        "prompt_tokens": 6065
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W5565470\", \"user_id\": \"isabella_johansson_2152\", \"address\": {\"address1\": \"812 Cedar Avenue\", \"address2\": \"Suite 500\", \"city\": \"Houston\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"77129\"}, \"items\": [{\"name\": \"Electric Kettle\", \"product_id\": \"1075968781\", \"item_id\": \"7602931732\", \"price\": 153.25, \"options\": {\"capacity\": \"1L\", \"material\": \"stainless steel\", \"color\": \"black\"}}, {\"name\": \"Mechanical Keyboard\", \"product_id\": \"1656367028\", \"item_id\": \"9570044148\", \"price\": 231.37, \"options\": {\"switch type\": \"linear\", \"backlight\": \"none\", \"size\": \"full size\"}}, {\"name\": \"Pet Bed\", \"product_id\": \"2747247837\", \"item_id\": \"6857426243\", \"price\": 196.53, \"options\": {\"size\": \"medium\", \"material\": \"fleece\", \"color\": \"grey\"}}], \"status\": \"return requested\", \"fulfillments\": [{\"tracking_id\": [\"907614527588\"], \"item_ids\": [\"7602931732\", \"9570044148\", \"6857426243\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 581.15, \"payment_method_id\": \"paypal_3024827\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": [\"7602931732\", \"9570044148\"], \"return_payment_method_id\": \"paypal_3024827\"}",
+      "error": false,
+      "id": "call_ngVe5I1MbBemBT6JV1ggCK7s",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 19
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Done — I submitted a **return request** for order **#W5565470**.\n\n- **Returned items:**  \n  - Electric Kettle (item **7602931732**)  \n  - Mechanical Keyboard (item **9570044148**)\n- **Not returned:**  \n  - Pet Bed (item **6857426243**)\n- **Refund to:** **PayPal** (**paypal_3024827**)\n- **Order status:** **return requested**\n\nYou should receive an email with the return instructions (how/where to send the items).",
+      "cost": 0.00043919,
+      "generation_time_seconds": 1.4625062920094933,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 20,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 119,
+        "prompt_tokens": 6521
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Great, thank you for your help! That’s all I needed.",
+      "cost": 0.002086,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 21,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 987
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "You’re welcome! If you need anything else with that order, just let me know.",
+      "cost": 0.00034574000000000003,
+      "generation_time_seconds": 1.4004462909942959,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 22,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 6660
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "###STOP###",
+      "cost": 0.002078,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 23,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1027
+      },
+      "utterance_ids": null
+    }
+  ],
+  "mode": "half_duplex",
+  "policy": null,
+  "review": null,
+  "reward_info": null,
+  "seed": 976301,
+  "speech_environment": null,
+  "task_id": "26",
+  "termination_reason": "user_stop",
+  "ticks": null,
+  "trial": null,
+  "user_cost": 0.00851,
+  "user_only_review": null
+}

@@ -1,0 +1,887 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00587231,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0009783
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a4625c9874fab69859f48eabb563e033a4b80aa56c78bb4a8f90a4d82f944bab",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "6acc3d3e6129e662f641c044284022df1147dd36929346ffd4d7b5c4757e700b",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5056519"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5995614"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "both orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W5056519\", \"reason\": \"\\u201cordered by mistake\\u201d\", \"scope\": \"all of my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W5995614\", \"reason\": \"\\u201cordered by mistake\\u201d\", \"scope\": \"both orders\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "5deb329cd05c55c9f92cae6c0614c37e7d0cb171b3516029556cc2967b9c27b8",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5056519"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5995614"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "both orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "5deb329cd05c55c9f92cae6c0614c37e7d0cb171b3516029556cc2967b9c27b8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "5deb329cd05c55c9f92cae6c0614c37e7d0cb171b3516029556cc2967b9c27b8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5056519",
+            "reason": "ordered by mistake"
+          },
+          "call_id": "call_msALwPpOWR3z8roRdBGfyLjL",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "5deb329cd05c55c9f92cae6c0614c37e7d0cb171b3516029556cc2967b9c27b8",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 7,
+      "state_revision": 20
+    },
+    {
+      "arguments": {
+        "order_id": "#W5056519",
+        "reason": "ordered by mistake"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_msALwPpOWR3z8roRdBGfyLjL",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 20,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_msALwPpOWR3z8roRdBGfyLjL",
+        "candidate_arguments": {
+          "order_id": "#W5056519",
+          "reason": "ordered by mistake"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yara_muller_8652",
+          "authentication_source_event_ids": [
+            "tool:call_11xKIDdmbD9b4gFYJ5CBIT6f:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7902309762"
+            ],
+            "order_id": "#W5056519",
+            "source_event_ids": [
+              "tool:call_vmhXU1NRaJ0pA3evBGh8TG6s:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yara_muller_8652"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3095586"
+            ],
+            "source_event_ids": [
+              "tool:call_TvqbrWgH5P65APlpg90VmAdt:get_user_details"
+            ],
+            "user_id": "yara_muller_8652"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 9,
+      "state_revision": 20
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_msALwPpOWR3z8roRdBGfyLjL",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 10,
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "5deb329cd05c55c9f92cae6c0614c37e7d0cb171b3516029556cc2967b9c27b8",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W5056519\", \"reason\": \"\\u201cordered by mistake\\u201d\", \"scope\": \"all of my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W5995614\", \"reason\": \"\\u201cordered by mistake\\u201d\", \"scope\": \"both orders\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W5056519\", \"reason\": \"ordered by mistake\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "bb413fa06fe478af4b9ef81b78177783ac6e8dc6bc8d2039c700f42aae2c394f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user",
+        "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5056519"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5995614"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "both orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5056519",
+              "reason": "ordered by mistake"
+            },
+            "result": {
+              "address": {
+                "address1": "575 Oak Street",
+                "address2": "Suite 866",
+                "city": "Phoenix",
+                "country": "USA",
+                "state": "AZ",
+                "zip": "85041"
+              },
+              "cancel_reason": "ordered by mistake",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7902309762",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand B",
+                    "kit size": "professional",
+                    "skin tone": "light"
+                  },
+                  "price": 243.62,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W5056519",
+              "payment_history": [
+                {
+                  "amount": 243.62,
+                  "payment_method_id": "credit_card_3095586",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 243.62,
+                  "payment_method_id": "credit_card_3095586",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "yara_muller_8652"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "bb413fa06fe478af4b9ef81b78177783ac6e8dc6bc8d2039c700f42aae2c394f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user",
+        "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5995614",
+            "reason": "ordered by mistake"
+          },
+          "call_id": "call_f9ZGRqERpC8OTIWDOGfkjrge",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "bb413fa06fe478af4b9ef81b78177783ac6e8dc6bc8d2039c700f42aae2c394f",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "order_id": "#W5995614",
+        "reason": "ordered by mistake"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_f9ZGRqERpC8OTIWDOGfkjrge",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 15,
+      "state_revision": 22,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_f9ZGRqERpC8OTIWDOGfkjrge",
+        "candidate_arguments": {
+          "order_id": "#W5995614",
+          "reason": "ordered by mistake"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yara_muller_8652",
+          "authentication_source_event_ids": [
+            "tool:call_11xKIDdmbD9b4gFYJ5CBIT6f:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "3877338112",
+              "9692325258"
+            ],
+            "order_id": "#W5995614",
+            "source_event_ids": [
+              "tool:call_CdyVnnZSewyBwBA83BS1X95W:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yara_muller_8652"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "5426915165",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3095586"
+            ],
+            "source_event_ids": [
+              "tool:call_TvqbrWgH5P65APlpg90VmAdt:get_user_details"
+            ],
+            "user_id": "yara_muller_8652"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 16,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_f9ZGRqERpC8OTIWDOGfkjrge",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 17,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "bb413fa06fe478af4b9ef81b78177783ac6e8dc6bc8d2039c700f42aae2c394f",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"order_id\": \"#W5056519\", \"reason\": \"\\u201cordered by mistake\\u201d\", \"scope\": \"all of my pending orders\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W5995614\", \"reason\": \"\\u201cordered by mistake\\u201d\", \"scope\": \"both orders\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"order_id\": \"#W5056519\", \"reason\": \"ordered by mistake\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W5995614\", \"reason\": \"ordered by mistake\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "b5d1a45c098695780f10ec202df21444a413db4550eecca6c5c6dcf88d08a89b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user",
+        "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order",
+        "tool:call_f9ZGRqERpC8OTIWDOGfkjrge:cancel_pending_order"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5056519"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:17:user"
+              ],
+              "value": "all of my pending orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W5995614"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "“ordered by mistake”"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "both orders"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5056519",
+              "reason": "ordered by mistake"
+            },
+            "result": {
+              "address": {
+                "address1": "575 Oak Street",
+                "address2": "Suite 866",
+                "city": "Phoenix",
+                "country": "USA",
+                "state": "AZ",
+                "zip": "85041"
+              },
+              "cancel_reason": "ordered by mistake",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "7902309762",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand B",
+                    "kit size": "professional",
+                    "skin tone": "light"
+                  },
+                  "price": 243.62,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W5056519",
+              "payment_history": [
+                {
+                  "amount": 243.62,
+                  "payment_method_id": "credit_card_3095586",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 243.62,
+                  "payment_method_id": "credit_card_3095586",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "yara_muller_8652"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_f9ZGRqERpC8OTIWDOGfkjrge:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5995614",
+              "reason": "ordered by mistake"
+            },
+            "result": {
+              "address": {
+                "address1": "575 Oak Street",
+                "address2": "Suite 866",
+                "city": "Phoenix",
+                "country": "USA",
+                "state": "AZ",
+                "zip": "85041"
+              },
+              "cancel_reason": "ordered by mistake",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3877338112",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "iron",
+                    "set type": "adjustable",
+                    "weight range": "5-25 lbs"
+                  },
+                  "price": 545.68,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "9692325258",
+                  "name": "Luggage Set",
+                  "options": {
+                    "color": "black",
+                    "material": "softshell",
+                    "piece count": "3-piece"
+                  },
+                  "price": 528.63,
+                  "product_id": "5426915165"
+                }
+              ],
+              "order_id": "#W5995614",
+              "payment_history": [
+                {
+                  "amount": 1074.31,
+                  "payment_method_id": "credit_card_3095586",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1074.31,
+                  "payment_method_id": "credit_card_3095586",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "yara_muller_8652"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b5d1a45c098695780f10ec202df21444a413db4550eecca6c5c6dcf88d08a89b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user",
+        "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order",
+        "tool:call_f9ZGRqERpC8OTIWDOGfkjrge:cancel_pending_order"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "b5d1a45c098695780f10ec202df21444a413db4550eecca6c5c6dcf88d08a89b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:17:user",
+        "message:1:user",
+        "tool:call_msALwPpOWR3z8roRdBGfyLjL:cancel_pending_order",
+        "tool:call_f9ZGRqERpC8OTIWDOGfkjrge:cancel_pending_order"
+      ],
+      "state_revision": 26
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 22,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 30.26850166899385,
+    "prewrite_validation": 0.00039920693961903453,
+    "semantic_support": 6.337988624931313
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 5,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "113",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_113"
+}

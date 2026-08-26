@@ -1,0 +1,423 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00461266,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0010405000000000002
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "828e3549a8d594cd594bc34cc99449cc7e7f5bd76e185f50d2adf121c95b74a7",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "get the largest size available for the same perfume"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the same perfume"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "37c26a5a09ba0046d6651e3fb2cdc0c09f2fb65feba2e865e7b12ba42be67b26",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "100ml Woody"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "30ml bottle",
+                "100ml Woody"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"get the largest size available for the same perfume\", \"scope\": \"the same perfume\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"100ml Woody\", \"item_descriptions\": [\"30ml bottle\", \"100ml Woody\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "f03b3bd9903d63efd4ef4bd66dc7d2bfc5a1adb6fc76e40b1c170ff3139c68a8",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:9:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "get the largest size available for the same perfume"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the same perfume"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "100ml Woody"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "30ml bottle",
+                "100ml Woody"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "f03b3bd9903d63efd4ef4bd66dc7d2bfc5a1adb6fc76e40b1c170ff3139c68a8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:9:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5081446110"
+            ],
+            "new_item_ids": [
+              "3399869890"
+            ],
+            "order_id": "#W1671835",
+            "payment_method_id": "paypal_6918118"
+          },
+          "call_id": "call_lOnXmskaT7e9M4xKyDMJZZMN",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "f03b3bd9903d63efd4ef4bd66dc7d2bfc5a1adb6fc76e40b1c170ff3139c68a8",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 6,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "f03b3bd9903d63efd4ef4bd66dc7d2bfc5a1adb6fc76e40b1c170ff3139c68a8",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 7,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"get the largest size available for the same perfume\", \"scope\": \"the same perfume\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"100ml Woody\", \"item_descriptions\": [\"30ml bottle\", \"100ml Woody\"]}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"5081446110\"], \"new_item_ids\": [\"3399869890\"], \"order_id\": \"#W1671835\", \"payment_method_id\": \"paypal_6918118\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "b8815cfa46a358c61a5313d64f375f07cc0641ba03ab80a86364db4b1e8c670c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 8,
+      "source_event_ids": [
+        "message:9:user",
+        "message:15:user",
+        "tool:call_lOnXmskaT7e9M4xKyDMJZZMN:exchange_delivered_order_items"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "get the largest size available for the same perfume"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the same perfume"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "100ml Woody"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": [
+                "30ml bottle",
+                "100ml Woody"
+              ]
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_lOnXmskaT7e9M4xKyDMJZZMN:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5081446110"
+              ],
+              "new_item_ids": [
+                "3399869890"
+              ],
+              "order_id": "#W1671835",
+              "payment_method_id": "paypal_6918118"
+            },
+            "result": {
+              "address": {
+                "address1": "851 Pine Lane",
+                "address2": "Suite 428",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76115"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "5081446110"
+              ],
+              "exchange_new_items": [
+                "3399869890"
+              ],
+              "exchange_payment_method_id": "paypal_6918118",
+              "exchange_price_difference": -10.48,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5081446110"
+                  ],
+                  "tracking_id": [
+                    "820626058356"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5081446110",
+                  "name": "Perfume",
+                  "options": {
+                    "gender": "men",
+                    "scent family": "woody",
+                    "size": "30ml"
+                  },
+                  "price": 322.52,
+                  "product_id": "6858788497"
+                }
+              ],
+              "order_id": "#W1671835",
+              "payment_history": [
+                {
+                  "amount": 322.52,
+                  "payment_method_id": "paypal_6918118",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "ivan_johnson_6036"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b8815cfa46a358c61a5313d64f375f07cc0641ba03ab80a86364db4b1e8c670c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:9:user",
+        "message:15:user",
+        "tool:call_lOnXmskaT7e9M4xKyDMJZZMN:exchange_delivered_order_items"
+      ],
+      "state_revision": 18
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 10,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 20.930895625904668,
+    "prewrite_validation": 0.0,
+    "semantic_support": 7.4170512510463595
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 2,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "77",
+  "trajectory_id": "seed_976305_C1_SEMANTIC_SUPPORT_task_077"
+}

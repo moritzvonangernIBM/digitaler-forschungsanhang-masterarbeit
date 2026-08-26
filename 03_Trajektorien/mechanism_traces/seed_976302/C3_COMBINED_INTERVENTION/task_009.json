@@ -1,0 +1,414 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00726495,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0032229
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "8bb5c18e1563b0c06883e713c3d1341b37cd46f734f404948742b0bbcc13fef7",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'desired_variant_constraints' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "desired_variant_constraints",
+          "record_index": 0
+        },
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "414b2aea5798a192f810324c3be07ea03bce9ff97827b2aa5f16ddac7dd38e10",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "9450fa458774823dd07e74ba9ccf0e193fc8f4a1ff223b277db1c68f5127bead",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "a brighter one that uses an AC adapter"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "I don’t need to exchange the water bottle anymore"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user",
+                "message:19:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "104309f72be86760ff1b1b4f7dec7247c54a5c551c0031e282b08caf7a7c961e",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:19:user",
+        "message:27:user"
+      ],
+      "state_revision": 28,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "a brighter one that uses an AC adapter"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "I don’t need to exchange the water bottle anymore"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:7:user",
+                "message:19:user",
+                "message:27:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:19:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8384507844"
+        ],
+        "new_item_ids": [
+          "7624783998"
+        ],
+        "order_id": "#W6390527",
+        "payment_method_id": "paypal_7644869"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_qKikvXTbyAxgMvCKY34TVLId",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 28,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_qKikvXTbyAxgMvCKY34TVLId",
+        "candidate_arguments": {
+          "item_ids": [
+            "8384507844"
+          ],
+          "new_item_ids": [
+            "7624783998"
+          ],
+          "order_id": "#W6390527",
+          "payment_method_id": "paypal_7644869"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_kovacs_8020",
+          "authentication_source_event_ids": [
+            "tool:call_ScVcTTWpv6zW9n8Soi2mQ4bF:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "8384507844",
+              "1615379700",
+              "8538875209"
+            ],
+            "order_id": "#W6390527",
+            "source_event_ids": [
+              "tool:call_11eZOUPqLClW4tGA4wKk48ej:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "mei_kovacs_8020"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "6817146515",
+              "source_event_ids": [
+                "tool:call_qfIUwpJdzSpk4X9TmjzVSmmF:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7644869"
+            ],
+            "source_event_ids": [
+              "tool:call_II8LaLt3myZQ9fnC30jpMJwZ:get_user_details"
+            ],
+            "user_id": "mei_kovacs_8020"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 9,
+      "state_revision": 28
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_qKikvXTbyAxgMvCKY34TVLId",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 10,
+      "state_revision": 28
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 11,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 31.987750625034096,
+    "prewrite_validation": 0.0006286669959081337,
+    "semantic_support": 16.211839416995645
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "9",
+  "trajectory_id": "seed_976302_C3_COMBINED_INTERVENTION_task_009"
+}

@@ -1,0 +1,989 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00708117,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0036516
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 2,
+    "b_evidence_reads": 1,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "bb187f94721171e46109c4dd420b35aa5346ec58dc7caf822993d817a817b3f9",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I want a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a blue v-neck T-shirt, small"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "this order—W7209932"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "05eba825d8c23a9e7f3896c1edb8842bad43823ab414a3d142ad633e5d00c311",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the blue v-neck in small that I got"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "#W7209932"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the T-shirt"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "#W7209932"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "use my gift card if there’s any extra cost"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"I want a red one, XXL, cotton, crew neck\", \"item_descriptions\": \"a blue v-neck T-shirt, small\", \"scope\": \"this order\\u2014W7209932\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a red one, XXL, cotton, crew neck\", \"item_descriptions\": \"the blue v-neck in small that I got\", \"order_id\": \"#W7209932\", \"scope\": \"the T-shirt\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W7209932\", \"scope\": \"use my gift card if there\\u2019s any extra cost\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I want a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a blue v-neck T-shirt, small"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "this order—W7209932"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the blue v-neck in small that I got"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "#W7209932"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the T-shirt"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "#W7209932"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "use my gift card if there’s any extra cost"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "6e412a9f230d40c7c4c4099fbc54ece7cb93c7013e95c8237eb58b6881abe9f7",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "I want a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user"
+              ],
+              "value": "a blue v-neck T-shirt, small"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "this order—W7209932"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "1cda6c29c14dd5633f63687741411434209f40c015a1a1c381ee3c9067ebc895",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user",
+                "message:13:user"
+              ],
+              "value": "I want a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user",
+                "message:13:user"
+              ],
+              "value": "a blue v-neck T-shirt, small"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "this order—W7209932"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5047954489"
+            ],
+            "new_item_ids": [
+              "9354168549"
+            ],
+            "order_id": "#W7209932",
+            "payment_method_id": "gift_card_2611937"
+          },
+          "call_id": "call_kKfXGUQlBcuT3v9HnA4gjTM2",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 15,
+      "state_revision": 14
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5047954489"
+        ],
+        "new_item_ids": [
+          "9354168549"
+        ],
+        "order_id": "#W7209932",
+        "payment_method_id": "gift_card_2611937"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_kKfXGUQlBcuT3v9HnA4gjTM2",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 16,
+      "state_revision": 14,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_kKfXGUQlBcuT3v9HnA4gjTM2",
+        "candidate_arguments": {
+          "item_ids": [
+            "5047954489"
+          ],
+          "new_item_ids": [
+            "9354168549"
+          ],
+          "order_id": "#W7209932",
+          "payment_method_id": "gift_card_2611937"
+        },
+        "disposition": "EVIDENCE_REQUIRED",
+        "evidence_action": {
+          "arguments": {
+            "user_id": "amelia_gonzalez_4098"
+          },
+          "tool_name": "get_user_details"
+        },
+        "observed": {
+          "authenticated_user_id": "amelia_gonzalez_4098",
+          "authentication_source_event_ids": [
+            "tool:call_CVxTUV9hqKyPJn1h0uhWPuPx:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "5047954489",
+              "5917587651"
+            ],
+            "order_id": "#W7209932",
+            "source_event_ids": [
+              "tool:call_ABgq8p5sOUGwOQon4DV7GVL6:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "amelia_gonzalez_4098"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_Xxca71g2x0tnqurKCrDGcxy1:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": null
+        },
+        "reason_code": "B_PAYMENT_PROFILE_NOT_OBSERVED",
+        "required_response": "Read the authenticated user profile before reconsidering the payment method.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "EVIDENCE_REQUIRED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_PAYMENT_PROFILE_NOT_OBSERVED",
+      "sequence": 17,
+      "state_revision": 14
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_evidence",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_EXACT_EVIDENCE_READ",
+      "sequence": 18,
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5047954489"
+            ],
+            "new_item_ids": [
+              "9354168549"
+            ],
+            "order_id": "#W7209932",
+            "payment_method_id": "gift_card_2611937"
+          },
+          "call_id": "call_f1yCgs3CdHMp0ct5lkDN7iwV",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 20,
+      "state_revision": 16
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5047954489"
+        ],
+        "new_item_ids": [
+          "9354168549"
+        ],
+        "order_id": "#W7209932",
+        "payment_method_id": "gift_card_2611937"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_f1yCgs3CdHMp0ct5lkDN7iwV",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 16,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_f1yCgs3CdHMp0ct5lkDN7iwV",
+        "candidate_arguments": {
+          "item_ids": [
+            "5047954489"
+          ],
+          "new_item_ids": [
+            "9354168549"
+          ],
+          "order_id": "#W7209932",
+          "payment_method_id": "gift_card_2611937"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "amelia_gonzalez_4098",
+          "authentication_source_event_ids": [
+            "tool:call_CVxTUV9hqKyPJn1h0uhWPuPx:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "5047954489",
+              "5917587651"
+            ],
+            "order_id": "#W7209932",
+            "source_event_ids": [
+              "tool:call_ABgq8p5sOUGwOQon4DV7GVL6:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "amelia_gonzalez_4098"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9523456873",
+              "source_event_ids": [
+                "tool:call_Xxca71g2x0tnqurKCrDGcxy1:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_2611937"
+            ],
+            "source_event_ids": [
+              "tool:factorial_b_read_14_19:get_user_details"
+            ],
+            "user_id": "amelia_gonzalez_4098"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 22,
+      "state_revision": 16
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_f1yCgs3CdHMp0ct5lkDN7iwV",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 23,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3b6d997074de4d2666fa2786f00f66e299ecf8c46f86dfee09d8f19c676e7178",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 24,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"I want a red one, XXL, cotton, crew neck\", \"item_descriptions\": \"a blue v-neck T-shirt, small\", \"scope\": \"this order\\u2014W7209932\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a red one, XXL, cotton, crew neck\", \"item_descriptions\": \"the blue v-neck in small that I got\", \"order_id\": \"#W7209932\", \"scope\": \"the T-shirt\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W7209932\", \"scope\": \"use my gift card if there\\u2019s any extra cost\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"5047954489\"], \"new_item_ids\": [\"9354168549\"], \"order_id\": \"#W7209932\", \"payment_method_id\": \"gift_card_2611937\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "49be069d980786a3183f69d5c2cd4c1c5cd5390db73b0a7817dc6ba7d5c4942c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "message:3:user",
+        "tool:call_f1yCgs3CdHMp0ct5lkDN7iwV:exchange_delivered_order_items"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user",
+                "message:13:user"
+              ],
+              "value": "I want a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:11:user",
+                "message:13:user"
+              ],
+              "value": "a blue v-neck T-shirt, small"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "this order—W7209932"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "a red one, XXL, cotton, crew neck"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the blue v-neck in small that I got"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "#W7209932"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the T-shirt"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "#W7209932"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "use my gift card if there’s any extra cost"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_f1yCgs3CdHMp0ct5lkDN7iwV:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5047954489"
+              ],
+              "new_item_ids": [
+                "9354168549"
+              ],
+              "order_id": "#W7209932",
+              "payment_method_id": "gift_card_2611937"
+            },
+            "result": {
+              "address": {
+                "address1": "722 Sunset Drive",
+                "address2": "Suite 670",
+                "city": "Denver",
+                "country": "USA",
+                "state": "CO",
+                "zip": "80245"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "5047954489"
+              ],
+              "exchange_new_items": [
+                "9354168549"
+              ],
+              "exchange_payment_method_id": "gift_card_2611937",
+              "exchange_price_difference": -7.99,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5047954489",
+                    "5917587651"
+                  ],
+                  "tracking_id": [
+                    "699530851768"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5047954489",
+                  "name": "T-Shirt",
+                  "options": {
+                    "color": "blue",
+                    "material": "polyester",
+                    "size": "S",
+                    "style": "v-neck"
+                  },
+                  "price": 54.84,
+                  "product_id": "9523456873"
+                },
+                {
+                  "item_id": "5917587651",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "grey",
+                    "compartment": "laptop",
+                    "material": "polyester",
+                    "size": "medium"
+                  },
+                  "price": 212.79,
+                  "product_id": "2524789262"
+                }
+              ],
+              "order_id": "#W7209932",
+              "payment_history": [
+                {
+                  "amount": 267.63,
+                  "payment_method_id": "gift_card_2611937",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "amelia_gonzalez_4098"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "49be069d980786a3183f69d5c2cd4c1c5cd5390db73b0a7817dc6ba7d5c4942c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:13:user",
+        "message:3:user",
+        "tool:call_f1yCgs3CdHMp0ct5lkDN7iwV:exchange_delivered_order_items"
+      ],
+      "state_revision": 18
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 27,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 32.56615670895553,
+    "prewrite_validation": 0.0005602499877568334,
+    "semantic_support": 17.890826917020604
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 8,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "80",
+  "trajectory_id": "seed_976301_C3_COMBINED_INTERVENTION_task_080"
+}

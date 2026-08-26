@@ -1,0 +1,881 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.010761410000000003,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0028635500000000003
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "cf3973bde886db3f54c0dca1ec3a64eaeb0d337f0affce572e36e064e1bdac79",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different configuration"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "030086e50a6734addb9beed253f553603305783bb8484a7d6d45534d5e5a1e82",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W3826449"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different configuration\", \"scope\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W3826449\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "e1a127f88c8a410f24598a538d36f6cf7c50310b59a26b40e4a5d546c23eeedf",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different configuration"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W3826449"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e1a127f88c8a410f24598a538d36f6cf7c50310b59a26b40e4a5d546c23eeedf",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e1a127f88c8a410f24598a538d36f6cf7c50310b59a26b40e4a5d546c23eeedf",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:17:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ec27b1f8c999706002861a0762a7b9fffb693d3d8a5f49c3ae9fec74fbdc0a85",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different configuration"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a 15-inch laptop with 16GB RAM"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e1a127f88c8a410f24598a538d36f6cf7c50310b59a26b40e4a5d546c23eeedf",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 9,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different configuration\", \"item_descriptions\": \"a 15-inch laptop with 16GB RAM\", \"scope\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W3826449\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:17:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different configuration"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a 15-inch laptop with 16GB RAM"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W3826449"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:17:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:17:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:17:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 3,
+      "rejection_details": [
+        {
+          "error": "field 'item_ids' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "item_ids",
+          "record_index": 0
+        },
+        {
+          "error": "field 'new_item_ids' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "new_item_ids",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "5a694f2a49c0780a25d1fdc99268e7733fb0918fe57c49870d165434e47db824",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:29:user"
+      ],
+      "state_revision": 30,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different configuration"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:29:user"
+              ],
+              "value": "a 15-inch laptop with 16GB RAM"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user",
+                "message:29:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:17:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:17:user"
+      ],
+      "state_revision": 32
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3478699712"
+            ],
+            "new_item_ids": [
+              "9844888101"
+            ],
+            "order_id": "#W2905754",
+            "payment_method_id": "credit_card_3677959"
+          },
+          "call_id": "call_D4lYQLuxnxsiZwWVr34zTLNe",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 32
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3478699712"
+        ],
+        "new_item_ids": [
+          "9844888101"
+        ],
+        "order_id": "#W2905754",
+        "payment_method_id": "credit_card_3677959"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_D4lYQLuxnxsiZwWVr34zTLNe",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 19,
+      "state_revision": 32,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_D4lYQLuxnxsiZwWVr34zTLNe",
+        "candidate_arguments": {
+          "item_ids": [
+            "3478699712"
+          ],
+          "new_item_ids": [
+            "9844888101"
+          ],
+          "order_id": "#W2905754",
+          "payment_method_id": "credit_card_3677959"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "lei_wilson_4541",
+          "authentication_source_event_ids": [
+            "tool:call_X0tTo5KMm8MB2nLpitcRiwZb:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5206946487",
+              "9973034634",
+              "3478699712",
+              "4329558751",
+              "7903094618"
+            ],
+            "order_id": "#W2905754",
+            "source_event_ids": [
+              "tool:call_KoASWsGHYaL0xgZTrpXXaCT4:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "lei_wilson_4541"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "4760268021",
+              "source_event_ids": [
+                "tool:call_r56cH10BvB7uDdsrVLaxTD4o:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6942297802",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7314138884",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8940227892",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3677959"
+            ],
+            "source_event_ids": [
+              "tool:call_D8U7kKqDTbslv4HtgjIzzsPB:get_user_details"
+            ],
+            "user_id": "lei_wilson_4541"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 20,
+      "state_revision": 32
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_D4lYQLuxnxsiZwWVr34zTLNe",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 21,
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4cfd7fa0ad200cf926d6d03925fd27bf315cdacb439b06a02faa33a5179ecb03",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 22,
+      "state_revision": 34
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different configuration\", \"item_descriptions\": \"a 15-inch laptop with 16GB RAM\", \"scope\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W3826449\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3478699712\"], \"new_item_ids\": [\"9844888101\"], \"order_id\": \"#W2905754\", \"payment_method_id\": \"credit_card_3677959\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "24cb258b7a782421f436c0d9676a76cb33617bd2a960a9f02026931cf3709a70",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:29:user",
+        "message:17:user",
+        "tool:call_D4lYQLuxnxsiZwWVr34zTLNe:exchange_delivered_order_items"
+      ],
+      "state_revision": 34,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different configuration"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:29:user"
+              ],
+              "value": "a 15-inch laptop with 16GB RAM"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user",
+                "message:29:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "#W3826449"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_D4lYQLuxnxsiZwWVr34zTLNe:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3478699712"
+              ],
+              "new_item_ids": [
+                "9844888101"
+              ],
+              "order_id": "#W2905754",
+              "payment_method_id": "credit_card_3677959"
+            },
+            "result": {
+              "address": {
+                "address1": "119 Elm Avenue",
+                "address2": "Suite 999",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32255"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "3478699712"
+              ],
+              "exchange_new_items": [
+                "9844888101"
+              ],
+              "exchange_payment_method_id": "credit_card_3677959",
+              "exchange_price_difference": 167.87,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5206946487",
+                    "9973034634",
+                    "3478699712",
+                    "4329558751",
+                    "7903094618"
+                  ],
+                  "tracking_id": [
+                    "232257628569"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5206946487",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "black",
+                    "length": "50ft",
+                    "material": "vinyl"
+                  },
+                  "price": 95.08,
+                  "product_id": "6679515468"
+                },
+                {
+                  "item_id": "9973034634",
+                  "name": "Digital Camera",
+                  "options": {
+                    "resolution": "20MP",
+                    "storage": "CF card",
+                    "zoom": "3x"
+                  },
+                  "price": 2850.32,
+                  "product_id": "8940227892"
+                },
+                {
+                  "item_id": "3478699712",
+                  "name": "Laptop",
+                  "options": {
+                    "color": "space grey",
+                    "processor": "i5",
+                    "ram": "16GB",
+                    "screen size": "15-inch",
+                    "storage": "512GB SSD"
+                  },
+                  "price": 2291.87,
+                  "product_id": "4760268021"
+                },
+                {
+                  "item_id": "4329558751",
+                  "name": "Sunglasses",
+                  "options": {
+                    "frame color": "silver",
+                    "frame material": "plastic",
+                    "lens color": "blue",
+                    "lens type": "non-polarized"
+                  },
+                  "price": 297.33,
+                  "product_id": "7314138884"
+                },
+                {
+                  "item_id": "7903094618",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "5000mAh",
+                    "color": "white",
+                    "output": "USB-A"
+                  },
+                  "price": 90.32,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W2905754",
+              "payment_history": [
+                {
+                  "amount": 5624.92,
+                  "payment_method_id": "credit_card_3677959",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "lei_wilson_4541"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "24cb258b7a782421f436c0d9676a76cb33617bd2a960a9f02026931cf3709a70",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:29:user",
+        "message:17:user",
+        "tool:call_D4lYQLuxnxsiZwWVr34zTLNe:exchange_delivered_order_items"
+      ],
+      "state_revision": 34
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 25,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 79.53024916810682,
+    "prewrite_validation": 0.00050149712478742,
+    "semantic_support": 15.214210417005233
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 8,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "94",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_094"
+}

@@ -1,0 +1,816 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00602007,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0035205
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "9a985deea5c66b25bcb353f2831a5c18f72b24d0dc118a54c2600ab34529091a",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’ve gotten into gaming, so I only want to keep things related to that."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return or cancel some items from my recent order. I’ve gotten into gaming, so I only want to keep things related to that."
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 8,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "9f26c44206bfbacc3d3054d475c3d6f158bdb110510c47b2ccaa9436709967e8",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"reason\": \"I\\u2019ve gotten into gaming, so I only want to keep things related to that.\", \"scope\": \"return or cancel some items from my recent order. I\\u2019ve gotten into gaming, so I only want to keep things related to that.\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"The rest\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"The rest\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "2b74cbcaac22a9ea5a8b7a8f70f818a70481caa7a175f0d5632e62c1e267f1bb",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’ve gotten into gaming, so I only want to keep things related to that."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "return or cancel some items from my recent order. I’ve gotten into gaming, so I only want to keep things related to that."
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "2b74cbcaac22a9ea5a8b7a8f70f818a70481caa7a175f0d5632e62c1e267f1bb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "2b74cbcaac22a9ea5a8b7a8f70f818a70481caa7a175f0d5632e62c1e267f1bb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "2b74cbcaac22a9ea5a8b7a8f70f818a70481caa7a175f0d5632e62c1e267f1bb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:16:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "e6bee9cbd655bc5fa5816912a152fd1bbe688c6270655e507b8f972affa96838",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:16:user"
+      ],
+      "state_revision": 17,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": "everything else"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’ve gotten into gaming, so I only want to keep things related to that."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": "return or cancel some items from my recent order. I’ve gotten into gaming, so I only want to keep things related to that."
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "2b74cbcaac22a9ea5a8b7a8f70f818a70481caa7a175f0d5632e62c1e267f1bb",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 17
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"everything else\", \"reason\": \"I\\u2019ve gotten into gaming, so I only want to keep things related to that.\", \"scope\": \"return or cancel some items from my recent order. I\\u2019ve gotten into gaming, so I only want to keep things related to that.\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"The rest\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"The rest\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "55b5b9b5ff96e783c7d4900b584a396130e92a2dca611f40c5f18fa9ff4f1644",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:16:user",
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 17,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": "everything else"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’ve gotten into gaming, so I only want to keep things related to that."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": "return or cancel some items from my recent order. I’ve gotten into gaming, so I only want to keep things related to that."
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "55b5b9b5ff96e783c7d4900b584a396130e92a2dca611f40c5f18fa9ff4f1644",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:16:user",
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "55b5b9b5ff96e783c7d4900b584a396130e92a2dca611f40c5f18fa9ff4f1644",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:16:user",
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4579334072",
+              "6117189161",
+              "4947717507"
+            ],
+            "order_id": "#W5490111",
+            "payment_method_id": "credit_card_3124723"
+          },
+          "call_id": "call_ibVmIRj3BhH3OTSlKK4EwvV9",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "55b5b9b5ff96e783c7d4900b584a396130e92a2dca611f40c5f18fa9ff4f1644",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 16,
+      "state_revision": 19
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4579334072",
+          "6117189161",
+          "4947717507"
+        ],
+        "order_id": "#W5490111",
+        "payment_method_id": "credit_card_3124723"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_ibVmIRj3BhH3OTSlKK4EwvV9",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 17,
+      "state_revision": 19,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_ibVmIRj3BhH3OTSlKK4EwvV9",
+        "candidate_arguments": {
+          "item_ids": [
+            "4579334072",
+            "6117189161",
+            "4947717507"
+          ],
+          "order_id": "#W5490111",
+          "payment_method_id": "credit_card_3124723"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mia_garcia_4516",
+          "authentication_source_event_ids": [
+            "tool:call_zVIrDfVILSj98MUkqEFlSyfd:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "4579334072",
+              "1421289881",
+              "6117189161",
+              "4947717507"
+            ],
+            "order_id": "#W5490111",
+            "source_event_ids": [
+              "tool:call_jATWyDzmcmpOUC5HK10lx9rA:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "mia_garcia_4516"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "3377618313",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3124723",
+              "paypal_9497703"
+            ],
+            "source_event_ids": [
+              "tool:call_3zI4A815oQ3AVC0mcW9QZFS1:get_user_details"
+            ],
+            "user_id": "mia_garcia_4516"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 18,
+      "state_revision": 19
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_ibVmIRj3BhH3OTSlKK4EwvV9",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 19,
+      "state_revision": 19
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "55b5b9b5ff96e783c7d4900b584a396130e92a2dca611f40c5f18fa9ff4f1644",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 20,
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"everything else\", \"reason\": \"I\\u2019ve gotten into gaming, so I only want to keep things related to that.\", \"scope\": \"return or cancel some items from my recent order. I\\u2019ve gotten into gaming, so I only want to keep things related to that.\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"The rest\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"The rest\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4579334072\", \"6117189161\", \"4947717507\"], \"order_id\": \"#W5490111\", \"payment_method_id\": \"credit_card_3124723\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "d960f75761c9aa9c07fee1183d175f06f7ae3dd5e59b23133975634c4e4c70df",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 21,
+      "source_event_ids": [
+        "message:16:user",
+        "message:1:user",
+        "message:9:user",
+        "tool:call_ibVmIRj3BhH3OTSlKK4EwvV9:return_delivered_order_items"
+      ],
+      "state_revision": 21,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:16:user"
+              ],
+              "value": "everything else"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’ve gotten into gaming, so I only want to keep things related to that."
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:16:user"
+              ],
+              "value": "return or cancel some items from my recent order. I’ve gotten into gaming, so I only want to keep things related to that."
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "The rest"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_ibVmIRj3BhH3OTSlKK4EwvV9:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4579334072",
+                "6117189161",
+                "4947717507"
+              ],
+              "order_id": "#W5490111",
+              "payment_method_id": "credit_card_3124723"
+            },
+            "result": {
+              "address": {
+                "address1": "537 Main Street",
+                "address2": "Suite 572",
+                "city": "Indianapolis",
+                "country": "USA",
+                "state": "IN",
+                "zip": "46229"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4579334072",
+                    "1421289881",
+                    "6117189161",
+                    "4947717507"
+                  ],
+                  "tracking_id": [
+                    "574297338433"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4579334072",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "black",
+                    "material": "glass"
+                  },
+                  "price": 54.85,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "1421289881",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "80%",
+                    "switch type": "linear"
+                  },
+                  "price": 268.77,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "6117189161",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "silver",
+                    "resolution": "4K",
+                    "waterproof": "yes"
+                  },
+                  "price": 481.5,
+                  "product_id": "3377618313"
+                },
+                {
+                  "item_id": "4947717507",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "green",
+                    "compartment": "camera",
+                    "material": "leather",
+                    "size": "medium"
+                  },
+                  "price": 218.04,
+                  "product_id": "2524789262"
+                }
+              ],
+              "order_id": "#W5490111",
+              "payment_history": [
+                {
+                  "amount": 1023.16,
+                  "payment_method_id": "credit_card_3124723",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "4579334072",
+                "4947717507",
+                "6117189161"
+              ],
+              "return_payment_method_id": "credit_card_3124723",
+              "status": "return requested",
+              "user_id": "mia_garcia_4516"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "d960f75761c9aa9c07fee1183d175f06f7ae3dd5e59b23133975634c4e4c70df",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:16:user",
+        "message:1:user",
+        "message:9:user",
+        "tool:call_ibVmIRj3BhH3OTSlKK4EwvV9:return_delivered_order_items"
+      ],
+      "state_revision": 21
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 23,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 42.08129333588295,
+    "prewrite_validation": 0.00036162487231194973,
+    "semantic_support": 21.23818854003912
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 6,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "13",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_013"
+}

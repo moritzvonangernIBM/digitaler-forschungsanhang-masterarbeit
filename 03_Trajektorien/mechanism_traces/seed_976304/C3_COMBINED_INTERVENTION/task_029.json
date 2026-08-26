@@ -1,0 +1,1303 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.010843650000000002,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0026402500000000002
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "f30c900a3bb0fed3dfb30e1339fb826f51f5cec72ae6fc8353f908cb3580e5e2",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a shorter one made of bamboo"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different type"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a garden hose I received"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the one that’s in my pending order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a shorter one made of bamboo\", \"item_descriptions\": \"my skateboard\", \"scope\": \"my skateboard\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different type\", \"item_descriptions\": \"a garden hose I received\", \"scope\": \"the one that\\u2019s in my pending order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "1506e7ab2eef67c4006298f2553777e9d8035203b1b6c0cc2a228e256a0f5168",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a shorter one made of bamboo"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different type"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a garden hose I received"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the one that’s in my pending order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1506e7ab2eef67c4006298f2553777e9d8035203b1b6c0cc2a228e256a0f5168",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1506e7ab2eef67c4006298f2553777e9d8035203b1b6c0cc2a228e256a0f5168",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1506e7ab2eef67c4006298f2553777e9d8035203b1b6c0cc2a228e256a0f5168",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1506e7ab2eef67c4006298f2553777e9d8035203b1b6c0cc2a228e256a0f5168",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "196c89693b2f9329137b4321f3bdb7c72ea744ce1027624c88cce4829bafc48f",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the garden hose"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "exchange the one I received for the type that’s actually in my pending order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1506e7ab2eef67c4006298f2553777e9d8035203b1b6c0cc2a228e256a0f5168",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 9,
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a shorter one made of bamboo\", \"item_descriptions\": \"my skateboard\", \"scope\": \"my skateboard\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different type\", \"item_descriptions\": \"a garden hose I received\", \"scope\": \"the one that\\u2019s in my pending order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the garden hose\", \"scope\": \"exchange the one I received for the type that\\u2019s actually in my pending order\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a shorter one made of bamboo"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different type"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a garden hose I received"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the one that’s in my pending order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the garden hose"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "exchange the one I received for the type that’s actually in my pending order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 15
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 17
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "629713782cda8d8d03616035c058391b0a19eba9350792753e5fd0e6e37ac966",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:9:user",
+        "message:20:user"
+      ],
+      "state_revision": 21,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the garden hose"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user",
+                "message:20:user"
+              ],
+              "value": "exchange the one I received for the type that’s actually in my pending order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4293355847"
+            ],
+            "new_item_ids": [
+              "8176740019"
+            ],
+            "order_id": "#W3792453",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_PYP1KO7776CU738tql5xcu1a",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 21
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4293355847"
+        ],
+        "new_item_ids": [
+          "8176740019"
+        ],
+        "order_id": "#W3792453",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_PYP1KO7776CU738tql5xcu1a",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 19,
+      "state_revision": 21,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_PYP1KO7776CU738tql5xcu1a",
+        "candidate_arguments": {
+          "item_ids": [
+            "4293355847"
+          ],
+          "new_item_ids": [
+            "8176740019"
+          ],
+          "order_id": "#W3792453",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_LGC8UdHkGqbhVUoVOXXXZRM2:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4293355847"
+            ],
+            "order_id": "#W3792453",
+            "source_event_ids": [
+              "tool:call_e2YXu3wLdVJX5xreS7w5UfiI:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1968349452",
+              "source_event_ids": [
+                "tool:call_Xm9Q5lXxuXew7oHyJwgt5orm:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_rOD3qtSm1gk221XpI2SpLQTW:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 20,
+      "state_revision": 21
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_PYP1KO7776CU738tql5xcu1a",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 21,
+      "state_revision": 21
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "4219ae2fed627825cdf906e5f6dae5a792d64fe9f4e8a4803fbb93d737336eec",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 22,
+      "state_revision": 23
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a shorter one made of bamboo\", \"item_descriptions\": \"my skateboard\", \"scope\": \"my skateboard\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different type\", \"item_descriptions\": \"a garden hose I received\", \"scope\": \"the one that\\u2019s in my pending order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the garden hose\", \"scope\": \"exchange the one I received for the type that\\u2019s actually in my pending order\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4293355847\"], \"new_item_ids\": [\"8176740019\"], \"order_id\": \"#W3792453\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "a4a16cb3aa76c47aa78b0ae0702cef76bbda6f8145d765148ce6c55b9a23023a",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:20:user",
+        "tool:call_PYP1KO7776CU738tql5xcu1a:exchange_delivered_order_items"
+      ],
+      "state_revision": 23,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a shorter one made of bamboo"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different type"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a garden hose I received"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the one that’s in my pending order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the garden hose"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user",
+                "message:20:user"
+              ],
+              "value": "exchange the one I received for the type that’s actually in my pending order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_PYP1KO7776CU738tql5xcu1a:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4293355847"
+              ],
+              "new_item_ids": [
+                "8176740019"
+              ],
+              "order_id": "#W3792453",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "4293355847"
+              ],
+              "exchange_new_items": [
+                "8176740019"
+              ],
+              "exchange_payment_method_id": "paypal_3024827",
+              "exchange_price_difference": 7.8,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4293355847"
+                  ],
+                  "tracking_id": [
+                    "908856694334"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4293355847",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "bamboo",
+                    "design": "plain",
+                    "length": "31 inch"
+                  },
+                  "price": 200.8,
+                  "product_id": "1968349452"
+                }
+              ],
+              "order_id": "#W3792453",
+              "payment_history": [
+                {
+                  "amount": 200.8,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a4a16cb3aa76c47aa78b0ae0702cef76bbda6f8145d765148ce6c55b9a23023a",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:20:user",
+        "tool:call_PYP1KO7776CU738tql5xcu1a:exchange_delivered_order_items"
+      ],
+      "state_revision": 23
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5753502325"
+            ],
+            "new_item_ids": [
+              "5206946487"
+            ],
+            "order_id": "#W7181492",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_7vm21YljQ8GzmP1HyQSmIaI3",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "a4a16cb3aa76c47aa78b0ae0702cef76bbda6f8145d765148ce6c55b9a23023a",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 25,
+      "state_revision": 23
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5753502325"
+        ],
+        "new_item_ids": [
+          "5206946487"
+        ],
+        "order_id": "#W7181492",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_7vm21YljQ8GzmP1HyQSmIaI3",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 23,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_7vm21YljQ8GzmP1HyQSmIaI3",
+        "candidate_arguments": {
+          "item_ids": [
+            "5753502325"
+          ],
+          "new_item_ids": [
+            "5206946487"
+          ],
+          "order_id": "#W7181492",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_LGC8UdHkGqbhVUoVOXXXZRM2:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5753502325",
+              "9851293632",
+              "3778705663",
+              "8118291112",
+              "3020722515"
+            ],
+            "order_id": "#W7181492",
+            "source_event_ids": [
+              "tool:call_nikQ9RRivhyh5FD2Qfj71Met:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "6679515468",
+              "source_event_ids": [
+                "tool:call_7XyyjSPeVqAvI9qVhfPl5ciz:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_rOD3qtSm1gk221XpI2SpLQTW:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 27,
+      "state_revision": 23
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_7vm21YljQ8GzmP1HyQSmIaI3",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 28,
+      "state_revision": 23
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "a4a16cb3aa76c47aa78b0ae0702cef76bbda6f8145d765148ce6c55b9a23023a",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 29,
+      "state_revision": 25
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"a shorter one made of bamboo\", \"item_descriptions\": \"my skateboard\", \"scope\": \"my skateboard\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"a different type\", \"item_descriptions\": \"a garden hose I received\", \"scope\": \"the one that\\u2019s in my pending order\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the garden hose\", \"scope\": \"exchange the one I received for the type that\\u2019s actually in my pending order\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4293355847\"], \"new_item_ids\": [\"8176740019\"], \"order_id\": \"#W3792453\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"exchange_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"5753502325\"], \"new_item_ids\": [\"5206946487\"], \"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "90089572eb8dfb18f5fa83d0025d0e98538d8bcea444fe1419ad794693c10c34",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 30,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:20:user",
+        "tool:call_PYP1KO7776CU738tql5xcu1a:exchange_delivered_order_items",
+        "tool:call_7vm21YljQ8GzmP1HyQSmIaI3:exchange_delivered_order_items"
+      ],
+      "state_revision": 25,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a shorter one made of bamboo"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my skateboard"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a different type"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a garden hose I received"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the one that’s in my pending order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the garden hose"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user",
+                "message:20:user"
+              ],
+              "value": "exchange the one I received for the type that’s actually in my pending order"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_PYP1KO7776CU738tql5xcu1a:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4293355847"
+              ],
+              "new_item_ids": [
+                "8176740019"
+              ],
+              "order_id": "#W3792453",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "4293355847"
+              ],
+              "exchange_new_items": [
+                "8176740019"
+              ],
+              "exchange_payment_method_id": "paypal_3024827",
+              "exchange_price_difference": 7.8,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4293355847"
+                  ],
+                  "tracking_id": [
+                    "908856694334"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4293355847",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "bamboo",
+                    "design": "plain",
+                    "length": "31 inch"
+                  },
+                  "price": 200.8,
+                  "product_id": "1968349452"
+                }
+              ],
+              "order_id": "#W3792453",
+              "payment_history": [
+                {
+                  "amount": 200.8,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_7vm21YljQ8GzmP1HyQSmIaI3:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5753502325"
+              ],
+              "new_item_ids": [
+                "5206946487"
+              ],
+              "order_id": "#W7181492",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "5753502325"
+              ],
+              "exchange_new_items": [
+                "5206946487"
+              ],
+              "exchange_payment_method_id": "paypal_3024827",
+              "exchange_price_difference": -1.27,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5753502325",
+                    "9851293632",
+                    "3778705663",
+                    "8118291112",
+                    "3020722515"
+                  ],
+                  "tracking_id": [
+                    "418708581751"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5753502325",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "rubber"
+                  },
+                  "price": 96.35,
+                  "product_id": "6679515468"
+                },
+                {
+                  "item_id": "9851293632",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "green",
+                    "compartment": "camera",
+                    "material": "polyester",
+                    "size": "small"
+                  },
+                  "price": 193.38,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3778705663",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "black",
+                    "height": "6 ft",
+                    "material": "metal"
+                  },
+                  "price": 473.48,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "8118291112",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "12",
+                    "waterproof": "no"
+                  },
+                  "price": 260.56,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "3020722515",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "1 cup",
+                    "color": "black",
+                    "features": "auto shutoff",
+                    "type": "french press"
+                  },
+                  "price": 238.64,
+                  "product_id": "7996920482"
+                }
+              ],
+              "order_id": "#W7181492",
+              "payment_history": [
+                {
+                  "amount": 1262.41,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "90089572eb8dfb18f5fa83d0025d0e98538d8bcea444fe1419ad794693c10c34",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 31,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:20:user",
+        "tool:call_PYP1KO7776CU738tql5xcu1a:exchange_delivered_order_items",
+        "tool:call_7vm21YljQ8GzmP1HyQSmIaI3:exchange_delivered_order_items"
+      ],
+      "state_revision": 25
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 32,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 38.565742206934374,
+    "prewrite_validation": 0.0007885850500315428,
+    "semantic_support": 14.58671029098332
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 11,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "29",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_029"
+}

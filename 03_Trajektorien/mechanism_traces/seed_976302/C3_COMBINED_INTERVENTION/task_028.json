@@ -1,0 +1,1541 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.01307602,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0017639
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 3,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "f02ab0e85ee28df926652c4aa32bc22e978186ea790bccaad5aad6cec7b5d5a8",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a skateboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "4250edfd80d804ff87e854d05d7a018e1e5dbc16373145319b465d338ae7a608",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user"
+              ],
+              "value": "a skateboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "2732a7a7f19ff7438067b2cacd90ed8f921f180be95f221e803f4d91bdfdc3dc",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user",
+                "message:23:user"
+              ],
+              "value": "a skateboard"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W3792453"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "1 skateboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4293355847"
+        ],
+        "order_id": "#W3792453",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_vEVRjDXvExkZHIHpRdSTH9Vf",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 6,
+      "state_revision": 26,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_vEVRjDXvExkZHIHpRdSTH9Vf",
+        "candidate_arguments": {
+          "item_ids": [
+            "4293355847"
+          ],
+          "order_id": "#W3792453",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_cKxLNleRYAWrZ6svXfXd37jw:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4293355847"
+            ],
+            "order_id": "#W3792453",
+            "source_event_ids": [
+              "tool:call_JpUPqMSJktKCol9zx3iQ8Un5:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1968349452",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_xOHOC10Ocg7DbW9i4qQh6Cb6:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 7,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_vEVRjDXvExkZHIHpRdSTH9Vf",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 8,
+      "state_revision": 26
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "d682753929a06d779edbc7e3c9994e7e87579f89d643b7735ab692adbacd046c",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a skateboard\", \"order_id\": \"#W3792453\", \"scope\": \"1 skateboard\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a garden hose and a backpack\", \"scope\": \"a garden hose and a backpack\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4293355847\"], \"order_id\": \"#W3792453\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0001",
+      "card_sha256": "ce1294501e5a552e2ceec9e520405913c76fbc72d04742a0f7d0fe359428b2fa",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user",
+                "message:23:user"
+              ],
+              "value": "a skateboard"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W3792453"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "1 skateboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4293355847"
+              ],
+              "order_id": "#W3792453",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4293355847"
+                  ],
+                  "tracking_id": [
+                    "908856694334"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4293355847",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "bamboo",
+                    "design": "plain",
+                    "length": "31 inch"
+                  },
+                  "price": 200.8,
+                  "product_id": "1968349452"
+                }
+              ],
+              "order_id": "#W3792453",
+              "payment_history": [
+                {
+                  "amount": 200.8,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "4293355847"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ce1294501e5a552e2ceec9e520405913c76fbc72d04742a0f7d0fe359428b2fa",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items"
+      ],
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ce1294501e5a552e2ceec9e520405913c76fbc72d04742a0f7d0fe359428b2fa",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items"
+      ],
+      "state_revision": 32
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5753502325",
+              "9851293632"
+            ],
+            "order_id": "#W7181492",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_wjKXvbSLNw29oymdwffd8O9Z",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "ce1294501e5a552e2ceec9e520405913c76fbc72d04742a0f7d0fe359428b2fa",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 14,
+      "state_revision": 32
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "5753502325",
+          "9851293632"
+        ],
+        "order_id": "#W7181492",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_wjKXvbSLNw29oymdwffd8O9Z",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 15,
+      "state_revision": 32,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_wjKXvbSLNw29oymdwffd8O9Z",
+        "candidate_arguments": {
+          "item_ids": [
+            "5753502325",
+            "9851293632"
+          ],
+          "order_id": "#W7181492",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_cKxLNleRYAWrZ6svXfXd37jw:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5753502325",
+              "9851293632",
+              "3778705663",
+              "8118291112",
+              "3020722515"
+            ],
+            "order_id": "#W7181492",
+            "source_event_ids": [
+              "tool:call_rEBpxXgXC68LIeQ39PgXnsB3:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "2524789262",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6679515468",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7996920482",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_xOHOC10Ocg7DbW9i4qQh6Cb6:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 16,
+      "state_revision": 32
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_wjKXvbSLNw29oymdwffd8O9Z",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 17,
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ce1294501e5a552e2ceec9e520405913c76fbc72d04742a0f7d0fe359428b2fa",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 18,
+      "state_revision": 34
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a skateboard\", \"order_id\": \"#W3792453\", \"scope\": \"1 skateboard\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a garden hose and a backpack\", \"scope\": \"a garden hose and a backpack\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4293355847\"], \"order_id\": \"#W3792453\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"5753502325\", \"9851293632\"], \"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "57d0113267a543d337e207d752c4a784a5583957dc85276e6373e889ac8197b8",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items"
+      ],
+      "state_revision": 34,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user",
+                "message:23:user"
+              ],
+              "value": "a skateboard"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W3792453"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "1 skateboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4293355847"
+              ],
+              "order_id": "#W3792453",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4293355847"
+                  ],
+                  "tracking_id": [
+                    "908856694334"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4293355847",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "bamboo",
+                    "design": "plain",
+                    "length": "31 inch"
+                  },
+                  "price": 200.8,
+                  "product_id": "1968349452"
+                }
+              ],
+              "order_id": "#W3792453",
+              "payment_history": [
+                {
+                  "amount": 200.8,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "4293355847"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5753502325",
+                "9851293632"
+              ],
+              "order_id": "#W7181492",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5753502325",
+                    "9851293632",
+                    "3778705663",
+                    "8118291112",
+                    "3020722515"
+                  ],
+                  "tracking_id": [
+                    "418708581751"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5753502325",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "rubber"
+                  },
+                  "price": 96.35,
+                  "product_id": "6679515468"
+                },
+                {
+                  "item_id": "9851293632",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "green",
+                    "compartment": "camera",
+                    "material": "polyester",
+                    "size": "small"
+                  },
+                  "price": 193.38,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3778705663",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "black",
+                    "height": "6 ft",
+                    "material": "metal"
+                  },
+                  "price": 473.48,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "8118291112",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "12",
+                    "waterproof": "no"
+                  },
+                  "price": 260.56,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "3020722515",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "1 cup",
+                    "color": "black",
+                    "features": "auto shutoff",
+                    "type": "french press"
+                  },
+                  "price": 238.64,
+                  "product_id": "7996920482"
+                }
+              ],
+              "order_id": "#W7181492",
+              "payment_history": [
+                {
+                  "amount": 1262.41,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "5753502325",
+                "9851293632"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "57d0113267a543d337e207d752c4a784a5583957dc85276e6373e889ac8197b8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items"
+      ],
+      "state_revision": 34
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "57d0113267a543d337e207d752c4a784a5583957dc85276e6373e889ac8197b8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items"
+      ],
+      "state_revision": 36
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "57d0113267a543d337e207d752c4a784a5583957dc85276e6373e889ac8197b8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items"
+      ],
+      "state_revision": 38
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "9570044148",
+              "6857426243"
+            ],
+            "order_id": "#W5565470",
+            "payment_method_id": "paypal_3024827"
+          },
+          "call_id": "call_eTNdffXZ39e9gZ1of62y1Nmi",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "57d0113267a543d337e207d752c4a784a5583957dc85276e6373e889ac8197b8",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 23,
+      "state_revision": 38
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "9570044148",
+          "6857426243"
+        ],
+        "order_id": "#W5565470",
+        "payment_method_id": "paypal_3024827"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_eTNdffXZ39e9gZ1of62y1Nmi",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 24,
+      "state_revision": 38,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_eTNdffXZ39e9gZ1of62y1Nmi",
+        "candidate_arguments": {
+          "item_ids": [
+            "9570044148",
+            "6857426243"
+          ],
+          "order_id": "#W5565470",
+          "payment_method_id": "paypal_3024827"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "isabella_johansson_2152",
+          "authentication_source_event_ids": [
+            "tool:call_cKxLNleRYAWrZ6svXfXd37jw:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "7602931732",
+              "9570044148",
+              "6857426243"
+            ],
+            "order_id": "#W5565470",
+            "source_event_ids": [
+              "tool:call_ycE1v2lXRyQQscWWLeI2uGyO:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "isabella_johansson_2152"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1075968781",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "1656367028",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "2747247837",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3024827"
+            ],
+            "source_event_ids": [
+              "tool:call_xOHOC10Ocg7DbW9i4qQh6Cb6:get_user_details"
+            ],
+            "user_id": "isabella_johansson_2152"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 25,
+      "state_revision": 38
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_eTNdffXZ39e9gZ1of62y1Nmi",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 26,
+      "state_revision": 38
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "57d0113267a543d337e207d752c4a784a5583957dc85276e6373e889ac8197b8",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 27,
+      "state_revision": 40
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a skateboard\", \"order_id\": \"#W3792453\", \"scope\": \"1 skateboard\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"a garden hose and a backpack\", \"scope\": \"a garden hose and a backpack\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4293355847\"], \"order_id\": \"#W3792453\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"5753502325\", \"9851293632\"], \"order_id\": \"#W7181492\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"9570044148\", \"6857426243\"], \"order_id\": \"#W5565470\", \"payment_method_id\": \"paypal_3024827\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "192e888a6e32502640546a40e925f479934fe623dbbfce57e7f1513771626ed4",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 28,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items",
+        "tool:call_eTNdffXZ39e9gZ1of62y1Nmi:return_delivered_order_items"
+      ],
+      "state_revision": 40,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user",
+                "message:23:user"
+              ],
+              "value": "a skateboard"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W3792453"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "1 skateboard"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "a garden hose and a backpack"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4293355847"
+              ],
+              "order_id": "#W3792453",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4293355847"
+                  ],
+                  "tracking_id": [
+                    "908856694334"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4293355847",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "bamboo",
+                    "design": "plain",
+                    "length": "31 inch"
+                  },
+                  "price": 200.8,
+                  "product_id": "1968349452"
+                }
+              ],
+              "order_id": "#W3792453",
+              "payment_history": [
+                {
+                  "amount": 200.8,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "4293355847"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5753502325",
+                "9851293632"
+              ],
+              "order_id": "#W7181492",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "313 Chestnut Street",
+                "address2": "Suite 537",
+                "city": "Jacksonville",
+                "country": "USA",
+                "state": "FL",
+                "zip": "32286"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5753502325",
+                    "9851293632",
+                    "3778705663",
+                    "8118291112",
+                    "3020722515"
+                  ],
+                  "tracking_id": [
+                    "418708581751"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5753502325",
+                  "name": "Garden Hose",
+                  "options": {
+                    "color": "green",
+                    "length": "25ft",
+                    "material": "rubber"
+                  },
+                  "price": 96.35,
+                  "product_id": "6679515468"
+                },
+                {
+                  "item_id": "9851293632",
+                  "name": "Backpack",
+                  "options": {
+                    "color": "green",
+                    "compartment": "camera",
+                    "material": "polyester",
+                    "size": "small"
+                  },
+                  "price": 193.38,
+                  "product_id": "2524789262"
+                },
+                {
+                  "item_id": "3778705663",
+                  "name": "Bookshelf",
+                  "options": {
+                    "color": "black",
+                    "height": "6 ft",
+                    "material": "metal"
+                  },
+                  "price": 473.48,
+                  "product_id": "8600330539"
+                },
+                {
+                  "item_id": "8118291112",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "leather",
+                    "size": "12",
+                    "waterproof": "no"
+                  },
+                  "price": 260.56,
+                  "product_id": "7363354090"
+                },
+                {
+                  "item_id": "3020722515",
+                  "name": "Coffee Maker",
+                  "options": {
+                    "capacity": "1 cup",
+                    "color": "black",
+                    "features": "auto shutoff",
+                    "type": "french press"
+                  },
+                  "price": 238.64,
+                  "product_id": "7996920482"
+                }
+              ],
+              "order_id": "#W7181492",
+              "payment_history": [
+                {
+                  "amount": 1262.41,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "5753502325",
+                "9851293632"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_eTNdffXZ39e9gZ1of62y1Nmi:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "9570044148",
+                "6857426243"
+              ],
+              "order_id": "#W5565470",
+              "payment_method_id": "paypal_3024827"
+            },
+            "result": {
+              "address": {
+                "address1": "812 Cedar Avenue",
+                "address2": "Suite 500",
+                "city": "Houston",
+                "country": "USA",
+                "state": "TX",
+                "zip": "77129"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "7602931732",
+                    "9570044148",
+                    "6857426243"
+                  ],
+                  "tracking_id": [
+                    "907614527588"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "7602931732",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1L",
+                    "color": "black",
+                    "material": "stainless steel"
+                  },
+                  "price": 153.25,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "9570044148",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "none",
+                    "size": "full size",
+                    "switch type": "linear"
+                  },
+                  "price": 231.37,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "6857426243",
+                  "name": "Pet Bed",
+                  "options": {
+                    "color": "grey",
+                    "material": "fleece",
+                    "size": "medium"
+                  },
+                  "price": 196.53,
+                  "product_id": "2747247837"
+                }
+              ],
+              "order_id": "#W5565470",
+              "payment_history": [
+                {
+                  "amount": 581.15,
+                  "payment_method_id": "paypal_3024827",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "6857426243",
+                "9570044148"
+              ],
+              "return_payment_method_id": "paypal_3024827",
+              "status": "return requested",
+              "user_id": "isabella_johansson_2152"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "192e888a6e32502640546a40e925f479934fe623dbbfce57e7f1513771626ed4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 29,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items",
+        "tool:call_eTNdffXZ39e9gZ1of62y1Nmi:return_delivered_order_items"
+      ],
+      "state_revision": 40
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "192e888a6e32502640546a40e925f479934fe623dbbfce57e7f1513771626ed4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 30,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items",
+        "tool:call_eTNdffXZ39e9gZ1of62y1Nmi:return_delivered_order_items"
+      ],
+      "state_revision": 42
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "192e888a6e32502640546a40e925f479934fe623dbbfce57e7f1513771626ed4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 31,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items",
+        "tool:call_eTNdffXZ39e9gZ1of62y1Nmi:return_delivered_order_items"
+      ],
+      "state_revision": 44
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "192e888a6e32502640546a40e925f479934fe623dbbfce57e7f1513771626ed4",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 32,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:23:user",
+        "message:29:user",
+        "tool:call_vEVRjDXvExkZHIHpRdSTH9Vf:return_delivered_order_items",
+        "tool:call_wjKXvbSLNw29oymdwffd8O9Z:return_delivered_order_items",
+        "tool:call_eTNdffXZ39e9gZ1of62y1Nmi:return_delivered_order_items"
+      ],
+      "state_revision": 46
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 3,
+    "b_opportunities": 3,
+    "event_count": 33,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 52.692222583980765,
+    "prewrite_validation": 0.0013249600597191602,
+    "semantic_support": 10.547827166999923
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 9,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "28",
+  "trajectory_id": "seed_976302_C3_COMBINED_INTERVENTION_task_028"
+}

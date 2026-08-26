@@ -1,0 +1,1576 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00894615,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00300365
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "b7fffc29050ff88aae5e3d7cdedaa96e0f621830fc962ce070be43dc147ba8ae",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "165aa0b2f8a4313ed88250cac59320fc105191c3a9052c545998ba0a839262c9",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "my smart watch",
+                "the e-reader I just bought"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "a couple of other things"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"reason\": \"I\\u2019m really disappointed with the quality\", \"scope\": \"them\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"my smart watch\", \"the e-reader I just bought\"], \"scope\": \"a couple of other things\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "b713c65901909506e202112e59a5a59acfd80036b9e75bbba315e528fe28c959",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "my smart watch",
+                "the e-reader I just bought"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "a couple of other things"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b713c65901909506e202112e59a5a59acfd80036b9e75bbba315e528fe28c959",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b713c65901909506e202112e59a5a59acfd80036b9e75bbba315e528fe28c959",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b713c65901909506e202112e59a5a59acfd80036b9e75bbba315e528fe28c959",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b713c65901909506e202112e59a5a59acfd80036b9e75bbba315e528fe28c959",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "425a14bc7fc49670d4219cc454138988a0fd4c2e2f03f4936b4128d32e0c5ac1",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "32GB storage version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the same e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "b713c65901909506e202112e59a5a59acfd80036b9e75bbba315e528fe28c959",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 11,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"reason\": \"I\\u2019m really disappointed with the quality\", \"scope\": \"them\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"my smart watch\", \"the e-reader I just bought\"], \"scope\": \"a couple of other things\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"32GB storage version\", \"item_descriptions\": \"the same e-reader\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "9f13ed535463521a9f02e66f2fa5f469c67a78ccd631af7e05f0ec68a8ca5a71",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "two skateboards"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "my smart watch",
+                "the e-reader I just bought"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "a couple of other things"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "32GB storage version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the same e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9f13ed535463521a9f02e66f2fa5f469c67a78ccd631af7e05f0ec68a8ca5a71",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9f13ed535463521a9f02e66f2fa5f469c67a78ccd631af7e05f0ec68a8ca5a71",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:11:user",
+        "message:19:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "3025c0148c2ae19bd04e1e5d8629879b262d7f46d24f1b3affe23b9cf715ad8c",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:19:user",
+        "message:23:user",
+        "message:1:user"
+      ],
+      "state_revision": 24,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user",
+                "message:23:user"
+              ],
+              "value": "32GB storage version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the same e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "my current e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:23:user"
+              ],
+              "value": "two skateboards"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W7553978"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9f13ed535463521a9f02e66f2fa5f469c67a78ccd631af7e05f0ec68a8ca5a71",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 17,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"order_id\": \"#W7553978\", \"reason\": \"I\\u2019m really disappointed with the quality\", \"scope\": \"them\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"my smart watch\", \"the e-reader I just bought\"], \"scope\": \"a couple of other things\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"32GB storage version\", \"item_descriptions\": \"the same e-reader\", \"scope\": \"my current e-reader\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "d5f3898ee1fe64340bba3302ec260f56c2964a20a61994fd65d32de248a5f9fd",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:23:user"
+              ],
+              "value": "two skateboards"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W7553978"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "my smart watch",
+                "the e-reader I just bought"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "a couple of other things"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user",
+                "message:23:user"
+              ],
+              "value": "32GB storage version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the same e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "my current e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "d5f3898ee1fe64340bba3302ec260f56c2964a20a61994fd65d32de248a5f9fd",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "d5f3898ee1fe64340bba3302ec260f56c2964a20a61994fd65d32de248a5f9fd",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "9494281769"
+            ],
+            "new_item_ids": [
+              "7609274509"
+            ],
+            "order_id": "#W3239882",
+            "payment_method_id": "credit_card_5902940"
+          },
+          "call_id": "call_n24AKqWEbrngCxLZf9yBvwZX",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "d5f3898ee1fe64340bba3302ec260f56c2964a20a61994fd65d32de248a5f9fd",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 26
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "9494281769"
+        ],
+        "new_item_ids": [
+          "7609274509"
+        ],
+        "order_id": "#W3239882",
+        "payment_method_id": "credit_card_5902940"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_n24AKqWEbrngCxLZf9yBvwZX",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 22,
+      "state_revision": 26,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_n24AKqWEbrngCxLZf9yBvwZX",
+        "candidate_arguments": {
+          "item_ids": [
+            "9494281769"
+          ],
+          "new_item_ids": [
+            "7609274509"
+          ],
+          "order_id": "#W3239882",
+          "payment_method_id": "credit_card_5902940"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_ahmed_4909",
+          "authentication_source_event_ids": [
+            "tool:call_cOywTXXkuz8Qo1tgbRb5ZYwz:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "9494281769",
+              "2106335193",
+              "2146648441",
+              "6509212169"
+            ],
+            "order_id": "#W3239882",
+            "source_event_ids": [
+              "tool:call_J2bCMMq6lhcPobCd7U9yyVqg:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "mei_ahmed_4909"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "3801771308",
+              "source_event_ids": [
+                "tool:call_RzMyQmRPGMMg5lm34jswZsMc:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6942297802",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8024098596",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_5902940"
+            ],
+            "source_event_ids": [
+              "tool:call_IQ1Q0JgWORAx3CMbQ5ZwgXHj:get_user_details"
+            ],
+            "user_id": "mei_ahmed_4909"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 23,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_n24AKqWEbrngCxLZf9yBvwZX",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 24,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "d5f3898ee1fe64340bba3302ec260f56c2964a20a61994fd65d32de248a5f9fd",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 25,
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"order_id\": \"#W7553978\", \"reason\": \"I\\u2019m really disappointed with the quality\", \"scope\": \"them\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"my smart watch\", \"the e-reader I just bought\"], \"scope\": \"a couple of other things\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"32GB storage version\", \"item_descriptions\": \"the same e-reader\", \"scope\": \"my current e-reader\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"9494281769\"], \"new_item_ids\": [\"7609274509\"], \"order_id\": \"#W3239882\", \"payment_method_id\": \"credit_card_5902940\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "e74bac08d7eeeb056010114152e1736b53ff2ae66826d898a88965d7f03078a7",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 26,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user",
+        "tool:call_n24AKqWEbrngCxLZf9yBvwZX:exchange_delivered_order_items"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:23:user"
+              ],
+              "value": "two skateboards"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W7553978"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "my smart watch",
+                "the e-reader I just bought"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "a couple of other things"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user",
+                "message:23:user"
+              ],
+              "value": "32GB storage version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the same e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "my current e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_n24AKqWEbrngCxLZf9yBvwZX:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "9494281769"
+              ],
+              "new_item_ids": [
+                "7609274509"
+              ],
+              "order_id": "#W3239882",
+              "payment_method_id": "credit_card_5902940"
+            },
+            "result": {
+              "address": {
+                "address1": "572 Cedar Street",
+                "address2": "Suite 469",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78705"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "9494281769"
+              ],
+              "exchange_new_items": [
+                "7609274509"
+              ],
+              "exchange_payment_method_id": "credit_card_5902940",
+              "exchange_price_difference": -8.66,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "9494281769",
+                    "2106335193",
+                    "2146648441",
+                    "6509212169"
+                  ],
+                  "tracking_id": [
+                    "618282621876"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "9494281769",
+                  "name": "E-Reader",
+                  "options": {
+                    "connectivity": "Wi-Fi",
+                    "screen size": "8-inch",
+                    "storage": "8GB"
+                  },
+                  "price": 252.06,
+                  "product_id": "3801771308"
+                },
+                {
+                  "item_id": "2106335193",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "silver",
+                    "screen size": "10-inch",
+                    "storage": "64GB"
+                  },
+                  "price": 903.95,
+                  "product_id": "8024098596"
+                },
+                {
+                  "item_id": "2146648441",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "10000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 105.85,
+                  "product_id": "6942297802"
+                },
+                {
+                  "item_id": "6509212169",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand A",
+                    "kit size": "professional",
+                    "skin tone": "light"
+                  },
+                  "price": 256.14,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W3239882",
+              "payment_history": [
+                {
+                  "amount": 1518.0,
+                  "payment_method_id": "credit_card_5902940",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "mei_ahmed_4909"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e74bac08d7eeeb056010114152e1736b53ff2ae66826d898a88965d7f03078a7",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 27,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user",
+        "tool:call_n24AKqWEbrngCxLZf9yBvwZX:exchange_delivered_order_items"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4545791457",
+              "3098764622",
+              "1631806422"
+            ],
+            "order_id": "#W7553978",
+            "payment_method_id": "credit_card_5902940"
+          },
+          "call_id": "call_UVX6079z7p5IrpYcIktQLh8q",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "e74bac08d7eeeb056010114152e1736b53ff2ae66826d898a88965d7f03078a7",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 28,
+      "state_revision": 28
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4545791457",
+          "3098764622",
+          "1631806422"
+        ],
+        "order_id": "#W7553978",
+        "payment_method_id": "credit_card_5902940"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_UVX6079z7p5IrpYcIktQLh8q",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 29,
+      "state_revision": 28,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_UVX6079z7p5IrpYcIktQLh8q",
+        "candidate_arguments": {
+          "item_ids": [
+            "4545791457",
+            "3098764622",
+            "1631806422"
+          ],
+          "order_id": "#W7553978",
+          "payment_method_id": "credit_card_5902940"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_ahmed_4909",
+          "authentication_source_event_ids": [
+            "tool:call_cOywTXXkuz8Qo1tgbRb5ZYwz:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4545791457",
+              "1345513440",
+              "3098764622",
+              "1631806422"
+            ],
+            "order_id": "#W7553978",
+            "source_event_ids": [
+              "tool:call_F5csIQWl9xlt53lwRFEMqWwO:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "mei_ahmed_4909"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1762337868",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "1968349452",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_5902940"
+            ],
+            "source_event_ids": [
+              "tool:call_IQ1Q0JgWORAx3CMbQ5ZwgXHj:get_user_details"
+            ],
+            "user_id": "mei_ahmed_4909"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 30,
+      "state_revision": 28
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_UVX6079z7p5IrpYcIktQLh8q",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 31,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "e74bac08d7eeeb056010114152e1736b53ff2ae66826d898a88965d7f03078a7",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 32,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"two skateboards\", \"order_id\": \"#W7553978\", \"reason\": \"I\\u2019m really disappointed with the quality\", \"scope\": \"them\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": [\"my smart watch\", \"the e-reader I just bought\"], \"scope\": \"a couple of other things\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"32GB storage version\", \"item_descriptions\": \"the same e-reader\", \"scope\": \"my current e-reader\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"9494281769\"], \"new_item_ids\": [\"7609274509\"], \"order_id\": \"#W3239882\", \"payment_method_id\": \"credit_card_5902940\"}, \"tool_name\": \"exchange_delivered_order_items\"}, {\"arguments\": {\"item_ids\": [\"4545791457\", \"3098764622\", \"1631806422\"], \"order_id\": \"#W7553978\", \"payment_method_id\": \"credit_card_5902940\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "ef945df96824806ceb18a7946c489229b0431076b7fe7b6fa7a1c679cdb590a6",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 33,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user",
+        "tool:call_n24AKqWEbrngCxLZf9yBvwZX:exchange_delivered_order_items",
+        "tool:call_UVX6079z7p5IrpYcIktQLh8q:return_delivered_order_items"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:23:user"
+              ],
+              "value": "two skateboards"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "#W7553978"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "I’m really disappointed with the quality"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "them"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": [
+                "my smart watch",
+                "the e-reader I just bought"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:11:user"
+              ],
+              "value": "a couple of other things"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:19:user",
+                "message:23:user"
+              ],
+              "value": "32GB storage version"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the same e-reader"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "my current e-reader"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_n24AKqWEbrngCxLZf9yBvwZX:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "9494281769"
+              ],
+              "new_item_ids": [
+                "7609274509"
+              ],
+              "order_id": "#W3239882",
+              "payment_method_id": "credit_card_5902940"
+            },
+            "result": {
+              "address": {
+                "address1": "572 Cedar Street",
+                "address2": "Suite 469",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78705"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "9494281769"
+              ],
+              "exchange_new_items": [
+                "7609274509"
+              ],
+              "exchange_payment_method_id": "credit_card_5902940",
+              "exchange_price_difference": -8.66,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "9494281769",
+                    "2106335193",
+                    "2146648441",
+                    "6509212169"
+                  ],
+                  "tracking_id": [
+                    "618282621876"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "9494281769",
+                  "name": "E-Reader",
+                  "options": {
+                    "connectivity": "Wi-Fi",
+                    "screen size": "8-inch",
+                    "storage": "8GB"
+                  },
+                  "price": 252.06,
+                  "product_id": "3801771308"
+                },
+                {
+                  "item_id": "2106335193",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "silver",
+                    "screen size": "10-inch",
+                    "storage": "64GB"
+                  },
+                  "price": 903.95,
+                  "product_id": "8024098596"
+                },
+                {
+                  "item_id": "2146648441",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "10000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 105.85,
+                  "product_id": "6942297802"
+                },
+                {
+                  "item_id": "6509212169",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand A",
+                    "kit size": "professional",
+                    "skin tone": "light"
+                  },
+                  "price": 256.14,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W3239882",
+              "payment_history": [
+                {
+                  "amount": 1518.0,
+                  "payment_method_id": "credit_card_5902940",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "mei_ahmed_4909"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_UVX6079z7p5IrpYcIktQLh8q:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4545791457",
+                "3098764622",
+                "1631806422"
+              ],
+              "order_id": "#W7553978",
+              "payment_method_id": "credit_card_5902940"
+            },
+            "result": {
+              "address": {
+                "address1": "572 Cedar Street",
+                "address2": "Suite 469",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78705"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4545791457",
+                    "1345513440",
+                    "3098764622",
+                    "1631806422"
+                  ],
+                  "tracking_id": [
+                    "873459681869"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4545791457",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "plastic",
+                    "design": "plain",
+                    "length": "28 inch"
+                  },
+                  "price": 186.06,
+                  "product_id": "1968349452"
+                },
+                {
+                  "item_id": "1345513440",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "cordless",
+                    "type": "canister"
+                  },
+                  "price": 655.59,
+                  "product_id": "1762337868"
+                },
+                {
+                  "item_id": "3098764622",
+                  "name": "Skateboard",
+                  "options": {
+                    "deck material": "plastic",
+                    "design": "plain",
+                    "length": "34 inch"
+                  },
+                  "price": 202.13,
+                  "product_id": "1968349452"
+                },
+                {
+                  "item_id": "1631806422",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "metal",
+                    "color": "black",
+                    "display": "AMOLED"
+                  },
+                  "price": 339.85,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W7553978",
+              "payment_history": [
+                {
+                  "amount": 1383.63,
+                  "payment_method_id": "credit_card_5902940",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "1631806422",
+                "3098764622",
+                "4545791457"
+              ],
+              "return_payment_method_id": "credit_card_5902940",
+              "status": "return requested",
+              "user_id": "mei_ahmed_4909"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "ef945df96824806ceb18a7946c489229b0431076b7fe7b6fa7a1c679cdb590a6",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 34,
+      "source_event_ids": [
+        "message:1:user",
+        "message:23:user",
+        "message:11:user",
+        "message:19:user",
+        "tool:call_n24AKqWEbrngCxLZf9yBvwZX:exchange_delivered_order_items",
+        "tool:call_UVX6079z7p5IrpYcIktQLh8q:return_delivered_order_items"
+      ],
+      "state_revision": 30
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 35,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 36.117744247982046,
+    "prewrite_validation": 0.0004925830289721489,
+    "semantic_support": 14.68622508199769
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 10,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "91",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_091"
+}

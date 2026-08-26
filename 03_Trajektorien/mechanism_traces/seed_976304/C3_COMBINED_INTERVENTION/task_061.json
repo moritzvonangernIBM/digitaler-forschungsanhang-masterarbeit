@@ -1,0 +1,425 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00438093,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0014691500000000002
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 0,
+    "b_evidence_reads": 1,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "961feb2e35499e798b7604720f6cb35e7526860ca7ab7fe094d1d61b2c3e0179",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a blue colored one"
+              ]
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "make sure the price stays the same or is lower"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the wireless earbuds"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my order W5061109"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "066592b536e440616212fd679bda9f073b2ad6abba4e6e8530d39d3b597bb2a3",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user"
+              ],
+              "value": [
+                "a blue colored one"
+              ]
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "make sure the price stays the same or is lower"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "the wireless earbuds"
+            },
+            "item_ids": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": [
+                "8555936349"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my order W5061109"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3694871183"
+        ],
+        "new_item_ids": [
+          "8555936349"
+        ],
+        "order_id": "#W5061109",
+        "payment_method_id": "paypal_3742148"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_xTuJfHkn5afMAx5QsSeAGKf0",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 4,
+      "state_revision": 10,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_xTuJfHkn5afMAx5QsSeAGKf0",
+        "candidate_arguments": {
+          "item_ids": [
+            "3694871183"
+          ],
+          "new_item_ids": [
+            "8555936349"
+          ],
+          "order_id": "#W5061109",
+          "payment_method_id": "paypal_3742148"
+        },
+        "disposition": "EVIDENCE_REQUIRED",
+        "evidence_action": {
+          "arguments": {
+            "user_id": "chen_johnson_4204"
+          },
+          "tool_name": "get_user_details"
+        },
+        "observed": {
+          "authenticated_user_id": "chen_johnson_4204",
+          "authentication_source_event_ids": [
+            "tool:call_8fFx9xuEY11nkNANjlTkkZZh:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "6254646215",
+              "3694871183",
+              "8323284863",
+              "3254583681"
+            ],
+            "order_id": "#W5061109",
+            "source_event_ids": [
+              "tool:call_1dJ93dVTf7M4ENGitTFOtjHV:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "chen_johnson_4204"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4768869376",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4794339885",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9924732112",
+              "source_event_ids": [
+                "tool:call_ApokfYCY8gfHh2gAMLgm3htH:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": null
+        },
+        "reason_code": "B_PAYMENT_PROFILE_NOT_OBSERVED",
+        "required_response": "Read the authenticated user profile before reconsidering the payment method.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "EVIDENCE_REQUIRED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_PAYMENT_PROFILE_NOT_OBSERVED",
+      "sequence": 5,
+      "state_revision": 10
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_evidence",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_EXACT_EVIDENCE_READ",
+      "sequence": 6,
+      "state_revision": 10
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3694871183"
+        ],
+        "new_item_ids": [
+          "8555936349"
+        ],
+        "order_id": "#W5061109",
+        "payment_method_id": "paypal_3742148"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_7spZNVy42eY8MwoIfaJYsqw6",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 7,
+      "state_revision": 12,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_7spZNVy42eY8MwoIfaJYsqw6",
+        "candidate_arguments": {
+          "item_ids": [
+            "3694871183"
+          ],
+          "new_item_ids": [
+            "8555936349"
+          ],
+          "order_id": "#W5061109",
+          "payment_method_id": "paypal_3742148"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "chen_johnson_4204",
+          "authentication_source_event_ids": [
+            "tool:call_8fFx9xuEY11nkNANjlTkkZZh:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "6254646215",
+              "3694871183",
+              "8323284863",
+              "3254583681"
+            ],
+            "order_id": "#W5061109",
+            "source_event_ids": [
+              "tool:call_1dJ93dVTf7M4ENGitTFOtjHV:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "chen_johnson_4204"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4768869376",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4794339885",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "9924732112",
+              "source_event_ids": [
+                "tool:call_ApokfYCY8gfHh2gAMLgm3htH:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_3406421",
+              "paypal_3742148"
+            ],
+            "source_event_ids": [
+              "tool:factorial_b_read_10_7:get_user_details"
+            ],
+            "user_id": "chen_johnson_4204"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 8,
+      "state_revision": 12
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_7spZNVy42eY8MwoIfaJYsqw6",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 9,
+      "state_revision": 12
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 10,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 20.990869167027995,
+    "prewrite_validation": 0.006469625921454281,
+    "semantic_support": 8.023408333014231
+  },
+  "seed": 976304,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "61",
+  "trajectory_id": "seed_976304_C3_COMBINED_INTERVENTION_task_061"
+}

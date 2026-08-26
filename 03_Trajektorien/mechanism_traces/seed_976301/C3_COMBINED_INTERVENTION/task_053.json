@@ -1,0 +1,1028 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.00834222,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0018607000000000003
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 1
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "1e49e873ab28bae86ec86132e746b8b192587b027c76bd1eb427c9646221dd82",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "c634e53cc6110ac3c07426436550f6bd9cd30625e02588aff58222d7c1356152",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034572"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the delivered item"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a bicycle\", \"reason\": \"damaged\", \"scope\": \"a bicycle\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W0034572\", \"scope\": \"the delivered item\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "e67dda0439d3ca9ebac5b7e81fdb8a6e4547846a1966eb04c6eb2e2b4ec0063c",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034572"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the delivered item"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e67dda0439d3ca9ebac5b7e81fdb8a6e4547846a1966eb04c6eb2e2b4ec0063c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e67dda0439d3ca9ebac5b7e81fdb8a6e4547846a1966eb04c6eb2e2b4ec0063c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:11:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7826bedbbaa1125c0ba7ab44cab36106aef9e0828e3ed18bcb685d968f1a2bfa",
+      "sequence": 8,
+      "source_event_ids": [],
+      "state_revision": 12,
+      "total_commitments": 2,
+      "validated_records": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e67dda0439d3ca9ebac5b7e81fdb8a6e4547846a1966eb04c6eb2e2b4ec0063c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e67dda0439d3ca9ebac5b7e81fdb8a6e4547846a1966eb04c6eb2e2b4ec0063c",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "2512f7dfa366215f283a6910747b6b52a2eb5b0b664d2eb784ecb709da509307",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "e67dda0439d3ca9ebac5b7e81fdb8a6e4547846a1966eb04c6eb2e2b4ec0063c",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 13,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a bicycle\", \"reason\": \"damaged\", \"scope\": \"a bicycle\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W0034572\", \"scope\": \"the delivered item\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"that one\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034572"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the delivered item"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "7758198585"
+            ],
+            "order_id": "#W3916020",
+            "payment_method_id": "credit_card_3951670"
+          },
+          "call_id": "call_0OkvZKpy0o02Ic9b4PChibab",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 20,
+      "state_revision": 26
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "7758198585"
+        ],
+        "order_id": "#W3916020",
+        "payment_method_id": "credit_card_3951670"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_0OkvZKpy0o02Ic9b4PChibab",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 21,
+      "state_revision": 26,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_0OkvZKpy0o02Ic9b4PChibab",
+        "candidate_arguments": {
+          "item_ids": [
+            "7758198585"
+          ],
+          "order_id": "#W3916020",
+          "payment_method_id": "credit_card_3951670"
+        },
+        "disposition": "INVALID",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "sofia_li_9219",
+          "authentication_source_event_ids": [
+            "tool:call_aKyKQDFiwtEScBE92eVHXS2K:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4068787148",
+              "7758198585"
+            ],
+            "order_id": "#W3916020",
+            "source_event_ids": [
+              "tool:call_QkmY7mx055i0XXUOXeQgqHd4:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "sofia_li_9219"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1808611083",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9783735446",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3951670",
+              "credit_card_8105988",
+              "paypal_8194385"
+            ],
+            "source_event_ids": [
+              "tool:call_5pXLCL2uobj7p4SpBHX6v9uW:get_user_details"
+            ],
+            "user_id": "sofia_li_9219"
+          }
+        },
+        "reason_code": "B_INVALID_REFUND_METHOD",
+        "required_response": "Use the original payment method or an owned gift card as allowed by policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "INVALID",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_INVALID_REFUND_METHOD",
+      "sequence": 22,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_replan",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_INVALID_HELD_FOR_SINGLE_REPLAN",
+      "sequence": 23,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "event_type": "ACTIVATION",
+      "findings": [
+        {
+          "call_id": "call_0OkvZKpy0o02Ic9b4PChibab",
+          "candidate_arguments": {
+            "item_ids": [
+              "7758198585"
+            ],
+            "order_id": "#W3916020",
+            "payment_method_id": "credit_card_3951670"
+          },
+          "disposition": "INVALID",
+          "evidence_action": null,
+          "observed": {
+            "authenticated_user_id": "sofia_li_9219",
+            "authentication_source_event_ids": [
+              "tool:call_aKyKQDFiwtEScBE92eVHXS2K:find_user_id_by_name_zip"
+            ],
+            "order": {
+              "item_ids": [
+                "4068787148",
+                "7758198585"
+              ],
+              "order_id": "#W3916020",
+              "source_event_ids": [
+                "tool:call_QkmY7mx055i0XXUOXeQgqHd4:get_order_details"
+              ],
+              "status": "delivered",
+              "user_id": "sofia_li_9219"
+            },
+            "products": [
+              {
+                "observed": false,
+                "product_id": "1808611083",
+                "source_event_ids": []
+              },
+              {
+                "observed": false,
+                "product_id": "9783735446",
+                "source_event_ids": []
+              }
+            ],
+            "user_profile": {
+              "payment_method_ids": [
+                "credit_card_3951670",
+                "credit_card_8105988",
+                "paypal_8194385"
+              ],
+              "source_event_ids": [
+                "tool:call_5pXLCL2uobj7p4SpBHX6v9uW:get_user_details"
+              ],
+              "user_id": "sofia_li_9219"
+            }
+          },
+          "reason_code": "B_INVALID_REFUND_METHOD",
+          "required_response": "Use the original payment method or an owned gift card as allowed by policy.",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "opportunity_id": null,
+      "reason_code": "B_SINGLE_REPLAN",
+      "sequence": 24,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "7758198585"
+            ],
+            "order_id": "#W3916020",
+            "payment_method_id": "credit_card_8105988"
+          },
+          "call_id": "call_l3LkrQKca5Ulh9SnQHt0bfxS",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 28
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "7758198585"
+        ],
+        "order_id": "#W3916020",
+        "payment_method_id": "credit_card_8105988"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_l3LkrQKca5Ulh9SnQHt0bfxS",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 27,
+      "state_revision": 28,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_l3LkrQKca5Ulh9SnQHt0bfxS",
+        "candidate_arguments": {
+          "item_ids": [
+            "7758198585"
+          ],
+          "order_id": "#W3916020",
+          "payment_method_id": "credit_card_8105988"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "sofia_li_9219",
+          "authentication_source_event_ids": [
+            "tool:call_aKyKQDFiwtEScBE92eVHXS2K:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4068787148",
+              "7758198585"
+            ],
+            "order_id": "#W3916020",
+            "source_event_ids": [
+              "tool:call_QkmY7mx055i0XXUOXeQgqHd4:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "sofia_li_9219"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1808611083",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "9783735446",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_3951670",
+              "credit_card_8105988",
+              "paypal_8194385"
+            ],
+            "source_event_ids": [
+              "tool:call_5pXLCL2uobj7p4SpBHX6v9uW:get_user_details"
+            ],
+            "user_id": "sofia_li_9219"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 28,
+      "state_revision": 28
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_l3LkrQKca5Ulh9SnQHt0bfxS",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 29,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "582a359d9be1189396d4df94f968277562b3dab8aac4ec1c233ba70e3f03b3c0",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 30,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a bicycle\", \"reason\": \"damaged\", \"scope\": \"a bicycle\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W0034572\", \"scope\": \"the delivered item\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"that one\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"7758198585\"], \"order_id\": \"#W3916020\", \"payment_method_id\": \"credit_card_8105988\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "878bb7302621cba0aa2719eb99f113af33f82c5f2042a03176dae2824cec060f",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 31,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user",
+        "tool:call_l3LkrQKca5Ulh9SnQHt0bfxS:return_delivered_order_items"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "damaged"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a bicycle"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "#W0034572"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:7:user"
+              ],
+              "value": "the delivered item"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_l3LkrQKca5Ulh9SnQHt0bfxS:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "7758198585"
+              ],
+              "order_id": "#W3916020",
+              "payment_method_id": "credit_card_8105988"
+            },
+            "result": {
+              "address": {
+                "address1": "285 Elm Street",
+                "address2": "Suite 121",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76155"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4068787148",
+                    "7758198585"
+                  ],
+                  "tracking_id": [
+                    "580826001577"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4068787148",
+                  "name": "Jigsaw Puzzle",
+                  "options": {
+                    "difficulty level": "intermediate",
+                    "pieces": "500",
+                    "theme": "art"
+                  },
+                  "price": 52.01,
+                  "product_id": "1808611083"
+                },
+                {
+                  "item_id": "7758198585",
+                  "name": "Bicycle",
+                  "options": {
+                    "color": "green",
+                    "frame size": "medium",
+                    "type": "road"
+                  },
+                  "price": 1917.21,
+                  "product_id": "9783735446"
+                }
+              ],
+              "order_id": "#W3916020",
+              "payment_history": [
+                {
+                  "amount": 1969.22,
+                  "payment_method_id": "credit_card_8105988",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "7758198585"
+              ],
+              "return_payment_method_id": "credit_card_8105988",
+              "status": "return requested",
+              "user_id": "sofia_li_9219"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "878bb7302621cba0aa2719eb99f113af33f82c5f2042a03176dae2824cec060f",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 32,
+      "source_event_ids": [
+        "message:1:user",
+        "message:7:user",
+        "message:15:user",
+        "tool:call_l3LkrQKca5Ulh9SnQHt0bfxS:return_delivered_order_items"
+      ],
+      "state_revision": 30
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 33,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 34.13071929101716,
+    "prewrite_validation": 0.0006799130351282656,
+    "semantic_support": 8.965705916984007
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 11,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "53",
+  "trajectory_id": "seed_976301_C3_COMBINED_INTERVENTION_task_053"
+}

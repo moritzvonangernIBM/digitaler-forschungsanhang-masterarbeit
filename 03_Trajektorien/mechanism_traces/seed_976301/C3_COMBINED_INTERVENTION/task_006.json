@@ -1,0 +1,429 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.007186860000000001,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0034678500000000006
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ea5143ed6ec3ac92c7987680b27d566075f9c276db72714965cee0b044f03d8b",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 0,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "unsupported transactional goal kind",
+          "error_type": "ValueError",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "b5a61bae3e687670f52d480742397c213f2be19faad0199aa781dc405eae1f9f",
+      "sequence": 3,
+      "source_event_ids": [],
+      "state_revision": 10,
+      "total_commitments": 1,
+      "validated_records": []
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "a9fa335f34afbc62b3b5a31cd4b57d1ee81c0df45e29b7be387ea17dbcb8b13f",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a 1L size"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a 1L size"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "battery-powered if possible. If not, USB is fine."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:26:user"
+      ],
+      "state_revision": 27
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "25d9baf8b866d4b2cf1c33b909a93efccab3a43ff38174b500d2bfeb15bb52f8",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:21:user",
+        "message:26:user"
+      ],
+      "state_revision": 27,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:26:user"
+              ],
+              "value": "a 1L size"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "battery-powered if possible. If not, USB is fine."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:21:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "8384507844",
+          "8538875209"
+        ],
+        "new_item_ids": [
+          "7453605304",
+          "7661609223"
+        ],
+        "order_id": "#W6390527",
+        "payment_method_id": "paypal_7644869"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_3KGYv97pffXS4dJmR5Pw0zYK",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 27,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_3KGYv97pffXS4dJmR5Pw0zYK",
+        "candidate_arguments": {
+          "item_ids": [
+            "8384507844",
+            "8538875209"
+          ],
+          "new_item_ids": [
+            "7453605304",
+            "7661609223"
+          ],
+          "order_id": "#W6390527",
+          "payment_method_id": "paypal_7644869"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "mei_kovacs_8020",
+          "authentication_source_event_ids": [
+            "tool:call_NlGOOBn9novkaEc9hpVXFfXM:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "8384507844",
+              "1615379700",
+              "8538875209"
+            ],
+            "order_id": "#W6390527",
+            "source_event_ids": [
+              "tool:call_i2GYPldIme4hnOC4wSQc6DQ2:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "mei_kovacs_8020"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "6817146515",
+              "source_event_ids": [
+                "tool:call_CPJQGA9TbMKuIGd2oUgFf2Qs:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "7363354090",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "8310926033",
+              "source_event_ids": [
+                "tool:call_zihVFIIhRMJ4eV1kHVG2d1lG:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7644869"
+            ],
+            "source_event_ids": [
+              "tool:call_ZXJukbhuuheJ0L6f6lrA4d05:get_user_details"
+            ],
+            "user_id": "mei_kovacs_8020"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 9,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_3KGYv97pffXS4dJmR5Pw0zYK",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 10,
+      "state_revision": 27
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 11,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 30.252746122976532,
+    "prewrite_validation": 0.0005789170245407149,
+    "semantic_support": 16.90116241700889
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "6",
+  "trajectory_id": "seed_976301_C3_COMBINED_INTERVENTION_task_006"
+}

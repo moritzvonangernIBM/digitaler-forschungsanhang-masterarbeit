@@ -1,0 +1,330 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.010721939999999998,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00254985
+  },
+  "counts": {
+    "a_commitments": 1,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "8bb5c18e1563b0c06883e713c3d1341b37cd46f734f404948742b0bbcc13fef7",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:35:user"
+      ],
+      "state_revision": 36
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "d3917a0c500a9f8084431aa370f03956647e286c3a8bd79a13397bb8d286db4d",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:35:user"
+      ],
+      "state_revision": 36,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:35:user"
+              ],
+              "value": "exchange it for one that’s less bright and preferably battery-powered"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:35:user"
+              ],
+              "value": [
+                "if that’s not available, USB is okay",
+                "AC is my last choice"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:35:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:35:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:41:user"
+      ],
+      "state_revision": 42
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "838a1e83c8684cc57583d912c032d5db543fd264756b0ce1a232619a88d5c078",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:35:user",
+        "message:41:user"
+      ],
+      "state_revision": 42,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:35:user"
+              ],
+              "value": "exchange it for one that’s less bright and preferably battery-powered"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:35:user"
+              ],
+              "value": [
+                "if that’s not available, USB is okay",
+                "AC is my last choice"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:35:user",
+                "message:41:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:35:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:43:user"
+      ],
+      "state_revision": 44
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7666ca8cd633f858ffbb4319865a2ffb208b578120b66e67caee5fb7adbe469c",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:35:user",
+        "message:41:user",
+        "message:43:user"
+      ],
+      "state_revision": 44,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:35:user"
+              ],
+              "value": "exchange it for one that’s less bright and preferably battery-powered"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:35:user"
+              ],
+              "value": [
+                "if that’s not available, USB is okay",
+                "AC is my last choice"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:35:user",
+                "message:41:user",
+                "message:43:user"
+              ],
+              "value": [
+                "a water bottle",
+                "a desk lamp"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:35:user"
+              ],
+              "value": "a couple of items I bought recently—a water bottle and a desk lamp"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 8,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 66.71008662605891,
+    "prewrite_validation": 0.0,
+    "semantic_support": 13.93708574899938
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "6",
+  "trajectory_id": "seed_976305_C1_SEMANTIC_SUPPORT_task_006"
+}

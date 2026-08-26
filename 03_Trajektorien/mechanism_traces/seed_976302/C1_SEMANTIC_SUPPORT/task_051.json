@@ -1,0 +1,692 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00658189,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0020684
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "a740dadf347aeb29210c0c0c5c6260977ba7ef42b842e2b0b7c5404c958b2fba",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "56144668c91d5bc599dec33a2d56c46e4a6e7c431220b9b30befb0b972554e87",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "wrong order number"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:18:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "ee9ad6b35224a91a848675fa1551c94fdfc7a1651cb9b8a25f477c61b7f30f4a",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:18:user"
+      ],
+      "state_revision": 19,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_ids": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": [
+                "5996159312"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "#W4689314"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "the camera"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a digital camera\", \"order_id\": \"#W8855135\", \"reason\": \"wrong order number\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_ids\": [\"5996159312\"], \"order_id\": \"#W4689314\", \"scope\": \"the camera\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "98be5dfd74b63f9c6d97bb529f0665447a284ba4eeb59269936d951ef447ecbb",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:18:user"
+      ],
+      "state_revision": 19,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "wrong order number"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_ids": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": [
+                "5996159312"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "#W4689314"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "the camera"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "98be5dfd74b63f9c6d97bb529f0665447a284ba4eeb59269936d951ef447ecbb",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:18:user"
+      ],
+      "state_revision": 19
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "5b687873caf6b6fbec0734708059e5b2377b8fdac87a604d7a5cbe2a2d50d840",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:20:user"
+      ],
+      "state_revision": 21,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "return request"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "98be5dfd74b63f9c6d97bb529f0665447a284ba4eeb59269936d951ef447ecbb",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 21
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a digital camera\", \"order_id\": \"#W8855135\", \"reason\": \"wrong order number\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_ids\": [\"5996159312\"], \"order_id\": \"#W4689314\", \"scope\": \"the camera\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"return request\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "dfb151b0a9a4902de0ab2ff37fbfcd4e41b887df455fa95896cce0c04fa5ed45",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:18:user",
+        "message:20:user"
+      ],
+      "state_revision": 21,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "wrong order number"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_ids": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": [
+                "5996159312"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "#W4689314"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "the camera"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "return request"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "dfb151b0a9a4902de0ab2ff37fbfcd4e41b887df455fa95896cce0c04fa5ed45",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:18:user",
+        "message:20:user"
+      ],
+      "state_revision": 21
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "5996159312"
+            ],
+            "order_id": "#W4689314",
+            "payment_method_id": "credit_card_8105988"
+          },
+          "call_id": "call_CXBHhY4Z1YrSSEDBnugG46NW",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "dfb151b0a9a4902de0ab2ff37fbfcd4e41b887df455fa95896cce0c04fa5ed45",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 21
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "dfb151b0a9a4902de0ab2ff37fbfcd4e41b887df455fa95896cce0c04fa5ed45",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 23
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"a digital camera\", \"order_id\": \"#W8855135\", \"reason\": \"wrong order number\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_ids\": [\"5996159312\"], \"order_id\": \"#W4689314\", \"scope\": \"the camera\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"return request\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"5996159312\"], \"order_id\": \"#W4689314\", \"payment_method_id\": \"credit_card_8105988\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "f29df86d383d94f19a136fc3208ef2a05d5f5bf4083a205e9a0e1c090821b709",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:18:user",
+        "message:20:user",
+        "tool:call_CXBHhY4Z1YrSSEDBnugG46NW:return_delivered_order_items"
+      ],
+      "state_revision": 23,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:9:user"
+              ],
+              "value": "a digital camera"
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "#W8855135"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "wrong order number"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_ids": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": [
+                "5996159312"
+              ]
+            },
+            "order_id": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "#W4689314"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:18:user"
+              ],
+              "value": "the camera"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:20:user"
+              ],
+              "value": "return request"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_CXBHhY4Z1YrSSEDBnugG46NW:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "5996159312"
+              ],
+              "order_id": "#W4689314",
+              "payment_method_id": "credit_card_8105988"
+            },
+            "result": {
+              "address": {
+                "address1": "786 Elm Street",
+                "address2": "Suite 546",
+                "city": "San Antonio",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78260"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "5996159312"
+                  ],
+                  "tracking_id": [
+                    "689944590938"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "5996159312",
+                  "name": "Digital Camera",
+                  "options": {
+                    "resolution": "24MP",
+                    "storage": "SD card",
+                    "zoom": "3x"
+                  },
+                  "price": 2895.55,
+                  "product_id": "8940227892"
+                }
+              ],
+              "order_id": "#W4689314",
+              "payment_history": [
+                {
+                  "amount": 2895.55,
+                  "payment_method_id": "credit_card_8105988",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "5996159312"
+              ],
+              "return_payment_method_id": "credit_card_8105988",
+              "status": "return requested",
+              "user_id": "sofia_li_9219"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f29df86d383d94f19a136fc3208ef2a05d5f5bf4083a205e9a0e1c090821b709",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:18:user",
+        "message:20:user",
+        "tool:call_CXBHhY4Z1YrSSEDBnugG46NW:return_delivered_order_items"
+      ],
+      "state_revision": 23
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 17,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 34.7273859569832,
+    "prewrite_validation": 0.0,
+    "semantic_support": 10.704708458986715
+  },
+  "seed": 976302,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 3,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "51",
+  "trajectory_id": "seed_976302_C1_SEMANTIC_SUPPORT_task_051"
+}

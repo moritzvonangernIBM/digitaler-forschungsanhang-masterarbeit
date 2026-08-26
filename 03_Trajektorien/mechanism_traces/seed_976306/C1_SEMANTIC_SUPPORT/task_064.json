@@ -1,0 +1,479 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.00874788,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0019112
+  },
+  "counts": {
+    "a_commitments": 2,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 2,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "3480c81ba2a9a5924daa7c9afd662ac5da62e681e9bc9d168924fa3df373174d",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "highest resolution",
+                "waterproof camera",
+                "for the same price I paid before"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'item_ids' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "item_ids",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "3630efd89951cbbd6c030f0f44752a795119c991b67e2e5f9d8286d7eb1a4ba8",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "the 4K, waterproof, silver camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"highest resolution\", \"waterproof camera\", \"for the same price I paid before\"], \"item_descriptions\": \"a camera\", \"scope\": \"exchange it\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 4K, waterproof, silver camera\", \"scope\": \"my order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "1cf3255ad6edee048234ad140dd710c79812e7f1711da9aa358fe82c18c0fcce",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "highest resolution",
+                "waterproof camera",
+                "for the same price I paid before"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "the 4K, waterproof, silver camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1cf3255ad6edee048234ad140dd710c79812e7f1711da9aa358fe82c18c0fcce",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 0,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_VALIDATED_NO_OP",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "5285733ed1593db5faae0027282be104e61bf83355072dec096b65b2fe114717",
+      "sequence": 7,
+      "source_event_ids": [],
+      "state_revision": 30,
+      "total_commitments": 2,
+      "validated_records": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1cf3255ad6edee048234ad140dd710c79812e7f1711da9aa358fe82c18c0fcce",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "1810466394"
+            ],
+            "new_item_ids": [
+              "6117189161"
+            ],
+            "order_id": "#W7464385",
+            "payment_method_id": "paypal_1261484"
+          },
+          "call_id": "call_HUGkVQ4eEQaFOBjSggIGR8oT",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "1cf3255ad6edee048234ad140dd710c79812e7f1711da9aa358fe82c18c0fcce",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 9,
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1cf3255ad6edee048234ad140dd710c79812e7f1711da9aa358fe82c18c0fcce",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"highest resolution\", \"waterproof camera\", \"for the same price I paid before\"], \"item_descriptions\": \"a camera\", \"scope\": \"exchange it\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 4K, waterproof, silver camera\", \"scope\": \"my order\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"1810466394\"], \"new_item_ids\": [\"6117189161\"], \"order_id\": \"#W7464385\", \"payment_method_id\": \"paypal_1261484\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "d23a0465b919c01626d867f8fe24f9bd5ba82ef91c4d6ba460b9720b4186a2dc",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user",
+        "tool:call_HUGkVQ4eEQaFOBjSggIGR8oT:modify_pending_order_items"
+      ],
+      "state_revision": 32,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "highest resolution",
+                "waterproof camera",
+                "for the same price I paid before"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "the 4K, waterproof, silver camera"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "my order"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_HUGkVQ4eEQaFOBjSggIGR8oT:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "1810466394"
+              ],
+              "new_item_ids": [
+                "6117189161"
+              ],
+              "order_id": "#W7464385",
+              "payment_method_id": "paypal_1261484"
+            },
+            "result": {
+              "address": {
+                "address1": "219 Park Avenue",
+                "address2": "Suite 437",
+                "city": "Chicago",
+                "country": "USA",
+                "state": "IL",
+                "zip": "60623"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6117189161",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "silver",
+                    "resolution": "4K",
+                    "waterproof": "yes"
+                  },
+                  "price": 481.5,
+                  "product_id": "3377618313"
+                }
+              ],
+              "order_id": "#W7464385",
+              "payment_history": [
+                {
+                  "amount": 502.28,
+                  "payment_method_id": "paypal_1261484",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 20.779999999999973,
+                  "payment_method_id": "paypal_1261484",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "james_sanchez_3954"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "d23a0465b919c01626d867f8fe24f9bd5ba82ef91c4d6ba460b9720b4186a2dc",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:1:user",
+        "message:27:user",
+        "tool:call_HUGkVQ4eEQaFOBjSggIGR8oT:modify_pending_order_items"
+      ],
+      "state_revision": 32
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 13,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 41.43000816600397,
+    "prewrite_validation": 0.0,
+    "semantic_support": 9.54397804097971
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 3,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "64",
+  "trajectory_id": "seed_976306_C1_SEMANTIC_SUPPORT_task_064"
+}

@@ -1,0 +1,814 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.0069119,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00182685
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 2,
+    "a_opportunities": 2,
+    "a_support_cards": 2,
+    "b_evidence_reads": 1,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "cc34a7a9dc8161c45d20918b7fb2045b220f15942fc0275eb2ecf8e3deb80626",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "same model but with clicky switches",
+                "works with Google Home instead of Apple HomeKit"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the mechanical keyboard",
+                "the smart thermostat"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "both at once"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'new_item_ids' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "new_item_ids",
+          "record_index": 0
+        },
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "b6f1771167c52db51bc64787e18a0d568ebbafee3475fbad82adeff71ea9fe89",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "just the thermostat exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "for any refund or charge"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"same model but with clicky switches\", \"works with Google Home instead of Apple HomeKit\"], \"item_descriptions\": [\"the mechanical keyboard\", \"the smart thermostat\"], \"scope\": \"both at once\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"just the thermostat exchange\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"for any refund or charge\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "same model but with clicky switches",
+                "works with Google Home instead of Apple HomeKit"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the mechanical keyboard",
+                "the smart thermostat"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "both at once"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "just the thermostat exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "for any refund or charge"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4983901480"
+            ],
+            "new_item_ids": [
+              "7747408585"
+            ],
+            "order_id": "#W2378156",
+            "payment_method_id": "credit_card_9513926"
+          },
+          "call_id": "call_Rb71Zs91I9vIFNS1LfOsMdYm",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 7,
+      "state_revision": 16
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4983901480"
+        ],
+        "new_item_ids": [
+          "7747408585"
+        ],
+        "order_id": "#W2378156",
+        "payment_method_id": "credit_card_9513926"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_Rb71Zs91I9vIFNS1LfOsMdYm",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 8,
+      "state_revision": 16,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_Rb71Zs91I9vIFNS1LfOsMdYm",
+        "candidate_arguments": {
+          "item_ids": [
+            "4983901480"
+          ],
+          "new_item_ids": [
+            "7747408585"
+          ],
+          "order_id": "#W2378156",
+          "payment_method_id": "credit_card_9513926"
+        },
+        "disposition": "EVIDENCE_REQUIRED",
+        "evidence_action": {
+          "arguments": {
+            "user_id": "yusuf_rossi_9620"
+          },
+          "tool_name": "get_user_details"
+        },
+        "observed": {
+          "authenticated_user_id": "yusuf_rossi_9620",
+          "authentication_source_event_ids": [
+            "tool:call_iT4qHwhKbpc0yhOPDsJKjgWl:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4202497723",
+              "4602305039",
+              "1151293680",
+              "4983901480",
+              "9408160950"
+            ],
+            "order_id": "#W2378156",
+            "source_event_ids": [
+              "tool:call_1tLAHI7LYdXVcfeEfHfRU56G:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "yusuf_rossi_9620"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1656367028",
+              "source_event_ids": [
+                "tool:call_WX7VRsd9qtxsAgtYtymmOBvh:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "1762337868",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "4896585277",
+              "source_event_ids": [
+                "tool:call_1PV7U4EIkb2F08fIJwkYpeNP:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6992792935",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": null
+        },
+        "reason_code": "B_PAYMENT_PROFILE_NOT_OBSERVED",
+        "required_response": "Read the authenticated user profile before reconsidering the payment method.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "EVIDENCE_REQUIRED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_PAYMENT_PROFILE_NOT_OBSERVED",
+      "sequence": 9,
+      "state_revision": 16
+    },
+    {
+      "component": "B",
+      "disposition": "held_for_evidence",
+      "emitted_call_id": null,
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_EXACT_EVIDENCE_READ",
+      "sequence": 10,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "4983901480"
+            ],
+            "new_item_ids": [
+              "7747408585"
+            ],
+            "order_id": "#W2378156",
+            "payment_method_id": "credit_card_9513926"
+          },
+          "call_id": "call_1yTp9YaIDaCH0bNJRfIzEsTc",
+          "tool_name": "exchange_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 12,
+      "state_revision": 18
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "4983901480"
+        ],
+        "new_item_ids": [
+          "7747408585"
+        ],
+        "order_id": "#W2378156",
+        "payment_method_id": "credit_card_9513926"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_1yTp9YaIDaCH0bNJRfIzEsTc",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 18,
+      "tool_name": "exchange_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_1yTp9YaIDaCH0bNJRfIzEsTc",
+        "candidate_arguments": {
+          "item_ids": [
+            "4983901480"
+          ],
+          "new_item_ids": [
+            "7747408585"
+          ],
+          "order_id": "#W2378156",
+          "payment_method_id": "credit_card_9513926"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_rossi_9620",
+          "authentication_source_event_ids": [
+            "tool:call_iT4qHwhKbpc0yhOPDsJKjgWl:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4202497723",
+              "4602305039",
+              "1151293680",
+              "4983901480",
+              "9408160950"
+            ],
+            "order_id": "#W2378156",
+            "source_event_ids": [
+              "tool:call_1tLAHI7LYdXVcfeEfHfRU56G:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "yusuf_rossi_9620"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "1656367028",
+              "source_event_ids": [
+                "tool:call_WX7VRsd9qtxsAgtYtymmOBvh:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "1762337868",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "4896585277",
+              "source_event_ids": [
+                "tool:call_1PV7U4EIkb2F08fIJwkYpeNP:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6992792935",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_9513926"
+            ],
+            "source_event_ids": [
+              "tool:factorial_b_read_16_11:get_user_details"
+            ],
+            "user_id": "yusuf_rossi_9620"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "exchange_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 14,
+      "state_revision": 18
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_1yTp9YaIDaCH0bNJRfIzEsTc",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 15,
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "1435da6ac6dd3a689045ef9a93ac3bae5c7f39fc2dcd72ac3afb70cac630bf0d",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 16,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": [\"same model but with clicky switches\", \"works with Google Home instead of Apple HomeKit\"], \"item_descriptions\": [\"the mechanical keyboard\", \"the smart thermostat\"], \"scope\": \"both at once\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"just the thermostat exchange\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"scope\": \"for any refund or charge\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"4983901480\"], \"new_item_ids\": [\"7747408585\"], \"order_id\": \"#W2378156\", \"payment_method_id\": \"credit_card_9513926\"}, \"tool_name\": \"exchange_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "e415c9368bc1bdc73c1d94f1a0f657d426a0eb7575aacadc281c65bb5cac7568",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user",
+        "tool:call_1yTp9YaIDaCH0bNJRfIzEsTc:exchange_delivered_order_items"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "same model but with clicky switches",
+                "works with Google Home instead of Apple HomeKit"
+              ]
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": [
+                "the mechanical keyboard",
+                "the smart thermostat"
+              ]
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "both at once"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "just the thermostat exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "for any refund or charge"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_1yTp9YaIDaCH0bNJRfIzEsTc:exchange_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "4983901480"
+              ],
+              "new_item_ids": [
+                "7747408585"
+              ],
+              "order_id": "#W2378156",
+              "payment_method_id": "credit_card_9513926"
+            },
+            "result": {
+              "address": {
+                "address1": "763 Broadway",
+                "address2": "Suite 135",
+                "city": "Philadelphia",
+                "country": "USA",
+                "state": "PA",
+                "zip": "19122"
+              },
+              "cancel_reason": null,
+              "exchange_items": [
+                "4983901480"
+              ],
+              "exchange_new_items": [
+                "7747408585"
+              ],
+              "exchange_payment_method_id": "credit_card_9513926",
+              "exchange_price_difference": -13.46,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "4202497723",
+                    "4602305039",
+                    "1151293680",
+                    "4983901480",
+                    "9408160950"
+                  ],
+                  "tracking_id": [
+                    "843053632392"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "4202497723",
+                  "name": "Headphones",
+                  "options": {
+                    "color": "blue",
+                    "connectivity": "wireless",
+                    "type": "over-ear"
+                  },
+                  "price": 342.81,
+                  "product_id": "6992792935"
+                },
+                {
+                  "item_id": "4602305039",
+                  "name": "Vacuum Cleaner",
+                  "options": {
+                    "bagged/bagless": "bagged",
+                    "features": "cordless",
+                    "type": "robotic"
+                  },
+                  "price": 561.05,
+                  "product_id": "1762337868"
+                },
+                {
+                  "item_id": "1151293680",
+                  "name": "Mechanical Keyboard",
+                  "options": {
+                    "backlight": "RGB",
+                    "size": "full size",
+                    "switch type": "linear"
+                  },
+                  "price": 272.33,
+                  "product_id": "1656367028"
+                },
+                {
+                  "item_id": "4983901480",
+                  "name": "Smart Thermostat",
+                  "options": {
+                    "color": "black",
+                    "compatibility": "Apple HomeKit"
+                  },
+                  "price": 262.47,
+                  "product_id": "4896585277"
+                },
+                {
+                  "item_id": "9408160950",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "leather",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 381.26,
+                  "product_id": "6945232052"
+                }
+              ],
+              "order_id": "#W2378156",
+              "payment_history": [
+                {
+                  "amount": 1819.92,
+                  "payment_method_id": "credit_card_9513926",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "exchange requested",
+              "user_id": "yusuf_rossi_9620"
+            },
+            "tool_name": "exchange_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "e415c9368bc1bdc73c1d94f1a0f657d426a0eb7575aacadc281c65bb5cac7568",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:13:user",
+        "tool:call_1yTp9YaIDaCH0bNJRfIzEsTc:exchange_delivered_order_items"
+      ],
+      "state_revision": 20
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 2,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 19,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 34.164959750080016,
+    "prewrite_validation": 0.0006819580448791385,
+    "semantic_support": 10.971690292004496
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 2,
+    "card_injections": 4,
+    "injected_cards": 2,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "1",
+  "trajectory_id": "seed_976305_C3_COMBINED_INTERVENTION_task_001"
+}

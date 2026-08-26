@@ -1,0 +1,2112 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.014625329999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0018864
+  },
+  "counts": {
+    "a_commitments": 5,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 7,
+    "b_evidence_reads": 0,
+    "b_opportunities": 3,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "e3836914840e9169c8249bfd5a0a69546920526175ff38d4c49522b5e6064cf6",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "c0aeb47c50ce38137954f2ede814aceccd7cac39721f32f0b009230c33ffe79b",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "c0aeb47c50ce38137954f2ede814aceccd7cac39721f32f0b009230c33ffe79b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "c0aeb47c50ce38137954f2ede814aceccd7cac39721f32f0b009230c33ffe79b",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:17:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "bbc9a0a17f28459a87b5244e3d5e99c2cccbda65929c6a30f3e787f1e4857dc2",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "c0aeb47c50ce38137954f2ede814aceccd7cac39721f32f0b009230c33ffe79b",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 7,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "ed63e2e43182ed9c03254d41acebf5dd126daff8ddce232d87386c86fa336206",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 8,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ed63e2e43182ed9c03254d41acebf5dd126daff8ddce232d87386c86fa336206",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3788616824"
+            ],
+            "order_id": "#W2692684",
+            "payment_method_id": "gift_card_7711863"
+          },
+          "call_id": "call_Sx3JMBG4436OgxBJdwJfDisW",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "ed63e2e43182ed9c03254d41acebf5dd126daff8ddce232d87386c86fa336206",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 10,
+      "state_revision": 22
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3788616824"
+        ],
+        "order_id": "#W2692684",
+        "payment_method_id": "gift_card_7711863"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_Sx3JMBG4436OgxBJdwJfDisW",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 11,
+      "state_revision": 22,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_Sx3JMBG4436OgxBJdwJfDisW",
+        "candidate_arguments": {
+          "item_ids": [
+            "3788616824"
+          ],
+          "order_id": "#W2692684",
+          "payment_method_id": "gift_card_7711863"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "olivia_lopez_3865",
+          "authentication_source_event_ids": [
+            "tool:call_PvQkND7JhoGDv46N7J5CArmO:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "3788616824"
+            ],
+            "order_id": "#W2692684",
+            "source_event_ids": [
+              "tool:call_Qgc4vfIw5ypJc0MgsyDcOBWo:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "olivia_lopez_3865"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "8024098596",
+              "source_event_ids": [
+                "tool:call_yAcD01aTz3axA9FxMfhvLUmA:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7711863"
+            ],
+            "source_event_ids": [
+              "tool:call_k886D2qCIWEO1MoAYzUZ4FpJ:get_user_details"
+            ],
+            "user_id": "olivia_lopez_3865"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 12,
+      "state_revision": 22
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_Sx3JMBG4436OgxBJdwJfDisW",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 13,
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "ed63e2e43182ed9c03254d41acebf5dd126daff8ddce232d87386c86fa336206",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\"}, \"operation\": \"return_delivered_order_items\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "c481aa01c53ffc54928c454d93d987cefa23ccd4bef8e2c8af008bcf62c6c286",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "c481aa01c53ffc54928c454d93d987cefa23ccd4bef8e2c8af008bcf62c6c286",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 24
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:25:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "493274eb61aec66cc0104c882efd0e1ba5bf1ae73d6a45922bad448ba840f177",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:25:user"
+      ],
+      "state_revision": 26,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "because it goes with the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "the charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "c481aa01c53ffc54928c454d93d987cefa23ccd4bef8e2c8af008bcf62c6c286",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 19,
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"reason\": \"because it goes with the tablet\", \"scope\": \"the charger I just bought\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "789704a4fa9c7027467b8b289121e2bb260f07a15efc19e88d82c2e516ec43a9",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 20,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "because it goes with the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "the charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "789704a4fa9c7027467b8b289121e2bb260f07a15efc19e88d82c2e516ec43a9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "789704a4fa9c7027467b8b289121e2bb260f07a15efc19e88d82c2e516ec43a9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "789704a4fa9c7027467b8b289121e2bb260f07a15efc19e88d82c2e516ec43a9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 30
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:31:user"
+      ],
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'order_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "order_id",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "df2aa9e3af8748c13fcf079a2f77b276b22d0d1e3dd3fba2766bc495dc4c7eb6",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:31:user"
+      ],
+      "state_revision": 32,
+      "total_commitments": 5,
+      "validated_records": [
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "order #W9373487"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "789704a4fa9c7027467b8b289121e2bb260f07a15efc19e88d82c2e516ec43a9",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 26,
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"reason\": \"because it goes with the tablet\", \"scope\": \"the charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"order #W9373487\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "3142f743ceb47181456daccada4f7e47db5b5e76639531e6a41b668770e70164",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 27,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 32,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "because it goes with the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "the charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "order #W9373487"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "3142f743ceb47181456daccada4f7e47db5b5e76639531e6a41b668770e70164",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 28,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+      ],
+      "state_revision": 32
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W9373487",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_jqPIAhGX3E8YADGA1ancZKlm",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0005",
+      "card_sha256": "3142f743ceb47181456daccada4f7e47db5b5e76639531e6a41b668770e70164",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 29,
+      "state_revision": 32
+    },
+    {
+      "arguments": {
+        "order_id": "#W9373487",
+        "reason": "no longer needed"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_jqPIAhGX3E8YADGA1ancZKlm",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 30,
+      "state_revision": 32,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_jqPIAhGX3E8YADGA1ancZKlm",
+        "candidate_arguments": {
+          "order_id": "#W9373487",
+          "reason": "no longer needed"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "olivia_lopez_3865",
+          "authentication_source_event_ids": [
+            "tool:call_PvQkND7JhoGDv46N7J5CArmO:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "4063401924"
+            ],
+            "order_id": "#W9373487",
+            "source_event_ids": [
+              "tool:call_MwBvSvfjejjnT991RPXnGrvc:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "olivia_lopez_3865"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "6942297802",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7711863"
+            ],
+            "source_event_ids": [
+              "tool:call_k886D2qCIWEO1MoAYzUZ4FpJ:get_user_details"
+            ],
+            "user_id": "olivia_lopez_3865"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 31,
+      "state_revision": 32
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_jqPIAhGX3E8YADGA1ancZKlm",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 32,
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "3142f743ceb47181456daccada4f7e47db5b5e76639531e6a41b668770e70164",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 33,
+      "state_revision": 34
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"reason\": \"because it goes with the tablet\", \"scope\": \"the charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"order #W9373487\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 34,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+      ],
+      "state_revision": 34,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "because it goes with the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "the charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "order #W9373487"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 35,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+      ],
+      "state_revision": 34
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 36,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+      ],
+      "state_revision": 36
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 37,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+      ],
+      "state_revision": 38
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 38,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+      ],
+      "state_revision": 40
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6477915553"
+            ],
+            "order_id": "#W7449508",
+            "payment_method_id": "gift_card_7711863"
+          },
+          "call_id": "call_G1oqh2HvDoJu0xMHTlgmlO1P",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 39,
+      "state_revision": 40
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "6477915553"
+        ],
+        "order_id": "#W7449508",
+        "payment_method_id": "gift_card_7711863"
+      },
+      "bundle_id": "BB-0003-O",
+      "call_id": "call_G1oqh2HvDoJu0xMHTlgmlO1P",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 40,
+      "state_revision": 40,
+      "tool_name": "return_delivered_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_G1oqh2HvDoJu0xMHTlgmlO1P",
+        "candidate_arguments": {
+          "item_ids": [
+            "6477915553"
+          ],
+          "order_id": "#W7449508",
+          "payment_method_id": "gift_card_7711863"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "olivia_lopez_3865",
+          "authentication_source_event_ids": [
+            "tool:call_PvQkND7JhoGDv46N7J5CArmO:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "6200867091",
+              "6477915553"
+            ],
+            "order_id": "#W7449508",
+            "source_event_ids": [
+              "tool:call_DEjfgjwg6hn3ApYMRId5RTp5:get_order_details"
+            ],
+            "status": "delivered",
+            "user_id": "olivia_lopez_3865"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7471004230",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "gift_card_7711863"
+            ],
+            "source_event_ids": [
+              "tool:call_k886D2qCIWEO1MoAYzUZ4FpJ:get_user_details"
+            ],
+            "user_id": "olivia_lopez_3865"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "return_delivered_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 41,
+      "state_revision": 40
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_G1oqh2HvDoJu0xMHTlgmlO1P",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0003",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 42,
+      "state_revision": 40
+    },
+    {
+      "card_id": "AC-0006",
+      "card_sha256": "c93b2eb369dca7f6557c42945aa48510eb47928525c5b4f2531a4760cc040a36",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 43,
+      "state_revision": 42
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"the same item\", \"fallback_constraints\": \"If that\\u2019s not available, then I\\u2019ll just return it.\", \"item_descriptions\": \"the tablet\", \"scope\": \"the tablet\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"it\", \"scope\": \"it\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"reason\": \"because it goes with the tablet\", \"scope\": \"the charger I just bought\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"order #W9373487\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"item_ids\": [\"6477915553\"], \"order_id\": \"#W7449508\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0007",
+      "card_sha256": "ab701efaf633a86367ad2d33806b1985d670024c7c53901cb115feb24af8f0c5",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 44,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order",
+        "tool:call_G1oqh2HvDoJu0xMHTlgmlO1P:return_delivered_order_items"
+      ],
+      "state_revision": 42,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the same item"
+            },
+            "fallback_constraints": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "If that’s not available, then I’ll just return it."
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:17:user"
+              ],
+              "value": "it"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "because it goes with the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:25:user"
+              ],
+              "value": "the charger I just bought"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:31:user"
+              ],
+              "value": "order #W9373487"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_G1oqh2HvDoJu0xMHTlgmlO1P:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6477915553"
+              ],
+              "order_id": "#W7449508",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6200867091",
+                    "6477915553"
+                  ],
+                  "tracking_id": [
+                    "194496721133"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6200867091",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 2955.17,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "6477915553",
+                  "name": "Sneakers",
+                  "options": {
+                    "color": "black",
+                    "material": "synthetic",
+                    "size": "6"
+                  },
+                  "price": 186.45,
+                  "product_id": "7471004230"
+                }
+              ],
+              "order_id": "#W7449508",
+              "payment_history": [
+                {
+                  "amount": 3141.62,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "6477915553"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0007",
+      "card_sha256": "ab701efaf633a86367ad2d33806b1985d670024c7c53901cb115feb24af8f0c5",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 45,
+      "source_event_ids": [
+        "message:17:user",
+        "message:21:user",
+        "message:25:user",
+        "message:31:user",
+        "tool:call_Sx3JMBG4436OgxBJdwJfDisW:return_delivered_order_items",
+        "tool:call_jqPIAhGX3E8YADGA1ancZKlm:cancel_pending_order",
+        "tool:call_G1oqh2HvDoJu0xMHTlgmlO1P:return_delivered_order_items"
+      ],
+      "state_revision": 42
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 3,
+    "b_opportunities": 3,
+    "event_count": 46,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 46.19656820798991,
+    "prewrite_validation": 0.0011334579612594098,
+    "semantic_support": 9.850908375956351
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 7,
+    "card_injections": 13,
+    "injected_cards": 7,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "30",
+  "trajectory_id": "seed_976303_C3_COMBINED_INTERVENTION_task_030"
+}

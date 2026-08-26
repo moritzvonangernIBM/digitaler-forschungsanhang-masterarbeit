@@ -1,0 +1,229 @@
+{
+  "condition": "C2_PREWRITE_CONTROL",
+  "cost_usd": {
+    "native_agent": 0.0104638,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0
+  },
+  "counts": {
+    "a_commitments": 0,
+    "a_extractions": 0,
+    "a_opportunities": 0,
+    "a_support_cards": 0,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "arguments": {
+        "address1": "565 Maple Drive",
+        "address2": "Suite 501",
+        "city": "Washington",
+        "country": "USA",
+        "state": "DC",
+        "user_id": "yusuf_hernandez_6785",
+        "zip": "20307"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_fnUoy7gMakeINh8f2CJCxaoH",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 0,
+      "state_revision": 25,
+      "tool_name": "modify_user_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_fnUoy7gMakeINh8f2CJCxaoH",
+        "candidate_arguments": {
+          "address1": "565 Maple Drive",
+          "address2": "Suite 501",
+          "city": "Washington",
+          "country": "USA",
+          "state": "DC",
+          "user_id": "yusuf_hernandez_6785",
+          "zip": "20307"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_hernandez_6785",
+          "authentication_source_event_ids": [
+            "tool:call_2Ht1UNq2KsM1XvoIp43cZhwx:find_user_id_by_email"
+          ],
+          "order": null,
+          "products": [],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7529813"
+            ],
+            "source_event_ids": [
+              "tool:call_XQt0EoWUn3foR571F4ZwntKq:get_user_details"
+            ],
+            "user_id": "yusuf_hernandez_6785"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_user_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 1,
+      "state_revision": 25
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_fnUoy7gMakeINh8f2CJCxaoH",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 2,
+      "state_revision": 25
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "9385662952"
+        ],
+        "new_item_ids": [
+          "8733974883"
+        ],
+        "order_id": "#W2466703",
+        "payment_method_id": "paypal_7529813"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_FqIx47yYiOdivB2D9bOQscOS",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 3,
+      "state_revision": 27,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_FqIx47yYiOdivB2D9bOQscOS",
+        "candidate_arguments": {
+          "item_ids": [
+            "9385662952"
+          ],
+          "new_item_ids": [
+            "8733974883"
+          ],
+          "order_id": "#W2466703",
+          "payment_method_id": "paypal_7529813"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "yusuf_hernandez_6785",
+          "authentication_source_event_ids": [
+            "tool:call_2Ht1UNq2KsM1XvoIp43cZhwx:find_user_id_by_email"
+          ],
+          "order": {
+            "item_ids": [
+              "7848293342",
+              "4894369688",
+              "9385662952"
+            ],
+            "order_id": "#W2466703",
+            "source_event_ids": [
+              "tool:call_ebBPzzNspk6tw1zSW02TtYSp:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "yusuf_hernandez_6785"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "6819683148",
+              "source_event_ids": []
+            },
+            {
+              "observed": true,
+              "product_id": "8560156827",
+              "source_event_ids": [
+                "tool:call_jcAqWt0aJCaiBZGv1JcHimYQ:get_product_details"
+              ]
+            },
+            {
+              "observed": false,
+              "product_id": "8600330539",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_7529813"
+            ],
+            "source_event_ids": [
+              "tool:call_fnUoy7gMakeINh8f2CJCxaoH:modify_user_address"
+            ],
+            "user_id": "yusuf_hernandez_6785"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 4,
+      "state_revision": 27
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_FqIx47yYiOdivB2D9bOQscOS",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 5,
+      "state_revision": 27
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": false
+  },
+  "observer_audit": {
+    "a_opportunities": 0,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 6,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 40.58857203999651,
+    "prewrite_validation": 0.0006419580022338778,
+    "semantic_support": 0.0
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 0,
+    "card_injections": 0,
+    "injected_cards": 0,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 0
+  },
+  "task_id": "86",
+  "trajectory_id": "seed_976303_C2_PREWRITE_CONTROL_task_086"
+}

@@ -1,0 +1,612 @@
+{
+  "agent_cost": 0.0050586,
+  "auth_classification": null,
+  "condition": "C0_NATIVE",
+  "duration": 32.49024233299133,
+  "effect_timeline": null,
+  "hallucination_check": null,
+  "hallucination_retries_used": 0,
+  "id": "seed_976301_C0_NATIVE_task_097",
+  "info": null,
+  "messages": [
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi! How can I help you today?",
+      "cost": 0.0,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 0,
+      "turn_taking_action": null,
+      "usage": null,
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Hi, I actually have two things I need help with regarding my order. First, I’d like to exchange the Bluetooth Speaker I ordered for the cheapest green version you have. Also, I need to change the delivery address from my LA location to my NYC address—the one you have on file from my other order. Can you help me with both of these?",
+      "cost": 0.001388,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 1,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 72,
+        "prompt_tokens": 406
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Yes—I can help with both, but first I need to authenticate you and then look up your order status and details.\n\n1) **Please share the email address** on your account (or your **first name + last name + ZIP code**).  \n2) Also, what is your **order ID** for the Bluetooth Speaker (it looks like `#W0000000`)?\n\nOnce I have that, I’ll confirm:\n- whether the order is **delivered** (required for an exchange) or **pending** (required for address changes),\n- the exact item(s) in your order,\n- and what address we have on file for your other LA/NYC order so I can update the correct one.\n\nThen I’ll ask for your explicit **“yes”** confirmation before I make any changes.",
+      "cost": 0.00056,
+      "generation_time_seconds": 2.3225919169926783,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 2,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 236,
+        "prompt_tokens": 3629
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Sure, I can give you my name and zip code—it's Yusuf Li, and the zip is 91148. I’m not sure about my email, though. As for the order ID, I’ll need a moment to find it—could you remind me where I can locate that?",
+      "cost": 0.001774,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 3,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 59,
+        "prompt_tokens": 651
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.0004043,
+      "generation_time_seconds": 1.3519050829927437,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "first_name": "Yusuf",
+            "last_name": "Li",
+            "zip": "91148"
+          },
+          "id": "call_5MGrvBjTmyVtXcIN8HNaMAaY",
+          "name": "find_user_id_by_name_zip",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 4,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 74,
+        "prompt_tokens": 3863
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "yusuf_li_7255",
+      "error": false,
+      "id": "call_5MGrvBjTmyVtXcIN8HNaMAaY",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 5
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks, Yusuf—I've found your account: **yusuf_li_7255**.\n\nFor the **order ID**, you can usually find it in one of these places:\n- the **confirmation email** you received when you placed the order (it will show something like `#W0000000`)\n- your account’s **Order History** page (each order has its own order ID)\n\nWhen you find the Bluetooth Speaker order ID, send it to me.\n\nAlso, to make sure I do the right thing for both requests, please confirm one detail:\n- When you say “**cheapest green version**,” do you mean **green color** regardless of any other options (size/model), as long as it’s the **lowest price** green option?",
+      "cost": 0.00033473000000000004,
+      "generation_time_seconds": 1.8128012910019606,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 6,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 157,
+        "prompt_tokens": 3918
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Yes, that’s right—I want the green color, and I’d like whichever model is the least expensive. I’ll check my order history now for the order ID and get back to you in a moment.",
+      "cost": 0.002078,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 7,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 871
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Got it—**green** color only, and **the least expensive green model**.\n\nWhile you look up the order ID, quick heads-up on the two actions (so we don’t run into surprises):\n- **Address change**: I can only change the **delivery address for a pending order**.\n- **Exchange**: I can only exchange items for a **delivered order**.\n\nReply with your **order ID** when you find it, and I’ll pull up the order details to confirm which actions are possible for that specific order.",
+      "cost": 0.00032323,
+      "generation_time_seconds": 1.5858131670102011,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 8,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 115,
+        "prompt_tokens": 4123
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Thanks for explaining that. I just found my order ID—it’s #W0098234. Can you check if both changes are possible for this order?",
+      "cost": 0.002312,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 9,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 1032
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00029488,
+      "generation_time_seconds": 1.4322697909956332,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W0098234"
+          },
+          "id": "call_NK0lndaePV4QQIUHNVYBkUEq",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 10,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 4275
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "Error: Order not found",
+      "error": true,
+      "id": "call_NK0lndaePV4QQIUHNVYBkUEq",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 11
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00036183,
+      "generation_time_seconds": 1.7275374589953572,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "user_id": "yusuf_li_7255"
+          },
+          "id": "call_YJ3aCMS5jgqcEqotgJXxe6R8",
+          "name": "get_user_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 12,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 115,
+        "prompt_tokens": 4316
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"user_id\": \"yusuf_li_7255\", \"name\": {\"first_name\": \"Yusuf\", \"last_name\": \"Li\"}, \"address\": {\"address1\": \"909 Spruce Street\", \"address2\": \"Suite 599\", \"city\": \"Los Angeles\", \"country\": \"USA\", \"state\": \"CA\", \"zip\": \"91148\"}, \"email\": \"yusuf.li3523@example.com\", \"payment_methods\": {\"paypal_8080730\": {\"source\": \"paypal\", \"id\": \"paypal_8080730\"}}, \"orders\": [\"#W6750959\", \"#W3407479\"]}",
+      "error": false,
+      "id": "call_YJ3aCMS5jgqcEqotgJXxe6R8",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 13
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I tried to look up **#W0098234**, but the system says **“Order not found.”**  \n\nFrom your account **yusuf_li_7255**, the only orders I can currently see are:\n- **#W6750959**\n- **#W3407479**\n\nCould you please double-check the order ID you provided (make sure it’s exactly like `#W...`) and tell me whether the Bluetooth Speaker order might be one of the two above?\n\nOnce you confirm the correct order ID, I’ll check whether:\n- it’s **pending** (so I can change the delivery address), and\n- it’s **delivered** (so I can do the green cheapest-model exchange).",
+      "cost": 0.00050873,
+      "generation_time_seconds": 2.1289173749973997,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 14,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 205,
+        "prompt_tokens": 4488
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Oh, sorry about that—I must have mixed up the numbers. The Bluetooth Speaker should be in order #W6750959. Can you check that one for me?",
+      "cost": 0.002706,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 15,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 1217
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00033673,
+      "generation_time_seconds": 1.2465875829948345,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W6750959"
+          },
+          "id": "call_EplGe1QJQ53hpN1BXPUM9qhV",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 16,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 4678
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W6750959\", \"user_id\": \"yusuf_li_7255\", \"address\": {\"address1\": \"909 Spruce Street\", \"address2\": \"Suite 599\", \"city\": \"Los Angeles\", \"country\": \"USA\", \"state\": \"CA\", \"zip\": \"91148\"}, \"items\": [{\"name\": \"Bluetooth Speaker\", \"product_id\": \"4768869376\", \"item_id\": \"3254583681\", \"price\": 302.67, \"options\": {\"color\": \"blue\", \"battery life\": \"20 hours\", \"water resistance\": \"yes\"}}, {\"name\": \"E-Reader\", \"product_id\": \"3801771308\", \"item_id\": \"4273929280\", \"price\": 244.95, \"options\": {\"screen size\": \"7-inch\", \"connectivity\": \"Wi-Fi + Cellular\", \"storage\": \"32GB\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 547.62, \"payment_method_id\": \"paypal_8080730\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_EplGe1QJQ53hpN1BXPUM9qhV",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 17
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.00033636000000000007,
+      "generation_time_seconds": 1.465319750001072,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "order_id": "#W3407479"
+          },
+          "id": "call_eg58najhiil2Gk1eRYef3FBj",
+          "name": "get_order_details",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 18,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 132,
+        "prompt_tokens": 5004
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W3407479\", \"user_id\": \"yusuf_li_7255\", \"address\": {\"address1\": \"476 Maple Drive\", \"address2\": \"Suite 432\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10093\"}, \"items\": [{\"name\": \"E-Reader\", \"product_id\": \"3801771308\", \"item_id\": \"5510402676\", \"price\": 267.07, \"options\": {\"screen size\": \"6-inch\", \"connectivity\": \"Wi-Fi\", \"storage\": \"8GB\"}}, {\"name\": \"Jigsaw Puzzle\", \"product_id\": \"1808611083\", \"item_id\": \"9370300555\", \"price\": 45.9, \"options\": {\"pieces\": \"1000\", \"theme\": \"art\", \"difficulty level\": \"expert\"}}, {\"name\": \"Skateboard\", \"product_id\": \"1968349452\", \"item_id\": \"3232433601\", \"price\": 204.14, \"options\": {\"deck material\": \"maple\", \"length\": \"28 inch\", \"design\": \"plain\"}}, {\"name\": \"Running Shoes\", \"product_id\": \"6938111410\", \"item_id\": \"9791469541\", \"price\": 147.05, \"options\": {\"size\": \"9\", \"color\": \"yellow\", \"material\": \"synthetic\", \"sole\": \"rubber\"}}], \"status\": \"processed\", \"fulfillments\": [{\"tracking_id\": [\"758121863229\"], \"item_ids\": [\"5510402676\", \"9370300555\", \"3232433601\", \"9791469541\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 664.16, \"payment_method_id\": \"paypal_8080730\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_eg58najhiil2Gk1eRYef3FBj",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 19
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "I checked **order #W6750959** and **yes—changing the delivery address is possible** because its status is **pending**.\n\nHowever, **the exchange is not possible yet** because exchanges can only be done when the order status is **delivered**. (Your #W6750959 is currently **pending**.)\n\n### Address change details (for #W6750959)\nChange delivery address from your current LA address to the **NYC address on file** from order **#W3407479**:\n\n- **New address:** 476 Maple Drive, Suite 432, New York, NY 10093, USA\n\n### Please confirm\nDo you want me to update the delivery address for **order #W6750959** to the NYC address above?  \nReply **“yes”** to proceed, or **“no”** to stop.",
+      "cost": 0.00080876,
+      "generation_time_seconds": 3.459187083004508,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 20,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 432,
+        "prompt_tokens": 5491
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Yes, please go ahead and update the delivery address for order #W6750959 to the NYC address you mentioned. Thank you for clarifying about the exchange—I’ll wait until the order is delivered before requesting that.",
+      "cost": 0.0032259999999999997,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 21,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 1437
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": null,
+      "cost": 0.0005001599999999999,
+      "generation_time_seconds": 1.9927260410040617,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": [
+        {
+          "arguments": {
+            "address1": "476 Maple Drive",
+            "address2": "Suite 432",
+            "city": "New York",
+            "country": "USA",
+            "order_id": "#W6750959",
+            "state": "NY",
+            "zip": "10093"
+          },
+          "id": "call_o4Hf4KjoZqqOokcT6Q55Rzdk",
+          "name": "modify_pending_order_address",
+          "requestor": "assistant"
+        }
+      ],
+      "turn_idx": 22,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 148,
+        "prompt_tokens": 5723
+      },
+      "utterance_ids": null
+    },
+    {
+      "content": "{\"order_id\": \"#W6750959\", \"user_id\": \"yusuf_li_7255\", \"address\": {\"address1\": \"476 Maple Drive\", \"address2\": \"Suite 432\", \"city\": \"New York\", \"country\": \"USA\", \"state\": \"NY\", \"zip\": \"10093\"}, \"items\": [{\"name\": \"Bluetooth Speaker\", \"product_id\": \"4768869376\", \"item_id\": \"3254583681\", \"price\": 302.67, \"options\": {\"color\": \"blue\", \"battery life\": \"20 hours\", \"water resistance\": \"yes\"}}, {\"name\": \"E-Reader\", \"product_id\": \"3801771308\", \"item_id\": \"4273929280\", \"price\": 244.95, \"options\": {\"screen size\": \"7-inch\", \"connectivity\": \"Wi-Fi + Cellular\", \"storage\": \"32GB\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 547.62, \"payment_method_id\": \"paypal_8080730\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "error": false,
+      "id": "call_o4Hf4KjoZqqOokcT6Q55Rzdk",
+      "requestor": "assistant",
+      "role": "tool",
+      "turn_idx": 23
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Your delivery address has been updated for **order #W6750959** to:\n\n**476 Maple Drive, Suite 432, New York, NY 10093, USA**\n\nYour exchange request is noted for later—once the order is **delivered**, you can request the **least expensive green Bluetooth Speaker model**.",
+      "cost": 0.00028889,
+      "generation_time_seconds": 1.414124584000092,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "assistant",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 24,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 69,
+        "prompt_tokens": 6082
+      },
+      "utterance_ids": null
+    },
+    {
+      "audio_format": null,
+      "audio_script_gold": null,
+      "channel_effects": null,
+      "chunk_id": null,
+      "contains_speech": true,
+      "content": "Great, thanks for your help. I’ll reach out again once the order is delivered for the exchange. Have a good day! ###STOP###",
+      "cost": 0.0014199999999999998,
+      "generation_time_seconds": null,
+      "is_audio": false,
+      "is_final_chunk": true,
+      "role": "user",
+      "source": null,
+      "source_effects": null,
+      "speech_effects": null,
+      "tool_calls": null,
+      "turn_idx": 25,
+      "turn_taking_action": null,
+      "usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 1554
+      },
+      "utterance_ids": null
+    }
+  ],
+  "mode": "half_duplex",
+  "policy": null,
+  "review": null,
+  "reward_info": null,
+  "seed": 976301,
+  "speech_environment": null,
+  "task_id": "97",
+  "termination_reason": "user_stop",
+  "ticks": null,
+  "trial": null,
+  "user_cost": 0.014903999999999999,
+  "user_only_review": null
+}

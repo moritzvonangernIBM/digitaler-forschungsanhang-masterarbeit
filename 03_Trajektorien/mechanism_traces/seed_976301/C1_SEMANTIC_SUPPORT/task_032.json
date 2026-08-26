@@ -1,0 +1,1711 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.01239892,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00200825
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "b0e4756ede41e44587a34e7ed724db6e526c4f766588feaa6a77a5fef4ad848d",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "9b1cc9fdba23a2b8e707ff832b081e5ebdb522539d5d7ff29542792489806415",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:23:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "d68528e25352e927031bc4d28d37b8934d88661ae7450de9b1f071dce728e2e1",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:27:user"
+      ],
+      "state_revision": 28,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "Since I lost the tablet, I don’t need the charger I just bought"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\", \"reason\": \"Since I lost the tablet\", \"scope\": \"a refund\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"Since I lost the tablet, I don\\u2019t need the charger I just bought\", \"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0001",
+      "card_sha256": "ce7737acf23096fe2fe12807b1bf35cb37dc497758b697b996687a3d257dc759",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:23:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "Since I lost the tablet, I don’t need the charger I just bought"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ce7737acf23096fe2fe12807b1bf35cb37dc497758b697b996687a3d257dc759",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+      ],
+      "state_revision": 28
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "7d0acbde7d07f066dffce710c707de3c0ac1204b9cfa4eddcf938b721c78bfa4",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:29:user"
+      ],
+      "state_revision": 30,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "#W9373487"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the charger"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "ce7737acf23096fe2fe12807b1bf35cb37dc497758b697b996687a3d257dc759",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 10,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\", \"reason\": \"Since I lost the tablet\", \"scope\": \"a refund\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"Since I lost the tablet, I don\\u2019t need the charger I just bought\", \"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W9373487\", \"scope\": \"the charger\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0002",
+      "card_sha256": "b7438e2116430ad39b16b5d5e94c721f9d6decd87b057ae65c92a122236a969d",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 11,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:23:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "Since I lost the tablet, I don’t need the charger I just bought"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "#W9373487"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the charger"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b7438e2116430ad39b16b5d5e94c721f9d6decd87b057ae65c92a122236a969d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+      ],
+      "state_revision": 30
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W9373487",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_FA8tU95varX3l0tADCPaYebv",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "b7438e2116430ad39b16b5d5e94c721f9d6decd87b057ae65c92a122236a969d",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 13,
+      "state_revision": 30
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b7438e2116430ad39b16b5d5e94c721f9d6decd87b057ae65c92a122236a969d",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 32
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\", \"reason\": \"Since I lost the tablet\", \"scope\": \"a refund\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"Since I lost the tablet, I don\\u2019t need the charger I just bought\", \"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W9373487\", \"scope\": \"the charger\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+      ],
+      "state_revision": 32,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:23:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "Since I lost the tablet, I don’t need the charger I just bought"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "#W9373487"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the charger"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+      ],
+      "state_revision": 32
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+      ],
+      "state_revision": 34
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+      ],
+      "state_revision": 36
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+      ],
+      "state_revision": 38
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W5481803",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_84Om6czFVYexwZRWpxsXITvD",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 20,
+      "state_revision": 38
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "f77e8bfdd5dba80333440fb02c32fa5f66c762bc44708591047952c6606da151",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 21,
+      "state_revision": 40
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\", \"reason\": \"Since I lost the tablet\", \"scope\": \"a refund\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"Since I lost the tablet, I don\\u2019t need the charger I just bought\", \"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W9373487\", \"scope\": \"the charger\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W5481803\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "ee87e0951de3ec5d44b63762be797d10e4fbf6ed534c3b5dfb053f4c735c15d8",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 22,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order",
+        "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order"
+      ],
+      "state_revision": 40,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:23:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "Since I lost the tablet, I don’t need the charger I just bought"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "#W9373487"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the charger"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5481803",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "3613716226",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "8",
+                    "waterproof": "no"
+                  },
+                  "price": 253.54,
+                  "product_id": "7363354090"
+                }
+              ],
+              "order_id": "#W5481803",
+              "payment_history": [
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "ee87e0951de3ec5d44b63762be797d10e4fbf6ed534c3b5dfb053f4c735c15d8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order",
+        "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order"
+      ],
+      "state_revision": 40
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "ee87e0951de3ec5d44b63762be797d10e4fbf6ed534c3b5dfb053f4c735c15d8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order",
+        "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order"
+      ],
+      "state_revision": 42
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "ee87e0951de3ec5d44b63762be797d10e4fbf6ed534c3b5dfb053f4c735c15d8",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 25,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order",
+        "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order"
+      ],
+      "state_revision": 44
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "6477915553"
+            ],
+            "order_id": "#W7449508",
+            "payment_method_id": "gift_card_7711863"
+          },
+          "call_id": "call_z01BNkJ3XLsNzf3uAGqDFNUG",
+          "tool_name": "return_delivered_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "ee87e0951de3ec5d44b63762be797d10e4fbf6ed534c3b5dfb053f4c735c15d8",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 26,
+      "state_revision": 44
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "ee87e0951de3ec5d44b63762be797d10e4fbf6ed534c3b5dfb053f4c735c15d8",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 27,
+      "state_revision": 46
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"item_descriptions\": \"the tablet\", \"reason\": \"Since I lost the tablet\", \"scope\": \"a refund\"}, \"operation\": \"return_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"reason\": \"Since I lost the tablet, I don\\u2019t need the charger I just bought\", \"scope\": \"that order\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W9373487\", \"scope\": \"the charger\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3788616824\"], \"order_id\": \"#W2692684\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}, {\"arguments\": {\"order_id\": \"#W9373487\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"order_id\": \"#W5481803\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}, {\"arguments\": {\"item_ids\": [\"6477915553\"], \"order_id\": \"#W7449508\", \"payment_method_id\": \"gift_card_7711863\"}, \"tool_name\": \"return_delivered_order_items\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "0d04901289d478fc88988ee0a462f647915373f79317cee4473a67196006d39d",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 28,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order",
+        "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order",
+        "tool:call_z01BNkJ3XLsNzf3uAGqDFNUG:return_delivered_order_items"
+      ],
+      "state_revision": 46,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:21:user",
+                "message:23:user"
+              ],
+              "value": "the tablet"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "Since I lost the tablet"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "a refund"
+            }
+          },
+          "operation": "return_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "Since I lost the tablet, I don’t need the charger I just bought"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:27:user"
+              ],
+              "value": "that order"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "#W9373487"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:29:user"
+              ],
+              "value": "the charger"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3788616824"
+              ],
+              "order_id": "#W2692684",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "3788616824"
+                  ],
+                  "tracking_id": [
+                    "746342064230"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "3788616824",
+                  "name": "Tablet",
+                  "options": {
+                    "color": "black",
+                    "screen size": "10-inch",
+                    "storage": "128GB"
+                  },
+                  "price": 951.21,
+                  "product_id": "8024098596"
+                }
+              ],
+              "order_id": "#W2692684",
+              "payment_history": [
+                {
+                  "amount": 951.21,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "3788616824"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W9373487",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "4063401924",
+                  "name": "Portable Charger",
+                  "options": {
+                    "capacity": "20000mAh",
+                    "color": "blue",
+                    "output": "Wireless"
+                  },
+                  "price": 109.27,
+                  "product_id": "6942297802"
+                }
+              ],
+              "order_id": "#W9373487",
+              "payment_history": [
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 109.27,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W5481803",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "9472539378",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1.5L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 143.72,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "3613716226",
+                  "name": "Hiking Boots",
+                  "options": {
+                    "material": "synthetic",
+                    "size": "8",
+                    "waterproof": "no"
+                  },
+                  "price": 253.54,
+                  "product_id": "7363354090"
+                }
+              ],
+              "order_id": "#W5481803",
+              "payment_history": [
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 397.26,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_z01BNkJ3XLsNzf3uAGqDFNUG:return_delivered_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "6477915553"
+              ],
+              "order_id": "#W7449508",
+              "payment_method_id": "gift_card_7711863"
+            },
+            "result": {
+              "address": {
+                "address1": "310 Laurel Lane",
+                "address2": "Suite 480",
+                "city": "Fort Worth",
+                "country": "USA",
+                "state": "TX",
+                "zip": "76171"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [
+                {
+                  "item_ids": [
+                    "6200867091",
+                    "6477915553"
+                  ],
+                  "tracking_id": [
+                    "194496721133"
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "item_id": "6200867091",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 2955.17,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "6477915553",
+                  "name": "Sneakers",
+                  "options": {
+                    "color": "black",
+                    "material": "synthetic",
+                    "size": "6"
+                  },
+                  "price": 186.45,
+                  "product_id": "7471004230"
+                }
+              ],
+              "order_id": "#W7449508",
+              "payment_history": [
+                {
+                  "amount": 3141.62,
+                  "payment_method_id": "gift_card_7711863",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": [
+                "6477915553"
+              ],
+              "return_payment_method_id": "gift_card_7711863",
+              "status": "return requested",
+              "user_id": "olivia_lopez_3865"
+            },
+            "tool_name": "return_delivered_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "0d04901289d478fc88988ee0a462f647915373f79317cee4473a67196006d39d",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 29,
+      "source_event_ids": [
+        "message:21:user",
+        "message:23:user",
+        "message:27:user",
+        "message:29:user",
+        "tool:call_sIUNijE0B16rsShVpQh9XyeM:return_delivered_order_items",
+        "tool:call_FA8tU95varX3l0tADCPaYebv:cancel_pending_order",
+        "tool:call_84Om6czFVYexwZRWpxsXITvD:cancel_pending_order",
+        "tool:call_z01BNkJ3XLsNzf3uAGqDFNUG:return_delivered_order_items"
+      ],
+      "state_revision": 46
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 30,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 49.27926887500507,
+    "prewrite_validation": 0.0,
+    "semantic_support": 12.747481209007674
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 10,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 3
+  },
+  "task_id": "32",
+  "trajectory_id": "seed_976301_C1_SEMANTIC_SUPPORT_task_032"
+}

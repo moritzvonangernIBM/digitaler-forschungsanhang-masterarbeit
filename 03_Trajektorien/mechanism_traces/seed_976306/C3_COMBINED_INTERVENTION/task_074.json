@@ -1,0 +1,1519 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.01313248,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0025755
+  },
+  "counts": {
+    "a_commitments": 6,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 5,
+    "b_evidence_reads": 0,
+    "b_opportunities": 2,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'scope' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "scope",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "9344d2d9d216543df994751465245d1f9cb86e7bfee0df596838853367040970",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it for one with an i9 processor instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "another order with five items"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"exchange it for one with an i9 processor instead\", \"item_descriptions\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"another order with five items\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it for one with an i9 processor instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "another order with five items"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "fcecf0ab592e7877d43e7843159c19ed005caa57c622b7732cf8c5a560079cc0",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W5166363"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the laptop exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W3189752"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "since that one has five items and it’s still pending"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "776722e730af0d90232c681d70a5f6a8b6303e21e4bb51bc33ca98a6d9fb9ee9",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 20
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"exchange it for one with an i9 processor instead\", \"item_descriptions\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"another order with five items\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W5166363\", \"scope\": \"the laptop exchange\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W3189752\", \"reason\": \"since that one has five items and it\\u2019s still pending\", \"scope\": \"that one\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "9de3747c01e3c47f26383c8ead6d27873d7e1e696c15fe9397b93f2bf95947be",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it for one with an i9 processor instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "another order with five items"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W5166363"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the laptop exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W3189752"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "since that one has five items and it’s still pending"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9de3747c01e3c47f26383c8ead6d27873d7e1e696c15fe9397b93f2bf95947be",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9de3747c01e3c47f26383c8ead6d27873d7e1e696c15fe9397b93f2bf95947be",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 2,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        },
+        {
+          "error": "record has no valid grounded fields",
+          "error_type": "ValueError",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "8551f31db28333cfcae7d83a20e25329ab57523c2dfc008babcbf6b8e5aa381d",
+      "sequence": 19,
+      "source_event_ids": [
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "total_commitments": 6,
+      "validated_records": [
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the 17-inch, i9, 8GB RAM, 256GB SSD, in silver"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "9de3747c01e3c47f26383c8ead6d27873d7e1e696c15fe9397b93f2bf95947be",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 20,
+      "state_revision": 24
+    },
+    {
+      "accepted_records": 6,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"exchange it for one with an i9 processor instead\", \"item_descriptions\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"another order with five items\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W5166363\", \"scope\": \"the laptop exchange\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W3189752\", \"reason\": \"since that one has five items and it\\u2019s still pending\", \"scope\": \"that one\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 17-inch, i9, 8GB RAM, 256GB SSD, in silver\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0006\", \"explicit_fields\": {\"reason\": \"no longer needed.\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "e194493850023d6eb9498fe4e6505e8fd165425e173dfead4da2a0b30bf139a9",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user"
+      ],
+      "state_revision": 24,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it for one with an i9 processor instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "another order with five items"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W5166363"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the laptop exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W3189752"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "since that one has five items and it’s still pending"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the 17-inch, i9, 8GB RAM, 256GB SSD, in silver"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "e194493850023d6eb9498fe4e6505e8fd165425e173dfead4da2a0b30bf139a9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "e194493850023d6eb9498fe4e6505e8fd165425e173dfead4da2a0b30bf139a9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user"
+      ],
+      "state_revision": 26
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "3334537816"
+            ],
+            "new_item_ids": [
+              "3265035808"
+            ],
+            "order_id": "#W5166363",
+            "payment_method_id": "credit_card_4466831"
+          },
+          "call_id": "call_287SffhKCi8T7OUdJjTuwUPf",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "e194493850023d6eb9498fe4e6505e8fd165425e173dfead4da2a0b30bf139a9",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 24,
+      "state_revision": 26
+    },
+    {
+      "arguments": {
+        "item_ids": [
+          "3334537816"
+        ],
+        "new_item_ids": [
+          "3265035808"
+        ],
+        "order_id": "#W5166363",
+        "payment_method_id": "credit_card_4466831"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_287SffhKCi8T7OUdJjTuwUPf",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 25,
+      "state_revision": 26,
+      "tool_name": "modify_pending_order_items"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_287SffhKCi8T7OUdJjTuwUPf",
+        "candidate_arguments": {
+          "item_ids": [
+            "3334537816"
+          ],
+          "new_item_ids": [
+            "3265035808"
+          ],
+          "order_id": "#W5166363",
+          "payment_method_id": "credit_card_4466831"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "lei_li_6575",
+          "authentication_source_event_ids": [
+            "tool:call_B0Xz0S4rnOcLYzNcsTNvxqHH:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "3334537816"
+            ],
+            "order_id": "#W5166363",
+            "source_event_ids": [
+              "tool:call_Nf7htDBSefjDoYGdmAyXxYmY:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "lei_li_6575"
+          },
+          "products": [
+            {
+              "observed": true,
+              "product_id": "4760268021",
+              "source_event_ids": [
+                "tool:call_QI9WDdT08yJtBa1tKgoIipUg:get_product_details"
+              ]
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_4466831",
+              "gift_card_8049813",
+              "paypal_5914760"
+            ],
+            "source_event_ids": [
+              "tool:call_f0P49HCoPdJYvLn1j5yZT3QS:get_user_details"
+            ],
+            "user_id": "lei_li_6575"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_items"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 26,
+      "state_revision": 26
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_287SffhKCi8T7OUdJjTuwUPf",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 27,
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "e194493850023d6eb9498fe4e6505e8fd165425e173dfead4da2a0b30bf139a9",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 28,
+      "state_revision": 28
+    },
+    {
+      "accepted_records": 6,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"exchange it for one with an i9 processor instead\", \"item_descriptions\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"another order with five items\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W5166363\", \"scope\": \"the laptop exchange\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W3189752\", \"reason\": \"since that one has five items and it\\u2019s still pending\", \"scope\": \"that one\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 17-inch, i9, 8GB RAM, 256GB SSD, in silver\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0006\", \"explicit_fields\": {\"reason\": \"no longer needed.\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3334537816\"], \"new_item_ids\": [\"3265035808\"], \"order_id\": \"#W5166363\", \"payment_method_id\": \"credit_card_4466831\"}, \"tool_name\": \"modify_pending_order_items\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "df3fac8b7f887e9d0709dbc50b5980baa0d3d2936755129ce62dd755b0aa8f96",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 29,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user",
+        "tool:call_287SffhKCi8T7OUdJjTuwUPf:modify_pending_order_items"
+      ],
+      "state_revision": 28,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it for one with an i9 processor instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "another order with five items"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W5166363"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the laptop exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W3189752"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "since that one has five items and it’s still pending"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the 17-inch, i9, 8GB RAM, 256GB SSD, in silver"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_287SffhKCi8T7OUdJjTuwUPf:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3334537816"
+              ],
+              "new_item_ids": [
+                "3265035808"
+              ],
+              "order_id": "#W5166363",
+              "payment_method_id": "credit_card_4466831"
+            },
+            "result": {
+              "address": {
+                "address1": "905 Highland Drive",
+                "address2": "Suite 807",
+                "city": "San Francisco",
+                "country": "USA",
+                "state": "CA",
+                "zip": "94132"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3265035808",
+                  "name": "Laptop",
+                  "options": {
+                    "color": "silver",
+                    "processor": "i9",
+                    "ram": "8GB",
+                    "screen size": "17-inch",
+                    "storage": "256GB SSD"
+                  },
+                  "price": 2530.72,
+                  "product_id": "4760268021"
+                }
+              ],
+              "order_id": "#W5166363",
+              "payment_history": [
+                {
+                  "amount": 2749.56,
+                  "payment_method_id": "paypal_5914760",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 218.84000000000015,
+                  "payment_method_id": "credit_card_4466831",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "lei_li_6575"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "df3fac8b7f887e9d0709dbc50b5980baa0d3d2936755129ce62dd755b0aa8f96",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 30,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user",
+        "tool:call_287SffhKCi8T7OUdJjTuwUPf:modify_pending_order_items"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "order_id": "#W3189752",
+            "reason": "no longer needed"
+          },
+          "call_id": "call_fBaNExbPlDGxkYlR85qInvZr",
+          "tool_name": "cancel_pending_order"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "df3fac8b7f887e9d0709dbc50b5980baa0d3d2936755129ce62dd755b0aa8f96",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 31,
+      "state_revision": 28
+    },
+    {
+      "arguments": {
+        "order_id": "#W3189752",
+        "reason": "no longer needed"
+      },
+      "bundle_id": "BB-0002-O",
+      "call_id": "call_fBaNExbPlDGxkYlR85qInvZr",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 32,
+      "state_revision": 28,
+      "tool_name": "cancel_pending_order"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_fBaNExbPlDGxkYlR85qInvZr",
+        "candidate_arguments": {
+          "order_id": "#W3189752",
+          "reason": "no longer needed"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "lei_li_6575",
+          "authentication_source_event_ids": [
+            "tool:call_B0Xz0S4rnOcLYzNcsTNvxqHH:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5268233322",
+              "7617930199",
+              "6777246137",
+              "4648362606",
+              "5012998807"
+            ],
+            "order_id": "#W3189752",
+            "source_event_ids": [
+              "tool:call_sl8Q48LRnAOgbsUd0Jxfa9wR:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "lei_li_6575"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "1075968781",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4768869376",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4794339885",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "5149340237",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "8310926033",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": {
+            "payment_method_ids": [
+              "credit_card_4466831",
+              "gift_card_8049813",
+              "paypal_5914760"
+            ],
+            "source_event_ids": [
+              "tool:call_f0P49HCoPdJYvLn1j5yZT3QS:get_user_details"
+            ],
+            "user_id": "lei_li_6575"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "cancel_pending_order"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 33,
+      "state_revision": 28
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_fBaNExbPlDGxkYlR85qInvZr",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0002",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 34,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "df3fac8b7f887e9d0709dbc50b5980baa0d3d2936755129ce62dd755b0aa8f96",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 35,
+      "state_revision": 30
+    },
+    {
+      "accepted_records": 6,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"desired_variant_constraints\": \"exchange it for one with an i9 processor instead\", \"item_descriptions\": \"a laptop\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"scope\": \"another order with five items\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"order_id\": \"#W5166363\", \"scope\": \"the laptop exchange\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"order_id\": \"#W3189752\", \"reason\": \"since that one has five items and it\\u2019s still pending\", \"scope\": \"that one\"}, \"operation\": \"cancel_pending_order\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"desired_variant_constraints\": \"the 17-inch, i9, 8GB RAM, 256GB SSD, in silver\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0006\", \"explicit_fields\": {\"reason\": \"no longer needed.\"}, \"operation\": \"cancel_pending_order\"}], \"verified_completed_writes\": [{\"arguments\": {\"item_ids\": [\"3334537816\"], \"new_item_ids\": [\"3265035808\"], \"order_id\": \"#W5166363\", \"payment_method_id\": \"credit_card_4466831\"}, \"tool_name\": \"modify_pending_order_items\"}, {\"arguments\": {\"order_id\": \"#W3189752\", \"reason\": \"no longer needed\"}, \"tool_name\": \"cancel_pending_order\"}]}",
+      "card_id": "AC-0005",
+      "card_sha256": "5ff59b06c74e2890d4b2b234251ff6d80196cdd5ff7b3e7e6aa3770957358b7e",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 36,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user",
+        "tool:call_287SffhKCi8T7OUdJjTuwUPf:modify_pending_order_items",
+        "tool:call_fBaNExbPlDGxkYlR85qInvZr:cancel_pending_order"
+      ],
+      "state_revision": 30,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange it for one with an i9 processor instead"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "a laptop"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "another order with five items"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W5166363"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "the laptop exchange"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "#W3189752"
+            },
+            "reason": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "since that one has five items and it’s still pending"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:19:user"
+              ],
+              "value": "that one"
+            }
+          },
+          "operation": "cancel_pending_order"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "the 17-inch, i9, 8GB RAM, 256GB SSD, in silver"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0006",
+          "fields": {
+            "reason": {
+              "source_event_ids": [
+                "message:23:user"
+              ],
+              "value": "no longer needed."
+            }
+          },
+          "operation": "cancel_pending_order"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_287SffhKCi8T7OUdJjTuwUPf:modify_pending_order_items"
+          ],
+          "value": {
+            "arguments": {
+              "item_ids": [
+                "3334537816"
+              ],
+              "new_item_ids": [
+                "3265035808"
+              ],
+              "order_id": "#W5166363",
+              "payment_method_id": "credit_card_4466831"
+            },
+            "result": {
+              "address": {
+                "address1": "905 Highland Drive",
+                "address2": "Suite 807",
+                "city": "San Francisco",
+                "country": "USA",
+                "state": "CA",
+                "zip": "94132"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "3265035808",
+                  "name": "Laptop",
+                  "options": {
+                    "color": "silver",
+                    "processor": "i9",
+                    "ram": "8GB",
+                    "screen size": "17-inch",
+                    "storage": "256GB SSD"
+                  },
+                  "price": 2530.72,
+                  "product_id": "4760268021"
+                }
+              ],
+              "order_id": "#W5166363",
+              "payment_history": [
+                {
+                  "amount": 2749.56,
+                  "payment_method_id": "paypal_5914760",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 218.84000000000015,
+                  "payment_method_id": "credit_card_4466831",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending (item modified)",
+              "user_id": "lei_li_6575"
+            },
+            "tool_name": "modify_pending_order_items"
+          }
+        },
+        {
+          "source_event_ids": [
+            "tool:call_fBaNExbPlDGxkYlR85qInvZr:cancel_pending_order"
+          ],
+          "value": {
+            "arguments": {
+              "order_id": "#W3189752",
+              "reason": "no longer needed"
+            },
+            "result": {
+              "address": {
+                "address1": "604 Pine Lane",
+                "address2": "Suite 907",
+                "city": "Phoenix",
+                "country": "USA",
+                "state": "AZ",
+                "zip": "85033"
+              },
+              "cancel_reason": "no longer needed",
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5268233322",
+                  "name": "Electric Kettle",
+                  "options": {
+                    "capacity": "1L",
+                    "color": "white",
+                    "material": "glass"
+                  },
+                  "price": 155.99,
+                  "product_id": "1075968781"
+                },
+                {
+                  "item_id": "7617930199",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "20 hours",
+                    "color": "red",
+                    "water resistance": "yes"
+                  },
+                  "price": 285.94,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "6777246137",
+                  "name": "Water Bottle",
+                  "options": {
+                    "capacity": "750ml",
+                    "color": "red",
+                    "material": "stainless steel"
+                  },
+                  "price": 47.76,
+                  "product_id": "8310926033"
+                },
+                {
+                  "item_id": "4648362606",
+                  "name": "Office Chair",
+                  "options": {
+                    "armrest": "adjustable",
+                    "backrest height": "high-back",
+                    "color": "black",
+                    "material": "leather"
+                  },
+                  "price": 503.76,
+                  "product_id": "4794339885"
+                },
+                {
+                  "item_id": "5012998807",
+                  "name": "Makeup Kit",
+                  "options": {
+                    "brand": "Brand B",
+                    "kit size": "professional",
+                    "skin tone": "dark"
+                  },
+                  "price": 258.71,
+                  "product_id": "5149340237"
+                }
+              ],
+              "order_id": "#W3189752",
+              "payment_history": [
+                {
+                  "amount": 1252.16,
+                  "payment_method_id": "paypal_5914760",
+                  "transaction_type": "payment"
+                },
+                {
+                  "amount": 1252.16,
+                  "payment_method_id": "paypal_5914760",
+                  "transaction_type": "refund"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "cancelled",
+              "user_id": "lei_li_6575"
+            },
+            "tool_name": "cancel_pending_order"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0005",
+      "card_sha256": "5ff59b06c74e2890d4b2b234251ff6d80196cdd5ff7b3e7e6aa3770957358b7e",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 37,
+      "source_event_ids": [
+        "message:1:user",
+        "message:19:user",
+        "message:23:user",
+        "tool:call_287SffhKCi8T7OUdJjTuwUPf:modify_pending_order_items",
+        "tool:call_fBaNExbPlDGxkYlR85qInvZr:cancel_pending_order"
+      ],
+      "state_revision": 30
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 2,
+    "b_opportunities": 2,
+    "event_count": 38,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 60.516465876076836,
+    "prewrite_validation": 0.0005992919905111194,
+    "semantic_support": 12.951755625021178
+  },
+  "seed": 976306,
+  "semantic_linkage_audit": {
+    "activated_cards": 5,
+    "card_injections": 15,
+    "injected_cards": 5,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "74",
+  "trajectory_id": "seed_976306_C3_COMBINED_INTERVENTION_task_074"
+}

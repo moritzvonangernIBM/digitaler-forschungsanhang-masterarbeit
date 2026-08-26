@@ -1,0 +1,1272 @@
+{
+  "condition": "C1_SEMANTIC_SUPPORT",
+  "cost_usd": {
+    "native_agent": 0.01860024,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.003254
+  },
+  "counts": {
+    "a_commitments": 5,
+    "a_extractions": 3,
+    "a_opportunities": 3,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 0,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "190f22577edc1ab6a1e3dcd9072831242f77a524a2bd3b75a0c2cd66a2c6b105",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "update the laptop specs"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my laptop"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "one with a black dial"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange my watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my watch"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"city\": \"NYC\", \"scope\": \"change the delivery address for my laptop\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"item_descriptions\": \"update the laptop specs\", \"scope\": \"my laptop\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"one with a black dial\", \"item_descriptions\": \"exchange my watch\", \"scope\": \"my watch\"}, \"operation\": \"exchange_delivered_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "37b0bef49962d1c748abe2661ac12ad2a1b1687c75bf79dae7fa643630a13595",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 2,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "update the laptop specs"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my laptop"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "one with a black dial"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange my watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my watch"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "37b0bef49962d1c748abe2661ac12ad2a1b1687c75bf79dae7fa643630a13595",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 3,
+      "changed_commitments": 3,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "a80d548c7d3a395befe40418bc2f2e4c651c21c5a5f7df3b8077f3d2dd3f6b42",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my NYC address that’s already in my profile"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "i5, 256GB SSD, space grey"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "update the laptop specs"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my laptop"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "swap it for a black dial but keep the leather strap"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "for the watch"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "37b0bef49962d1c748abe2661ac12ad2a1b1687c75bf79dae7fa643630a13595",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 6,
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my NYC address that\\u2019s already in my profile\", \"city\": \"NYC\", \"scope\": \"change the delivery address for my laptop\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"i5, 256GB SSD, space grey\", \"item_descriptions\": \"update the laptop specs\", \"scope\": \"my laptop\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"one with a black dial\", \"item_descriptions\": \"exchange my watch\", \"scope\": \"my watch\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"desired_variant_constraints\": \"swap it for a black dial but keep the leather strap\", \"item_descriptions\": \"the watch\", \"scope\": \"for the watch\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 7,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my NYC address that’s already in my profile"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "i5, 256GB SSD, space grey"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "update the laptop specs"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my laptop"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "one with a black dial"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange my watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my watch"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "swap it for a black dial but keep the leather strap"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "for the watch"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 6
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 8
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 4,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 5,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 6,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 7,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 8,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 15,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 20
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 17,
+      "source_event_ids": [
+        "message:21:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 2,
+      "changed_commitments": 2,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'payment_method_id' has an invalid identifier",
+          "error_type": "ValueError",
+          "field": "payment_method_id",
+          "record_index": 1
+        }
+      ],
+      "response_sha256": "594ca468d5e3fc676f42935459173ed77db56e3a1f673aac56f128e0a85ead1e",
+      "sequence": 18,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:21:user"
+      ],
+      "state_revision": 22,
+      "total_commitments": 5,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "555 Highland Drive, Suite 872"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my NYC address that’s already in my profile"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "for the laptop delivery"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:21:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "10116"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "for any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "b85b67ab517b506ecb6831f61e11514b4b67443b851dde12722478c1062c9313",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 9,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 19,
+      "state_revision": 22
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"555 Highland Drive, Suite 872\", \"address_reference\": \"my NYC address that\\u2019s already in my profile\", \"city\": \"NYC\", \"country\": \"for the laptop delivery\", \"scope\": \"change the delivery address for my laptop\", \"state\": \"NY\", \"zip\": \"10116\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"i5, 256GB SSD, space grey\", \"item_descriptions\": \"update the laptop specs\", \"scope\": \"my laptop\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"one with a black dial\", \"item_descriptions\": \"exchange my watch\", \"scope\": \"my watch\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"desired_variant_constraints\": \"swap it for a black dial but keep the leather strap\", \"item_descriptions\": \"the watch\", \"scope\": \"for the watch\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"for any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "770ce5e25b881798383e38ebd4f5fb052c8501ea9ed6f1903984c9c09c31ed84",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 20,
+      "source_event_ids": [
+        "message:21:user",
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 22,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "555 Highland Drive, Suite 872"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my NYC address that’s already in my profile"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "for the laptop delivery"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:21:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "10116"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "i5, 256GB SSD, space grey"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "update the laptop specs"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my laptop"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "one with a black dial"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange my watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my watch"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "swap it for a black dial but keep the leather strap"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "for the watch"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "for any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "770ce5e25b881798383e38ebd4f5fb052c8501ea9ed6f1903984c9c09c31ed84",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:21:user",
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 22
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "770ce5e25b881798383e38ebd4f5fb052c8501ea9ed6f1903984c9c09c31ed84",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:21:user",
+        "message:3:user",
+        "message:1:user"
+      ],
+      "state_revision": 24
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "555 Highland Drive",
+            "address2": "Suite 872",
+            "city": "New York",
+            "country": "USA",
+            "order_id": "#W3730488",
+            "state": "NY",
+            "zip": "10116"
+          },
+          "call_id": "call_XAlkszxaORYChwgotcla3X6J",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "770ce5e25b881798383e38ebd4f5fb052c8501ea9ed6f1903984c9c09c31ed84",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 23,
+      "state_revision": 24
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "770ce5e25b881798383e38ebd4f5fb052c8501ea9ed6f1903984c9c09c31ed84",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 24,
+      "state_revision": 26
+    },
+    {
+      "accepted_records": 5,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address1\": \"555 Highland Drive, Suite 872\", \"address_reference\": \"my NYC address that\\u2019s already in my profile\", \"city\": \"NYC\", \"country\": \"for the laptop delivery\", \"scope\": \"change the delivery address for my laptop\", \"state\": \"NY\", \"zip\": \"10116\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"desired_variant_constraints\": \"i5, 256GB SSD, space grey\", \"item_descriptions\": \"update the laptop specs\", \"scope\": \"my laptop\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"desired_variant_constraints\": \"one with a black dial\", \"item_descriptions\": \"exchange my watch\", \"scope\": \"my watch\"}, \"operation\": \"exchange_delivered_order_items\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"desired_variant_constraints\": \"swap it for a black dial but keep the leather strap\", \"item_descriptions\": \"the watch\", \"scope\": \"for the watch\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0005\", \"explicit_fields\": {\"scope\": \"for any price difference\"}, \"operation\": \"modify_pending_order_payment\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"555 Highland Drive\", \"address2\": \"Suite 872\", \"city\": \"New York\", \"country\": \"USA\", \"order_id\": \"#W3730488\", \"state\": \"NY\", \"zip\": \"10116\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "0e496a3229960c690fd6e0f08f142b1cfd7ce5bdf87ba12c3ae5b1686fb807ce",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 25,
+      "source_event_ids": [
+        "message:21:user",
+        "message:3:user",
+        "message:1:user",
+        "tool:call_XAlkszxaORYChwgotcla3X6J:modify_pending_order_address"
+      ],
+      "state_revision": 26,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "555 Highland Drive, Suite 872"
+            },
+            "address_reference": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "my NYC address that’s already in my profile"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "NYC"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "for the laptop delivery"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user",
+                "message:21:user"
+              ],
+              "value": "change the delivery address for my laptop"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "NY"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "10116"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "i5, 256GB SSD, space grey"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "update the laptop specs"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my laptop"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "one with a black dial"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "exchange my watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my watch"
+            }
+          },
+          "operation": "exchange_delivered_order_items"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "desired_variant_constraints": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "swap it for a black dial but keep the leather strap"
+            },
+            "item_descriptions": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "the watch"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "for the watch"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0005",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:21:user"
+              ],
+              "value": "for any price difference"
+            }
+          },
+          "operation": "modify_pending_order_payment"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_XAlkszxaORYChwgotcla3X6J:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "555 Highland Drive",
+              "address2": "Suite 872",
+              "city": "New York",
+              "country": "USA",
+              "order_id": "#W3730488",
+              "state": "NY",
+              "zip": "10116"
+            },
+            "result": {
+              "address": {
+                "address1": "555 Highland Drive",
+                "address2": "Suite 872",
+                "city": "New York",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10116"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "6200867091",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "1L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 2955.17,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "2913673670",
+                  "name": "Laptop",
+                  "options": {
+                    "color": "black",
+                    "processor": "i9",
+                    "ram": "32GB",
+                    "screen size": "15-inch",
+                    "storage": "512GB SSD"
+                  },
+                  "price": 2701.89,
+                  "product_id": "4760268021"
+                }
+              ],
+              "order_id": "#W3730488",
+              "payment_history": [
+                {
+                  "amount": 5657.06,
+                  "payment_method_id": "gift_card_7252880",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "yara_silva_7567"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "0e496a3229960c690fd6e0f08f142b1cfd7ce5bdf87ba12c3ae5b1686fb807ce",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 26,
+      "source_event_ids": [
+        "message:21:user",
+        "message:3:user",
+        "message:1:user",
+        "tool:call_XAlkszxaORYChwgotcla3X6J:modify_pending_order_address"
+      ],
+      "state_revision": 26
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "0e496a3229960c690fd6e0f08f142b1cfd7ce5bdf87ba12c3ae5b1686fb807ce",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 27,
+      "source_event_ids": [
+        "message:21:user",
+        "message:3:user",
+        "message:1:user",
+        "tool:call_XAlkszxaORYChwgotcla3X6J:modify_pending_order_address"
+      ],
+      "state_revision": 28
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "item_ids": [
+              "2913673670"
+            ],
+            "new_item_ids": [
+              "2216662955"
+            ],
+            "order_id": "#W3730488",
+            "payment_method_id": "gift_card_7252880"
+          },
+          "call_id": "call_4PJzS0nKCHwHb7pTx3xPC9Bk",
+          "tool_name": "modify_pending_order_items"
+        }
+      ],
+      "card_id": "AC-0004",
+      "card_sha256": "0e496a3229960c690fd6e0f08f142b1cfd7ce5bdf87ba12c3ae5b1686fb807ce",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 28,
+      "state_revision": 28
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "0e496a3229960c690fd6e0f08f142b1cfd7ce5bdf87ba12c3ae5b1686fb807ce",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 29,
+      "state_revision": 30
+    },
+    {
+      "commitment_count": 5,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 30,
+      "state_revision": 30
+    },
+    {
+      "commitment_count": 5,
+      "component": "A",
+      "disposition": "NO_OP",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_LEDGER_RENDER_FAIL_OPEN",
+      "sequence": 31,
+      "state_revision": 32
+    }
+  ],
+  "factors": {
+    "prewrite_control": false,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 3,
+    "b_final_dispositions": 0,
+    "b_opportunities": 0,
+    "event_count": 32,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 87.92506787602906,
+    "prewrite_validation": 0.0,
+    "semantic_support": 19.577743542031385
+  },
+  "seed": 976305,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 14,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 2
+  },
+  "task_id": "111",
+  "trajectory_id": "seed_976305_C1_SEMANTIC_SUPPORT_task_111"
+}

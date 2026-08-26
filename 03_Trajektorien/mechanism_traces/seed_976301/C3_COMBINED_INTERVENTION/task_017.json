@@ -1,0 +1,961 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.0036973100000000005,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.00193045
+  },
+  "counts": {
+    "a_commitments": 4,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 4,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "64933252e1300de201ba1e6b6e1b3d62e2e1279025eb970eaecb246449125ec7",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "0c62191487d22989b0e59ae7e103b99a833899cbe3e7e562fcd219e780f37202",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W8665881"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"an order I placed\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\"}, \"operation\": \"modify_pending_order_items\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "172c0662fd7931e53a9fd6f8f2520e324439447e1b6a1ce1d6695c3dd12a6c36",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 4,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W8665881"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "172c0662fd7931e53a9fd6f8f2520e324439447e1b6a1ce1d6695c3dd12a6c36",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "172c0662fd7931e53a9fd6f8f2520e324439447e1b6a1ce1d6695c3dd12a6c36",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "c91d080429b69fb6df867b7ffa97ddcc71d76ce825a9b38f5d12a34b715b8204",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "123 Elm Street"
+            },
+            "address2": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Suite 641"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Austin"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "78712"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "172c0662fd7931e53a9fd6f8f2520e324439447e1b6a1ce1d6695c3dd12a6c36",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 9,
+      "state_revision": 14
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"an order I placed\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite 641\", \"city\": \"Austin\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78712\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "6ac424ea61290ccde5f38733d19e0eb28729e33b5ffdfc45bcdcead96ed920e9",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 10,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user"
+      ],
+      "state_revision": 14,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W8665881"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "123 Elm Street"
+            },
+            "address2": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Suite 641"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Austin"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "78712"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "6ac424ea61290ccde5f38733d19e0eb28729e33b5ffdfc45bcdcead96ed920e9",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 12,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ce18d4cad9193ee1972a7550a96b96c4b80ee10a44b6af78834f76d67fd60bad",
+      "sequence": 13,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 4,
+      "validated_records": [
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address2": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Suite 641"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "6ac424ea61290ccde5f38733d19e0eb28729e33b5ffdfc45bcdcead96ed920e9",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 14,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"an order I placed\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite 641\", \"city\": \"Austin\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78712\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"address2\": \"Suite 641\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0003",
+      "card_sha256": "cf57eed22e0a28da51e1e8ec752628851f971dffb83bd4c254ab0d97e143cd63",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 15,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W8665881"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "123 Elm Street"
+            },
+            "address2": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Suite 641"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Austin"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "78712"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address2": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Suite 641"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "cf57eed22e0a28da51e1e8ec752628851f971dffb83bd4c254ab0d97e143cd63",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 16,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "123 Elm Street",
+            "address2": "Suite 641",
+            "city": "Austin",
+            "country": "USA",
+            "order_id": "#W8665881",
+            "state": "TX",
+            "zip": "78712"
+          },
+          "call_id": "call_eJgVQEzBtJHswaAksy8tVxMk",
+          "tool_name": "modify_pending_order_address"
+        }
+      ],
+      "card_id": "AC-0003",
+      "card_sha256": "cf57eed22e0a28da51e1e8ec752628851f971dffb83bd4c254ab0d97e143cd63",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 17,
+      "state_revision": 16
+    },
+    {
+      "arguments": {
+        "address1": "123 Elm Street",
+        "address2": "Suite 641",
+        "city": "Austin",
+        "country": "USA",
+        "order_id": "#W8665881",
+        "state": "TX",
+        "zip": "78712"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_eJgVQEzBtJHswaAksy8tVxMk",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 18,
+      "state_revision": 16,
+      "tool_name": "modify_pending_order_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_eJgVQEzBtJHswaAksy8tVxMk",
+        "candidate_arguments": {
+          "address1": "123 Elm Street",
+          "address2": "Suite 641",
+          "city": "Austin",
+          "country": "USA",
+          "order_id": "#W8665881",
+          "state": "TX",
+          "zip": "78712"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "fatima_johnson_7581",
+          "authentication_source_event_ids": [
+            "tool:call_wB0bwp2CKhfDm8H06GBqaHnN:find_user_id_by_name_zip"
+          ],
+          "order": {
+            "item_ids": [
+              "5855700373",
+              "9408160950",
+              "4422467033",
+              "1157853815",
+              "8725040869"
+            ],
+            "order_id": "#W8665881",
+            "source_event_ids": [
+              "tool:call_8ZAJNCe4XG26qXyCIflf3KsF:get_order_details"
+            ],
+            "status": "pending",
+            "user_id": "fatima_johnson_7581"
+          },
+          "products": [
+            {
+              "observed": false,
+              "product_id": "3377618313",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4354588079",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "4768869376",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "6945232052",
+              "source_event_ids": []
+            },
+            {
+              "observed": false,
+              "product_id": "7233192239",
+              "source_event_ids": []
+            }
+          ],
+          "user_profile": null
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_pending_order_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 19,
+      "state_revision": 16
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_eJgVQEzBtJHswaAksy8tVxMk",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 20,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "cf57eed22e0a28da51e1e8ec752628851f971dffb83bd4c254ab0d97e143cd63",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 21,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 4,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"scope\": \"an order I placed\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"order_id\": \"#W8665881\"}, \"operation\": \"modify_pending_order_items\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite 641\", \"city\": \"Austin\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78712\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0004\", \"explicit_fields\": {\"address2\": \"Suite 641\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite 641\", \"city\": \"Austin\", \"country\": \"USA\", \"order_id\": \"#W8665881\", \"state\": \"TX\", \"zip\": \"78712\"}, \"tool_name\": \"modify_pending_order_address\"}]}",
+      "card_id": "AC-0004",
+      "card_sha256": "008c78d60758206ec9c3cf017ad15ec08ed506e4464b7600bf9b28813237a185",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 22,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user",
+        "message:15:user",
+        "tool:call_eJgVQEzBtJHswaAksy8tVxMk:modify_pending_order_address"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "scope": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "an order I placed"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "order_id": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "#W8665881"
+            }
+          },
+          "operation": "modify_pending_order_items"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "address1": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "123 Elm Street"
+            },
+            "address2": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Suite 641"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "Austin"
+            },
+            "country": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "USA"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "TX"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:13:user"
+              ],
+              "value": "78712"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0004",
+          "fields": {
+            "address2": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Suite 641"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_eJgVQEzBtJHswaAksy8tVxMk:modify_pending_order_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "123 Elm Street",
+              "address2": "Suite 641",
+              "city": "Austin",
+              "country": "USA",
+              "order_id": "#W8665881",
+              "state": "TX",
+              "zip": "78712"
+            },
+            "result": {
+              "address": {
+                "address1": "123 Elm Street",
+                "address2": "Suite 641",
+                "city": "Austin",
+                "country": "USA",
+                "state": "TX",
+                "zip": "78712"
+              },
+              "cancel_reason": null,
+              "exchange_items": null,
+              "exchange_new_items": null,
+              "exchange_payment_method_id": null,
+              "exchange_price_difference": null,
+              "fulfillments": [],
+              "items": [
+                {
+                  "item_id": "5855700373",
+                  "name": "Bluetooth Speaker",
+                  "options": {
+                    "battery life": "10 hours",
+                    "color": "black",
+                    "water resistance": "yes"
+                  },
+                  "price": 293.46,
+                  "product_id": "4768869376"
+                },
+                {
+                  "item_id": "9408160950",
+                  "name": "Smart Watch",
+                  "options": {
+                    "band material": "leather",
+                    "color": "gold",
+                    "display": "LCD"
+                  },
+                  "price": 381.26,
+                  "product_id": "6945232052"
+                },
+                {
+                  "item_id": "4422467033",
+                  "name": "Dumbbell Set",
+                  "options": {
+                    "material": "urethane",
+                    "set type": "adjustable",
+                    "weight range": "30-50 lbs"
+                  },
+                  "price": 483.47,
+                  "product_id": "7233192239"
+                },
+                {
+                  "item_id": "1157853815",
+                  "name": "Espresso Machine",
+                  "options": {
+                    "capacity": "2L",
+                    "pressure": "19 bar",
+                    "type": "capsule"
+                  },
+                  "price": 3096.7,
+                  "product_id": "4354588079"
+                },
+                {
+                  "item_id": "8725040869",
+                  "name": "Action Camera",
+                  "options": {
+                    "color": "black",
+                    "resolution": "4K",
+                    "waterproof": "no"
+                  },
+                  "price": 522.86,
+                  "product_id": "3377618313"
+                }
+              ],
+              "order_id": "#W8665881",
+              "payment_history": [
+                {
+                  "amount": 4777.75,
+                  "payment_method_id": "paypal_5364164",
+                  "transaction_type": "payment"
+                }
+              ],
+              "return_items": null,
+              "return_payment_method_id": null,
+              "status": "pending",
+              "user_id": "fatima_johnson_7581"
+            },
+            "tool_name": "modify_pending_order_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "008c78d60758206ec9c3cf017ad15ec08ed506e4464b7600bf9b28813237a185",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 23,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user",
+        "message:15:user",
+        "tool:call_eJgVQEzBtJHswaAksy8tVxMk:modify_pending_order_address"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0004",
+      "card_sha256": "008c78d60758206ec9c3cf017ad15ec08ed506e4464b7600bf9b28813237a185",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 24,
+      "source_event_ids": [
+        "message:1:user",
+        "message:9:user",
+        "message:13:user",
+        "message:15:user",
+        "tool:call_eJgVQEzBtJHswaAksy8tVxMk:modify_pending_order_address"
+      ],
+      "state_revision": 20
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 25,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 20.392449334991397,
+    "prewrite_validation": 0.00042716600000858307,
+    "semantic_support": 9.457423125015339
+  },
+  "seed": 976301,
+  "semantic_linkage_audit": {
+    "activated_cards": 4,
+    "card_injections": 6,
+    "injected_cards": 4,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "17",
+  "trajectory_id": "seed_976301_C3_COMBINED_INTERVENTION_task_017"
+}

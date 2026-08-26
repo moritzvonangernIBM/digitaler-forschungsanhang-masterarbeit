@@ -1,0 +1,778 @@
+{
+  "condition": "C3_COMBINED_INTERVENTION",
+  "cost_usd": {
+    "native_agent": 0.006272979999999999,
+    "prewrite_validation": 0.0,
+    "semantic_support": 0.0032291999999999998
+  },
+  "counts": {
+    "a_commitments": 3,
+    "a_extractions": 4,
+    "a_opportunities": 4,
+    "a_support_cards": 3,
+    "b_evidence_reads": 0,
+    "b_opportunities": 1,
+    "b_replans": 0
+  },
+  "domain": "retail",
+  "events": [
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 0,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0001",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "b03331da41ba0f9fe981d43a4103a5d92f6d2b09ee90be4ce8b2caddbf50ab44",
+      "sequence": 1,
+      "source_event_ids": [
+        "message:1:user"
+      ],
+      "state_revision": 2,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user"
+              ],
+              "value": "my daughter's address"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 2,
+      "source_event_ids": [
+        "message:3:user"
+      ],
+      "state_revision": 4
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0002",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "ca8a10adbe14bb55433882bf924f27630f9a5fce5d32914a8bc0e40f0674a503",
+      "sequence": 3,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user"
+      ],
+      "state_revision": 4,
+      "total_commitments": 1,
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "my daughter's address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "Chicago"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 4,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0003",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "response_sha256": "d3be50b510eee362026fbc9ac7f769841364cce4bb3832e5498c131d270ba768",
+      "sequence": 5,
+      "source_event_ids": [
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "total_commitments": 2,
+      "validated_records": [
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the address from the order that was shipped to Chicago"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "Chicago"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the order that was shipped to Chicago"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ]
+    },
+    {
+      "accepted_records": 2,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my daughter's address\", \"city\": \"Chicago\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address from the order that was shipped to Chicago\", \"city\": \"Chicago\", \"scope\": \"the order that was shipped to Chicago\"}, \"operation\": \"modify_pending_order_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0001",
+      "card_sha256": "3f5416223f38b46dfbf7bff5c7c05bfcc696828c8d15339700e0ce644cb53ea1",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 6,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 10,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "my daughter's address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "Chicago"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the address from the order that was shipped to Chicago"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "Chicago"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the order that was shipped to Chicago"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3f5416223f38b46dfbf7bff5c7c05bfcc696828c8d15339700e0ce644cb53ea1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 7,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 10
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3f5416223f38b46dfbf7bff5c7c05bfcc696828c8d15339700e0ce644cb53ea1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 8,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 12
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3f5416223f38b46dfbf7bff5c7c05bfcc696828c8d15339700e0ce644cb53ea1",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 9,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user"
+      ],
+      "state_revision": 14
+    },
+    {
+      "component": "A",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_MATERIAL_TRANSACTIONAL_USER_EVENT",
+      "sequence": 10,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 1,
+      "changed_commitments": 1,
+      "component": "A",
+      "disposition": "STORED_SILENTLY",
+      "event_type": "DECISION",
+      "opportunity_id": "AOP-0004",
+      "reason_code": "A_LEDGER_UPDATED",
+      "rejected_records": 1,
+      "rejection_details": [
+        {
+          "error": "field 'address1' value is not entailed by cited evidence",
+          "error_type": "ValueError",
+          "field": "address1",
+          "record_index": 0
+        }
+      ],
+      "response_sha256": "49830b0cca080447cba49b156cbb434920c5027dfbbb3800207fe85bdd55c324",
+      "sequence": 11,
+      "source_event_ids": [
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "total_commitments": 3,
+      "validated_records": [
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Chicago"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "60621"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0001",
+      "card_sha256": "3f5416223f38b46dfbf7bff5c7c05bfcc696828c8d15339700e0ce644cb53ea1",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 3,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 12,
+      "state_revision": 16
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my daughter's address\", \"city\": \"Chicago\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address from the order that was shipped to Chicago\", \"city\": \"Chicago\", \"scope\": \"the order that was shipped to Chicago\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"city\": \"Chicago\", \"state\": \"IL\", \"zip\": \"60621\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": []}",
+      "card_id": "AC-0002",
+      "card_sha256": "44e04d4e277adcdc9a0502fbc92f6359941597b34034e303ecf19061e21b06e6",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 13,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:15:user"
+      ],
+      "state_revision": 16,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "my daughter's address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "Chicago"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the address from the order that was shipped to Chicago"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "Chicago"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the order that was shipped to Chicago"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Chicago"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "60621"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": []
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "44e04d4e277adcdc9a0502fbc92f6359941597b34034e303ecf19061e21b06e6",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 14,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:15:user"
+      ],
+      "state_revision": 16
+    },
+    {
+      "candidate_calls": [
+        {
+          "arguments": {
+            "address1": "943 Maple Drive",
+            "address2": "Suite 356",
+            "city": "Chicago",
+            "country": "USA",
+            "state": "IL",
+            "user_id": "lucas_santos_6600",
+            "zip": "60621"
+          },
+          "call_id": "call_uyqooqtKnuZ6LrYuzSDMYaaK",
+          "tool_name": "modify_user_address"
+        }
+      ],
+      "card_id": "AC-0002",
+      "card_sha256": "44e04d4e277adcdc9a0502fbc92f6359941597b34034e303ecf19061e21b06e6",
+      "component": "A",
+      "event_type": "LINKAGE",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REACHED_WRITE_CANDIDATE",
+      "sequence": 15,
+      "state_revision": 16
+    },
+    {
+      "arguments": {
+        "address1": "943 Maple Drive",
+        "address2": "Suite 356",
+        "city": "Chicago",
+        "country": "USA",
+        "state": "IL",
+        "user_id": "lucas_santos_6600",
+        "zip": "60621"
+      },
+      "bundle_id": "BB-0001-O",
+      "call_id": "call_uyqooqtKnuZ6LrYuzSDMYaaK",
+      "candidate_role": "original",
+      "component": "B",
+      "event_type": "OPPORTUNITY",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_NATIVE_WRITE_CANDIDATE",
+      "sequence": 16,
+      "state_revision": 16,
+      "tool_name": "modify_user_address"
+    },
+    {
+      "component": "B",
+      "decision_evidence": {
+        "call_id": "call_uyqooqtKnuZ6LrYuzSDMYaaK",
+        "candidate_arguments": {
+          "address1": "943 Maple Drive",
+          "address2": "Suite 356",
+          "city": "Chicago",
+          "country": "USA",
+          "state": "IL",
+          "user_id": "lucas_santos_6600",
+          "zip": "60621"
+        },
+        "disposition": "VALID_UNCHANGED",
+        "evidence_action": null,
+        "observed": {
+          "authenticated_user_id": "lucas_santos_6600",
+          "authentication_source_event_ids": [
+            "tool:call_wWX5GVxx03KZSIl6CcQKmVgk:find_user_id_by_name_zip"
+          ],
+          "order": null,
+          "products": [],
+          "user_profile": {
+            "payment_method_ids": [
+              "paypal_3820631"
+            ],
+            "source_event_ids": [
+              "tool:call_kDXFAp7VhtYaYTGI5puHtgQ7:get_user_details"
+            ],
+            "user_id": "lucas_santos_6600"
+          }
+        },
+        "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+        "required_response": "Reconsider the candidate using only visible evidence and Retail policy.",
+        "tool_name": "modify_user_address"
+      },
+      "disposition": "VALID_UNCHANGED",
+      "event_type": "DECISION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_FEASIBILITY_VALID_CONFIRMATION_NATIVE_SCOPE",
+      "sequence": 17,
+      "state_revision": 16
+    },
+    {
+      "component": "B",
+      "disposition": "executed_unchanged",
+      "emitted_call_id": "call_uyqooqtKnuZ6LrYuzSDMYaaK",
+      "event_type": "FINAL_DISPOSITION",
+      "opportunity_id": "BOP-0001",
+      "reason_code": "B_BUNDLE_VALID_UNCHANGED",
+      "sequence": 18,
+      "state_revision": 16
+    },
+    {
+      "card_id": "AC-0002",
+      "card_sha256": "44e04d4e277adcdc9a0502fbc92f6359941597b34034e303ecf19061e21b06e6",
+      "component": "A",
+      "event_type": "STATE_CHANGE",
+      "injection_count": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_REFRESHED_AFTER_VISIBLE_PROGRESS",
+      "sequence": 19,
+      "state_revision": 18
+    },
+    {
+      "accepted_records": 3,
+      "card_content": "Selective advisory for a compound request. CUSTOMER_COMMITMENTS contain only source-grounded user statements; they are not permissions or completion claims. VERIFIED_COMPLETED_WRITES contain only successful visible tool outcomes. Use them as a checklist, do not repeat completed writes, do not infer missing values, and follow Retail policy. Do not alter an otherwise valid choice unless it conflicts with an explicit customer field: {\"customer_commitments\": [{\"commitment_id\": \"G-0001\", \"explicit_fields\": {\"address_reference\": \"my daughter's address\", \"city\": \"Chicago\"}, \"operation\": \"modify_user_address\"}, {\"commitment_id\": \"G-0002\", \"explicit_fields\": {\"address_reference\": \"the address from the order that was shipped to Chicago\", \"city\": \"Chicago\", \"scope\": \"the order that was shipped to Chicago\"}, \"operation\": \"modify_pending_order_address\"}, {\"commitment_id\": \"G-0003\", \"explicit_fields\": {\"city\": \"Chicago\", \"state\": \"IL\", \"zip\": \"60621\"}, \"operation\": \"modify_user_address\"}], \"verified_completed_writes\": [{\"arguments\": {\"address1\": \"943 Maple Drive\", \"address2\": \"Suite 356\", \"city\": \"Chicago\", \"country\": \"USA\", \"state\": \"IL\", \"user_id\": \"lucas_santos_6600\", \"zip\": \"60621\"}, \"tool_name\": \"modify_user_address\"}]}",
+      "card_id": "AC-0003",
+      "card_sha256": "9241ef9f38a7bce81463127f9bcbc96464ea5b7daf8bf4f2b89d6ba78c8b0338",
+      "component": "A",
+      "disposition": "SELECTIVE_ADVISORY",
+      "event_type": "DECISION",
+      "opportunity_id": null,
+      "reason_code": "A_CARD_ACTIVATED",
+      "rejected_records": 0,
+      "rejection_details": [],
+      "sequence": 20,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:15:user",
+        "tool:call_uyqooqtKnuZ6LrYuzSDMYaaK:modify_user_address"
+      ],
+      "state_revision": 18,
+      "trigger_reason": "A_COMPOUND_COMMITMENT_RISK",
+      "validated_records": [
+        {
+          "commitment_id": "G-0001",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:1:user",
+                "message:3:user"
+              ],
+              "value": "my daughter's address"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:3:user"
+              ],
+              "value": "Chicago"
+            }
+          },
+          "operation": "modify_user_address"
+        },
+        {
+          "commitment_id": "G-0002",
+          "fields": {
+            "address_reference": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the address from the order that was shipped to Chicago"
+            },
+            "city": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "Chicago"
+            },
+            "scope": {
+              "source_event_ids": [
+                "message:9:user"
+              ],
+              "value": "the order that was shipped to Chicago"
+            }
+          },
+          "operation": "modify_pending_order_address"
+        },
+        {
+          "commitment_id": "G-0003",
+          "fields": {
+            "city": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "Chicago"
+            },
+            "state": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "IL"
+            },
+            "zip": {
+              "source_event_ids": [
+                "message:15:user"
+              ],
+              "value": "60621"
+            }
+          },
+          "operation": "modify_user_address"
+        }
+      ],
+      "verified_completed_writes": [
+        {
+          "source_event_ids": [
+            "tool:call_uyqooqtKnuZ6LrYuzSDMYaaK:modify_user_address"
+          ],
+          "value": {
+            "arguments": {
+              "address1": "943 Maple Drive",
+              "address2": "Suite 356",
+              "city": "Chicago",
+              "country": "USA",
+              "state": "IL",
+              "user_id": "lucas_santos_6600",
+              "zip": "60621"
+            },
+            "result": {
+              "address": {
+                "address1": "943 Maple Drive",
+                "address2": "Suite 356",
+                "city": "Chicago",
+                "country": "USA",
+                "state": "IL",
+                "zip": "60621"
+              },
+              "email": "lucas.santos4998@example.com",
+              "name": {
+                "first_name": "Lucas",
+                "last_name": "Santos"
+              },
+              "orders": [
+                "#W1588712",
+                "#W7895761"
+              ],
+              "payment_methods": {
+                "paypal_3820631": {
+                  "id": "paypal_3820631",
+                  "source": "paypal"
+                }
+              },
+              "user_id": "lucas_santos_6600"
+            },
+            "tool_name": "modify_user_address"
+          }
+        }
+      ]
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "9241ef9f38a7bce81463127f9bcbc96464ea5b7daf8bf4f2b89d6ba78c8b0338",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 1,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 21,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:15:user",
+        "tool:call_uyqooqtKnuZ6LrYuzSDMYaaK:modify_user_address"
+      ],
+      "state_revision": 18
+    },
+    {
+      "card_id": "AC-0003",
+      "card_sha256": "9241ef9f38a7bce81463127f9bcbc96464ea5b7daf8bf4f2b89d6ba78c8b0338",
+      "component": "A",
+      "event_type": "ACTIVATION",
+      "injection_number": 2,
+      "opportunity_id": null,
+      "reason_code": "A_CARD_INJECTED",
+      "sequence": 22,
+      "source_event_ids": [
+        "message:1:user",
+        "message:3:user",
+        "message:9:user",
+        "message:15:user",
+        "tool:call_uyqooqtKnuZ6LrYuzSDMYaaK:modify_user_address"
+      ],
+      "state_revision": 20
+    }
+  ],
+  "factors": {
+    "prewrite_control": true,
+    "semantic_support": true
+  },
+  "observer_audit": {
+    "a_opportunities": 4,
+    "b_final_dispositions": 1,
+    "b_opportunities": 1,
+    "event_count": 23,
+    "issues": [],
+    "pass": true
+  },
+  "schema_version": "retail_factorial_runtime_support_v2",
+  "seconds": {
+    "native_agent": 24.088371499994537,
+    "prewrite_validation": 0.0005146230396348983,
+    "semantic_support": 16.393834667047486
+  },
+  "seed": 976303,
+  "semantic_linkage_audit": {
+    "activated_cards": 3,
+    "card_injections": 6,
+    "injected_cards": 3,
+    "issues": [],
+    "pass": true,
+    "write_linkages": 1
+  },
+  "task_id": "43",
+  "trajectory_id": "seed_976303_C3_COMBINED_INTERVENTION_task_043"
+}

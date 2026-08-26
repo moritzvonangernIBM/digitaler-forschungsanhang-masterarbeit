@@ -1,0 +1,58 @@
+{
+  "study": "retail_factorial_runtime_interventions",
+  "domain": "retail_customer_service",
+  "tasks": 80,
+  "seeds": [976301, 976302, 976303, 976304, 976305, 976306],
+  "conditions": {
+    "C0_NATIVE": {
+      "semantic_support": false,
+      "prewrite_control": false
+    },
+    "C1_SEMANTIC_SUPPORT": {
+      "semantic_support": true,
+      "prewrite_control": false
+    },
+    "C2_PREWRITE_CONTROL": {
+      "semantic_support": false,
+      "prewrite_control": true
+    },
+    "C3_COMBINED_INTERVENTION": {
+      "semantic_support": true,
+      "prewrite_control": true
+    }
+  },
+  "runtime": {
+    "agent_model": "gpt-5-nano",
+    "user_model": "gpt-5-nano",
+    "temperature": 0.0,
+    "reasoning_effort": "medium",
+    "max_steps": 30
+  },
+  "module_a_limits": {
+    "max_extractions_per_episode": 12,
+    "max_evidence_reads_per_episode": 6,
+    "max_evidence_reads_per_agent_turn": 1,
+    "max_support_cards_per_opportunity": 1,
+    "max_support_cards_per_episode": 12,
+    "max_support_card_chars": 1800
+  },
+  "module_b_limits": {
+    "max_evidence_reads_per_candidate": 1,
+    "max_evidence_reads_per_episode": 8,
+    "max_evidence_reads_per_agent_turn": 1,
+    "max_confirmation_requests_per_action_digest": 1,
+    "max_confirmation_cycles_per_episode": 3,
+    "max_rejections_per_action_digest": 1,
+    "max_transfers_per_episode": 1
+  },
+  "evaluation": {
+    "unit": "task_seed_condition_cell",
+    "cells": 1920,
+    "offline_evaluation": true
+  },
+  "notes": [
+    "All four conditions use the same task-seed cells.",
+    "Seeds are repeated executions for stability analysis.",
+    "The offline evaluator is separate from the runtime path."
+  ]
+}
